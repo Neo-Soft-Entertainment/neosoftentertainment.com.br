@@ -1,5 +1,5 @@
-# Portifólio Wise Labs
+# Neo Soft Portfolio
 
-Esse é o site de portifólio oficial interativo e dinâmico da Wise Labs (ainda não está concluído).
+This is Neo Soft's official interactive and dynamic portfolio website (not yet finished).
 
-Além disso estamos recriando ele com um formato novo, em breve estará no nosso domínio que é https://wiselabsgworks.com.br
+We are also redesigning it with a new format; it will soon be available on our domain, https:/neeosoft@gmail.com.br
