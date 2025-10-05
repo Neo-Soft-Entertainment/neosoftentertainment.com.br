@@ -8,14 +8,9 @@ body {
   line-height: 1.55;
 }
 
-body.custom-cursor-active {
-  cursor: none;
-}
-
-@media (pointer: coarse) {
-  body.custom-cursor-active {
-    cursor: auto;
-  }
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
 }
 
 /* Improve anchor scroll positioning when navbar is fixed */
