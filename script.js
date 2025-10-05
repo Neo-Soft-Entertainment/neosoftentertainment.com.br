@@ -38,12 +38,27 @@
 
   // Custom cursor
   const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-  if (hasFinePointer && cursor){
-    window.addEventListener('mousemove', (e) => {
-      cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-  } else if (cursor){
-    cursor.remove();
+  if (cursor){
+    if (hasFinePointer){
+      document.body.classList.add('custom-cursor-active');
+      let cursorVisible = false;
+      const reveal = () => {
+        if (!cursorVisible){
+          cursor.style.opacity = '1';
+          cursorVisible = true;
+        }
+      };
+      window.addEventListener('mousemove', (e) => {
+        reveal();
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+      window.addEventListener('mouseleave', () => {
+        cursorVisible = false;
+        cursor.style.opacity = '0';
+      });
+    } else {
+      cursor.remove();
+    }
   }
 
   // SFX (WebAudio)
