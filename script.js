@@ -48,14 +48,16 @@
           cursorVisible = true;
         }
       };
+      const hideCursor = () => {
+        cursorVisible = false;
+        cursor.style.opacity = '0';
+      };
       window.addEventListener('mousemove', (e) => {
         reveal();
         cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
       });
-      window.addEventListener('mouseleave', () => {
-        cursorVisible = false;
-        cursor.style.opacity = '0';
-      });
+      window.addEventListener('mouseleave', hideCursor);
+
     } else {
       cursor.remove();
     }
