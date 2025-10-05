@@ -80,15 +80,21 @@ section[id] {
 
 /* Responsive Cards */
 @media (max-width: 640px){
-  .card3d{ width:88vw; }
-}
+  #gamesTrack,
+  #pluginsTrack{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    overflow:visible;
+    scroll-snap-type:unset;
+  }
 
-/* Buttons full width on mobile */
-@media (max-width: 640px){
-  .btn-primary, .btn-outline{ width:100%; text-align:center }
-}
+  .card3d{ width:100%; }
 
-@media (max-width: 640px){
+  /* Buttons full width on mobile */
+  .btn-primary,
+  .btn-outline{ width:100%; text-align:center }
+
   .carousel-controls{ display:none; }
 }
 
