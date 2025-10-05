@@ -1,0 +1,69 @@
+/* Neo Soft — styles (dark theme, purple highlights) */
+:root{
+  --purple:#9b5de5;
+  --fuchsia:#d14bf0;
+}
+
+/* Scrollbar hidden util */
+.no-scrollbar{ scrollbar-width:none; }
+.no-scrollbar::-webkit-scrollbar{ display:none; }
+
+/* Navbar background on scroll */
+.sticky-nav{ background: rgba(0,0,0,.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.1); }
+
+/* Card 3D styles */
+.card3d{ position:relative; width:320px; max-width:360px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:1rem; overflow:hidden; transition:transform .15s ease, background .2s ease; }
+.card3d:hover{ background:rgba(255,255,255,.08); }
+.card3d-img{ position:relative; height:180px; background:rgba(0,0,0,.3); }
+.card3d-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.75; }
+.card3d-title{ font-weight:600; font-size:1.125rem; color:#e9d5ff; }
+.card3d-desc{ font-size:.9rem; color:rgba(255,255,255,.75); margin-top:.25rem; }
+.card3d-link{ display:inline-block; margin-top:1rem; color:#d6bcfa; text-decoration:none; }
+.card3d-link:hover{text-decoration:underline;}
+.card3d::after{ content:''; position:absolute; inset:-1px; border-radius:1rem; box-shadow:0 0 60px rgba(155,93,229,.25); pointer-events:none; }
+
+/* Carousel controls */
+.carousel-controls{ position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none; padding:0 .25rem; }
+.carousel-controls button{ pointer-events:auto; height:40px; width:40px; border-radius:9999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); }
+.carousel-controls button:hover{ background:rgba(255,255,255,.2); }
+
+/* News cards */
+.news-card{ border:1px solid rgba(255,255,255,.1); padding:1.5rem; border-radius:.75rem; background:linear-gradient(135deg, rgba(255,255,255,.05), transparent); }
+.news-date{ font-size:.75rem; color:rgba(255,255,255,.6); }
+.news-title{ font-weight:700; font-size:1.25rem; color:#e9d5ff; margin:.25rem 0 .5rem; }
+.news-summary{ color:rgba(255,255,255,.85); font-size:.95rem; }
+
+/* Team */
+.team-card{ text-align:center; border:1px solid rgba(255,255,255,.1); padding:1.5rem; border-radius:.75rem; background:rgba(255,255,255,.05); transition:background .2s ease; }
+.team-card:hover{ background:rgba(255,255,255,.1); }
+.team-avatar{ height:96px; width:96px; margin:0 auto 1rem; border-radius:9999px; background:linear-gradient(135deg, var(--purple), var(--fuchsia)); box-shadow:0 0 40px rgba(155,93,229,.35); }
+.team-name{ font-weight:600; }
+.team-role{ font-size:.85rem; color:rgba(216,180,254,.8); }
+
+/* Inputs / buttons */
+.input, .textarea{ border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); border-radius:.5rem; padding:.6rem .75rem; color:white; }
+.input::placeholder, .textarea::placeholder{ color:rgba(255,255,255,.4); }
+.btn-primary{ padding:.7rem 1.25rem; border-radius:.5rem; font-weight:600; color:white; background:linear-gradient(90deg, var(--purple), var(--fuchsia)); box-shadow:0 10px 20px rgba(155,93,229,.2); }
+.btn-primary:hover{ filter:brightness(1.05); }
+.btn-outline{ padding:.7rem 1.25rem; border-radius:.5rem; border:1px solid rgba(255,255,255,.2); }
+.btn-outline:hover{ border-color: rgba(216,180,254,.6); color:#e9d5ff; }
+
+/* Custom shadow for cursor */
+.shadow-glow{ box-shadow:0 0 20px rgba(155,93,229,.5); }
+
+/* Hamburger / Mobile menu */
+.hamburger-line{ width:18px; height:2px; background:rgba(255,255,255,.8); margin:2px 0; display:block }
+.mobile-menu{ background:rgba(0,0,0,.9); border-top:1px solid rgba(255,255,255,.12); padding:.75rem 1rem; }
+.mobile-menu a{ display:block; padding:.5rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
+.mobile-menu a:last-child{ border-bottom:0; }
+
+/* Responsive Cards */
+@media (max-width: 640px){
+  .card3d{ width:88vw; }
+  .card3d-img{ height:160px; }
+}
+
+/* Buttons full width on mobile */
+@media (max-width: 640px){
+  .btn-primary, .btn-outline{ width:100%; text-align:center }
+}
