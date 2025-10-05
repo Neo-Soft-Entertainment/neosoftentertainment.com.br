@@ -4,6 +4,10 @@
   --fuchsia:#d14bf0;
 }
 
+body {
+cursor: none;
+}
+
 /* Scrollbar hidden util */
 .no-scrollbar{ scrollbar-width:none; }
 .no-scrollbar::-webkit-scrollbar{ display:none; }
