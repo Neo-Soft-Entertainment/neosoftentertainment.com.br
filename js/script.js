@@ -83,6 +83,12 @@
       'contact.sending': 'Sending...',
       'contact.success': 'Message sent! We’ll get back to you soon.',
       'contact.error': 'Something went wrong. Please try again later.',
+      'contact.socialTitle': 'Connect with Neo Soft',
+      'contact.socialCopy': 'Follow our latest updates and behind-the-scenes moments.',
+      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
+      'contact.instagramAria': 'Open Neo Soft on Instagram',
+      'contact.linkedinAria': 'Open Neo Soft on LinkedIn',
       'footer.copy': '© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     pt: {
@@ -147,6 +153,12 @@
       'contact.sending': 'Enviando...',
       'contact.success': 'Mensagem enviada! Responderemos em breve.',
       'contact.error': 'Algo deu errado. Tente novamente mais tarde.',
+      'contact.socialTitle': 'Conecte-se com a Neo Soft',
+      'contact.socialCopy': 'Acompanhe as novidades e bastidores do estúdio.',
+      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
+      'contact.instagramAria': 'Abrir Neo Soft no Instagram',
+      'contact.linkedinAria': 'Abrir Neo Soft no LinkedIn',
       'footer.copy': '© <span id="year"></span> Neo Soft. Fundada por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     es: {
@@ -211,6 +223,12 @@
       'contact.sending': 'Enviando...',
       'contact.success': '¡Mensaje enviado! Nos pondremos en contacto pronto.',
       'contact.error': 'Algo salió mal. Inténtalo de nuevo más tarde.',
+      'contact.socialTitle': 'Conéctate con Neo Soft',
+      'contact.socialCopy': 'Sigue nuestras novedades y momentos entre bastidores.',
+      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
+      'contact.instagramAria': 'Abrir Neo Soft en Instagram',
+      'contact.linkedinAria': 'Abrir Neo Soft en LinkedIn',
       'footer.copy': '© <span id="year"></span> Neo Soft. Fundado por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     zh: {
@@ -275,6 +293,12 @@
       'contact.sending': '正在发送…',
       'contact.success': '信息已发送！我们会尽快回复。',
       'contact.error': '出现问题。请稍后再试。',
+      'contact.socialTitle': '关注 Neo Soft',
+      'contact.socialCopy': '获取我们的最新动态与幕后花絮。',
+      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
+      'contact.instagramAria': '在 Instagram 打开 Neo Soft',
+      'contact.linkedinAria': '在 LinkedIn 打开 Neo Soft',
       'footer.copy': '© <span id="year"></span> Neo Soft. 由 Victor Henrique Mendonça Rodrigues 创立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     ja: {
@@ -339,6 +363,12 @@
       'contact.sending': '送信中…',
       'contact.success': 'メッセージを送信しました！追ってご連絡いたします。',
       'contact.error': '問題が発生しました。後でもう一度お試しください。',
+      'contact.socialTitle': 'Neo Soft とつながる',
+      'contact.socialCopy': '最新情報や舞台裏の様子をチェックしましょう。',
+      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
+      'contact.instagramAria': 'Instagram で Neo Soft を開く',
+      'contact.linkedinAria': 'LinkedIn で Neo Soft を開く',
       'footer.copy': '© <span id="year"></span> Neo Soft. Victor Henrique Mendonça Rodrigues により設立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     }
   };
