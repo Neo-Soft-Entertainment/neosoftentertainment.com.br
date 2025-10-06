@@ -14,6 +14,10 @@
   const muteBtnMobile = $('#muteBtnMobile');
   const mobileMenu = $('#mobileMenu');
   const hamburger = $('#hamburger');
+  const themeToggle = $('#themeToggle');
+  const themeToggleMobile = $('#themeToggleMobile');
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
   const contactForm = $('#contactForm');
   const formFeedback = $('#formFeedback');
   const yearSpan = $('#year');
@@ -26,6 +30,58 @@
   const refreshMuteBtn = () => { if (muteBtn) muteBtn.textContent = muted ? 'Unmute SFX' : 'Mute SFX'; if (muteBtnMobile) muteBtnMobile.textContent = muted ? 'Unmute SFX' : 'Mute SFX'; }
   refreshMuteBtn();
   if (sfxToggle) sfxToggle.checked = !muted;
+
+  // Theme toggling
+  const storage = (() => {
+    try { return window.localStorage; } catch (err) { return null; }
+  })();
+  const THEME_KEY = 'neo-theme';
+  let userSelectedTheme = false;
+  let theme = prefersLight.matches ? 'light' : 'dark';
+  if (storage){
+    try {
+      const saved = storage.getItem(THEME_KEY);
+      if (saved === 'light' || saved === 'dark'){
+        theme = saved;
+        userSelectedTheme = true;
+      }
+    } catch (err) {
+      console.warn('Theme storage unavailable', err);
+    }
+  }
+
+  const applyTheme = (next, fromUser=false) => {
+    theme = next === 'light' ? 'light' : 'dark';
+    document.body.classList.toggle('theme-light', theme === 'light');
+    document.body.classList.toggle('theme-dark', theme !== 'light');
+    document.documentElement.style.colorScheme = theme === 'light' ? 'light' : 'dark';
+    const label = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+    if (themeToggle) themeToggle.textContent = label;
+    if (themeToggleMobile) themeToggleMobile.textContent = label;
+    if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#f6f3ff' : '#12021c');
+    if (storage && (fromUser || userSelectedTheme)){
+      try { storage.setItem(THEME_KEY, theme); } catch (err) { console.warn('Theme storage failed', err); }
+    }
+    if (fromUser) userSelectedTheme = true;
+  };
+
+  applyTheme(theme, userSelectedTheme);
+
+  const toggleTheme = () => applyTheme(theme === 'light' ? 'dark' : 'light', true);
+  themeToggle && themeToggle.addEventListener('click', toggleTheme);
+  themeToggleMobile && themeToggleMobile.addEventListener('click', () => {
+    toggleTheme();
+    if (mobileMenu) mobileMenu.classList.add('hidden');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+  });
+
+  const handleSystemTheme = (event) => {
+    if (userSelectedTheme) return;
+    applyTheme(event.matches ? 'light' : 'dark');
+  };
+
+  if (prefersLight.addEventListener) prefersLight.addEventListener('change', handleSystemTheme);
+  else if (prefersLight.addListener) prefersLight.addListener(handleSystemTheme);
 
   // Navbar scroll / back-to-top
   const onScroll = () => {
