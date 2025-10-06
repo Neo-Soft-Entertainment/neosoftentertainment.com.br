@@ -40,9 +40,13 @@
       'games.title': 'Our Games',
       'games.subtitle': 'Worlds built with heart and cutting-edge tech. Drag to explore.',
       'games.frontline': 'An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.',
+      'games.frontlineTag': 'Tactical shooter — live on Steam',
       'games.rampage': 'A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.',
+      'games.rampageTag': 'Co-op rhythm brawler in development',
       'games.dissociation': 'A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?',
+      'games.dissociationTag': 'Mind-bending survival horror concept',
       'games.banana': 'A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?',
+      'games.bananaTag': 'Absurd survival adventure concept',
       'shared.learnMore': 'Learn More →',
       'shared.backToTop': 'Back to top',
       'carousel.prev': 'Previous',
@@ -50,7 +54,9 @@
       'plugins.title': 'Our Plugins',
       'plugins.subtitle': 'Fab marketplace listings',
       'plugins.world': 'Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.',
+      'plugins.worldTag': 'Procedural worldbuilding toolkit for Unreal',
       'plugins.explosion': 'Add fully replicated, network-ready explosions with customizable effects and optimized physics.',
+      'plugins.explosionTag': 'Network-ready VFX & damage systems',
       'plugins.view': 'View Plugin →',
       'news.title': 'Latest News',
       'news.frontline.date': 'September 2025',
@@ -114,9 +120,13 @@
       'games.title': 'Nossos Jogos',
       'games.subtitle': 'Mundos construídos com coração e tecnologia de ponta. Arraste para explorar.',
       'games.frontline': 'Um shooter tático imersivo que combina realismo, intensidade e narrativa — disponível agora na Steam.',
+      'games.frontlineTag': 'Shooter tático — disponível na Steam',
       'games.rampage': 'Um brawler musical de ritmo caótico que entrega adrenalina, destruição e caos no modo multiplayer.',
+      'games.rampageTag': 'Brawler rítmico cooperativo em desenvolvimento',
       'games.dissociation': 'Um terror psicológico em que uma IA manipula cada movimento seu — sem armas, sem escape, só sobrevivência. Você sabe o que é real?',
+      'games.dissociationTag': 'Terror de sobrevivência psicológico em conceito',
       'games.banana': 'Uma aventura de sobrevivência bem-humorada em que bananas mutantes dominam o mundo — você consegue conter a revolta das frutas?',
+      'games.bananaTag': 'Aventura de sobrevivência absurda em conceito',
       'shared.learnMore': 'Saiba mais →',
       'shared.backToTop': 'Voltar ao topo',
       'carousel.prev': 'Anterior',
@@ -124,7 +134,9 @@
       'plugins.title': 'Nossos Plugins',
       'plugins.subtitle': 'Listagens na Fab',
       'plugins.world': 'Crie mundos abertos vastos e dinâmicos no Unreal Engine com terreno procedural, biomas e posicionamento de assets.',
+      'plugins.worldTag': 'Ferramentas de mundo procedural para Unreal',
       'plugins.explosion': 'Adicione explosões totalmente replicadas, prontas para rede, com efeitos personalizáveis e física otimizada.',
+      'plugins.explosionTag': 'Efeitos e dano prontos para rede',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Notícias',
       'news.frontline.date': 'Setembro de 2025',
@@ -188,9 +200,13 @@
       'games.title': 'Nuestros Juegos',
       'games.subtitle': 'Mundos construidos con corazón y tecnología de punta. Arrastra para explorar.',
       'games.frontline': 'Un shooter táctico inmersivo que combina realismo, intensidad y narrativa — disponible ahora en Steam.',
+      'games.frontlineTag': 'Shooter táctico — disponible en Steam',
       'games.rampage': 'Un brawler musical con un ritmo caótico que ofrece adrenalina pura, destrucción y caos en modo multijugador.',
+      'games.rampageTag': 'Brawler rítmico cooperativo en desarrollo',
       'games.dissociation': 'Un terror psicológico donde una IA manipula cada uno de tus movimientos — sin armas, sin escape, solo supervivencia. ¿Sabes qué es real?',
+      'games.dissociationTag': 'Terror psicológico de supervivencia en concepto',
       'games.banana': 'Una aventura de supervivencia humorística donde bananas mutantes dominan el mundo — ¿podrás detener la rebelión frutal?',
+      'games.bananaTag': 'Aventura de supervivencia absurda en concepto',
       'shared.learnMore': 'Saber más →',
       'shared.backToTop': 'Volver arriba',
       'carousel.prev': 'Anterior',
@@ -198,7 +214,9 @@
       'plugins.title': 'Nuestros Plugins',
       'plugins.subtitle': 'Listados en Fab',
       'plugins.world': 'Crea mundos abiertos vastos y dinámicos en Unreal Engine con terreno procedural, biomas y colocación de assets.',
+      'plugins.worldTag': 'Kit procedural de creación de mundos para Unreal',
       'plugins.explosion': 'Añade explosiones totalmente replicadas, listas para red, con efectos personalizables y física optimizada.',
+      'plugins.explosionTag': 'Efectos y daño listos para red',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Noticias',
       'news.frontline.date': 'Septiembre de 2025',
@@ -262,9 +280,13 @@
       'games.title': '我们的游戏',
       'games.subtitle': '用热忱与尖端科技构建的世界。拖动浏览。',
       'games.frontline': '一款将真实感、张力与叙事融合的沉浸式战术射击——现已登陆 Steam。',
+      'games.frontlineTag': '战术射击 — 现已登陆 Steam',
       'games.rampage': '一款节奏混乱的音乐格斗游戏，在多人模式中带来纯粹的肾上腺素、破坏与混乱。',
+      'games.rampageTag': '合作节奏乱斗 开发中',
       'games.dissociation': '一部心理恐怖作品，AI 操控你的每一步——无武器、无逃脱，只有求生。你还能分辨真实吗？',
+      'games.dissociationTag': '心理生存恐怖 概念阶段',
       'games.banana': '一场充满幽默的生存冒险，变异香蕉统治世界——你能阻止这场水果起义吗？',
+      'games.bananaTag': '荒诞生存冒险 概念阶段',
       'shared.learnMore': '了解更多 →',
       'shared.backToTop': '返回顶部',
       'carousel.prev': '上一项',
@@ -272,7 +294,9 @@
       'plugins.title': '我们的插件',
       'plugins.subtitle': 'Fab 市场上架',
       'plugins.world': '使用程序化地形、生物群落与资产布置，在 Unreal Engine 中打造广阔而动态的开放世界。',
+      'plugins.worldTag': '用于 Unreal 的程序化世界构建工具包',
       'plugins.explosion': '添加完全复制、即插即用的爆炸效果，可自定义视觉与优化的物理表现。',
+      'plugins.explosionTag': '网络同步的特效与伤害系统',
       'plugins.view': '查看插件 →',
       'news.title': '最新消息',
       'news.frontline.date': '2025 年 9 月',
@@ -336,9 +360,13 @@
       'games.title': '私たちのゲーム',
       'games.subtitle': '情熱と最先端技術で作り上げた世界。ドラッグしてご覧ください。',
       'games.frontline': 'リアリズム、緊張感、物語性を融合させた没入型タクティカルシューター — 現在 Steam で配信中。',
+      'games.frontlineTag': 'タクティカルシューター — Steam で配信中',
       'games.rampage': '混沌としたリズムで展開する音楽系乱闘ゲーム。マルチプレイで純粋な興奮と破壊、カオスを体験。',
+      'games.rampageTag': '協力リズム乱闘 ゲーム開発中',
       'games.dissociation': 'AI があなたの一挙手一投足を操るサイコホラー — 武器も逃げ場もなく、生き残りだけが目的。現実を見分けられますか？',
+      'games.dissociationTag': '心理サバイバルホラー 企画段階',
       'games.banana': '突然変異したバナナが世界を支配するコミカルなサバイバルアドベンチャー — フルーツの反乱を止められるか？',
+      'games.bananaTag': 'ナンセンスなサバイバルアドベンチャー企画中',
       'shared.learnMore': 'さらに詳しく →',
       'shared.backToTop': 'トップへ戻る',
       'carousel.prev': '前へ',
@@ -346,7 +374,9 @@
       'plugins.title': '私たちのプラグイン',
       'plugins.subtitle': 'Fab マーケット掲載',
       'plugins.world': 'Unreal Engine でプロシージャル地形、バイオーム、アセット配置を使って広大でダイナミックなオープンワールドを構築。',
+      'plugins.worldTag': 'Unreal 用のプロシージャル世界構築ツール',
       'plugins.explosion': '完全レプリケーション対応でネットワーク運用可能な爆発を追加。カスタマイズ可能な演出と最適化された物理を搭載。',
+      'plugins.explosionTag': 'ネット同期対応のVFXとダメージシステム',
       'plugins.view': 'プラグインを見る →',
       'news.title': '最新ニュース',
       'news.frontline.date': '2025年9月',
@@ -482,15 +512,32 @@
       const hideCursor = () => {
         cursorVisible = false;
         cursor.style.opacity = '0';
+        cursor.classList.remove('cursor-pressed');
+        cursor.classList.remove('cursor-interactive');
       };
       window.addEventListener('mousemove', (e) => {
         reveal();
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursor.style.setProperty('--cursor-x', `${e.clientX}px`);
+        cursor.style.setProperty('--cursor-y', `${e.clientY}px`);
       });
       window.addEventListener('mouseleave', hideCursor);
+      const interactiveSelector = 'a[href], button, [role="button"], .btn-primary, .btn-outline, .audio-toggle, .language-select, input, textarea, select';
+      window.addEventListener('pointerover', (e) => {
+        const interactive = e.target.closest(interactiveSelector);
+        if (interactive) cursor.classList.add('cursor-interactive');
+        else cursor.classList.remove('cursor-interactive');
+      });
+      const releasePress = () => cursor.classList.remove('cursor-pressed');
+      window.addEventListener('pointerdown', (e) => {
+        if (e.target.closest(interactiveSelector)) cursor.classList.add('cursor-pressed');
+        else releasePress();
+      });
+      window.addEventListener('pointerup', releasePress);
+      window.addEventListener('pointercancel', releasePress);
 
     } else {
       cursor.remove();
+      document.body.classList.remove('custom-cursor-active');
     }
   }
 
