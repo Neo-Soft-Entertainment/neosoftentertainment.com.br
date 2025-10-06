@@ -60,18 +60,23 @@
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex gap-4 lg:gap-6 text-sm font-medium" aria-label="Primary">
-        <a class="hover:text-purple-300" href="#games">Games</a>
-        <a class="hover:text-purple-300" href="#plugins">Plugins</a>
-        <a class="hover:text-purple-300" href="#news">News</a>
-        <a class="hover:text-purple-300" href="#careers">Careers</a>
-        <a class="hover:text-purple-300" href="#about">About</a>
-        <a class="hover:text-purple-300" href="#team">Team</a>
-        <a class="hover:text-purple-300" href="#contact">Contact</a>
+        <a class="hover:text-purple-300" href="#games" data-i18n="nav.games">Games</a>
+        <a class="hover:text-purple-300" href="#plugins" data-i18n="nav.plugins">Plugins</a>
+        <a class="hover:text-purple-300" href="#news" data-i18n="nav.news">News</a>
+        <a class="hover:text-purple-300" href="#careers" data-i18n="nav.careers">Careers</a>
+        <a class="hover:text-purple-300" href="#about" data-i18n="nav.about">About</a>
+        <a class="hover:text-purple-300" href="#team" data-i18n="nav.team">Team</a>
+        <a class="hover:text-purple-300" href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <!-- Mobile controls -->
       <div class="flex items-center gap-3">
-        <button id="muteBtn" class="hidden md:inline-block px-3 py-1.5 rounded-md text-xs border border-white/15 hover:border-purple-400/50 hover:text-purple-300" aria-label="Toggle SFX">Unmute SFX</button>
+        <label class="sr-only" for="languageSelect" data-i18n="nav.languageLabel">Select language</label>
+        <select id="languageSelect" class="hidden md:inline-block px-2 py-1 text-xs rounded-md border border-white/20 bg-black/40 hover:border-purple-400/50 focus:outline-none focus:border-purpleNeo" data-i18n-aria-label="nav.languageLabel">
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+        <button id="muteBtn" class="hidden md:inline-block px-3 py-1.5 rounded-md text-xs border border-white/15 hover:border-purple-400/50 hover:text-purple-300" aria-label="Toggle SFX" data-i18n="nav.unmute">Unmute SFX</button>
         <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded" aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -82,14 +87,21 @@
 
     <!-- Mobile menu -->
     <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Mobile menu">
-      <a href="#games">Games</a>
-      <a href="#plugins">Plugins</a>
-      <a href="#news">News</a>
-      <a href="#careers">Careers</a>
-      <a href="#about">About</a>
-      <a href="#team">Team</a>
-      <a href="#contact">Contact</a>
-      <button id="muteBtnMobile" class="mt-2 px-3 py-1.5 rounded-md text-xs border border-white/15">Unmute SFX</button>
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-semibold" data-i18n="nav.menuTitle">Menu</span>
+        <select id="languageSelectMobile" class="px-2 py-1 text-xs rounded-md border border-white/20 bg-black/40 focus:outline-none focus:border-purpleNeo" data-i18n-aria-label="nav.languageLabel">
+          <option value="en">EN</option>
+          <option value="pt">PT</option>
+        </select>
+      </div>
+      <a href="#games" data-i18n="nav.games">Games</a>
+      <a href="#plugins" data-i18n="nav.plugins">Plugins</a>
+      <a href="#news" data-i18n="nav.news">News</a>
+      <a href="#careers" data-i18n="nav.careers">Careers</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <button id="muteBtnMobile" class="mt-2 px-3 py-1.5 rounded-md text-xs border border-white/15" data-i18n="nav.unmute">Unmute SFX</button>
     </div>
   </header>
 
@@ -98,15 +110,15 @@
     <canvas id="particles" class="absolute inset-0 w-full h-full"></canvas>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black"></div>
     <div class="relative z-10 text-center px-4 sm:px-6" id="heroContent">
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight" data-i18n="hero.title">
         Creating Worlds. <span class="text-purpleNeo">Inspiring Players.</span>
       </h1>
-      <p class="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">
+      <p class="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto" data-i18n="hero.subtitle">
         Brazilian game studio crafting immersive experiences with technology, creativity and passion.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="#games" class="btn-primary shadow-lg">Explore Games</a>
-        <a href="#plugins" class="btn-outline">See Plugins</a>
+        <a href="#games" class="btn-primary shadow-lg" data-i18n="hero.ctaGames">Explore Games</a>
+        <a href="#plugins" class="btn-outline" data-i18n="hero.ctaPlugins">See Plugins</a>
       </div>
     </div>
   </section>
@@ -114,23 +126,23 @@
   <!-- Games -->
   <section id="games" class="py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Games</h2>
-      <p class="text-white/60 mb-6 max-w-3xl">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" data-i18n="games.title">Our Games</h2>
+      <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
       <div class="relative">
         <div id="gamesTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/frontline.png" alt="Frontline on Steam" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Frontline</h3>
-              <p class="card3d-desc">An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.</p>
-              <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link">Learn More →</a>
+              <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.</p>
+              <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
             </div>
           </div>
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/rampagerush.jpg" alt="Rampage Rush concept art" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Rampage Rush</h3>
-              <p class="card3d-desc">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
+              <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
               <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
@@ -138,7 +150,7 @@
             <div class="card3d-img"><img src="img/dissociation.jpg" alt="Bananapocalypse artwork" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Dissociation</h3>
-              <p class="card3d-desc">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
+              <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
               <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
@@ -146,14 +158,14 @@
             <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Bananapocalypse</h3>
-              <p class="card3d-desc">A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?</p>
+              <p class="card3d-desc" data-i18n="games.banana">A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?</p>
               <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
         </div>
         <div class="carousel-controls">
-          <button id="gamesPrev" aria-label="Previous">‹</button>
-          <button id="gamesNext" aria-label="Next">›</button>
+          <button id="gamesPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
+          <button id="gamesNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
         </div>
       </div>
     </div>
@@ -163,8 +175,8 @@
   <section id="plugins" class="relative py-20 sm:py-24 bg-[#0b0114]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-end justify-between mb-6">
-        <h2 class="text-2xl sm:text-3xl font-bold">Our Plugins</h2>
-        <span class="text-xs text-purple-300/70">Fab marketplace listings</span>
+        <h2 class="text-2xl sm:text-3xl font-bold" data-i18n="plugins.title">Our Plugins</h2>
+        <span class="text-xs text-purple-300/70" data-i18n="plugins.subtitle">Fab marketplace listings</span>
       </div>
       <div class="relative">
         <div id="pluginsTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
@@ -172,22 +184,22 @@
             <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
             <div class="p-5">
               <h3 class="card3d-title">World Procedural Generator Plugin</h3>
-              <p class="card3d-desc">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
-              <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link">View Plugin →</a>
+              <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
+              <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
             </div>
           </div>
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.jpg" alt="Replicated Explosion Plugin cover" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Replicated Explosion Plugin</h3>
-              <p class="card3d-desc">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
-              <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link">View Plugin →</a>
+              <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
+              <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
             </div>
           </div>
         </div>
         <div class="carousel-controls">
-          <button id="pluginsPrev" aria-label="Previous">‹</button>
-          <button id="pluginsNext" aria-label="Next">›</button>
+          <button id="pluginsPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
+          <button id="pluginsNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
         </div>
       </div>
     </div>
@@ -196,17 +208,17 @@
   <!-- News -->
   <section id="news" class="py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10">Latest News</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10" data-i18n="news.title">Latest News</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <article class="news-card">
-          <p class="news-date">September 2025</p>
-          <h3 class="news-title">Frontline Launches on Steam</h3>
-          <p class="news-summary">After nearly six years in development, our debut title has officially launched — explore the revolution now.</p>
+          <p class="news-date" data-i18n="news.frontline.date">September 2025</p>
+          <h3 class="news-title" data-i18n="news.frontline.title">Frontline Launches on Steam</h3>
+          <p class="news-summary" data-i18n="news.frontline.copy">After nearly six years in development, our debut title has officially launched — explore the revolution now.</p>
         </article>
         <article class="news-card">
-          <p class="news-date">July 2025</p>
-          <h3 class="news-title">Neo Soft Expands Team</h3>
-          <p class="news-summary">We’re growing! Neo Soft welcomes new talent as we take on the next chapter of our journey.</p>
+          <p class="news-date" data-i18n="news.team.date">July 2025</p>
+          <h3 class="news-title" data-i18n="news.team.title">Neo Soft Expands Team</h3>
+          <p class="news-summary" data-i18n="news.team.copy">We’re growing! Neo Soft welcomes new talent as we take on the next chapter of our journey.</p>
         </article>
       </div>
     </div>
@@ -216,20 +228,20 @@
   <section id="careers" class="py-20 sm:py-24 bg-gradient-to-b from-[#0b0114] to-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-5 gap-8 md:gap-10 items-center">
       <div class="md:col-span-3">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-3">Careers</h2>
-        <p class="text-white/70">We’re hiring! Developers, artists and designers passionate about building next-gen experiences. Help us shape the future of interactive entertainment.</p>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="careers.title">Careers</h2>
+        <p class="text-white/70" data-i18n="careers.copy">We’re hiring! Developers, artists and designers passionate about building next-gen experiences. Help us shape the future of interactive entertainment.</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="mailto:contact@neeosoft.com.br" class="btn-primary">Apply Now</a>
-          <a href="#team" class="btn-outline">Meet the Team</a>
+          <a href="mailto:contact@neeosoft.com.br" class="btn-primary" data-i18n="careers.apply">Apply Now</a>
+          <a href="#team" class="btn-outline" data-i18n="careers.team">Meet the Team</a>
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-white/10 p-6 bg-white/5">
-        <h3 class="font-semibold mb-2 text-purple-200">Open Roles</h3>
+        <h3 class="font-semibold mb-2 text-purple-200" data-i18n="careers.open">Open Roles</h3>
         <ul class="space-y-2 text-sm text-white/80">
-          <li>• Gameplay Programmer (Unreal)</li>
-          <li>• Technical Artist</li>
-          <li>• 3D Environment Artist</li>
-          <li>• Narrative Designer</li>
+          <li data-i18n="careers.roles.gameplay">• Gameplay Programmer (Unreal)</li>
+          <li data-i18n="careers.roles.technical">• Technical Artist</li>
+          <li data-i18n="careers.roles.environment">• 3D Environment Artist</li>
+          <li data-i18n="careers.roles.narrative">• Narrative Designer</li>
         </ul>
       </div>
     </div>
@@ -239,13 +251,13 @@
   <section id="about" class="py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
       <div>
-        <h2 class="text-2xl sm:text-3xl font-bold mb-3">About Neo Soft</h2>
-        <p class="text-white/80 mb-3">Founded in 2020 by <strong>Victor</strong>, Neo Soft is a Brazilian studio creating games and tools that inspire and empower creators.</p>
-        <p class="text-white/70">Our debut project, <em>Frontline</em>, represents our commitment to innovation and storytelling. We’ve been building for almost six years with a dedicated team — all driven by the love of games.</p>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="about.title">About Neo Soft</h2>
+        <p class="text-white/80 mb-3" data-i18n="about.first">Founded in 2020 by <strong>Victor</strong>, Neo Soft is a Brazilian studio creating games and tools that inspire and empower creators.</p>
+        <p class="text-white/70" data-i18n="about.second">Our debut project, <em>Frontline</em>, represents our commitment to innovation and storytelling. We’ve been building for almost six years with a dedicated team — all driven by the love of games.</p>
       </div>
       <div class="rounded-xl border border-white/10 p-8 bg-gradient-to-br from-white/5 to-transparent">
-        <h3 class="text-xl font-semibold mb-2 text-purple-200">Our Mission</h3>
-        <p class="text-white/80">To strengthen the Brazilian gaming scene by delivering world-class projects that showcase creativity and excellence.</p>
+        <h3 class="text-xl font-semibold mb-2 text-purple-200" data-i18n="about.missionTitle">Our Mission</h3>
+        <p class="text-white/80" data-i18n="about.missionCopy">To strengthen the Brazilian gaming scene by delivering world-class projects that showcase creativity and excellence.</p>
       </div>
     </div>
   </section>
@@ -253,7 +265,7 @@
   <!-- Team -->
   <section id="team" class="py-20 sm:py-24 bg-[#0b0114]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-purple-200 mb-8 sm:mb-10">Our Team</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-purple-200 mb-8 sm:mb-10" data-i18n="team.title">Our Team</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="team-card"><div class="team-avatar"><img src="img/victor.jpg" alt="Victor Henrique" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">Victor Henrique</h3><p class="team-role">Founder & Senior Developer</p></div>
         <div class="team-card"><div class="team-avatar"><img src="img/hiury.jpg" alt="Hiury Francisco" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">Hiury Francisco</h3><p class="team-role">Video Editor & Production Lead</p></div>
@@ -266,37 +278,37 @@
   <!-- Contact -->
   <section id="contact" class="py-20 sm:py-24 bg-black">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-6">Contact Us</h2>
-      <p class="text-white/70 mb-8 max-w-2xl">Want to collaborate, ask questions, or share feedback? Get in touch — we’d love to hear from you.</p>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-6" data-i18n="contact.title">Contact Us</h2>
+      <p class="text-white/70 mb-8 max-w-2xl" data-i18n="contact.copy">Want to collaborate, ask questions, or share feedback? Get in touch — we’d love to hear from you.</p>
       <form id="contactForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input name="from_name" class="input" placeholder="Your name" required />
-        <input name="from_mail" type="email" class="input" placeholder="Email" required />
-        <textarea name="message" class="textarea sm:col-span-2" placeholder="Your message" required></textarea>
+        <input name="from_name" class="input" placeholder="Your name" required data-i18n-placeholder="contact.name" />
+        <input name="from_mail" type="email" class="input" placeholder="Email" required data-i18n-placeholder="contact.email" />
+        <textarea name="message" class="textarea sm:col-span-2" placeholder="Your message" required data-i18n-placeholder="contact.message"></textarea>
         <div class="sm:col-span-2 flex items-center justify-between">
-          <button type="submit" id="sendBtn" class="btn-primary">Send Message</button>
+          <button type="submit" id="sendBtn" class="btn-primary" data-i18n="contact.send">Send Message</button>
         </div>
       </form>
       <div id="formFeedback" class="hidden mt-6 inline-flex items-center gap-2 text-green-400" role="status" aria-live="polite">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-        Message sent! We’ll get back to you soon.
+        <span id="formFeedbackText" data-i18n="contact.success">Message sent! We’ll get back to you soon.</span>
       </div>
     </div>
   </section>
 
   <!-- Back to top -->
-  <button id="backToTop" class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo shadow-lg hover:scale-105 transition" aria-label="Back to top">↑</button>
+  <button id="backToTop" class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo shadow-lg hover:scale-105 transition" aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
 
   <!-- Footer -->
   <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-      <p>© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
+      <p data-i18n="footer.copy">© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
       <div class="flex flex-wrap gap-4">
-        <a class="hover:text-purple-300" href="#games">Games</a>
-        <a class="hover:text-purple-300" href="#plugins">Plugins</a>
-        <a class="hover:text-purple-300" href="#news">News</a>
-        <a class="hover:text-purple-300" href="#careers">Careers</a>
-        <a class="hover:text-purple-300" href="#team">Team</a>
-        <a class="hover:text-purple-300" href="#contact">Contact</a>
+        <a class="hover:text-purple-300" href="#games" data-i18n="nav.games">Games</a>
+        <a class="hover:text-purple-300" href="#plugins" data-i18n="nav.plugins">Plugins</a>
+        <a class="hover:text-purple-300" href="#news" data-i18n="nav.news">News</a>
+        <a class="hover:text-purple-300" href="#careers" data-i18n="nav.careers">Careers</a>
+        <a class="hover:text-purple-300" href="#team" data-i18n="nav.team">Team</a>
+        <a class="hover:text-purple-300" href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
     </div>
   </footer>
