@@ -14,18 +14,269 @@
   const muteBtnMobile = $('#muteBtnMobile');
   const mobileMenu = $('#mobileMenu');
   const hamburger = $('#hamburger');
+  const languageSelect = $('#languageSelect');
+  const languageSelectMobile = $('#languageSelectMobile');
   const contactForm = $('#contactForm');
   const formFeedback = $('#formFeedback');
-  const yearSpan = $('#year');
+  const sendBtn = $('#sendBtn');
 
-  // Year
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+  const translations = {
+    en: {
+      'nav.games': 'Games',
+      'nav.plugins': 'Plugins',
+      'nav.news': 'News',
+      'nav.careers': 'Careers',
+      'nav.about': 'About',
+      'nav.team': 'Team',
+      'nav.contact': 'Contact',
+      'nav.unmute': 'Unmute SFX',
+      'nav.mute': 'Mute SFX',
+      'nav.languageLabel': 'Select language',
+      'nav.menuTitle': 'Menu',
+      'hero.title': 'Creating Worlds. <span class="text-purpleNeo">Inspiring Players.</span>',
+      'hero.subtitle': 'Brazilian game studio crafting immersive experiences with technology, creativity and passion.',
+      'hero.ctaGames': 'Explore Games',
+      'hero.ctaPlugins': 'See Plugins',
+      'games.title': 'Our Games',
+      'games.subtitle': 'Worlds built with heart and cutting-edge tech. Drag to explore.',
+      'games.frontline': 'An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.',
+      'games.rampage': 'A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.',
+      'games.dissociation': 'A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?',
+      'games.banana': 'A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?',
+      'shared.learnMore': 'Learn More →',
+      'shared.backToTop': 'Back to top',
+      'carousel.prev': 'Previous',
+      'carousel.next': 'Next',
+      'plugins.title': 'Our Plugins',
+      'plugins.subtitle': 'Fab marketplace listings',
+      'plugins.world': 'Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.',
+      'plugins.explosion': 'Add fully replicated, network-ready explosions with customizable effects and optimized physics.',
+      'plugins.view': 'View Plugin →',
+      'news.title': 'Latest News',
+      'news.frontline.date': 'September 2025',
+      'news.frontline.title': 'Frontline Launches on Steam',
+      'news.frontline.copy': 'After nearly six years in development, our debut title has officially launched — explore the revolution now.',
+      'news.team.date': 'July 2025',
+      'news.team.title': 'Neo Soft Expands Team',
+      'news.team.copy': 'We’re growing! Neo Soft welcomes new talent as we take on the next chapter of our journey.',
+      'careers.title': 'Careers',
+      'careers.copy': 'We’re hiring! Developers, artists and designers passionate about building next-gen experiences. Help us shape the future of interactive entertainment.',
+      'careers.apply': 'Apply Now',
+      'careers.team': 'Meet the Team',
+      'careers.open': 'Open Roles',
+      'careers.roles.gameplay': '• Gameplay Programmer (Unreal)',
+      'careers.roles.technical': '• Technical Artist',
+      'careers.roles.environment': '• 3D Environment Artist',
+      'careers.roles.narrative': '• Narrative Designer',
+      'about.title': 'About Neo Soft',
+      'about.first': 'Founded in 2020 by <strong>Victor</strong>, Neo Soft is a Brazilian studio creating games and tools that inspire and empower creators.',
+      'about.second': 'Our debut project, <em>Frontline</em>, represents our commitment to innovation and storytelling. We’ve been building for almost six years with a dedicated team — all driven by the love of games.',
+      'about.missionTitle': 'Our Mission',
+      'about.missionCopy': 'To strengthen the Brazilian gaming scene by delivering world-class projects that showcase creativity and excellence.',
+      'team.title': 'Our Team',
+      'contact.title': 'Contact Us',
+      'contact.copy': 'Want to collaborate, ask questions, or share feedback? Get in touch — we’d love to hear from you.',
+      'contact.name': 'Your name',
+      'contact.email': 'Email',
+      'contact.message': 'Your message',
+      'contact.send': 'Send Message',
+      'contact.sending': 'Sending...',
+      'contact.success': 'Message sent! We’ll get back to you soon.',
+      'contact.error': 'Something went wrong. Please try again later.',
+      'footer.copy': '© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+    },
+    pt: {
+      'nav.games': 'Jogos',
+      'nav.plugins': 'Plugins',
+      'nav.news': 'Notícias',
+      'nav.careers': 'Carreiras',
+      'nav.about': 'Sobre',
+      'nav.team': 'Equipe',
+      'nav.contact': 'Contato',
+      'nav.unmute': 'Ativar efeitos',
+      'nav.mute': 'Desativar efeitos',
+      'nav.languageLabel': 'Selecionar idioma',
+      'nav.menuTitle': 'Menu',
+      'hero.title': 'Criando Mundos. <span class="text-purpleNeo">Inspirando Jogadores.</span>',
+      'hero.subtitle': 'Estúdio brasileiro de jogos criando experiências imersivas com tecnologia, criatividade e paixão.',
+      'hero.ctaGames': 'Explorar jogos',
+      'hero.ctaPlugins': 'Ver plugins',
+      'games.title': 'Nossos Jogos',
+      'games.subtitle': 'Mundos construídos com coração e tecnologia de ponta. Arraste para explorar.',
+      'games.frontline': 'Um shooter tático imersivo que combina realismo, intensidade e narrativa — disponível agora na Steam.',
+      'games.rampage': 'Um brawler musical de ritmo caótico que entrega adrenalina, destruição e caos no modo multiplayer.',
+      'games.dissociation': 'Um terror psicológico em que uma IA manipula cada movimento seu — sem armas, sem escape, só sobrevivência. Você sabe o que é real?',
+      'games.banana': 'Uma aventura de sobrevivência bem-humorada em que bananas mutantes dominam o mundo — você consegue conter a revolta das frutas?',
+      'shared.learnMore': 'Saiba mais →',
+      'shared.backToTop': 'Voltar ao topo',
+      'carousel.prev': 'Anterior',
+      'carousel.next': 'Próximo',
+      'plugins.title': 'Nossos Plugins',
+      'plugins.subtitle': 'Listagens na Fab',
+      'plugins.world': 'Crie mundos abertos vastos e dinâmicos no Unreal Engine com terreno procedural, biomas e posicionamento de assets.',
+      'plugins.explosion': 'Adicione explosões totalmente replicadas, prontas para rede, com efeitos personalizáveis e física otimizada.',
+      'plugins.view': 'Ver plugin →',
+      'news.title': 'Últimas Notícias',
+      'news.frontline.date': 'Setembro de 2025',
+      'news.frontline.title': 'Frontline é lançado na Steam',
+      'news.frontline.copy': 'Após quase seis anos de desenvolvimento, nosso título de estreia foi lançado oficialmente — explore a revolução agora.',
+      'news.team.date': 'Julho de 2025',
+      'news.team.title': 'Neo Soft expande o time',
+      'news.team.copy': 'Estamos crescendo! A Neo Soft recebe novos talentos enquanto avançamos para o próximo capítulo da nossa jornada.',
+      'careers.title': 'Carreiras',
+      'careers.copy': 'Estamos contratando! Desenvolvedores, artistas e designers apaixonados por criar experiências de nova geração. Ajude-nos a moldar o futuro do entretenimento interativo.',
+      'careers.apply': 'Inscreva-se',
+      'careers.team': 'Conheça a equipe',
+      'careers.open': 'Vagas abertas',
+      'careers.roles.gameplay': '• Programador(a) de Gameplay (Unreal)',
+      'careers.roles.technical': '• Artista Técnico(a)',
+      'careers.roles.environment': '• Artista 3D de Cenários',
+      'careers.roles.narrative': '• Designer Narrativo',
+      'about.title': 'Sobre a Neo Soft',
+      'about.first': 'Fundada em 2020 por <strong>Victor</strong>, a Neo Soft é um estúdio brasileiro que cria jogos e ferramentas para inspirar e potencializar criadores.',
+      'about.second': 'Nosso projeto de estreia, <em>Frontline</em>, representa nosso compromisso com inovação e narrativa. Estamos construindo há quase seis anos com uma equipe dedicada — movida pelo amor aos jogos.',
+      'about.missionTitle': 'Nossa missão',
+      'about.missionCopy': 'Fortalecer a cena brasileira de games entregando projetos de classe mundial que exibem criatividade e excelência.',
+      'team.title': 'Nossa equipe',
+      'contact.title': 'Fale conosco',
+      'contact.copy': 'Quer colaborar, tirar dúvidas ou compartilhar feedback? Entre em contato — vamos adorar conversar com você.',
+      'contact.name': 'Seu nome',
+      'contact.email': 'Email',
+      'contact.message': 'Sua mensagem',
+      'contact.send': 'Enviar mensagem',
+      'contact.sending': 'Enviando...',
+      'contact.success': 'Mensagem enviada! Responderemos em breve.',
+      'contact.error': 'Algo deu errado. Tente novamente mais tarde.',
+      'footer.copy': '© <span id="year"></span> Neo Soft. Fundada por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+    },
+    es: {
+      'nav.games': 'Juegos',
+      'nav.plugins': 'Plugins',
+      'nav.news': 'Noticias',
+      'nav.careers': 'Carreras',
+      'nav.about': 'Acerca de',
+      'nav.team': 'Equipo',
+      'nav.contact': 'Contacto',
+      'nav.unmute': 'Activar efectos',
+      'nav.mute': 'Silenciar efectos',
+      'nav.languageLabel': 'Seleccionar idioma',
+      'nav.menuTitle': 'Menú',
+      'hero.title': 'Creando Mundos. <span class="text-purpleNeo">Inspirando Jugadores.</span>',
+      'hero.subtitle': 'Estudio brasileño de videojuegos que crea experiencias inmersivas con tecnología, creatividad y pasión.',
+      'hero.ctaGames': 'Explorar juegos',
+      'hero.ctaPlugins': 'Ver plugins',
+      'games.title': 'Nuestros Juegos',
+      'games.subtitle': 'Mundos construidos con corazón y tecnología de punta. Arrastra para explorar.',
+      'games.frontline': 'Un shooter táctico inmersivo que combina realismo, intensidad y narrativa — disponible ahora en Steam.',
+      'games.rampage': 'Un brawler musical con un ritmo caótico que ofrece adrenalina pura, destrucción y caos en modo multijugador.',
+      'games.dissociation': 'Un terror psicológico donde una IA manipula cada uno de tus movimientos — sin armas, sin escape, solo supervivencia. ¿Sabes qué es real?',
+      'games.banana': 'Una aventura de supervivencia humorística donde bananas mutantes dominan el mundo — ¿podrás detener la rebelión frutal?',
+      'shared.learnMore': 'Saber más →',
+      'shared.backToTop': 'Volver arriba',
+      'carousel.prev': 'Anterior',
+      'carousel.next': 'Siguiente',
+      'plugins.title': 'Nuestros Plugins',
+      'plugins.subtitle': 'Listados en Fab',
+      'plugins.world': 'Crea mundos abiertos vastos y dinámicos en Unreal Engine con terreno procedural, biomas y colocación de assets.',
+      'plugins.explosion': 'Añade explosiones totalmente replicadas, listas para red, con efectos personalizables y física optimizada.',
+      'plugins.view': 'Ver plugin →',
+      'news.title': 'Últimas Noticias',
+      'news.frontline.date': 'Septiembre de 2025',
+      'news.frontline.title': 'Frontline se lanza en Steam',
+      'news.frontline.copy': 'Tras casi seis años de desarrollo, nuestro título debut se ha lanzado oficialmente — explora la revolución ahora.',
+      'news.team.date': 'Julio de 2025',
+      'news.team.title': 'Neo Soft amplía el equipo',
+      'news.team.copy': '¡Estamos creciendo! Neo Soft recibe nuevo talento mientras abordamos el próximo capítulo de nuestro viaje.',
+      'careers.title': 'Carreras',
+      'careers.copy': '¡Estamos contratando! Desarrolladores, artistas y diseñadores apasionados por crear experiencias de nueva generación. Ayúdanos a dar forma al futuro del entretenimiento interactivo.',
+      'careers.apply': 'Postular ahora',
+      'careers.team': 'Conoce al equipo',
+      'careers.open': 'Vacantes abiertas',
+      'careers.roles.gameplay': '• Programador(a) de Gameplay (Unreal)',
+      'careers.roles.technical': '• Artista Técnico(a)',
+      'careers.roles.environment': '• Artista 3D de Entornos',
+      'careers.roles.narrative': '• Diseñador(a) Narrativo',
+      'about.title': 'Acerca de Neo Soft',
+      'about.first': 'Fundado en 2020 por <strong>Victor</strong>, Neo Soft es un estudio brasileño que crea juegos y herramientas para inspirar y empoderar a creadores.',
+      'about.second': 'Nuestro proyecto debut, <em>Frontline</em>, representa nuestro compromiso con la innovación y la narrativa. Llevamos casi seis años construyendo con un equipo dedicado — todos impulsados por el amor a los juegos.',
+      'about.missionTitle': 'Nuestra misión',
+      'about.missionCopy': 'Fortalecer la escena brasileña de videojuegos entregando proyectos de clase mundial que exhiban creatividad y excelencia.',
+      'team.title': 'Nuestro equipo',
+      'contact.title': 'Contáctanos',
+      'contact.copy': '¿Quieres colaborar, hacer preguntas o compartir comentarios? Ponte en contacto — nos encantará saber de ti.',
+      'contact.name': 'Tu nombre',
+      'contact.email': 'Correo electrónico',
+      'contact.message': 'Tu mensaje',
+      'contact.send': 'Enviar mensaje',
+      'contact.sending': 'Enviando...',
+      'contact.success': '¡Mensaje enviado! Nos pondremos en contacto pronto.',
+      'contact.error': 'Algo salió mal. Inténtalo de nuevo más tarde.',
+      'footer.copy': '© <span id="year"></span> Neo Soft. Fundado por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+    }
+  };
 
-  // State
+  const storageKey = 'neoSoftLang';
+  let currentLang = 'en';
+  try {
+    const stored = localStorage.getItem(storageKey);
+    if (stored && translations[stored]) currentLang = stored;
+  } catch (err) {
+    currentLang = 'en';
+  }
+
+  const setDocumentLang = (lang) => {
+    const map = { pt: 'pt-BR', es: 'es-ES', en: 'en' };
+    document.documentElement.lang = map[lang] || 'en';
+  };
+
+  const t = (key) => translations[currentLang]?.[key] ?? translations.en[key] ?? key;
+
   let muted = true;
-  const refreshMuteBtn = () => { if (muteBtn) muteBtn.textContent = muted ? 'Unmute SFX' : 'Mute SFX'; if (muteBtnMobile) muteBtnMobile.textContent = muted ? 'Unmute SFX' : 'Mute SFX'; }
-  refreshMuteBtn();
+
+  function refreshMuteBtn(){
+    const label = muted ? t('nav.unmute') : t('nav.mute');
+    if (muteBtn) muteBtn.textContent = label;
+    if (muteBtnMobile) muteBtnMobile.textContent = label;
+  }
+
+  const applyTranslations = (lang = currentLang) => {
+    if (!translations[lang]) lang = 'en';
+    currentLang = lang;
+    try { localStorage.setItem(storageKey, lang); } catch (err) {}
+    setDocumentLang(lang);
+    if (languageSelect) languageSelect.value = lang;
+    if (languageSelectMobile) languageSelectMobile.value = lang;
+    $$('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      const value = translations[lang]?.[key];
+      if (value !== undefined) el.innerHTML = value;
+    });
+    $$('[data-i18n-placeholder]').forEach(el => {
+      const key = el.dataset.i18nPlaceholder;
+      const value = translations[lang]?.[key];
+      if (value !== undefined) el.setAttribute('placeholder', value);
+    });
+    $$('[data-i18n-aria-label]').forEach(el => {
+      const key = el.dataset.i18nAriaLabel;
+      const value = translations[lang]?.[key];
+      if (value !== undefined) el.setAttribute('aria-label', value);
+    });
+    updateYear();
+    refreshMuteBtn();
+  };
+
+  const updateYear = () => {
+    const span = $('#year');
+    if (span) span.textContent = new Date().getFullYear();
+  };
+
+  applyTranslations(currentLang);
+  updateYear();
+
   if (sfxToggle) sfxToggle.checked = !muted;
+
+  languageSelect && languageSelect.addEventListener('change', (e) => applyTranslations(e.target.value));
+  languageSelectMobile && languageSelectMobile.addEventListener('change', (e) => applyTranslations(e.target.value));
 
   // Navbar scroll / back-to-top
   const onScroll = () => {
@@ -178,25 +429,25 @@
   // EmailJS form
   contactForm && contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const btn = $('#sendBtn');
+    const btn = sendBtn;
     const original = btn.innerHTML;
     btn.disabled = true;
     btn.classList.add('opacity-60','cursor-not-allowed');
-    btn.innerHTML = `<span class="loader mr-2"></span> Sending...`;
+    btn.innerHTML = `<span class="loader mr-2"></span> ${t('contact.sending')}`;
 
     emailjs.sendForm('service_47lqkyt','template_3yzo1bv', this)
       .then(function(res){
         console.log('Email sent', res.status);
         blip(540, 0.1, 'square');
-        formFeedback.classList.remove('hidden');
+        if (formFeedback) formFeedback.classList.remove('hidden');
         btn.disabled = false;
         btn.classList.remove('opacity-60','cursor-not-allowed');
         btn.innerHTML = original;
         contactForm.reset();
-        setTimeout(()=> formFeedback.classList.add('hidden'), 3000);
+        setTimeout(()=> formFeedback && formFeedback.classList.add('hidden'), 3000);
       }, function(err){
         console.error('Email error', err);
-        alert('Something went wrong. Please try again later.');
+        alert(t('contact.error'));
         btn.disabled = false;
         btn.classList.remove('opacity-60','cursor-not-allowed');
         btn.innerHTML = original;
