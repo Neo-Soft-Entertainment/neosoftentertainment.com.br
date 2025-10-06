@@ -40,9 +40,13 @@
       'games.title': 'Our Games',
       'games.subtitle': 'Worlds built with heart and cutting-edge tech. Drag to explore.',
       'games.frontline': 'An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.',
+      'games.frontlineTag': 'Tactical shooter — live on Steam',
       'games.rampage': 'A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.',
+      'games.rampageTag': 'Co-op rhythm brawler in development',
       'games.dissociation': 'A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?',
+      'games.dissociationTag': 'Mind-bending survival horror concept',
       'games.banana': 'A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?',
+      'games.bananaTag': 'Absurd survival adventure concept',
       'shared.learnMore': 'Learn More →',
       'shared.backToTop': 'Back to top',
       'carousel.prev': 'Previous',
@@ -50,7 +54,9 @@
       'plugins.title': 'Our Plugins',
       'plugins.subtitle': 'Fab marketplace listings',
       'plugins.world': 'Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.',
+      'plugins.worldTag': 'Procedural worldbuilding toolkit for Unreal',
       'plugins.explosion': 'Add fully replicated, network-ready explosions with customizable effects and optimized physics.',
+      'plugins.explosionTag': 'Network-ready VFX & damage systems',
       'plugins.view': 'View Plugin →',
       'news.title': 'Latest News',
       'news.frontline.date': 'September 2025',
@@ -74,6 +80,16 @@
       'about.missionTitle': 'Our Mission',
       'about.missionCopy': 'To strengthen the Brazilian gaming scene by delivering world-class projects that showcase creativity and excellence.',
       'team.title': 'Our Team',
+      'team.victor.role': 'Founder & Senior Developer',
+      'team.victor.bio': 'Architects gameplay systems and Unreal Engine plugins while guiding Neo Soft’s technical vision.',
+      'team.hiury.role': 'Video Editor & Production Lead',
+      'team.hiury.bio': 'Shapes trailers, cinematics, and marketing beats while coordinating production timelines with the team.',
+      'team.jose.role': 'Programmer',
+      'team.jose.bio': 'Builds gameplay features and tools, ensuring smooth performance across Neo Soft’s projects.',
+      'team.henrique.role': 'Writer',
+      'team.henrique.bio': 'Crafts immersive narratives, characters, and lore that give each universe its unique voice.',
+      'team.isabel.role': 'Voice Director',
+      'team.isabel.bio': 'Directs voice talent and ensures performances capture the emotional beats of each storyline.',
       'contact.title': 'Contact Us',
       'contact.copy': 'Want to collaborate, request services, or share feedback? We also work as service providers — reach out for a quote and we’ll get back to you.',
       'contact.name': 'Your name',
@@ -114,9 +130,13 @@
       'games.title': 'Nossos Jogos',
       'games.subtitle': 'Mundos construídos com coração e tecnologia de ponta. Arraste para explorar.',
       'games.frontline': 'Um shooter tático imersivo que combina realismo, intensidade e narrativa — disponível agora na Steam.',
+      'games.frontlineTag': 'Shooter tático — disponível na Steam',
       'games.rampage': 'Um brawler musical de ritmo caótico que entrega adrenalina, destruição e caos no modo multiplayer.',
+      'games.rampageTag': 'Brawler rítmico cooperativo em desenvolvimento',
       'games.dissociation': 'Um terror psicológico em que uma IA manipula cada movimento seu — sem armas, sem escape, só sobrevivência. Você sabe o que é real?',
+      'games.dissociationTag': 'Terror de sobrevivência psicológico em conceito',
       'games.banana': 'Uma aventura de sobrevivência bem-humorada em que bananas mutantes dominam o mundo — você consegue conter a revolta das frutas?',
+      'games.bananaTag': 'Aventura de sobrevivência absurda em conceito',
       'shared.learnMore': 'Saiba mais →',
       'shared.backToTop': 'Voltar ao topo',
       'carousel.prev': 'Anterior',
@@ -124,7 +144,9 @@
       'plugins.title': 'Nossos Plugins',
       'plugins.subtitle': 'Listagens na Fab',
       'plugins.world': 'Crie mundos abertos vastos e dinâmicos no Unreal Engine com terreno procedural, biomas e posicionamento de assets.',
+      'plugins.worldTag': 'Ferramentas de mundo procedural para Unreal',
       'plugins.explosion': 'Adicione explosões totalmente replicadas, prontas para rede, com efeitos personalizáveis e física otimizada.',
+      'plugins.explosionTag': 'Efeitos e dano prontos para rede',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Notícias',
       'news.frontline.date': 'Setembro de 2025',
@@ -148,6 +170,16 @@
       'about.missionTitle': 'Nossa missão',
       'about.missionCopy': 'Fortalecer a cena brasileira de games entregando projetos de classe mundial que exibem criatividade e excelência.',
       'team.title': 'Nossa equipe',
+      'team.victor.role': 'Fundador e Desenvolvedor Sênior',
+      'team.victor.bio': 'Projeta sistemas de gameplay e plugins para Unreal Engine enquanto guia a visão técnica da Neo Soft.',
+      'team.hiury.role': 'Editor de Vídeo e Líder de Produção',
+      'team.hiury.bio': 'Cria trailers, cinematics e campanhas e coordena os cronogramas de produção com o time.',
+      'team.jose.role': 'Programador',
+      'team.jose.bio': 'Desenvolve funcionalidades de gameplay e ferramentas, garantindo desempenho fluido em todos os projetos da Neo Soft.',
+      'team.henrique.role': 'Roteirista',
+      'team.henrique.bio': 'Cria narrativas, personagens e lore imersivos que dão voz única a cada universo.',
+      'team.isabel.role': 'Diretora de Voz',
+      'team.isabel.bio': 'Dirige o elenco de voz e assegura performances que capturam os momentos emocionais de cada história.',
       'contact.title': 'Fale conosco',
       'contact.copy': 'Quer colaborar, contratar nossos serviços ou compartilhar feedback? Também atuamos como prestadores de serviços — entre em contato para solicitar uma cotação e retornaremos em breve.',
       'contact.name': 'Seu nome',
@@ -188,9 +220,13 @@
       'games.title': 'Nuestros Juegos',
       'games.subtitle': 'Mundos construidos con corazón y tecnología de punta. Arrastra para explorar.',
       'games.frontline': 'Un shooter táctico inmersivo que combina realismo, intensidad y narrativa — disponible ahora en Steam.',
+      'games.frontlineTag': 'Shooter táctico — disponible en Steam',
       'games.rampage': 'Un brawler musical con un ritmo caótico que ofrece adrenalina pura, destrucción y caos en modo multijugador.',
+      'games.rampageTag': 'Brawler rítmico cooperativo en desarrollo',
       'games.dissociation': 'Un terror psicológico donde una IA manipula cada uno de tus movimientos — sin armas, sin escape, solo supervivencia. ¿Sabes qué es real?',
+      'games.dissociationTag': 'Terror psicológico de supervivencia en concepto',
       'games.banana': 'Una aventura de supervivencia humorística donde bananas mutantes dominan el mundo — ¿podrás detener la rebelión frutal?',
+      'games.bananaTag': 'Aventura de supervivencia absurda en concepto',
       'shared.learnMore': 'Saber más →',
       'shared.backToTop': 'Volver arriba',
       'carousel.prev': 'Anterior',
@@ -198,7 +234,9 @@
       'plugins.title': 'Nuestros Plugins',
       'plugins.subtitle': 'Listados en Fab',
       'plugins.world': 'Crea mundos abiertos vastos y dinámicos en Unreal Engine con terreno procedural, biomas y colocación de assets.',
+      'plugins.worldTag': 'Kit procedural de creación de mundos para Unreal',
       'plugins.explosion': 'Añade explosiones totalmente replicadas, listas para red, con efectos personalizables y física optimizada.',
+      'plugins.explosionTag': 'Efectos y daño listos para red',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Noticias',
       'news.frontline.date': 'Septiembre de 2025',
@@ -222,6 +260,16 @@
       'about.missionTitle': 'Nuestra misión',
       'about.missionCopy': 'Fortalecer la escena brasileña de videojuegos entregando proyectos de clase mundial que exhiban creatividad y excelencia.',
       'team.title': 'Nuestro equipo',
+      'team.victor.role': 'Fundador y Desarrollador Senior',
+      'team.victor.bio': 'Diseña sistemas de gameplay y plugins de Unreal Engine mientras guía la visión técnica de Neo Soft.',
+      'team.hiury.role': 'Editor de video y Líder de Producción',
+      'team.hiury.bio': 'Da forma a tráilers, cinemáticas y campañas de marketing mientras coordina los calendarios de producción con el equipo.',
+      'team.jose.role': 'Programador',
+      'team.jose.bio': 'Construye funciones de gameplay y herramientas, asegurando un rendimiento fluido en los proyectos de Neo Soft.',
+      'team.henrique.role': 'Escritor',
+      'team.henrique.bio': 'Crea narrativas, personajes y lore inmersivos que otorgan una voz única a cada universo.',
+      'team.isabel.role': 'Directora de Voz',
+      'team.isabel.bio': 'Dirige el talento de voz y garantiza interpretaciones que capturan los momentos emocionales de cada historia.',
       'contact.title': 'Contáctanos',
       'contact.copy': '¿Quieres colaborar, solicitar nuestros servicios o compartir comentarios? También trabajamos como proveedores de servicios — contáctanos para pedir una cotización y te responderemos.',
       'contact.name': 'Tu nombre',
@@ -262,9 +310,13 @@
       'games.title': '我们的游戏',
       'games.subtitle': '用热忱与尖端科技构建的世界。拖动浏览。',
       'games.frontline': '一款将真实感、张力与叙事融合的沉浸式战术射击——现已登陆 Steam。',
+      'games.frontlineTag': '战术射击 — 现已登陆 Steam',
       'games.rampage': '一款节奏混乱的音乐格斗游戏，在多人模式中带来纯粹的肾上腺素、破坏与混乱。',
+      'games.rampageTag': '合作节奏乱斗 开发中',
       'games.dissociation': '一部心理恐怖作品，AI 操控你的每一步——无武器、无逃脱，只有求生。你还能分辨真实吗？',
+      'games.dissociationTag': '心理生存恐怖 概念阶段',
       'games.banana': '一场充满幽默的生存冒险，变异香蕉统治世界——你能阻止这场水果起义吗？',
+      'games.bananaTag': '荒诞生存冒险 概念阶段',
       'shared.learnMore': '了解更多 →',
       'shared.backToTop': '返回顶部',
       'carousel.prev': '上一项',
@@ -272,7 +324,9 @@
       'plugins.title': '我们的插件',
       'plugins.subtitle': 'Fab 市场上架',
       'plugins.world': '使用程序化地形、生物群落与资产布置，在 Unreal Engine 中打造广阔而动态的开放世界。',
+      'plugins.worldTag': '用于 Unreal 的程序化世界构建工具包',
       'plugins.explosion': '添加完全复制、即插即用的爆炸效果，可自定义视觉与优化的物理表现。',
+      'plugins.explosionTag': '网络同步的特效与伤害系统',
       'plugins.view': '查看插件 →',
       'news.title': '最新消息',
       'news.frontline.date': '2025 年 9 月',
@@ -296,6 +350,16 @@
       'about.missionTitle': '我们的使命',
       'about.missionCopy': '通过交付世界级项目，展现创造力与卓越，壮大巴西游戏生态。',
       'team.title': '我们的团队',
+      'team.victor.role': '创始人兼高级开发者',
+      'team.victor.bio': '架构玩法系统与 Unreal Engine 插件，同时引领 Neo Soft 的技术愿景。',
+      'team.hiury.role': '视频剪辑与制作主管',
+      'team.hiury.bio': '打造预告片、过场动画与营销节奏，并协调团队的制作时间线。',
+      'team.jose.role': '程序员',
+      'team.jose.bio': '构建玩法功能与工具，确保 Neo Soft 各项目始终保持流畅性能。',
+      'team.henrique.role': '编剧',
+      'team.henrique.bio': '塑造沉浸式叙事、角色与世界观，让每个宇宙都拥有独特声音。',
+      'team.isabel.role': '配音导演',
+      'team.isabel.bio': '指导配音人才，确保演出捕捉到每条剧情的情感节奏。',
       'contact.title': '联系我们',
       'contact.copy': '想合作、咨询我们的服务或分享反馈？我们也提供定制服务——欢迎联系获取报价，我们会尽快回复。',
       'contact.name': '您的姓名',
@@ -336,9 +400,13 @@
       'games.title': '私たちのゲーム',
       'games.subtitle': '情熱と最先端技術で作り上げた世界。ドラッグしてご覧ください。',
       'games.frontline': 'リアリズム、緊張感、物語性を融合させた没入型タクティカルシューター — 現在 Steam で配信中。',
+      'games.frontlineTag': 'タクティカルシューター — Steam で配信中',
       'games.rampage': '混沌としたリズムで展開する音楽系乱闘ゲーム。マルチプレイで純粋な興奮と破壊、カオスを体験。',
+      'games.rampageTag': '協力リズム乱闘 ゲーム開発中',
       'games.dissociation': 'AI があなたの一挙手一投足を操るサイコホラー — 武器も逃げ場もなく、生き残りだけが目的。現実を見分けられますか？',
+      'games.dissociationTag': '心理サバイバルホラー 企画段階',
       'games.banana': '突然変異したバナナが世界を支配するコミカルなサバイバルアドベンチャー — フルーツの反乱を止められるか？',
+      'games.bananaTag': 'ナンセンスなサバイバルアドベンチャー企画中',
       'shared.learnMore': 'さらに詳しく →',
       'shared.backToTop': 'トップへ戻る',
       'carousel.prev': '前へ',
@@ -346,7 +414,9 @@
       'plugins.title': '私たちのプラグイン',
       'plugins.subtitle': 'Fab マーケット掲載',
       'plugins.world': 'Unreal Engine でプロシージャル地形、バイオーム、アセット配置を使って広大でダイナミックなオープンワールドを構築。',
+      'plugins.worldTag': 'Unreal 用のプロシージャル世界構築ツール',
       'plugins.explosion': '完全レプリケーション対応でネットワーク運用可能な爆発を追加。カスタマイズ可能な演出と最適化された物理を搭載。',
+      'plugins.explosionTag': 'ネット同期対応のVFXとダメージシステム',
       'plugins.view': 'プラグインを見る →',
       'news.title': '最新ニュース',
       'news.frontline.date': '2025年9月',
@@ -370,6 +440,16 @@
       'about.missionTitle': '私たちの使命',
       'about.missionCopy': '創造性と卓越性を示す世界水準のプロジェクトを届け、ブラジルのゲームシーンを強化すること。',
       'team.title': '私たちのチーム',
+      'team.victor.role': '創設者兼シニア開発者',
+      'team.victor.bio': 'ゲームプレイシステムとUnreal Engineプラグインを設計し、Neo Softの技術的ビジョンを牽引。',
+      'team.hiury.role': '映像編集・制作リード',
+      'team.hiury.bio': 'トレーラーやシネマティクス、マーケティング施策を形にし、制作スケジュールをチームと調整。',
+      'team.jose.role': 'プログラマー',
+      'team.jose.bio': 'ゲームプレイ機能とツールを構築し、Neo Softのプロジェクト全体でスムーズなパフォーマンスを実現。',
+      'team.henrique.role': 'ライター',
+      'team.henrique.bio': '没入感のある物語やキャラクター、世界観を生み出し、各ユニバースに独自の声を与える。',
+      'team.isabel.role': 'ボイスディレクター',
+      'team.isabel.bio': 'ボイスキャストを指揮し、物語の感情的な瞬間を伝えるパフォーマンスを引き出す。',
       'contact.title': 'お問い合わせ',
       'contact.copy': 'コラボの相談、サービスのご依頼、フィードバックなど、お気軽にご連絡ください。受託サービスも承っています — お見積もりのご相談をお待ちしています。',
       'contact.name': 'お名前',
@@ -482,15 +562,32 @@
       const hideCursor = () => {
         cursorVisible = false;
         cursor.style.opacity = '0';
+        cursor.classList.remove('cursor-pressed');
+        cursor.classList.remove('cursor-interactive');
       };
       window.addEventListener('mousemove', (e) => {
         reveal();
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursor.style.setProperty('--cursor-x', `${e.clientX}px`);
+        cursor.style.setProperty('--cursor-y', `${e.clientY}px`);
       });
       window.addEventListener('mouseleave', hideCursor);
+      const interactiveSelector = 'a[href], button, [role="button"], .btn-primary, .btn-outline, .audio-toggle, .language-select, input, textarea, select, .card3d, .team-card';
+      window.addEventListener('pointerover', (e) => {
+        const interactive = e.target.closest(interactiveSelector);
+        if (interactive) cursor.classList.add('cursor-interactive');
+        else cursor.classList.remove('cursor-interactive');
+      });
+      const releasePress = () => cursor.classList.remove('cursor-pressed');
+      window.addEventListener('pointerdown', (e) => {
+        if (e.target.closest(interactiveSelector)) cursor.classList.add('cursor-pressed');
+        else releasePress();
+      });
+      window.addEventListener('pointerup', releasePress);
+      window.addEventListener('pointercancel', releasePress);
 
     } else {
       cursor.remove();
+      document.body.classList.remove('custom-cursor-active');
     }
   }
 
