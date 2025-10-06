@@ -55,11 +55,26 @@ section[id] {
 .news-summary{ color:rgba(255,255,255,.85); font-size:.95rem; }
 
 /* Team */
-.team-card{ text-align:center; border:1px solid rgba(255,255,255,.1); padding:1.5rem; border-radius:.75rem; background:rgba(255,255,255,.05); transition:background .2s ease; }
-.team-card:hover{ background:rgba(255,255,255,.1); }
-.team-avatar{ height:96px; width:96px; margin:0 auto 1rem; border-radius:9999px; background:linear-gradient(135deg, var(--purple), var(--fuchsia)); box-shadow:0 0 40px rgba(155,93,229,.35); }
+.team-card{ position:relative; min-height:300px; border-radius:.75rem; perspective:1200px; outline:none; cursor:pointer; }
+.team-card:focus{ outline:none; }
+.team-card:focus-visible{ box-shadow:0 0 0 3px rgba(209,75,240,.45); }
+.team-card-inner{ position:relative; height:100%; width:100%; transform-style:preserve-3d; transition:transform .65s cubic-bezier(.25,.8,.25,1); }
+.team-card:hover .team-card-inner,
+.team-card:focus-visible .team-card-inner{ transform:rotateY(180deg); }
+.team-card-face{ position:absolute; inset:0; padding:1.5rem; border-radius:.75rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.05); text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.65rem; backface-visibility:hidden; transition:background .35s ease, border-color .35s ease; }
+.team-card-front{ transform:rotateY(0deg); }
+.team-card:hover .team-card-front,
+.team-card:focus-visible .team-card-front{ background:rgba(255,255,255,.1); }
+.team-card-back{ background:linear-gradient(135deg, rgba(155,93,229,.25), rgba(209,75,240,.2)); transform:rotateY(180deg); border-color:rgba(216,180,254,.25); }
+.team-card-back .team-name{ color:#f5e1ff; }
+.team-avatar{ height:96px; width:96px; margin:0 0 1rem; border-radius:9999px; background:linear-gradient(135deg, var(--purple), var(--fuchsia)); box-shadow:0 0 40px rgba(155,93,229,.35); }
 .team-name{ font-weight:600; }
-.team-role{ font-size:.85rem; color:rgba(216,180,254,.8); }
+.team-role{ font-size:.85rem; color:rgba(216,180,254,.8); margin:0; }
+.team-bio{ font-size:.85rem; color:rgba(255,255,255,.78); line-height:1.5; }
+
+@media (prefers-reduced-motion: reduce){
+  .team-card-inner{ transition:none; }
+}
 
 /* Inputs / buttons */
 .input, .textarea{ border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); border-radius:.5rem; padding:.6rem .75rem; color:white; }
