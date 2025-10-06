@@ -143,8 +143,8 @@ body.theme-light #navbar:not(.sticky-nav) #hamburger{
 /* Inputs / buttons */
 .input, .textarea{ border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); border-radius:.5rem; padding:.6rem .75rem; color:white; }
 .input::placeholder, .textarea::placeholder{ color:rgba(255,255,255,.4); }
-.btn-primary{ padding:.7rem 1.25rem; border-radius:.5rem; font-weight:600; color:white; background:linear-gradient(90deg, var(--purple), var(--fuchsia)); box-shadow:0 10px 20px rgba(155,93,229,.2); }
-.btn-primary:hover{ filter:brightness(1.05); }
+.btn-primary{ padding:.7rem 1.25rem; border-radius:.5rem; font-weight:600; color:white; background:linear-gradient(90deg, var(--purple), var(--fuchsia)); background-size:200% 200%; box-shadow:0 10px 20px rgba(155,93,229,.2); transition:transform .3s ease, box-shadow .3s ease, filter .3s ease, background-position .6s ease; }
+.btn-primary:hover{ filter:brightness(1.08); transform:translateY(-4px); box-shadow:0 15px 30px rgba(155,93,229,.35); background-position:right center; }
 .btn-outline{ padding:.7rem 1.25rem; border-radius:.5rem; border:1px solid rgba(255,255,255,.2); }
 .btn-outline:hover{ border-color: rgba(216,180,254,.6); color:#e9d5ff; }
 
