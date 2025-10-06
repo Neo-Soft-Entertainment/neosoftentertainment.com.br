@@ -92,8 +92,20 @@
 
     <!-- Mobile menu -->
     <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Mobile menu">
-      <div class="flex items-center justify-between">
-        <span class="text-xs font-semibold" data-i18n="nav.menuTitle">Menu</span>
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title" data-i18n="nav.menuTitle">Menu</span>
+      </div>
+      <nav class="mobile-menu__links" aria-label="Mobile primary">
+        <a href="#games" data-i18n="nav.games">Games</a>
+        <a href="#plugins" data-i18n="nav.plugins">Plugins</a>
+        <a href="#news" data-i18n="nav.news">News</a>
+        <a href="#careers" data-i18n="nav.careers">Careers</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#team" data-i18n="nav.team">Team</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="mobile-menu__section">
+        <label for="languageSelectMobile" class="mobile-menu__label" data-i18n="nav.languageLabel">Select language</label>
         <div class="language-select language-select--mobile" data-i18n-aria-label="nav.languageLabel">
           <select id="languageSelectMobile" class="language-select__field text-xs" aria-label="Select language">
             <option value="en">EN</option>
@@ -104,14 +116,7 @@
           </select>
         </div>
       </div>
-      <a href="#games" data-i18n="nav.games">Games</a>
-      <a href="#plugins" data-i18n="nav.plugins">Plugins</a>
-      <a href="#news" data-i18n="nav.news">News</a>
-      <a href="#careers" data-i18n="nav.careers">Careers</a>
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#team" data-i18n="nav.team">Team</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
-      <button id="muteBtnMobile" class="audio-toggle audio-toggle--mobile mt-2 text-xs" data-i18n="nav.unmute">Unmute SFX</button>
+      <button id="muteBtnMobile" class="audio-toggle audio-toggle--mobile mt-3 text-xs" data-i18n="nav.unmute">Unmute SFX</button>
     </div>
   </header>
 
