@@ -104,8 +104,13 @@ section[id] {
 /* Hamburger / Mobile menu */
 .hamburger-line{ width:18px; height:2px; background:rgba(255,255,255,.8); margin:2px 0; display:block }
 .mobile-menu{ background:rgba(0,0,0,.9); border-top:1px solid rgba(255,255,255,.12); padding:.75rem 1rem; }
+.mobile-menu__header{ display:flex; align-items:center; justify-content:space-between; padding-bottom:.5rem; margin-bottom:.75rem; border-bottom:1px solid rgba(255,255,255,.08); }
+.mobile-menu__title{ font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.65); font-weight:700; }
+.mobile-menu__links{ display:flex; flex-direction:column; }
 .mobile-menu a{ display:block; padding:.5rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
 .mobile-menu a:last-child{ border-bottom:0; }
+.mobile-menu__section{ margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,.08); }
+.mobile-menu__label{ display:block; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.55); font-weight:600; margin-bottom:.45rem; }
 
 .audio-toggle{
   position:relative;
@@ -234,6 +239,61 @@ section[id] {
   .btn-outline{ width:100%; }
 
   .carousel-controls{ display:none; }
+}
+
+@media (max-width: 768px){
+  #home{
+    height:auto;
+    min-height:70vh;
+    padding:5.5rem 0 3rem;
+  }
+
+  #heroContent h1{
+    font-size:clamp(2.4rem, 7vw, 3rem);
+  }
+}
+
+@media (max-width: 480px){
+  #heroContent{
+    padding-inline:0.25rem;
+  }
+
+  #heroContent h1{
+    font-size:clamp(2rem, 8.6vw, 2.6rem);
+    line-height:1.2;
+  }
+
+  #heroContent p{
+    font-size:.95rem;
+    line-height:1.6;
+  }
+
+  .news-card{
+    padding:1.25rem;
+  }
+
+  .team-card-face{
+    padding:1.5rem 1.25rem;
+  }
+
+  .team-card-back{
+    gap:.5rem;
+  }
+
+  #backToTop{
+    height:2.75rem;
+    width:2.75rem;
+    right:1rem;
+    bottom:1rem;
+  }
+
+  .footer-inner{
+    text-align:center;
+  }
+
+  .footer-inner > div:last-child{
+    justify-content:center;
+  }
 }
 
 @media (min-width: 1024px){

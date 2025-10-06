@@ -584,11 +584,18 @@
   sfxToggle && sfxToggle.addEventListener('change', (e) => { muted = !e.target.checked; refreshMuteBtn(); });
 
   // Mobile menu toggle
+  const setMobileMenuOpen = (open) => {
+    if (!mobileMenu) return;
+    mobileMenu.classList.toggle('hidden', !open);
+    hamburger?.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
   hamburger && hamburger.addEventListener('click', () => {
-    const opened = mobileMenu.classList.toggle('hidden') === false;
-    hamburger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    const shouldOpen = mobileMenu.classList.contains('hidden');
+    setMobileMenuOpen(shouldOpen);
   });
-  $$('#mobileMenu a').forEach(a => a.addEventListener('click', ()=> mobileMenu.classList.add('hidden')));
+
+  $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => setMobileMenuOpen(false)));
 
   // Back to top
   backToTop && backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
