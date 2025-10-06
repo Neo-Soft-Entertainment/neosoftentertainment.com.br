@@ -55,11 +55,28 @@ section[id] {
 .news-summary{ color:rgba(255,255,255,.85); font-size:.95rem; }
 
 /* Team */
-.team-card{ text-align:center; border:1px solid rgba(255,255,255,.1); padding:1.5rem; border-radius:.75rem; background:rgba(255,255,255,.05); transition:background .2s ease; }
-.team-card:hover{ background:rgba(255,255,255,.1); }
-.team-avatar{ height:96px; width:96px; margin:0 auto 1rem; border-radius:9999px; background:linear-gradient(135deg, var(--purple), var(--fuchsia)); box-shadow:0 0 40px rgba(155,93,229,.35); }
-.team-name{ font-weight:600; }
-.team-role{ font-size:.85rem; color:rgba(216,180,254,.8); }
+.team-card{ position:relative; perspective:1200px; }
+.team-card:focus{ outline:none; }
+.team-card:focus-visible{ outline:2px solid rgba(155,93,229,.6); outline-offset:6px; border-radius:.95rem; }
+.team-card-inner{ position:relative; width:100%; min-height:260px; transform-style:preserve-3d; transition:transform .6s ease; }
+.team-card:hover .team-card-inner,
+.team-card:focus-visible .team-card-inner{ transform:rotateY(180deg); }
+.team-card-face{ position:absolute; inset:0; padding:1.75rem 1.5rem; border-radius:.75rem; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.05); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:.75rem; backface-visibility:hidden; transition:background .3s ease, border-color .3s ease; }
+.team-card:hover .team-card-face,
+.team-card:focus-visible .team-card-face{ background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.18); }
+.team-card-back{ transform:rotateY(180deg); padding:2rem 1.75rem; gap:.65rem; }
+.team-avatar{ height:96px; width:96px; margin:0 auto; border-radius:9999px; background:linear-gradient(135deg, var(--purple), var(--fuchsia)); box-shadow:0 0 40px rgba(155,93,229,.35); overflow:hidden; }
+.team-avatar img{ width:100%; height:100%; object-fit:cover; border-radius:inherit; }
+.team-name{ font-weight:600; font-size:1.1rem; }
+.team-role{ font-size:.85rem; color:rgba(216,180,254,.8); letter-spacing:.01em; text-transform:uppercase; }
+.team-bio{ font-size:.85rem; color:rgba(255,255,255,.72); line-height:1.5; }
+
+@media (prefers-reduced-motion: reduce){
+  .team-card-inner{ transition:none; }
+  .team-card:hover .team-card-inner,
+  .team-card:focus-visible .team-card-inner{ transform:none; }
+  .team-card-face{ transition:background .2s ease, border-color .2s ease; }
+}
 
 /* Inputs / buttons */
 .input, .textarea{ border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); border-radius:.5rem; padding:.6rem .75rem; color:white; }
