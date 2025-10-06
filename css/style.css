@@ -236,6 +236,61 @@ section[id] {
   .carousel-controls{ display:none; }
 }
 
+@media (max-width: 768px){
+  #home{
+    height:auto;
+    min-height:70vh;
+    padding:5.5rem 0 3rem;
+  }
+
+  #heroContent h1{
+    font-size:clamp(2.4rem, 7vw, 3rem);
+  }
+}
+
+@media (max-width: 480px){
+  #heroContent{
+    padding-inline:0.25rem;
+  }
+
+  #heroContent h1{
+    font-size:clamp(2rem, 8.6vw, 2.6rem);
+    line-height:1.2;
+  }
+
+  #heroContent p{
+    font-size:.95rem;
+    line-height:1.6;
+  }
+
+  .news-card{
+    padding:1.25rem;
+  }
+
+  .team-card-face{
+    padding:1.5rem 1.25rem;
+  }
+
+  .team-card-back{
+    gap:.5rem;
+  }
+
+  #backToTop{
+    height:2.75rem;
+    width:2.75rem;
+    right:1rem;
+    bottom:1rem;
+  }
+
+  .footer-inner{
+    text-align:center;
+  }
+
+  .footer-inner > div:last-child{
+    justify-content:center;
+  }
+}
+
 @media (min-width: 1024px){
   #gamesTrack, #pluginsTrack{ justify-content:center; }
 }
