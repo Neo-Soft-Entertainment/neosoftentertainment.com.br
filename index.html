@@ -45,10 +45,10 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+<body class="theme-dark selection:bg-purple-500/30 antialiased overflow-x-hidden">
 
   <!-- Custom Cursor -->
-  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
+  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-4 w-4 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
 
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
@@ -72,6 +72,7 @@
       <!-- Mobile controls -->
       <div class="flex items-center gap-3">
         <button id="muteBtn" class="hidden md:inline-block px-3 py-1.5 rounded-md text-xs border border-white/15 hover:border-purple-400/50 hover:text-purple-300" aria-label="Toggle SFX">Unmute SFX</button>
+        <button id="themeToggle" class="hidden md:inline-block px-3 py-1.5 rounded-md text-xs border border-white/15 hover:border-purple-400/50 hover:text-purple-300" aria-label="Toggle color theme">Light Mode</button>
         <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded" aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -90,6 +91,7 @@
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
       <button id="muteBtnMobile" class="mt-2 px-3 py-1.5 rounded-md text-xs border border-white/15">Unmute SFX</button>
+      <button id="themeToggleMobile" class="mt-2 px-3 py-1.5 rounded-md text-xs border border-white/15">Light Mode</button>
     </div>
   </header>
 
@@ -117,7 +119,7 @@
       <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Games</h2>
       <p class="text-white/60 mb-6 max-w-3xl">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
       <div class="relative">
-        <div id="gamesTrack" class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+        <div id="gamesTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/frontline.png" alt="Frontline on Steam" /></div>
             <div class="p-5">
@@ -167,7 +169,7 @@
         <span class="text-xs text-purple-300/70">Fab marketplace listings</span>
       </div>
       <div class="relative">
-        <div id="pluginsTrack" class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+        <div id="pluginsTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
             <div class="p-5">
