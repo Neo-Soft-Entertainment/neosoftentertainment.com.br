@@ -48,7 +48,7 @@
 <body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
 
   <!-- Custom Cursor -->
-  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] h-4 w-4 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
+  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-4 w-4 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
 
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
@@ -140,65 +140,36 @@
       <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
       <div class="relative">
         <div id="gamesTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
-          <div class="card3d" data-card tabindex="0">
-            <div class="card3d-inner">
-              <div class="card3d-face card3d-front">
-                <div class="card3d-img"><img src="img/frontline.png" alt="Frontline on Steam" /></div>
-                <div class="card3d-front-copy">
-                  <h3 class="card3d-title">Frontline</h3>
-                  <p class="card3d-tagline" data-i18n="games.frontlineTag">Tactical shooter — live on Steam</p>
-                </div>
-              </div>
-              <div class="card3d-face card3d-back">
-                <h3 class="card3d-title">Frontline</h3>
-                <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.</p>
-                <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
-              </div>
+          <div class="card3d" data-card>
+            <div class="card3d-img"><img src="img/frontline.png" alt="Frontline on Steam" /></div>
+            <div class="p-5">
+              <h3 class="card3d-title">Frontline</h3>
+              <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism, intensity, and storytelling — available now on Steam.</p>
+              <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
             </div>
           </div>
-          <div class="card3d" data-card tabindex="0">
-            <div class="card3d-inner">
-              <div class="card3d-face card3d-front">
-                <div class="card3d-img"><img src="img/rampagerush.jpg" alt="Rampage Rush concept art" /></div>
-                <div class="card3d-front-copy">
-                  <h3 class="card3d-title">Rampage Rush</h3>
-                  <p class="card3d-tagline" data-i18n="games.rampageTag">Co-op rhythm brawler in development</p>
-                </div>
-              </div>
-              <div class="card3d-face card3d-back">
-                <h3 class="card3d-title">Rampage Rush</h3>
-                <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
-              </div>
+          <div class="card3d" data-card>
+            <div class="card3d-img"><img src="img/rampagerush.jpg" alt="Rampage Rush concept art" /></div>
+            <div class="p-5">
+              <h3 class="card3d-title">Rampage Rush</h3>
+              <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
+              <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
-          <div class="card3d" data-card tabindex="0">
-            <div class="card3d-inner">
-              <div class="card3d-face card3d-front">
-                <div class="card3d-img"><img src="img/dissociation.jpg" alt="Dissociation concept art" /></div>
-                <div class="card3d-front-copy">
-                  <h3 class="card3d-title">Dissociation</h3>
-                  <p class="card3d-tagline" data-i18n="games.dissociationTag">Mind-bending survival horror concept</p>
-                </div>
-              </div>
-              <div class="card3d-face card3d-back">
-                <h3 class="card3d-title">Dissociation</h3>
-                <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
-              </div>
+          <div class="card3d" data-card>
+            <div class="card3d-img"><img src="img/dissociation.jpg" alt="Bananapocalypse artwork" /></div>
+            <div class="p-5">
+              <h3 class="card3d-title">Dissociation</h3>
+              <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
+              <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
-          <div class="card3d" data-card tabindex="0">
-            <div class="card3d-inner">
-              <div class="card3d-face card3d-front">
-                <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
-                <div class="card3d-front-copy">
-                  <h3 class="card3d-title">Bananapocalypse</h3>
-                  <p class="card3d-tagline" data-i18n="games.bananaTag">Absurd survival adventure concept</p>
-                </div>
-              </div>
-              <div class="card3d-face card3d-back">
-                <h3 class="card3d-title">Bananapocalypse</h3>
-                <p class="card3d-desc" data-i18n="games.banana">A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?</p>
-              </div>
+          <div class="card3d" data-card>
+            <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
+            <div class="p-5">
+              <h3 class="card3d-title">Bananapocalypse</h3>
+              <p class="card3d-desc" data-i18n="games.banana">A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?</p>
+              <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
         </div>
@@ -219,36 +190,20 @@
       </div>
       <div class="relative">
         <div id="pluginsTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
-          <div class="card3d" data-card tabindex="0">
-            <div class="card3d-inner">
-              <div class="card3d-face card3d-front">
-                <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
-                <div class="card3d-front-copy">
-                  <h3 class="card3d-title">World Procedural Generator Plugin</h3>
-                  <p class="card3d-tagline" data-i18n="plugins.worldTag">Procedural worldbuilding toolkit for Unreal</p>
-                </div>
-              </div>
-              <div class="card3d-face card3d-back">
-                <h3 class="card3d-title">World Procedural Generator Plugin</h3>
-                <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
-                <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-              </div>
+          <div class="card3d" data-card>
+            <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
+            <div class="p-5">
+              <h3 class="card3d-title">World Procedural Generator Plugin</h3>
+              <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
+              <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
             </div>
           </div>
-          <div class="card3d" data-card tabindex="0">
-            <div class="card3d-inner">
-              <div class="card3d-face card3d-front">
-                <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.jpg" alt="Replicated Explosion Plugin cover" /></div>
-                <div class="card3d-front-copy">
-                  <h3 class="card3d-title">Replicated Explosion Plugin</h3>
-                  <p class="card3d-tagline" data-i18n="plugins.explosionTag">Network-ready VFX &amp; damage systems</p>
-                </div>
-              </div>
-              <div class="card3d-face card3d-back">
-                <h3 class="card3d-title">Replicated Explosion Plugin</h3>
-                <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
-                <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-              </div>
+          <div class="card3d" data-card>
+            <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.jpg" alt="Replicated Explosion Plugin cover" /></div>
+            <div class="p-5">
+              <h3 class="card3d-title">Replicated Explosion Plugin</h3>
+              <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
+              <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
             </div>
           </div>
         </div>
@@ -322,77 +277,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-purple-200 mb-8 sm:mb-10" data-i18n="team.title">Our Team</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="team-card" tabindex="0">
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <div class="team-avatar"><img src="img/victor.jpg" alt="Victor Henrique" class="rounded-full w-24 h-24 object-cover mx-auto"></div>
-              <h3 class="team-name">Victor Henrique</h3>
-              <p class="team-role">Founder &amp; Senior Developer</p>
-            </div>
-            <div class="team-card-face team-card-back">
-              <h3 class="team-name">Victor Henrique</h3>
-              <p class="team-role">Founder &amp; Senior Developer</p>
-              <p class="team-bio">Architects gameplay systems and Unreal Engine plugins while guiding Neo Soft&rsquo;s technical vision.</p>
-            </div>
-          </div>
-        </div>
-        <div class="team-card" tabindex="0">
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <div class="team-avatar"><img src="img/hiury.jpg" alt="Hiury Francisco" class="rounded-full w-24 h-24 object-cover mx-auto"></div>
-              <h3 class="team-name">Hiury Francisco</h3>
-              <p class="team-role">Video Editor &amp; Production Lead</p>
-            </div>
-            <div class="team-card-face team-card-back">
-              <h3 class="team-name">Hiury Francisco</h3>
-              <p class="team-role">Video Editor &amp; Production Lead</p>
-              <p class="team-bio">Shapes trailers, cinematics, and marketing beats while coordinating production timelines with the team.</p>
-            </div>
-          </div>
-        </div>
-        <div class="team-card" tabindex="0">
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <div class="team-avatar"><img src="img/josegabriel.jpg" alt="José Gabriel" class="rounded-full w-24 h-24 object-cover mx-auto"></div>
-              <h3 class="team-name">José Gabriel</h3>
-              <p class="team-role">Programmer</p>
-            </div>
-            <div class="team-card-face team-card-back">
-              <h3 class="team-name">José Gabriel</h3>
-              <p class="team-role">Programmer</p>
-              <p class="team-bio">Builds gameplay features and tools, ensuring smooth performance across Neo Soft&rsquo;s projects.</p>
-            </div>
-          </div>
-        </div>
-        <div class="team-card" tabindex="0">
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <div class="team-avatar"><img src="img/henriquecoelhozama(alice).jpg" alt="Henrique Coelho Zama" class="rounded-full w-24 h-24 object-cover mx-auto"></div>
-              <h3 class="team-name">Henrique Coelho Zama</h3>
-              <p class="team-role">Writer</p>
-            </div>
-            <div class="team-card-face team-card-back">
-              <h3 class="team-name">Henrique Coelho Zama</h3>
-              <p class="team-role">Writer</p>
-              <p class="team-bio">Crafts immersive narratives, characters, and lore that give each universe its unique voice.</p>
-            </div>
-          </div>
-        </div>
-        <div class="team-card" tabindex="0">
-          <div class="team-card-inner">
-            <div class="team-card-face team-card-front">
-              <div class="team-avatar"><img src="img/isabelbrito.jpg" alt="Isabel Brito" class="rounded-full w-24 h-24 object-cover mx-auto"></div>
-              <h3 class="team-name">Isabel Brito</h3>
-              <p class="team-role">Voice Director</p>
-            </div>
-            <div class="team-card-face team-card-back">
-              <h3 class="team-name">Isabel Brito</h3>
-              <p class="team-role">Voice Director</p>
-              <p class="team-bio">Directs voice talent and ensures performances capture the emotional beats of each storyline.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <div class="team-card"><div class="team-avatar"><img src="img/victor.jpg" alt="Victor Henrique" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">Victor Henrique</h3><p class="team-role">Founder & Senior Developer</p></div>
+        <div class="team-card"><div class="team-avatar"><img src="img/hiury.jpg" alt="Hiury Francisco" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">Hiury Francisco</h3><p class="team-role">Video Editor & Production Lead</p></div>
+        <div class="team-card"><div class="team-avatar"><img src="img/josegabriel.jpg" alt="José Gabriel" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">José Gabriel</h3><p class="team-role">Programmer</p></div>
+        <div class="team-card"><div class="team-avatar"><img src="img/henriquecoelhozama(alice).jpg" alt="Henrique Coelho Zama" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">Henrique Coelho Zama</h3><p class="team-role">Writer</p></div>
+        <div class="team-card"><div class="team-avatar"><img src="img/isabelbrito.jpg" alt="Isabel Brito" class="rounded-full w-24 h-24 object-cover mx-auto"></div><h3 class="team-name">Isabel Brito</h3><p class="team-role">Voice Director</p></div>     </div>
     </div>
   </section>
 
