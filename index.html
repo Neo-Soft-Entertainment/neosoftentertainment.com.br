@@ -72,13 +72,15 @@
       <!-- Mobile controls -->
       <div class="flex items-center gap-3">
         <label class="sr-only" for="languageSelect" data-i18n="nav.languageLabel">Select language</label>
-        <select id="languageSelect" class="hidden md:inline-block px-2 py-1 text-xs rounded-md border border-white/20 bg-black/40 hover:border-purple-400/50 focus:outline-none focus:border-purpleNeo" data-i18n-aria-label="nav.languageLabel">
-          <option value="en">EN</option>
-          <option value="pt">PT</option>
-          <option value="es">ES</option>
-          <option value="zh">ZH</option>
-          <option value="ja">JA</option>
-        </select>
+        <div class="language-select hidden md:inline-flex" data-i18n-aria-label="nav.languageLabel">
+          <select id="languageSelect" class="language-select__field text-xs" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+            <option value="es">ES</option>
+            <option value="zh">ZH</option>
+            <option value="ja">JA</option>
+          </select>
+        </div>
         <button id="muteBtn" class="hidden md:inline-block px-3 py-1.5 rounded-md text-xs border border-white/15 hover:border-purple-400/50 hover:text-purple-300" aria-label="Toggle SFX" data-i18n="nav.unmute">Unmute SFX</button>
         <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded" aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
@@ -92,13 +94,15 @@
     <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Mobile menu">
       <div class="flex items-center justify-between">
         <span class="text-xs font-semibold" data-i18n="nav.menuTitle">Menu</span>
-        <select id="languageSelectMobile" class="px-2 py-1 text-xs rounded-md border border-white/20 bg-black/40 focus:outline-none focus:border-purpleNeo" data-i18n-aria-label="nav.languageLabel">
-          <option value="en">EN</option>
-          <option value="pt">PT</option>
-          <option value="es">ES</option>
-          <option value="zh">ZH</option>
-          <option value="ja">JA</option>
-        </select>
+        <div class="language-select language-select--mobile" data-i18n-aria-label="nav.languageLabel">
+          <select id="languageSelectMobile" class="language-select__field text-xs" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+            <option value="es">ES</option>
+            <option value="zh">ZH</option>
+            <option value="ja">JA</option>
+          </select>
+        </div>
       </div>
       <a href="#games" data-i18n="nav.games">Games</a>
       <a href="#plugins" data-i18n="nav.plugins">Plugins</a>
