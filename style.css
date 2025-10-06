@@ -4,8 +4,20 @@
   --fuchsia:#d14bf0;
 }
 
-body {
-cursor: none;
+body.custom-cursor-active,
+body.custom-cursor-active *{
+  cursor:none !important;
+}
+
+#cursor{
+  opacity:0;
+  transition:opacity .2s ease, transform .08s ease;
+  border-color:rgba(216,180,254,.6);
+}
+
+/* Improve anchor scroll positioning when navbar is fixed */
+section[id]{
+  scroll-margin-top:clamp(4.5rem, 8vh, 6.5rem);
 }
 
 /* Scrollbar hidden util */

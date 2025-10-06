@@ -37,10 +37,33 @@
   window.addEventListener('scroll', onScroll);
 
   // Custom cursor
-  window.addEventListener('mousemove', (e) => {
-    if (!cursor) return;
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-  });
+  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+  const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+  const enableCustomCursor = hasFinePointer && !isMobileViewport;
+  if (cursor){
+    if (enableCustomCursor){
+      document.body.classList.add('custom-cursor-active');
+      let cursorVisible = false;
+      const reveal = () => {
+        if (!cursorVisible){
+          cursor.style.opacity = '1';
+          cursorVisible = true;
+        }
+      };
+      const hideCursor = () => {
+        cursorVisible = false;
+        cursor.style.opacity = '0';
+      };
+      window.addEventListener('mousemove', (e) => {
+        reveal();
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+      window.addEventListener('mouseleave', hideCursor);
+
+    } else {
+      cursor.remove();
+    }
+  }
 
   // SFX (WebAudio)
   let audioCtx = null;
@@ -71,62 +94,73 @@
   backToTop && backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // Particles
-  const DPR = Math.max(1, window.devicePixelRatio || 1);
-  const ctx = particles.getContext('2d');
-  const P = Array.from({ length: 80 }).map(() => ({
-    x: Math.random(), y: Math.random(),
-    vx: (Math.random()-0.5)*0.0008, vy: (Math.random()-0.5)*0.0008,
-    r: 1 + Math.random()*2
-  }));
-  const resize = () => { particles.width = particles.clientWidth * DPR; particles.height = particles.clientHeight * DPR; };
-  resize(); window.addEventListener('resize', resize);
-  const loop = () => {
-    const w = particles.width, h = particles.height;
-    ctx.clearRect(0,0,w,h);
-    const grd = ctx.createLinearGradient(0,0,w,h);
-    grd.addColorStop(0, '#0b0114'); grd.addColorStop(1,'#12021c');
-    ctx.fillStyle = grd; ctx.fillRect(0,0,w,h);
-    P.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0 || p.x > 1) p.vx *= -1;
-      if (p.y < 0 || p.y > 1) p.vy *= -1;
-      const px = p.x * w, py = p.y * h;
-      ctx.beginPath(); ctx.arc(px, py, p.r*DPR, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(155,93,229,0.7)'; ctx.fill();
-    });
-    // lines
-    for (let i=0;i<P.length;i++){
-      for (let j=i+1;j<P.length;j++){
-        const a=P[i], b=P[j];
-        const dx=(a.x-b.x)*w, dy=(a.y-b.y)*h;
-        const dist=Math.hypot(dx,dy);
-        if (dist < 150){
-          ctx.strokeStyle='rgba(123,47,247,0.15)'; ctx.lineWidth=1;
-          ctx.beginPath(); ctx.moveTo(a.x*w,a.y*h); ctx.lineTo(b.x*w,b.y*h); ctx.stroke();
+  if (particles){
+    const ctx = particles.getContext('2d');
+    if (ctx){
+      const DPR = Math.max(1, window.devicePixelRatio || 1);
+      const P = Array.from({ length: hasFinePointer ? 80 : 50 }).map(() => ({
+        x: Math.random(), y: Math.random(),
+        vx: (Math.random()-0.5)*0.0008, vy: (Math.random()-0.5)*0.0008,
+        r: 1 + Math.random()*2
+      }));
+      const resize = () => {
+        particles.width = particles.clientWidth * DPR;
+        particles.height = particles.clientHeight * DPR;
+      };
+      resize();
+      window.addEventListener('resize', resize);
+      const loop = () => {
+        const w = particles.width, h = particles.height;
+        ctx.clearRect(0,0,w,h);
+        const grd = ctx.createLinearGradient(0,0,w,h);
+        grd.addColorStop(0, '#0b0114'); grd.addColorStop(1,'#12021c');
+        ctx.fillStyle = grd; ctx.fillRect(0,0,w,h);
+        P.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > 1) p.vx *= -1;
+          if (p.y < 0 || p.y > 1) p.vy *= -1;
+          const px = p.x * w, py = p.y * h;
+          ctx.beginPath(); ctx.arc(px, py, p.r*DPR, 0, Math.PI*2);
+          ctx.fillStyle = 'rgba(155,93,229,0.7)'; ctx.fill();
+        });
+        for (let i=0;i<P.length;i++){
+          for (let j=i+1;j<P.length;j++){
+            const a=P[i], b=P[j];
+            const dx=(a.x-b.x)*w, dy=(a.y-b.y)*h;
+            const dist=Math.hypot(dx,dy);
+            if (dist < 150){
+              ctx.strokeStyle='rgba(123,47,247,0.15)'; ctx.lineWidth=1;
+              ctx.beginPath(); ctx.moveTo(a.x*w,a.y*h); ctx.lineTo(b.x*w,b.y*h); ctx.stroke();
+            }
+          }
         }
-      }
+        requestAnimationFrame(loop);
+      };
+      loop();
     }
-    requestAnimationFrame(loop);
-  };
-  loop();
+  }
 
   // Card tilt
-  $$('.card3d').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width;
-      const py = (e.clientY - rect.top) / rect.height;
-      const ry = (px - 0.5) * 10;
-      const rx = (0.5 - py) * 10;
-      card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+  const allowTilt = hasFinePointer && window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+  if (allowTilt){
+    $$('.card3d').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width;
+        const py = (e.clientY - rect.top) / rect.height;
+        const ry = (px - 0.5) * 10;
+        const rx = (0.5 - py) * 10;
+        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+      });
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
-    });
-  });
+  }
 
   // Carousel controls
   const scrollByCard = (track, dir=1) => {
+    if (!track) return;
     const card = track.querySelector('[data-card]');
     const amount = card ? card.clientWidth + 16 : 320;
     track.scrollBy({ left: amount * dir, behavior:'smooth' });
