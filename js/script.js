@@ -89,6 +89,10 @@
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Open Neo Soft on Instagram',
       'contact.linkedinAria': 'Open Neo Soft on LinkedIn',
+      'contact.socialDiscord': 'Discord Server — Neo Soft',
+      'contact.discordAria': 'Join the Neo Soft Discord server',
+      'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
+      'contact.youtubeAria': 'Open Neo Soft on YouTube',
       'footer.copy': '© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     pt: {
@@ -159,6 +163,10 @@
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Abrir Neo Soft no Instagram',
       'contact.linkedinAria': 'Abrir Neo Soft no LinkedIn',
+      'contact.socialDiscord': 'Servidor Discord — Neo Soft',
+      'contact.discordAria': 'Entrar no servidor Discord da Neo Soft',
+      'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
+      'contact.youtubeAria': 'Abrir Neo Soft no YouTube',
       'footer.copy': '© <span id="year"></span> Neo Soft. Fundada por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     es: {
@@ -229,6 +237,10 @@
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Abrir Neo Soft en Instagram',
       'contact.linkedinAria': 'Abrir Neo Soft en LinkedIn',
+      'contact.socialDiscord': 'Servidor de Discord — Neo Soft',
+      'contact.discordAria': 'Únete al servidor de Discord de Neo Soft',
+      'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
+      'contact.youtubeAria': 'Abrir Neo Soft en YouTube',
       'footer.copy': '© <span id="year"></span> Neo Soft. Fundado por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     zh: {
@@ -299,6 +311,10 @@
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': '在 Instagram 打开 Neo Soft',
       'contact.linkedinAria': '在 LinkedIn 打开 Neo Soft',
+      'contact.socialDiscord': 'Discord 服务器 — Neo Soft',
+      'contact.discordAria': '加入 Neo Soft 的 Discord 服务器',
+      'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
+      'contact.youtubeAria': '在 YouTube 打开 Neo Soft',
       'footer.copy': '© <span id="year"></span> Neo Soft. 由 Victor Henrique Mendonça Rodrigues 创立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     ja: {
@@ -369,6 +385,10 @@
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Instagram で Neo Soft を開く',
       'contact.linkedinAria': 'LinkedIn で Neo Soft を開く',
+      'contact.socialDiscord': 'Discordサーバー — Neo Soft',
+      'contact.discordAria': 'Neo Soft の Discord サーバーに参加する',
+      'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
+      'contact.youtubeAria': 'YouTube で Neo Soft を開く',
       'footer.copy': '© <span id="year"></span> Neo Soft. Victor Henrique Mendonça Rodrigues により設立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     }
   };
