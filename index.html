@@ -48,7 +48,7 @@
 <body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
 
   <!-- Custom Cursor -->
-  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
+  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-4 w-4 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
 
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
@@ -96,12 +96,12 @@
   <!-- Hero with Particles -->
   <section id="home" class="relative h-[78vh] sm:h-[88vh] grid place-items-center overflow-hidden">
     <canvas id="particles" class="absolute inset-0 w-full h-full"></canvas>
-    <div class="hero-overlay absolute inset-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black"></div>
     <div class="relative z-10 text-center px-4 sm:px-6" id="heroContent">
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
         Creating Worlds. <span class="text-purpleNeo">Inspiring Players.</span>
       </h1>
-      <p class="hero-tagline mt-4 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      <p class="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">
         Brazilian game studio crafting immersive experiences with technology, creativity and passion.
       </p>
       <div class="mt-8 flex flex-wrap justify-center gap-3">
@@ -117,7 +117,7 @@
       <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Games</h2>
       <p class="text-white/60 mb-6 max-w-3xl">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
       <div class="relative">
-        <div id="gamesTrack" class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+        <div id="gamesTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/frontline.png" alt="Frontline on Steam" /></div>
             <div class="p-5">
@@ -167,7 +167,7 @@
         <span class="text-xs text-purple-300/70">Fab marketplace listings</span>
       </div>
       <div class="relative">
-        <div id="pluginsTrack" class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+        <div id="pluginsTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
             <div class="p-5">
@@ -289,7 +289,7 @@
   <!-- Footer -->
   <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3">
-      <p>© <span id="year"></span> Neo Soft. Founded by Victor. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
+      <p>© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
       <div class="flex flex-wrap gap-4">
         <a class="hover:text-purple-300" href="#games">Games</a>
         <a class="hover:text-purple-300" href="#plugins">Plugins</a>
