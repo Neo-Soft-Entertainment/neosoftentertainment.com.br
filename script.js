@@ -38,8 +38,10 @@
 
   // Custom cursor
   const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+  const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
+  const enableCustomCursor = hasFinePointer && !isMobileViewport;
   if (cursor){
-    if (hasFinePointer){
+    if (enableCustomCursor){
       document.body.classList.add('custom-cursor-active');
       let cursorVisible = false;
       const reveal = () => {
