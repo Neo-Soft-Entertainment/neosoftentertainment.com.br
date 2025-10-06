@@ -473,21 +473,67 @@
     if (enableCustomCursor){
       document.body.classList.add('custom-cursor-active');
       let cursorVisible = false;
+      let cursorX = 0;
+      let cursorY = 0;
+
+      const updateCursorTransform = () => {
+        const scale = cursor.classList.contains('cursor-press')
+          ? 0.9
+          : cursor.classList.contains('cursor-hover')
+            ? 1.8
+            : 1;
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) scale(${scale})`;
+      };
+
       const reveal = () => {
         if (!cursorVisible){
           cursor.style.opacity = '1';
           cursorVisible = true;
         }
       };
+
       const hideCursor = () => {
         cursorVisible = false;
         cursor.style.opacity = '0';
+        cursor.classList.remove('cursor-hover', 'cursor-press');
+        updateCursorTransform();
       };
+
       window.addEventListener('mousemove', (e) => {
         reveal();
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+        updateCursorTransform();
       });
+
       window.addEventListener('mouseleave', hideCursor);
+
+      const interactiveElements = $$('a, button');
+      const handleEnter = () => {
+        cursor.classList.add('cursor-hover');
+        updateCursorTransform();
+      };
+      const handleLeave = () => {
+        cursor.classList.remove('cursor-hover', 'cursor-press');
+        updateCursorTransform();
+      };
+      const handleDown = () => {
+        cursor.classList.add('cursor-press');
+        updateCursorTransform();
+      };
+      const handleUp = () => {
+        cursor.classList.remove('cursor-press');
+        updateCursorTransform();
+      };
+
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', handleEnter);
+        el.addEventListener('mouseleave', handleLeave);
+        el.addEventListener('mousedown', handleDown);
+        el.addEventListener('mouseup', handleUp);
+      });
+
+      window.addEventListener('mouseup', handleUp);
 
     } else {
       cursor.remove();
