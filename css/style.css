@@ -123,8 +123,53 @@ section[id]{
 .no-scrollbar{ scrollbar-width:none; }
 .no-scrollbar::-webkit-scrollbar{ display:none; }
 
-/* Navbar background on scroll */
-.sticky-nav{ background:var(--nav-bg); backdrop-filter:blur(10px); border-bottom:1px solid var(--nav-border); }
+/* Navbar states */
+#navbar{
+  color:#fff;
+  transition:color .3s ease;
+}
+#navbar a,
+#navbar button{
+  color:inherit;
+  transition:color .3s ease, border-color .3s ease, background-color .3s ease;
+}
+.sticky-nav{
+  background:var(--nav-bg);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--nav-border);
+  color:var(--text-primary);
+}
+
+body.theme-light #navbar:not(.sticky-nav) .hamburger-line{
+  background:rgba(255,255,255,.85);
+}
+body.theme-light #navbar.sticky-nav .hamburger-line{
+  background:rgba(40,26,80,.85);
+}
+
+body.theme-light #navbar.sticky-nav #muteBtn,
+body.theme-light #navbar.sticky-nav #themeToggle{
+  border-color:var(--border-soft);
+  background:var(--surface);
+  color:var(--text-primary);
+}
+body.theme-light #navbar.sticky-nav #muteBtn:hover,
+body.theme-light #navbar.sticky-nav #themeToggle:hover{
+  border-color:var(--btn-outline-hover);
+  color:var(--accent-strong);
+}
+
+body.theme-light #navbar.sticky-nav #hamburger{
+  border-color:var(--border-soft);
+  background:var(--surface);
+}
+
+body.theme-light #navbar:not(.sticky-nav) #muteBtn,
+body.theme-light #navbar:not(.sticky-nav) #themeToggle,
+body.theme-light #navbar:not(.sticky-nav) #hamburger{
+  border-color:rgba(255,255,255,.35);
+  color:#fff;
+}
 
 /* Section backgrounds */
 #games{ background:var(--section-games-bg); }
