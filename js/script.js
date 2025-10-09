@@ -18,6 +18,7 @@
   const languageSelectMobile = $('#languageSelectMobile');
   const contactForm = $('#contactForm');
   const formFeedback = $('#formFeedback');
+  const formError = $('#formError');
   const sendBtn = $('#sendBtn');
 
   const translations = {
@@ -42,7 +43,7 @@
       'games.frontline': 'An immersive tactical shooter combining realism, intensity, and storytelling — coming soon to Steam. Wishlist now.',
       'games.rampage': 'A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.',
       'games.dissociation': 'A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?',
-      'games.banana': 'A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?',
+      'games.banana': 'A co-op adventure where every player is a monkey escaping a lab, sprinting for freedom while causing monkey mischief.',
       'shared.learnMore': 'Learn More →',
       'shared.backToTop': 'Back to top',
       'carousel.prev': 'Previous',
@@ -86,6 +87,7 @@
       'contact.message': 'Your message',
       'contact.send': 'Send Message',
       'contact.sending': 'Sending...',
+      'contact.invalidEmail': 'Please enter a valid email address.',
       'contact.success': 'Message sent! We’ll get back to you soon.',
       'contact.error': 'Something went wrong. Please try again later.',
       'contact.socialTitle': 'Connect with Neo Soft',
@@ -98,7 +100,7 @@
       'contact.discordAria': 'Open Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Open Neo Soft on YouTube',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft. Founded by Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     pt: {
       'nav.games': 'Jogos',
@@ -121,7 +123,7 @@
       'games.frontline': 'Um shooter tático imersivo que combina realismo, intensidade e narrativa — em breve na Steam. Adicione à lista de desejos.',
       'games.rampage': 'Um brawler musical de ritmo caótico que entrega adrenalina, destruição e caos no modo multiplayer.',
       'games.dissociation': 'Um terror psicológico em que uma IA manipula cada movimento seu — sem armas, sem escape, só sobrevivência. Você sabe o que é real?',
-      'games.banana': 'Uma aventura de sobrevivência bem-humorada em que bananas mutantes dominam o mundo — você consegue conter a revolta das frutas?',
+      'games.banana': 'Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.',
       'shared.learnMore': 'Saiba mais →',
       'shared.backToTop': 'Voltar ao topo',
       'carousel.prev': 'Anterior',
@@ -165,6 +167,7 @@
       'contact.message': 'Sua mensagem',
       'contact.send': 'Enviar mensagem',
       'contact.sending': 'Enviando...',
+      'contact.invalidEmail': 'Por favor, insira um email válido.',
       'contact.success': 'Mensagem enviada! Responderemos em breve.',
       'contact.error': 'Algo deu errado. Tente novamente mais tarde.',
       'contact.socialTitle': 'Conecte-se com a Neo Soft',
@@ -177,7 +180,7 @@
       'contact.discordAria': 'Abrir o Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft no YouTube',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Fundada por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft. Fundada por Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     es: {
       'nav.games': 'Juegos',
@@ -200,7 +203,7 @@
       'games.frontline': 'Un shooter táctico inmersivo que combina realismo, intensidad y narrativa — muy pronto en Steam. Agrégalo a tu lista de deseados.',
       'games.rampage': 'Un brawler musical con un ritmo caótico que ofrece adrenalina pura, destrucción y caos en modo multijugador.',
       'games.dissociation': 'Un terror psicológico donde una IA manipula cada uno de tus movimientos — sin armas, sin escape, solo supervivencia. ¿Sabes qué es real?',
-      'games.banana': 'Una aventura de supervivencia humorística donde bananas mutantes dominan el mundo — ¿podrás detener la rebelión frutal?',
+      'games.banana': 'Un juego cooperativo donde todos los jugadores son monos escapando de un laboratorio; todos deben correr y huir mientras hacen travesuras de mono.',
       'shared.learnMore': 'Saber más →',
       'shared.backToTop': 'Volver arriba',
       'carousel.prev': 'Anterior',
@@ -244,6 +247,7 @@
       'contact.message': 'Tu mensaje',
       'contact.send': 'Enviar mensaje',
       'contact.sending': 'Enviando...',
+      'contact.invalidEmail': 'Por favor, ingresa un correo electrónico válido.',
       'contact.success': '¡Mensaje enviado! Nos pondremos en contacto pronto.',
       'contact.error': 'Algo salió mal. Inténtalo de nuevo más tarde.',
       'contact.socialTitle': 'Conéctate con Neo Soft',
@@ -256,7 +260,7 @@
       'contact.discordAria': 'Abrir Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft en YouTube',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Fundado por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft. Fundado por Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     zh: {
       'nav.games': '游戏',
@@ -279,7 +283,7 @@
       'games.frontline': '一款将真实感、张力与叙事融合的沉浸式战术射击——即将登陆 Steam，立即加入愿望单。',
       'games.rampage': '一款节奏混乱的音乐格斗游戏，在多人模式中带来纯粹的肾上腺素、破坏与混乱。',
       'games.dissociation': '一部心理恐怖作品，AI 操控你的每一步——无武器、无逃脱，只有求生。你还能分辨真实吗？',
-      'games.banana': '一场充满幽默的生存冒险，变异香蕉统治世界——你能阻止这场水果起义吗？',
+      'games.banana': '一款合作游戏，所有玩家都是逃离实验室的猴子，一边拼命奔逃，一边制造猴子般的恶作剧。',
       'shared.learnMore': '了解更多 →',
       'shared.backToTop': '返回顶部',
       'carousel.prev': '上一项',
@@ -323,6 +327,7 @@
       'contact.message': '您的留言',
       'contact.send': '发送信息',
       'contact.sending': '正在发送…',
+      'contact.invalidEmail': '请输入有效的电子邮件地址。',
       'contact.success': '信息已发送！我们会尽快回复。',
       'contact.error': '出现问题。请稍后再试。',
       'contact.socialTitle': '关注 Neo Soft',
@@ -335,7 +340,7 @@
       'contact.discordAria': '打开 Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': '在 YouTube 打开 Neo Soft',
-      'footer.copy': '© <span id="year"></span> Neo Soft. 由 Victor Henrique Mendonça Rodrigues 创立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft。由 Victor 创立。- <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     ja: {
       'nav.games': 'ゲーム',
@@ -358,7 +363,7 @@
       'games.frontline': 'リアリズム、緊張感、物語性を融合させた没入型タクティカルシューター — まもなく Steam で配信予定。ウィッシュリストに登録しよう。',
       'games.rampage': '混沌としたリズムで展開する音楽系乱闘ゲーム。マルチプレイで純粋な興奮と破壊、カオスを体験。',
       'games.dissociation': 'AI があなたの一挙手一投足を操るサイコホラー — 武器も逃げ場もなく、生き残りだけが目的。現実を見分けられますか？',
-      'games.banana': '突然変異したバナナが世界を支配するコミカルなサバイバルアドベンチャー — フルーツの反乱を止められるか？',
+      'games.banana': 'すべてのプレイヤーが研究所から脱走するサルとなり、自由を求めて走りながらおサルのいたずらを繰り広げる協力ゲーム。',
       'shared.learnMore': 'さらに詳しく →',
       'shared.backToTop': 'トップへ戻る',
       'carousel.prev': '前へ',
@@ -402,6 +407,7 @@
       'contact.message': 'メッセージ',
       'contact.send': 'メッセージを送信',
       'contact.sending': '送信中…',
+      'contact.invalidEmail': '有効なメールアドレスを入力してください。',
       'contact.success': 'メッセージを送信しました！追ってご連絡いたします。',
       'contact.error': '問題が発生しました。後でもう一度お試しください。',
       'contact.socialTitle': 'Neo Soft とつながる',
@@ -414,7 +420,7 @@
       'contact.discordAria': 'Discord / Neo Soft を開く',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'YouTube で Neo Soft を開く',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Victor Henrique Mendonça Rodrigues により設立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft。Victor により設立。- <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     }
   };
 
@@ -464,17 +470,13 @@
       const value = translations[lang]?.[key];
       if (value !== undefined) el.setAttribute('aria-label', value);
     });
-    updateYear();
+    if (formError && !formError.classList.contains('hidden') && formError.dataset.errorKey){
+      formError.textContent = t(formError.dataset.errorKey);
+    }
     refreshMuteBtn();
   };
 
-  const updateYear = () => {
-    const span = $('#year');
-    if (span) span.textContent = new Date().getFullYear();
-  };
-
   applyTranslations(currentLang);
-  updateYear();
 
   if (sfxToggle) sfxToggle.checked = !muted;
 
@@ -685,28 +687,94 @@
   // EmailJS form
   contactForm && contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const btn = sendBtn;
+    const btn = sendBtn || this.querySelector('button[type="submit"]');
+    if (!btn) return;
     const original = btn.innerHTML;
-    btn.disabled = true;
-    btn.classList.add('opacity-60','cursor-not-allowed');
-    btn.innerHTML = `<span class="loader mr-2"></span> ${t('contact.sending')}`;
+    const disableBtn = () => {
+      btn.disabled = true;
+      btn.classList.add('opacity-60','cursor-not-allowed');
+      btn.innerHTML = `<span class="loader mr-2"></span> ${t('contact.sending')}`;
+    };
+    const restoreBtn = () => {
+      btn.disabled = false;
+      btn.classList.remove('opacity-60','cursor-not-allowed');
+      btn.innerHTML = original;
+    };
 
-    emailjs.sendForm('service_47lqkyt','template_3yzo1bv', this)
-      .then(function(res){
+    const showError = (key) => {
+      if (!formError) return;
+      formError.textContent = t(key);
+      formError.dataset.errorKey = key;
+      formError.classList.remove('hidden');
+    };
+
+    const clearError = () => {
+      if (!formError) return;
+      formError.classList.add('hidden');
+      delete formError.dataset.errorKey;
+    };
+
+    const formData = new FormData(contactForm);
+    const fromName = (formData.get('from_name') || '').toString().trim();
+    const fromMail = (formData.get('from_mail') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(fromMail)){
+      showError('contact.invalidEmail');
+      restoreBtn();
+      return;
+    }
+
+    clearError();
+    disableBtn();
+
+    const serviceId = 'service_47lqkyt';
+    const contactTemplateId = 'template_3yzo1bv';
+    const autoReplyTemplateId = 'template_contact_ack';
+    const ownerEmail = 'contact@neeosoft.com.br';
+
+    if (!emailPattern.test(ownerEmail)) {
+      console.error('Invalid owner email configured for EmailJS:', ownerEmail);
+      showError('contact.error');
+      restoreBtn();
+      return;
+    }
+
+    const templateParams = {
+      from_name: fromName,
+      from_mail: fromMail,
+      message,
+      reply_to: fromMail,
+      to_email: ownerEmail,
+      to_name: 'Neo Soft Team'
+    };
+
+    const acknowledgementParams = {
+      to_name: fromName || 'Friend',
+      to_email: fromMail,
+      from_name: 'Neo Soft',
+      reply_to: 'contact@neeosoft.com.br',
+      message: 'Recebemos sua mensagem e responderemos em breve. We received your message and will get back to you shortly.'
+    };
+
+    emailjs.send(serviceId, contactTemplateId, templateParams)
+      .then((res) => {
         console.log('Email sent', res.status);
         blip(540, 0.1, 'square');
         if (formFeedback) formFeedback.classList.remove('hidden');
-        btn.disabled = false;
-        btn.classList.remove('opacity-60','cursor-not-allowed');
-        btn.innerHTML = original;
         contactForm.reset();
         setTimeout(()=> formFeedback && formFeedback.classList.add('hidden'), 3000);
-      }, function(err){
+        return emailjs.send(serviceId, autoReplyTemplateId, acknowledgementParams).catch(err => {
+          console.warn('Auto-reply failed', err);
+        });
+      })
+      .catch((err) => {
         console.error('Email error', err);
-        alert(t('contact.error'));
-        btn.disabled = false;
-        btn.classList.remove('opacity-60','cursor-not-allowed');
-        btn.innerHTML = original;
+        showError('contact.error');
+      })
+      .finally(() => {
+        restoreBtn();
       });
   });
 
