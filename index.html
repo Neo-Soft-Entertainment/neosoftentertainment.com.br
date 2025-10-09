@@ -121,25 +121,53 @@
   </header>
 
   <!-- Hero with Particles -->
-  <section id="home" class="relative h-[78vh] sm:h-[88vh] grid place-items-center overflow-hidden">
+  <section id="home" class="hero-section relative overflow-hidden">
     <canvas id="particles" class="absolute inset-0 w-full h-full"></canvas>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black"></div>
-    <div class="relative z-10 text-center px-4 sm:px-6" id="heroContent">
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight" data-i18n="hero.title">
-        Creating Worlds. <span class="text-purpleNeo">Inspiring Players.</span>
-      </h1>
-      <p class="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto" data-i18n="hero.subtitle">
-        Brazilian game studio crafting immersive experiences with technology, creativity and passion.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="#games" class="btn-primary shadow-lg" data-i18n="hero.ctaGames">Explore Games</a>
-        <a href="#plugins" class="btn-outline" data-i18n="hero.ctaPlugins">See Plugins</a>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-container px-4 sm:px-6" id="heroContent">
+      <div class="hero-copy">
+        <span class="hero-kicker">From indie passion to global stages</span>
+        <h1 class="hero-title" data-i18n="hero.title">
+          Creating Worlds. <span class="hero-title__accent">Inspiring Players.</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          Brazilian game studio crafting immersive experiences with technology, creativity and passion.
+        </p>
+        <div class="hero-actions">
+          <a href="#games" class="btn-primary shadow-lg" data-i18n="hero.ctaGames">Explore Games</a>
+          <a href="#plugins" class="btn-outline" data-i18n="hero.ctaPlugins">See Plugins</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio-flair section-gradient" aria-label="Neo Soft studio highlights">
+    <div class="studio-flair__container">
+      <header class="studio-flair__header">
+        <span class="studio-flair__kicker">Neo Soft DNA</span>
+        <h2 class="studio-flair__title">Immersive universes energized by Neo Soft's signature storytelling.</h2>
+        <p class="studio-flair__subtitle">We amplify our worlds with cinematic pacing, rich lore, and visual drama — all anchored by accessible gameplay systems.</p>
+      </header>
+      <div class="studio-flair__grid">
+        <article class="flair-card">
+          <h3 class="flair-card__title">Cinematic Worlds</h3>
+          <p class="flair-card__copy">Layered lighting, diagonal compositions, and atmospheric depth guide players through unforgettable journeys.</p>
+        </article>
+        <article class="flair-card">
+          <h3 class="flair-card__title">Living Communities</h3>
+          <p class="flair-card__copy">We foster thriving fan hubs with regular updates, developer diaries, and community-driven events.</p>
+        </article>
+        <article class="flair-card">
+          <h3 class="flair-card__title">Fearless Innovation</h3>
+          <p class="flair-card__copy">Proprietary Unreal Engine tools give us the edge to prototype fast and push the boundaries of gameplay.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- Games -->
-  <section id="games" class="py-20 sm:py-24 bg-black">
+  <section id="games" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" data-i18n="games.title">Our Games</h2>
       <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
@@ -173,7 +201,7 @@
             <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Bananapocalypse</h3>
-              <p class="card3d-desc" data-i18n="games.banana">A humorous survival adventure where mutant bananas rule the world — can you fight the fruit uprising?</p>
+              <p class="card3d-desc" data-i18n="games.banana">Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.</p>
               <!-- <a href="#" class="card3d-link">Learn More →</a> -->
             </div>
           </div>
@@ -187,7 +215,7 @@
   </section>
 
   <!-- Plugins -->
-  <section id="plugins" class="relative py-20 sm:py-24 bg-[#0b0114]">
+  <section id="plugins" class="section-gradient relative py-20 sm:py-24 bg-[#0b0114]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="flex items-end justify-between mb-6">
         <h2 class="text-2xl sm:text-3xl font-bold" data-i18n="plugins.title">Our Plugins</h2>
@@ -221,7 +249,7 @@
   </section>
 
   <!-- News -->
-  <section id="news" class="py-20 sm:py-24 bg-black">
+  <section id="news" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10" data-i18n="news.title">Latest News</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -240,7 +268,7 @@
   </section>
 
   <!-- Careers -->
-  <section id="careers" class="py-20 sm:py-24 bg-gradient-to-b from-[#0b0114] to-black">
+  <section id="careers" class="section-gradient py-20 sm:py-24 bg-gradient-to-b from-[#0b0114] to-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-5 gap-8 md:gap-10 items-center">
       <div class="md:col-span-3">
         <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="careers.title">Careers</h2>
@@ -263,7 +291,7 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 sm:py-24 bg-black">
+  <section id="about" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
       <div>
         <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="about.title">About Neo Soft</h2>
@@ -278,7 +306,7 @@
   </section>
 
   <!-- Team -->
-  <section id="team" class="py-20 sm:py-24 bg-[#0b0114]">
+  <section id="team" class="section-gradient py-20 sm:py-24 bg-[#0b0114]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold text-purple-200 mb-8 sm:mb-10" data-i18n="team.title">Our Team</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -289,11 +317,11 @@
                 <img src="img/victor.jpg" alt="Portrait of Victor Henrique" />
               </div>
               <h3 class="team-name">Victor Henrique</h3>
-              <p class="team-role">Founder &amp; Senior Developer</p>
+              <p class="team-role">Founder, Game Director &amp; Production Director</p>
             </div>
             <div class="team-card-face team-card-back">
               <h3 class="team-name">Victor Henrique</h3>
-              <p class="team-role">Founder &amp; Senior Developer</p>
+              <p class="team-role">Founder, Game Director &amp; Production Director</p>
               <p class="team-bio" data-i18n="team.victor.bio">Leads Neo Soft’s creative direction and builds Unreal Engine experiences, balancing gameplay, tools, and storytelling.</p>
             </div>
           </div>
@@ -305,11 +333,11 @@
                 <img src="img/hiury.jpg" alt="Portrait of Hiury Francisco" />
               </div>
               <h3 class="team-name">Hiury Francisco</h3>
-              <p class="team-role">Video Editor &amp; Production Lead</p>
+              <p class="team-role">Co-Founder, Video Editor &amp; Production Lead</p>
             </div>
             <div class="team-card-face team-card-back">
               <h3 class="team-name">Hiury Francisco</h3>
-              <p class="team-role">Video Editor &amp; Production Lead</p>
+              <p class="team-role">Co-Founder, Video Editor &amp; Production Lead</p>
               <p class="team-bio" data-i18n="team.hiury.bio">Transforms game footage into cinematic trailers and coordinates marketing assets that capture each project’s energy.</p>
             </div>
           </div>
@@ -321,11 +349,11 @@
                 <img src="img/josegabriel.jpg" alt="Portrait of José Gabriel" />
               </div>
               <h3 class="team-name">José Gabriel</h3>
-              <p class="team-role">Programmer</p>
+              <p class="team-role">Lead Developer &amp; Co-Founder</p>
             </div>
             <div class="team-card-face team-card-back">
               <h3 class="team-name">José Gabriel</h3>
-              <p class="team-role">Programmer</p>
+              <p class="team-role">Lead Developer &amp; Co-Founder</p>
               <p class="team-bio" data-i18n="team.jose.bio">Builds gameplay systems and optimizes performance so our Unreal projects feel smooth, responsive, and alive.</p>
             </div>
           </div>
@@ -367,7 +395,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 sm:py-24 bg-black">
+  <section id="contact" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold mb-6" data-i18n="contact.title">Contact Us</h2>
       <p class="text-white/70 mb-8 max-w-2xl" data-i18n="contact.copy">Want to collaborate, request services, or share feedback? We also work as service providers — reach out for a quote and we’ll get back to you.</p>
@@ -387,32 +415,32 @@
         <h3 class="text-lg font-semibold text-purple-200 mb-2" data-i18n="contact.socialTitle">Connect with Neo Soft</h3>
         <p class="text-white/70 mb-4 max-w-2xl" data-i18n="contact.socialCopy">Follow our latest updates and behind-the-scenes moments.</p>
         <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          <a href="https://www.instagram.com/neeeosoft/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full" aria-label="Open Neo Soft on Instagram" data-i18n-aria-label="contact.instagramAria">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IG</span>
-            <div>
-              <span class="block text-sm font-semibold text-white" data-i18n="contact.socialInstagram">Instagram @neeeosoft</span>
-              <span class="block text-xs text-white/50">instagram.com/neeeosoft</span>
+          <a href="https://www.instagram.com/neeeosoft/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Open Neo Soft on Instagram" data-i18n-aria-label="contact.instagramAria">
+            <span class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IG</span>
+            <div class="min-w-0">
+              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialInstagram">Instagram @neeeosoft</span>
+              <span class="block text-xs text-white/50 break-words">instagram.com/neeeosoft</span>
             </div>
           </a>
-          <a href="https://www.linkedin.com/company/neeeosoft/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full" aria-label="Open Neo Soft on LinkedIn" data-i18n-aria-label="contact.linkedinAria">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IN</span>
-            <div>
-              <span class="block text-sm font-semibold text-white" data-i18n="contact.socialLinkedIn">LinkedIn / Neo Soft</span>
-              <span class="block text-xs text-white/50">linkedin.com/company/neeeosoft</span>
+          <a href="https://www.linkedin.com/company/neeeosoft/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Open Neo Soft on LinkedIn" data-i18n-aria-label="contact.linkedinAria">
+            <span class="social-pill inline-flex h-9 w-9 aspect-square items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IN</span>
+            <div class="min-w-0">
+              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialLinkedIn">LinkedIn / Neo Soft</span>
+              <span class="block text-xs text-white/50 break-words">linkedin.com/company/neeeosoft</span>
             </div>
           </a>
-          <a href="https://discord.gg/HA2CBfdCFT" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full" aria-label="Join the Neo Soft Discord server" data-i18n-aria-label="contact.discordAria">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">DC</span>
-            <div>
-              <span class="block text-sm font-semibold text-white" data-i18n="contact.socialDiscord">Discord / Neo Soft</span>
-              <span class="block text-xs text-white/50">discord.gg/HA2CBfdCFT</span>
+          <a href="https://discord.gg/HA2CBfdCFT" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Join the Neo Soft Discord server" data-i18n-aria-label="contact.discordAria">
+            <span class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">DC</span>
+            <div class="min-w-0">
+              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialDiscord">Discord / Neo Soft</span>
+              <span class="block text-xs text-white/50 break-words">discord.gg/HA2CBfdCFT</span>
             </div>
           </a>
-          <a href="https://www.youtube.com/@NeoSoft-m2e" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full" aria-label="Open Neo Soft on YouTube" data-i18n-aria-label="contact.youtubeAria">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">YT</span>
-            <div>
-              <span class="block text-sm font-semibold text-white" data-i18n="contact.socialYouTube">YouTube @NeoSoft-m2e</span>
-              <span class="block text-xs text-white/50">youtube.com/@NeoSoft-m2e</span>
+          <a href="https://www.youtube.com/@NeoSoft-m2e" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Open Neo Soft on YouTube" data-i18n-aria-label="contact.youtubeAria">
+            <span class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">YT</span>
+            <div class="min-w-0">
+              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialYouTube">YouTube @NeoSoft-m2e</span>
+              <span class="block text-xs text-white/50 break-words">youtube.com/@NeoSoft-m2e</span>
             </div>
           </a>
         </div>
@@ -426,7 +454,7 @@
   <!-- Footer -->
   <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
-      <p data-i18n="footer.copy">© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
+      <p data-i18n="footer.copy">© 2025 Neo Soft. Founded by Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
       <div class="flex flex-wrap gap-4">
         <a class="hover:text-purple-300" href="#games" data-i18n="nav.games">Games</a>
         <a class="hover:text-purple-300" href="#plugins" data-i18n="nav.plugins">Plugins</a>
