@@ -549,7 +549,7 @@
       let cursorY = 0;
 
       const updateCursorTransform = () => {
-        const baseScale = 1.15;
+        const baseScale = 0.9;
         const scale = cursor.classList.contains('cursor-press')
           ? baseScale * 0.85
           : cursor.classList.contains('cursor-hover')
