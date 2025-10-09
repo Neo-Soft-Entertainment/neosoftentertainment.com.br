@@ -98,7 +98,7 @@
       'contact.discordAria': 'Open Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Open Neo Soft on YouTube',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Founded by Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft. Founded by Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     pt: {
       'nav.games': 'Jogos',
@@ -177,7 +177,7 @@
       'contact.discordAria': 'Abrir o Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft no YouTube',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Fundada por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft. Fundada por Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     es: {
       'nav.games': 'Juegos',
@@ -256,7 +256,7 @@
       'contact.discordAria': 'Abrir Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft en YouTube',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Fundado por Victor Henrique Mendonça Rodrigues. • <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft. Fundado por Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     zh: {
       'nav.games': '游戏',
@@ -335,7 +335,7 @@
       'contact.discordAria': '打开 Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': '在 YouTube 打开 Neo Soft',
-      'footer.copy': '© <span id="year"></span> Neo Soft. 由 Victor Henrique Mendonça Rodrigues 创立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft。由 Victor 创立。- <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     },
     ja: {
       'nav.games': 'ゲーム',
@@ -414,7 +414,7 @@
       'contact.discordAria': 'Discord / Neo Soft を開く',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'YouTube で Neo Soft を開く',
-      'footer.copy': '© <span id="year"></span> Neo Soft. Victor Henrique Mendonça Rodrigues により設立。• <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2025 Neo Soft。Victor により設立。- <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
     }
   };
 
@@ -464,17 +464,10 @@
       const value = translations[lang]?.[key];
       if (value !== undefined) el.setAttribute('aria-label', value);
     });
-    updateYear();
     refreshMuteBtn();
   };
 
-  const updateYear = () => {
-    const span = $('#year');
-    if (span) span.textContent = new Date().getFullYear();
-  };
-
   applyTranslations(currentLang);
-  updateYear();
 
   if (sfxToggle) sfxToggle.checked = !muted;
 
