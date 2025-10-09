@@ -18,6 +18,7 @@
   const languageSelectMobile = $('#languageSelectMobile');
   const contactForm = $('#contactForm');
   const formFeedback = $('#formFeedback');
+  const formError = $('#formError');
   const sendBtn = $('#sendBtn');
 
   const translations = {
@@ -86,6 +87,7 @@
       'contact.message': 'Your message',
       'contact.send': 'Send Message',
       'contact.sending': 'Sending...',
+      'contact.invalidEmail': 'Please enter a valid email address.',
       'contact.success': 'Message sent! We’ll get back to you soon.',
       'contact.error': 'Something went wrong. Please try again later.',
       'contact.socialTitle': 'Connect with Neo Soft',
@@ -165,6 +167,7 @@
       'contact.message': 'Sua mensagem',
       'contact.send': 'Enviar mensagem',
       'contact.sending': 'Enviando...',
+      'contact.invalidEmail': 'Por favor, insira um email válido.',
       'contact.success': 'Mensagem enviada! Responderemos em breve.',
       'contact.error': 'Algo deu errado. Tente novamente mais tarde.',
       'contact.socialTitle': 'Conecte-se com a Neo Soft',
@@ -244,6 +247,7 @@
       'contact.message': 'Tu mensaje',
       'contact.send': 'Enviar mensaje',
       'contact.sending': 'Enviando...',
+      'contact.invalidEmail': 'Por favor, ingresa un correo electrónico válido.',
       'contact.success': '¡Mensaje enviado! Nos pondremos en contacto pronto.',
       'contact.error': 'Algo salió mal. Inténtalo de nuevo más tarde.',
       'contact.socialTitle': 'Conéctate con Neo Soft',
@@ -323,6 +327,7 @@
       'contact.message': '您的留言',
       'contact.send': '发送信息',
       'contact.sending': '正在发送…',
+      'contact.invalidEmail': '请输入有效的电子邮件地址。',
       'contact.success': '信息已发送！我们会尽快回复。',
       'contact.error': '出现问题。请稍后再试。',
       'contact.socialTitle': '关注 Neo Soft',
@@ -402,6 +407,7 @@
       'contact.message': 'メッセージ',
       'contact.send': 'メッセージを送信',
       'contact.sending': '送信中…',
+      'contact.invalidEmail': '有効なメールアドレスを入力してください。',
       'contact.success': 'メッセージを送信しました！追ってご連絡いたします。',
       'contact.error': '問題が発生しました。後でもう一度お試しください。',
       'contact.socialTitle': 'Neo Soft とつながる',
@@ -464,6 +470,9 @@
       const value = translations[lang]?.[key];
       if (value !== undefined) el.setAttribute('aria-label', value);
     });
+    if (formError && !formError.classList.contains('hidden') && formError.dataset.errorKey){
+      formError.textContent = t(formError.dataset.errorKey);
+    }
     refreshMuteBtn();
   };
 
@@ -678,28 +687,84 @@
   // EmailJS form
   contactForm && contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const btn = sendBtn;
+    const btn = sendBtn || this.querySelector('button[type="submit"]');
+    if (!btn) return;
     const original = btn.innerHTML;
-    btn.disabled = true;
-    btn.classList.add('opacity-60','cursor-not-allowed');
-    btn.innerHTML = `<span class="loader mr-2"></span> ${t('contact.sending')}`;
+    const disableBtn = () => {
+      btn.disabled = true;
+      btn.classList.add('opacity-60','cursor-not-allowed');
+      btn.innerHTML = `<span class="loader mr-2"></span> ${t('contact.sending')}`;
+    };
+    const restoreBtn = () => {
+      btn.disabled = false;
+      btn.classList.remove('opacity-60','cursor-not-allowed');
+      btn.innerHTML = original;
+    };
 
-    emailjs.sendForm('service_47lqkyt','template_3yzo1bv', this)
-      .then(function(res){
+    const showError = (key) => {
+      if (!formError) return;
+      formError.textContent = t(key);
+      formError.dataset.errorKey = key;
+      formError.classList.remove('hidden');
+    };
+
+    const clearError = () => {
+      if (!formError) return;
+      formError.classList.add('hidden');
+      delete formError.dataset.errorKey;
+    };
+
+    const formData = new FormData(contactForm);
+    const fromName = (formData.get('from_name') || '').toString().trim();
+    const fromMail = (formData.get('from_mail') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(fromMail)){
+      showError('contact.invalidEmail');
+      restoreBtn();
+      return;
+    }
+
+    clearError();
+    disableBtn();
+
+    const serviceId = 'service_47lqkyt';
+    const contactTemplateId = 'template_3yzo1bv';
+    const autoReplyTemplateId = 'template_contact_ack';
+
+    const templateParams = {
+      from_name: fromName,
+      from_mail: fromMail,
+      message,
+      reply_to: fromMail
+    };
+
+    const acknowledgementParams = {
+      to_name: fromName || 'Friend',
+      to_email: fromMail,
+      from_name: 'Neo Soft',
+      reply_to: 'contact@neeosoft.com.br',
+      message: 'Recebemos sua mensagem e responderemos em breve. We received your message and will get back to you shortly.'
+    };
+
+    emailjs.send(serviceId, contactTemplateId, templateParams)
+      .then((res) => {
         console.log('Email sent', res.status);
         blip(540, 0.1, 'square');
         if (formFeedback) formFeedback.classList.remove('hidden');
-        btn.disabled = false;
-        btn.classList.remove('opacity-60','cursor-not-allowed');
-        btn.innerHTML = original;
         contactForm.reset();
         setTimeout(()=> formFeedback && formFeedback.classList.add('hidden'), 3000);
-      }, function(err){
+        return emailjs.send(serviceId, autoReplyTemplateId, acknowledgementParams).catch(err => {
+          console.warn('Auto-reply failed', err);
+        });
+      })
+      .catch((err) => {
         console.error('Email error', err);
-        alert(t('contact.error'));
-        btn.disabled = false;
-        btn.classList.remove('opacity-60','cursor-not-allowed');
-        btn.innerHTML = original;
+        showError('contact.error');
+      })
+      .finally(() => {
+        restoreBtn();
       });
   });
 
