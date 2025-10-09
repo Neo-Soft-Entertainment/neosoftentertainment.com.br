@@ -48,7 +48,7 @@
 <body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
 
   <!-- Custom Cursor -->
-  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-4 w-4 rounded-full border border-purple-400/60 shadow-glow" aria-hidden="true"></div>
+  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm" aria-hidden="true"></div>
 
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
@@ -59,14 +59,14 @@
       </a>
 
       <!-- Desktop nav -->
-      <nav class="hidden md:flex gap-4 lg:gap-6 text-sm font-medium" aria-label="Primary">
-        <a class="hover:text-purple-300" href="#games" data-i18n="nav.games">Games</a>
-        <a class="hover:text-purple-300" href="#plugins" data-i18n="nav.plugins">Plugins</a>
-        <a class="hover:text-purple-300" href="#news" data-i18n="nav.news">News</a>
-        <a class="hover:text-purple-300" href="#careers" data-i18n="nav.careers">Careers</a>
-        <a class="hover:text-purple-300" href="#about" data-i18n="nav.about">About</a>
-        <a class="hover:text-purple-300" href="#team" data-i18n="nav.team">Team</a>
-        <a class="hover:text-purple-300" href="#contact" data-i18n="nav.contact">Contact</a>
+      <nav class="hidden md:flex gap-3 lg:gap-5 text-sm font-medium" aria-label="Primary">
+        <a class="nav-link" href="#games" data-i18n="nav.games">Games</a>
+        <a class="nav-link" href="#plugins" data-i18n="nav.plugins">Plugins</a>
+        <a class="nav-link" href="#news" data-i18n="nav.news">News</a>
+        <a class="nav-link" href="#careers" data-i18n="nav.careers">Careers</a>
+        <a class="nav-link" href="#about" data-i18n="nav.about">About</a>
+        <a class="nav-link" href="#team" data-i18n="nav.team">Team</a>
+        <a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <!-- Mobile controls -->
@@ -145,22 +145,22 @@
   <section class="studio-flair section-gradient" aria-label="Neo Soft studio highlights">
     <div class="studio-flair__container">
       <header class="studio-flair__header">
-        <span class="studio-flair__kicker">Neo Soft DNA</span>
-        <h2 class="studio-flair__title">Immersive universes energized by Neo Soft's signature storytelling.</h2>
-        <p class="studio-flair__subtitle">We amplify our worlds with cinematic pacing, rich lore, and visual drama — all anchored by accessible gameplay systems.</p>
+        <span class="studio-flair__kicker" data-i18n="flair.kicker">Neo Soft DNA</span>
+        <h2 class="studio-flair__title" data-i18n="flair.title">Immersive universes energized by Neo Soft's signature storytelling.</h2>
+        <p class="studio-flair__subtitle" data-i18n="flair.subtitle">We amplify our worlds with cinematic pacing, rich lore, and visual drama — all anchored by accessible gameplay systems.</p>
       </header>
       <div class="studio-flair__grid">
         <article class="flair-card">
-          <h3 class="flair-card__title">Cinematic Worlds</h3>
-          <p class="flair-card__copy">Layered lighting, diagonal compositions, and atmospheric depth guide players through unforgettable journeys.</p>
+          <h3 class="flair-card__title" data-i18n="flair.card1.title">Cinematic Worlds</h3>
+          <p class="flair-card__copy" data-i18n="flair.card1.copy">Layered lighting, diagonal compositions, and atmospheric depth guide players through unforgettable journeys.</p>
         </article>
         <article class="flair-card">
-          <h3 class="flair-card__title">Living Communities</h3>
-          <p class="flair-card__copy">We foster thriving fan hubs with regular updates, developer diaries, and community-driven events.</p>
+          <h3 class="flair-card__title" data-i18n="flair.card2.title">Living Communities</h3>
+          <p class="flair-card__copy" data-i18n="flair.card2.copy">We foster thriving fan hubs with regular updates, developer diaries, and community-driven events.</p>
         </article>
         <article class="flair-card">
-          <h3 class="flair-card__title">Fearless Innovation</h3>
-          <p class="flair-card__copy">Proprietary Unreal Engine tools give us the edge to prototype fast and push the boundaries of gameplay.</p>
+          <h3 class="flair-card__title" data-i18n="flair.card3.title">Fearless Innovation</h3>
+          <p class="flair-card__copy" data-i18n="flair.card3.copy">Proprietary Unreal Engine tools give us the edge to prototype fast and push the boundaries of gameplay.</p>
         </article>
       </div>
     </div>

@@ -38,6 +38,15 @@
       'hero.subtitle': 'Brazilian game studio crafting immersive experiences with technology, creativity and passion.',
       'hero.ctaGames': 'Explore Games',
       'hero.ctaPlugins': 'See Plugins',
+      'flair.kicker': 'Neo Soft DNA',
+      'flair.title': 'Immersive universes energized by Neo Soft’s signature storytelling.',
+      'flair.subtitle': 'We amplify our worlds with cinematic pacing, rich lore, and visual drama — all anchored by accessible gameplay systems.',
+      'flair.card1.title': 'Cinematic Worlds',
+      'flair.card1.copy': 'Layered lighting, diagonal compositions, and atmospheric depth guide players through unforgettable journeys.',
+      'flair.card2.title': 'Living Communities',
+      'flair.card2.copy': 'We foster thriving fan hubs with regular updates, developer diaries, and community-driven events.',
+      'flair.card3.title': 'Fearless Innovation',
+      'flair.card3.copy': 'Proprietary Unreal Engine tools give us the edge to prototype fast and push the boundaries of gameplay.',
       'games.title': 'Our Games',
       'games.subtitle': 'Worlds built with heart and cutting-edge tech. Drag to explore.',
       'games.frontline': 'An immersive tactical shooter combining realism, intensity, and storytelling — coming soon to Steam. Wishlist now.',
@@ -118,6 +127,15 @@
       'hero.subtitle': 'Estúdio brasileiro de jogos criando experiências imersivas com tecnologia, criatividade e paixão.',
       'hero.ctaGames': 'Explorar jogos',
       'hero.ctaPlugins': 'Ver plugins',
+      'flair.kicker': 'DNA Neo Soft',
+      'flair.title': 'Universos imersivos energizados pela narrativa exclusiva da Neo Soft.',
+      'flair.subtitle': 'Amplificamos nossos mundos com ritmo cinematográfico, lore rico e drama visual — tudo ancorado em sistemas de gameplay acessíveis.',
+      'flair.card1.title': 'Mundos Cinematográficos',
+      'flair.card1.copy': 'Iluminação em camadas, composições diagonais e profundidade atmosférica guiam os jogadores por jornadas inesquecíveis.',
+      'flair.card2.title': 'Comunidades Vivas',
+      'flair.card2.copy': 'Cultivamos hubs de fãs vibrantes com atualizações frequentes, diários de desenvolvimento e eventos guiados pela comunidade.',
+      'flair.card3.title': 'Inovação Destemida',
+      'flair.card3.copy': 'Ferramentas proprietárias em Unreal Engine nos dão agilidade para prototipar rápido e expandir os limites do gameplay.',
       'games.title': 'Nossos Jogos',
       'games.subtitle': 'Mundos construídos com coração e tecnologia de ponta. Arraste para explorar.',
       'games.frontline': 'Um shooter tático imersivo que combina realismo, intensidade e narrativa — em breve na Steam. Adicione à lista de desejos.',
@@ -198,6 +216,15 @@
       'hero.subtitle': 'Estudio brasileño de videojuegos que crea experiencias inmersivas con tecnología, creatividad y pasión.',
       'hero.ctaGames': 'Explorar juegos',
       'hero.ctaPlugins': 'Ver plugins',
+      'flair.kicker': 'ADN Neo Soft',
+      'flair.title': 'Universos inmersivos impulsados por la narrativa distintiva de Neo Soft.',
+      'flair.subtitle': 'Amplificamos nuestros mundos con ritmo cinematográfico, rica mitología y drama visual — todo anclado en sistemas de juego accesibles.',
+      'flair.card1.title': 'Mundos Cinematográficos',
+      'flair.card1.copy': 'Iluminación en capas, composiciones diagonales y profundidad atmosférica guían a los jugadores a través de viajes inolvidables.',
+      'flair.card2.title': 'Comunidades Vivas',
+      'flair.card2.copy': 'Fomentamos comunidades de fans vibrantes con actualizaciones constantes, diarios de desarrollo y eventos impulsados por la comunidad.',
+      'flair.card3.title': 'Innovación Sin Miedo',
+      'flair.card3.copy': 'Herramientas propietarias en Unreal Engine nos permiten prototipar rápido y empujar los límites del gameplay.',
       'games.title': 'Nuestros Juegos',
       'games.subtitle': 'Mundos construidos con corazón y tecnología de punta. Arrastra para explorar.',
       'games.frontline': 'Un shooter táctico inmersivo que combina realismo, intensidad y narrativa — muy pronto en Steam. Agrégalo a tu lista de deseados.',
@@ -278,6 +305,15 @@
       'hero.subtitle': '巴西游戏工作室，以技术、创意与热情打造沉浸式体验。',
       'hero.ctaGames': '探索游戏',
       'hero.ctaPlugins': '查看插件',
+      'flair.kicker': 'Neo Soft 基因',
+      'flair.title': '沉浸式宇宙由 Neo Soft 标志性的叙事驱动。',
+      'flair.subtitle': '我们通过电影化节奏、丰富的世界观和视觉张力强化作品，同时以易上手的玩法系统为核心。',
+      'flair.card1.title': '电影级世界',
+      'flair.card1.copy': '层次分明的灯光、对角线构图与氛围深度，引领玩家踏上难忘旅程。',
+      'flair.card2.title': '活力社群',
+      'flair.card2.copy': '通过定期更新、开发日志和社区驱动的活动，我们培育蓬勃的粉丝基地。',
+      'flair.card3.title': '无惧创新',
+      'flair.card3.copy': '自研的 Unreal Engine 工具让我们快速原型迭代，不断突破玩法边界。',
       'games.title': '我们的游戏',
       'games.subtitle': '用热忱与尖端科技构建的世界。拖动浏览。',
       'games.frontline': '一款将真实感、张力与叙事融合的沉浸式战术射击——即将登陆 Steam，立即加入愿望单。',
@@ -358,6 +394,15 @@
       'hero.subtitle': 'テクノロジー、創造性、情熱で没入型体験を生み出すブラジルのゲームスタジオ。',
       'hero.ctaGames': 'ゲームを見る',
       'hero.ctaPlugins': 'プラグインを見る',
+      'flair.kicker': 'Neo Soft DNA',
+      'flair.title': 'Neo Soft ならではの物語性が、没入型の世界を駆動する。',
+      'flair.subtitle': 'シネマティックなテンポ、豊かな世界観、視覚的なドラマを重ね、誰もが遊びやすいゲームプレイに落とし込んでいます。',
+      'flair.card1.title': 'シネマティックな世界',
+      'flair.card1.copy': '層状のライティングや対角構図、空気感のある奥行きで、忘れられない旅へプレイヤーを導きます。',
+      'flair.card2.title': '生きたコミュニティ',
+      'flair.card2.copy': '定期的なアップデート、開発者ダイアリー、コミュニティ主導のイベントでファンの拠点を育てています。',
+      'flair.card3.title': '恐れないイノベーション',
+      'flair.card3.copy': '自社の Unreal Engine ツールで素早くプロトタイプを作り、ゲームプレイの限界に挑み続けます。',
       'games.title': '私たちのゲーム',
       'games.subtitle': '情熱と最先端技術で作り上げた世界。ドラッグしてご覧ください。',
       'games.frontline': 'リアリズム、緊張感、物語性を融合させた没入型タクティカルシューター — まもなく Steam で配信予定。ウィッシュリストに登録しよう。',
@@ -504,11 +549,12 @@
       let cursorY = 0;
 
       const updateCursorTransform = () => {
+        const baseScale = 1.15;
         const scale = cursor.classList.contains('cursor-press')
-          ? 0.9
+          ? baseScale * 0.85
           : cursor.classList.contains('cursor-hover')
-            ? 1.8
-            : 1;
+            ? baseScale * 1.5
+            : baseScale;
         cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) scale(${scale})`;
       };
 
