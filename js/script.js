@@ -22,6 +22,37 @@
   const formError = $('#formError');
   const sendBtn = $('#sendBtn');
 
+  const gameCards = [
+    {
+      title: 'Frontline',
+      image: 'img/frontline.png',
+      alt: 'Frontline key art',
+      descKey: 'games.frontline',
+      link: {
+        href: 'https://store.steampowered.com/app/1772220/Frontline_New_Revolution/',
+        labelKey: 'shared.learnMore'
+      }
+    },
+    {
+      title: 'Rampage Rush',
+      image: 'img/rampagerush.jpg',
+      alt: 'Rampage Rush concept art',
+      descKey: 'games.rampage'
+    },
+    {
+      title: 'Dissociation',
+      image: 'img/dissociation.jpg',
+      alt: 'Dissociation artwork',
+      descKey: 'games.dissociation'
+    },
+    {
+      title: 'Bananapocalypse',
+      image: 'img/banapocalypse.png',
+      alt: 'Bananapocalypse artwork',
+      descKey: 'games.banana'
+    }
+  ];
+
   const translations = {
     en: {
       'nav.games': 'Games',
@@ -588,6 +619,86 @@
 
   let muted = true;
 
+  const buildGamesCarousel = () => {
+    if (!gamesTrack) return;
+    const perSlideAttr = parseInt(gamesTrack.dataset.perSlide || '3', 10);
+    const perSlide = Number.isFinite(perSlideAttr) && perSlideAttr > 0 ? perSlideAttr : 3;
+    gamesTrack.innerHTML = '';
+
+    const createGameCard = (card) => {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'card3d';
+      cardEl.dataset.card = '';
+
+      const media = document.createElement('div');
+      media.className = 'card3d-img';
+      const img = document.createElement('img');
+      img.src = card.image;
+      img.alt = card.alt || '';
+      media.appendChild(img);
+      cardEl.appendChild(media);
+
+      const body = document.createElement('div');
+      body.className = 'p-5';
+
+      const title = document.createElement('h3');
+      title.className = 'card3d-title';
+      title.textContent = card.title;
+      body.appendChild(title);
+
+      if (card.descKey){
+        const desc = document.createElement('p');
+        desc.className = 'card3d-desc';
+        desc.dataset.i18n = card.descKey;
+        desc.textContent = translations.en?.[card.descKey] || '';
+        body.appendChild(desc);
+      }
+
+      if (card.link){
+        const link = document.createElement('a');
+        link.className = 'card3d-link';
+        link.href = card.link.href;
+        if (card.link.target !== '_self'){
+          link.target = '_blank';
+          link.rel = 'noopener';
+        }
+        if (card.link.labelKey){
+          link.dataset.i18n = card.link.labelKey;
+          link.textContent = translations.en?.[card.link.labelKey] || 'Learn More →';
+        } else if (card.link.label){
+          link.textContent = card.link.label;
+        }
+        body.appendChild(link);
+      }
+
+      cardEl.appendChild(body);
+      return cardEl;
+    };
+
+    const slides = [];
+    for (let i = 0; i < gameCards.length; i += perSlide){
+      slides.push(gameCards.slice(i, i + perSlide));
+    }
+    if (!slides.length) slides.push([]);
+
+    slides.forEach((cards, index) => {
+      const slide = document.createElement('div');
+      slide.className = 'services-slide';
+      slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+      cards.forEach(card => slide.appendChild(createGameCard(card)));
+
+      const placeholdersNeeded = Math.max(0, perSlide - cards.length);
+      for (let i = 0; i < placeholdersNeeded; i++){
+        const placeholder = document.createElement('div');
+        placeholder.className = 'card3d card3d--placeholder';
+        placeholder.setAttribute('aria-hidden', 'true');
+        slide.appendChild(placeholder);
+      }
+
+      gamesTrack.appendChild(slide);
+    });
+  };
+
   const createServiceImages = () => {
     $$('[data-service-image]').forEach(slot => {
       const src = (slot.dataset.serviceImage || '').trim();
@@ -654,6 +765,7 @@
     refreshMuteBtn();
   };
 
+  buildGamesCarousel();
   createServiceImages();
   applyTranslations(currentLang);
 
@@ -847,17 +959,6 @@
     });
   }
 
-  // Carousel controls
-  const scrollByCard = (track, dir=1) => {
-    if (!track) return;
-    const card = track.querySelector('[data-card]');
-    const amount = card ? card.clientWidth + 16 : 320;
-    track.scrollBy({ left: amount * dir, behavior:'smooth' });
-    blip(dir>0 ? 720 : 480, 0.05, 'triangle');
-  };
-  $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
-  $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
-
   const setupSlider = (track) => {
     if (!track) return null;
     const slides = $$('.services-slide', track);
@@ -884,6 +985,12 @@
       }
     };
   };
+
+  const gamesSlider = setupSlider(gamesTrack);
+  if (gamesSlider){
+    $('#gamesPrev')?.addEventListener('click', () => gamesSlider.prev());
+    $('#gamesNext')?.addEventListener('click', () => gamesSlider.next());
+  }
 
   const servicesSlider = setupSlider(servicesTrack);
   if (servicesSlider){
