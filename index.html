@@ -170,54 +170,62 @@
   <section id="games" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" data-i18n="games.title">Our Games</h2>
-      <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
+      <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Use the arrows to explore.</p>
       <div class="relative">
-        <div id="gamesTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/frontline.png" alt="Frontline key art" /></div>
-            <div class="p-5">
-              <h3 class="card3d-title">Frontline</h3>
-              <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism, intensity, and storytelling — coming soon to Steam. Wishlist now.</p>
-              <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
+        <div class="carousel-slider" role="group" aria-roledescription="carousel" aria-label="Our Games" data-i18n-aria-label="games.title">
+          <div id="gamesTrack" class="carousel-track">
+            <div class="carousel-slide" aria-hidden="false">
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/frontline.png" alt="Frontline key art" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Frontline</h3>
+                  <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism, intensity, and storytelling — coming soon to Steam. Wishlist now.</p>
+                  <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
+                </div>
+              </div>
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/rampagerush.jpg" alt="Rampage Rush concept art" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Rampage Rush</h3>
+                  <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
+                  <!-- <a href="#" class="card3d-link">Learn More →</a> -->
+                </div>
+              </div>
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/dissociation.jpg" alt="Bananapocalypse artwork" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Dissociation</h3>
+                  <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
+                  <!-- <a href="#" class="card3d-link">Learn More →</a> -->
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/rampagerush.jpg" alt="Rampage Rush concept art" /></div>
-            <div class="p-5">
-              <h3 class="card3d-title">Rampage Rush</h3>
-              <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
-              <!-- <a href="#" class="card3d-link">Learn More →</a> -->
-            </div>
-          </div>
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/dissociation.jpg" alt="Bananapocalypse artwork" /></div>
-            <div class="p-5">
-              <h3 class="card3d-title">Dissociation</h3>
-              <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
-              <!-- <a href="#" class="card3d-link">Learn More →</a> -->
-            </div>
-          </div>
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
-            <div class="p-5">
-              <h3 class="card3d-title">Bananapocalypse</h3>
-              <p class="card3d-desc" data-i18n="games.banana">Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.</p>
-              <!-- <a href="#" class="card3d-link">Learn More →</a> -->
+            <div class="carousel-slide" aria-hidden="true">
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Bananapocalypse</h3>
+                  <p class="card3d-desc" data-i18n="games.banana">Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.</p>
+                  <!-- <a href="#" class="card3d-link">Learn More →</a> -->
+                </div>
+              </div>
+              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
+              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
             </div>
           </div>
         </div>
         <div class="carousel-controls">
-          <button id="gamesPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-          <button id="gamesNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
+          <button id="gamesPrev" type="button" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
+          <button id="gamesNext" type="button" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
         </div>
       </div>
       <div class="mt-12">
         <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" data-i18n="games.servicesTitle">Service Collaborations</h3>
         <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.servicesSubtitle">We also support partner studios as service providers. Here are a few of the projects we helped build.</p>
         <div class="relative">
-          <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Service Collaborations" data-i18n-aria-label="games.servicesTitle">
-            <div id="servicesTrack" class="services-track">
-              <div class="services-slide" aria-hidden="false">
+          <div class="carousel-slider" role="group" aria-roledescription="carousel" aria-label="Service Collaborations" data-i18n-aria-label="games.servicesTitle">
+            <div id="servicesTrack" class="carousel-track">
+              <div class="carousel-slide" aria-hidden="false">
                 <div class="card3d" data-card>
                   <div class="card3d-img card3d-img--services card3d-img--buns" data-service-image="img/services/buns-of-fire-placeholder.svg" data-service-alt="games.services.bunsAlt"><span data-i18n="games.services.bunsTitle">Buns Of Fire</span></div>
                   <div class="p-5">
@@ -240,7 +248,7 @@
                   </div>
                 </div>
               </div>
-              <div class="services-slide" aria-hidden="true">
+              <div class="carousel-slide" aria-hidden="true">
                 <div class="card3d" data-card>
                   <div class="card3d-img card3d-img--services card3d-img--phase"><span data-i18n="games.services.phaseTitle">Phase</span></div>
                   <div class="p-5">
@@ -263,7 +271,7 @@
                   </div>
                 </div>
               </div>
-              <div class="services-slide" aria-hidden="true">
+              <div class="carousel-slide" aria-hidden="true">
                 <div class="card3d" data-card>
                   <div class="card3d-img card3d-img--services card3d-img--secret"><span data-i18n="games.services.secret3Title">Confidential Project III</span></div>
                   <div class="p-5">
@@ -277,8 +285,8 @@
             </div>
           </div>
           <div class="carousel-controls">
-            <button id="servicesPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-            <button id="servicesNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
+            <button id="servicesPrev" type="button" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
+            <button id="servicesNext" type="button" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
           </div>
         </div>
       </div>
@@ -293,27 +301,32 @@
         <span class="text-xs text-purple-300/70" data-i18n="plugins.subtitle">Fab marketplace listings</span>
       </div>
       <div class="relative">
-        <div id="pluginsTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
-            <div class="p-5">
-              <h3 class="card3d-title">World Procedural Generator Plugin</h3>
-              <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
-              <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-            </div>
-          </div>
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.jpg" alt="Replicated Explosion Plugin cover" /></div>
-            <div class="p-5">
-              <h3 class="card3d-title">Replicated Explosion Plugin</h3>
-              <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
-              <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+        <div class="carousel-slider" role="group" aria-roledescription="carousel" aria-label="Our Plugins" data-i18n-aria-label="plugins.title">
+          <div id="pluginsTrack" class="carousel-track">
+            <div class="carousel-slide" aria-hidden="false">
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">World Procedural Generator Plugin</h3>
+                  <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
+                  <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.jpg" alt="Replicated Explosion Plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Replicated Explosion Plugin</h3>
+                  <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
+                  <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
             </div>
           </div>
         </div>
         <div class="carousel-controls">
-          <button id="pluginsPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-          <button id="pluginsNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
+          <button id="pluginsPrev" type="button" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
+          <button id="pluginsNext" type="button" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
         </div>
       </div>
     </div>
