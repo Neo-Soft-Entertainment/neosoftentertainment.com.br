@@ -135,7 +135,7 @@ section[id] {
 .card3d::after{ content:''; position:absolute; inset:-1px; border-radius:1rem; box-shadow:0 0 60px rgba(155,93,229,.25); pointer-events:none; }
 
 /* Carousel controls */
-.carousel-controls{ position:absolute; top:50%; left:-1.25rem; right:-1.25rem; display:flex; align-items:center; justify-content:space-between; pointer-events:none; transform:translateY(-50%); }
+.carousel-controls{ position:absolute; top:50%; left:-50px; right:-50px; display:flex; align-items:center; justify-content:space-between; pointer-events:none; transform:translateY(-50%); }
 .carousel-controls button{ pointer-events:auto; height:40px; width:40px; border-radius:9999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); }
 .carousel-controls button:hover{ background:rgba(255,255,255,.2); }
 
