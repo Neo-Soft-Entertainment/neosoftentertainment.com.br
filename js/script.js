@@ -857,17 +857,15 @@
   };
   $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
   $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
-  $('#pluginsPrev')?.addEventListener('click', () => scrollByCard(pluginsTrack, -1));
-  $('#pluginsNext')?.addEventListener('click', () => scrollByCard(pluginsTrack, 1));
 
-  const setupServicesSlider = () => {
-    if (!servicesTrack) return null;
-    const slides = $$('.services-slide', servicesTrack);
+  const setupSlider = (track) => {
+    if (!track) return null;
+    const slides = $$('.services-slide', track);
     if (!slides.length) return null;
     let index = 0;
     const total = slides.length;
     const update = () => {
-      servicesTrack.style.transform = `translateX(-${index * 100}%)`;
+      track.style.transform = `translateX(-${index * 100}%)`;
       slides.forEach((slide, i) => {
         slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
       });
@@ -887,10 +885,16 @@
     };
   };
 
-  const servicesSlider = setupServicesSlider();
+  const servicesSlider = setupSlider(servicesTrack);
   if (servicesSlider){
     $('#servicesPrev')?.addEventListener('click', () => servicesSlider.prev());
     $('#servicesNext')?.addEventListener('click', () => servicesSlider.next());
+  }
+
+  const pluginsSlider = setupSlider(pluginsTrack);
+  if (pluginsSlider){
+    $('#pluginsPrev')?.addEventListener('click', () => pluginsSlider.prev());
+    $('#pluginsNext')?.addEventListener('click', () => pluginsSlider.next());
   }
 
   // Hover SFX
