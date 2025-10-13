@@ -857,10 +857,41 @@
   };
   $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
   $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
-  $('#servicesPrev')?.addEventListener('click', () => scrollByCard(servicesTrack, -1));
-  $('#servicesNext')?.addEventListener('click', () => scrollByCard(servicesTrack, 1));
   $('#pluginsPrev')?.addEventListener('click', () => scrollByCard(pluginsTrack, -1));
   $('#pluginsNext')?.addEventListener('click', () => scrollByCard(pluginsTrack, 1));
+
+  const setupServicesSlider = () => {
+    if (!servicesTrack) return null;
+    const slides = $$('.services-slide', servicesTrack);
+    if (!slides.length) return null;
+    let index = 0;
+    const total = slides.length;
+    const update = () => {
+      servicesTrack.style.transform = `translateX(-${index * 100}%)`;
+      slides.forEach((slide, i) => {
+        slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      });
+    };
+    update();
+    return {
+      next(){
+        index = (index + 1) % total;
+        update();
+        blip(720, 0.05, 'triangle');
+      },
+      prev(){
+        index = (index - 1 + total) % total;
+        update();
+        blip(480, 0.05, 'triangle');
+      }
+    };
+  };
+
+  const servicesSlider = setupServicesSlider();
+  if (servicesSlider){
+    $('#servicesPrev')?.addEventListener('click', () => servicesSlider.prev());
+    $('#servicesNext')?.addEventListener('click', () => servicesSlider.next());
+  }
 
   // Hover SFX
   $$('#navbar a, #heroContent a').forEach(a => a.addEventListener('mouseenter', () => blip(800, 0.05)));
