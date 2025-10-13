@@ -118,6 +118,8 @@ section[id] {
 .card3d:hover .card3d-img--services.has-media .card3d-img-media{ transform:scale(1.03); filter:brightness(1); }
 .card3d-img--buns{ background:linear-gradient(135deg, rgba(255,89,0,.55), rgba(255,191,71,.45)); }
 .card3d-img--fatum{ background:linear-gradient(135deg, rgba(86,44,140,.6), rgba(13,12,58,.65)); }
+.card3d-img--buildy{ background:linear-gradient(135deg, rgba(58,168,96,.55), rgba(12,54,32,.65)); }
+.card3d-img--phase{ background:linear-gradient(135deg, rgba(91,149,255,.55), rgba(25,38,84,.7)); }
 .card3d-img--secret{ background:linear-gradient(135deg, rgba(148,163,184,.35), rgba(30,41,59,.6)); }
 .card3d-title{ font-weight:600; font-size:1.125rem; color:#e9d5ff; }
 .card3d-desc{ font-size:.9rem; color:rgba(255,255,255,.75); margin-top:.25rem; }
