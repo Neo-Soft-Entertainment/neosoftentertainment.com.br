@@ -953,7 +953,7 @@
     update();
   };
 
-  setupLoopedCarousel(gamesTrack, $('#gamesPrev'), $('#gamesNext'));
+  setupLoopedCarousel(gamesTrack, $('#gamesPrev'), $('#gamesNext'), '.carousel-slide');
   setupLoopedCarousel(servicesTrack, $('#servicesPrev'), $('#servicesNext'));
 
   // Hover SFX
