@@ -109,6 +109,11 @@ section[id] {
 .card3d:hover{ background:rgba(255,255,255,.08); }
 .card3d-img{ position:relative; background:rgba(0,0,0,.3); aspect-ratio:16/9; }
 .card3d-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.75; }
+.card3d-img--placeholder{ display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, rgba(155,93,229,.4), rgba(29,78,216,.45)); }
+.card3d-img--placeholder span{ font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,.78); text-align:center; padding:0 1rem; }
+.card3d-img--buns{ background:linear-gradient(135deg, rgba(255,89,0,.55), rgba(255,191,71,.45)); }
+.card3d-img--fatum{ background:linear-gradient(135deg, rgba(86,44,140,.6), rgba(13,12,58,.65)); }
+.card3d-img--secret{ background:linear-gradient(135deg, rgba(148,163,184,.35), rgba(30,41,59,.6)); }
 .card3d-title{ font-weight:600; font-size:1.125rem; color:#e9d5ff; }
 .card3d-desc{ font-size:.9rem; color:rgba(255,255,255,.75); margin-top:.25rem; }
 .card3d-link{ display:inline-block; margin-top:1rem; color:#d6bcfa; text-decoration:none; }

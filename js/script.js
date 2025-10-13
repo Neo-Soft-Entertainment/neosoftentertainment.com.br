@@ -7,6 +7,7 @@
   const cursor = $('#cursor');
   const particles = $('#particles');
   const gamesTrack = $('#gamesTrack');
+  const servicesTrack = $('#servicesTrack');
   const pluginsTrack = $('#pluginsTrack');
   const backToTop = $('#backToTop');
   const sfxToggle = $('#sfxToggle');
@@ -53,6 +54,18 @@
       'games.rampage': 'A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.',
       'games.dissociation': 'A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?',
       'games.banana': 'A co-op adventure where every player is a monkey escaping a lab, sprinting for freedom while causing monkey mischief.',
+      'games.servicesTitle': 'Service Collaborations',
+      'games.servicesSubtitle': 'We also support partner studios as service providers. Here are a few of the projects we helped build.',
+      'games.services.bunsTitle': 'Buns Of Fire',
+      'games.services.bunsDesc': 'Arcade firefighting adventure where we delivered co-op systems, responsive controls, and boss encounters.',
+      'games.services.fatumTitle': 'FATUM',
+      'games.services.fatumDesc': 'Narrative horror experience supported with cinematic scripting, lighting passes, and performance capture integration.',
+      'games.services.secret1Title': 'Confidential Project I',
+      'games.services.secret1Desc': 'In-development initiative under NDA. Our tools team is engineering core combat prototypes for the client.',
+      'games.services.secret2Title': 'Confidential Project II',
+      'games.services.secret2Desc': 'Ongoing Unreal Engine support providing optimization sprints and multiplayer stability tuning.',
+      'games.services.secret3Title': 'Confidential Project III',
+      'games.services.secret3Desc': 'Next-gen concept where we handle worldbuilding pre-production while respecting strict confidentiality.',
       'shared.learnMore': 'Learn More →',
       'shared.backToTop': 'Back to top',
       'carousel.prev': 'Previous',
@@ -142,6 +155,18 @@
       'games.rampage': 'Um brawler musical de ritmo caótico que entrega adrenalina, destruição e caos no modo multiplayer.',
       'games.dissociation': 'Um terror psicológico em que uma IA manipula cada movimento seu — sem armas, sem escape, só sobrevivência. Você sabe o que é real?',
       'games.banana': 'Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.',
+      'games.servicesTitle': 'Colaborações como Serviço',
+      'games.servicesSubtitle': 'Também apoiamos estúdios parceiros como prestadores de serviços. Confira alguns dos projetos que ajudamos a construir.',
+      'games.services.bunsTitle': 'Buns Of Fire',
+      'games.services.bunsDesc': 'Aventura arcade de bombeiros em que entregamos sistemas cooperativos, controles responsivos e batalhas contra chefes.',
+      'games.services.fatumTitle': 'FATUM',
+      'games.services.fatumDesc': 'Experiência de terror narrativo com roteirização cinemática, passes de iluminação e integração de captura de performance.',
+      'games.services.secret1Title': 'Projeto Confidencial I',
+      'games.services.secret1Desc': 'Iniciativa em desenvolvimento sob NDA. Nossa equipe de ferramentas está criando protótipos centrais de combate para o cliente.',
+      'games.services.secret2Title': 'Projeto Confidencial II',
+      'games.services.secret2Desc': 'Suporte contínuo em Unreal Engine com sprints de otimização e ajustes de estabilidade no multiplayer.',
+      'games.services.secret3Title': 'Projeto Confidencial III',
+      'games.services.secret3Desc': 'Concept de nova geração em que cuidamos da pré-produção de worldbuilding com confidencialidade total.',
       'shared.learnMore': 'Saiba mais →',
       'shared.backToTop': 'Voltar ao topo',
       'carousel.prev': 'Anterior',
@@ -231,6 +256,18 @@
       'games.rampage': 'Un brawler musical con un ritmo caótico que ofrece adrenalina pura, destrucción y caos en modo multijugador.',
       'games.dissociation': 'Un terror psicológico donde una IA manipula cada uno de tus movimientos — sin armas, sin escape, solo supervivencia. ¿Sabes qué es real?',
       'games.banana': 'Un juego cooperativo donde todos los jugadores son monos escapando de un laboratorio; todos deben correr y huir mientras hacen travesuras de mono.',
+      'games.servicesTitle': 'Colaboraciones como Servicio',
+      'games.servicesSubtitle': 'También apoyamos a estudios socios como proveedores de servicios. Estos son algunos de los proyectos en los que colaboramos.',
+      'games.services.bunsTitle': 'Buns Of Fire',
+      'games.services.bunsDesc': 'Aventura arcade de bomberos donde entregamos sistemas cooperativos, controles responsivos y batallas contra jefes.',
+      'games.services.fatumTitle': 'FATUM',
+      'games.services.fatumDesc': 'Experiencia de terror narrativo respaldada con guion cinemático, pases de iluminación e integración de captura de performance.',
+      'games.services.secret1Title': 'Proyecto Confidencial I',
+      'games.services.secret1Desc': 'Iniciativa en desarrollo bajo NDA. Nuestro equipo de herramientas crea prototipos centrales de combate para el cliente.',
+      'games.services.secret2Title': 'Proyecto Confidencial II',
+      'games.services.secret2Desc': 'Soporte continuo en Unreal Engine con sprints de optimización y ajustes de estabilidad multijugador.',
+      'games.services.secret3Title': 'Proyecto Confidencial III',
+      'games.services.secret3Desc': 'Concepto de próxima generación donde gestionamos la preproducción de worldbuilding con total confidencialidad.',
       'shared.learnMore': 'Saber más →',
       'shared.backToTop': 'Volver arriba',
       'carousel.prev': 'Anterior',
@@ -320,6 +357,18 @@
       'games.rampage': '一款节奏混乱的音乐格斗游戏，在多人模式中带来纯粹的肾上腺素、破坏与混乱。',
       'games.dissociation': '一部心理恐怖作品，AI 操控你的每一步——无武器、无逃脱，只有求生。你还能分辨真实吗？',
       'games.banana': '一款合作游戏，所有玩家都是逃离实验室的猴子，一边拼命奔逃，一边制造猴子般的恶作剧。',
+      'games.servicesTitle': '服务协作项目',
+      'games.servicesSubtitle': '我们也以服务提供商的身份支持合作工作室。以下是我们参与打造的部分项目。',
+      'games.services.bunsTitle': 'Buns Of Fire',
+      'games.services.bunsDesc': '我们负责协作系统、灵敏操控与首领战设计的街机消防冒险。',
+      'games.services.fatumTitle': 'FATUM',
+      'games.services.fatumDesc': '通过电影化脚本、灯光处理和动作捕捉整合支持的叙事向恐怖体验。',
+      'games.services.secret1Title': '保密项目 I',
+      'games.services.secret1Desc': '在保密协议下开发中，我们的工具团队为客户打造核心战斗原型。',
+      'games.services.secret2Title': '保密项目 II',
+      'games.services.secret2Desc': '持续提供 Unreal Engine 支持，开展优化冲刺并强化多人联机稳定性。',
+      'games.services.secret3Title': '保密项目 III',
+      'games.services.secret3Desc': '下一代概念项目，我们负责世界观前期制作并严格遵守保密要求。',
       'shared.learnMore': '了解更多 →',
       'shared.backToTop': '返回顶部',
       'carousel.prev': '上一项',
@@ -409,6 +458,18 @@
       'games.rampage': '混沌としたリズムで展開する音楽系乱闘ゲーム。マルチプレイで純粋な興奮と破壊、カオスを体験。',
       'games.dissociation': 'AI があなたの一挙手一投足を操るサイコホラー — 武器も逃げ場もなく、生き残りだけが目的。現実を見分けられますか？',
       'games.banana': 'すべてのプレイヤーが研究所から脱走するサルとなり、自由を求めて走りながらおサルのいたずらを繰り広げる協力ゲーム。',
+      'games.servicesTitle': '受託コラボレーション',
+      'games.servicesSubtitle': '私たちは受託開発としてパートナースタジオも支援しています。その一部のプロジェクトをご紹介します。',
+      'games.services.bunsTitle': 'Buns Of Fire',
+      'games.services.bunsDesc': '協力プレイのシステム、キビキビとした操作感、ボス戦を提供したアーケード消防アドベンチャー。',
+      'games.services.fatumTitle': 'FATUM',
+      'games.services.fatumDesc': 'シネマティックなスクリプト、ライティング調整、パフォーマンスキャプチャ統合で支援した物語ホラー体験。',
+      'games.services.secret1Title': '機密プロジェクト I',
+      'games.services.secret1Desc': 'NDA 下で進行中。ツールチームがクライアント向けにコア戦闘プロトタイプを構築。',
+      'games.services.secret2Title': '機密プロジェクト II',
+      'games.services.secret2Desc': 'Unreal Engine の継続サポートとして、最適化スプリントとマルチプレイ安定性の調整を実施。',
+      'games.services.secret3Title': '機密プロジェクト III',
+      'games.services.secret3Desc': '次世代コンセプトで、厳重な機密保持のもとワールドビルディングのプリプロを担当。',
       'shared.learnMore': 'さらに詳しく →',
       'shared.backToTop': 'トップへ戻る',
       'carousel.prev': '前へ',
@@ -723,6 +784,8 @@
   };
   $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
   $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
+  $('#servicesPrev')?.addEventListener('click', () => scrollByCard(servicesTrack, -1));
+  $('#servicesNext')?.addEventListener('click', () => scrollByCard(servicesTrack, 1));
   $('#pluginsPrev')?.addEventListener('click', () => scrollByCard(pluginsTrack, -1));
   $('#pluginsNext')?.addEventListener('click', () => scrollByCard(pluginsTrack, 1));
 
