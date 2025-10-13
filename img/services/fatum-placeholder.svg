@@ -1,0 +1,23 @@
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>FATUM placeholder art</title>
+  <desc>A cool-toned gradient background with abstract shapes and the project name centered.</desc>
+  <defs>
+    <linearGradient id="fatumGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1742" />
+      <stop offset="50%" stop-color="#422b6b" />
+      <stop offset="100%" stop-color="#0b0d29" />
+    </linearGradient>
+    <radialGradient id="fatumGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="rgba(202,176,255,0.5)" />
+      <stop offset="60%" stop-color="rgba(202,176,255,0.08)" />
+      <stop offset="100%" stop-color="rgba(202,176,255,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#fatumGradient)" />
+  <ellipse cx="200" cy="120" rx="140" ry="60" fill="rgba(255,255,255,0.06)" />
+  <ellipse cx="460" cy="260" rx="160" ry="70" fill="rgba(255,255,255,0.05)" />
+  <circle cx="320" cy="160" r="220" fill="url(#fatumGlow)" />
+  <text x="50%" y="55%" text-anchor="middle" font-family="'Montserrat', 'Arial', sans-serif" font-size="56" font-weight="700" fill="#e9d5ff">
+    FATUM
+  </text>
+</svg>

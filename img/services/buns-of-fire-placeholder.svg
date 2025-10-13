@@ -1,0 +1,28 @@
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Buns Of Fire placeholder art</title>
+  <desc>A warm gradient background with subtle sparks and the project name centered.</desc>
+  <defs>
+    <linearGradient id="fireGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7a18" />
+      <stop offset="50%" stop-color="#ff521b" />
+      <stop offset="100%" stop-color="#b31217" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+      <stop offset="60%" stop-color="rgba(255,255,255,0.08)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#fireGradient)" />
+  <circle cx="320" cy="170" r="220" fill="url(#glow)" />
+  <g fill="#ffffff" fill-opacity="0.2">
+    <circle cx="100" cy="80" r="6" />
+    <circle cx="520" cy="60" r="4" />
+    <circle cx="560" cy="220" r="5" />
+    <circle cx="180" cy="290" r="3" />
+    <circle cx="340" cy="40" r="4" />
+  </g>
+  <text x="50%" y="55%" text-anchor="middle" font-family="'Montserrat', 'Arial', sans-serif" font-size="52" font-weight="700" fill="#fff">
+    Buns Of Fire
+  </text>
+</svg>

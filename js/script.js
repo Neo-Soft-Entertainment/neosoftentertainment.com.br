@@ -58,8 +58,10 @@
       'games.servicesSubtitle': 'We also support partner studios as service providers. Here are a few of the projects we helped build.',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': 'Arcade firefighting adventure where we delivered co-op systems, responsive controls, and boss encounters.',
+      'games.services.bunsAlt': 'Key art from Buns Of Fire showing firefighters racing through flames.',
       'games.services.fatumTitle': 'FATUM',
       'games.services.fatumDesc': 'Narrative horror experience supported with cinematic scripting, lighting passes, and performance capture integration.',
+      'games.services.fatumAlt': 'Key art from FATUM highlighting a mysterious horror scene.',
       'games.services.secret1Title': 'Confidential Project I',
       'games.services.secret1Desc': 'In-development initiative under NDA. Our tools team is engineering core combat prototypes for the client.',
       'games.services.secret2Title': 'Confidential Project II',
@@ -159,8 +161,10 @@
       'games.servicesSubtitle': 'Também apoiamos estúdios parceiros como prestadores de serviços. Confira alguns dos projetos que ajudamos a construir.',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': 'Aventura arcade de bombeiros em que entregamos sistemas cooperativos, controles responsivos e batalhas contra chefes.',
+      'games.services.bunsAlt': 'Arte de Buns Of Fire com bombeiros atravessando chamas.',
       'games.services.fatumTitle': 'FATUM',
       'games.services.fatumDesc': 'Experiência de terror narrativo com roteirização cinemática, passes de iluminação e integração de captura de performance.',
+      'games.services.fatumAlt': 'Arte de FATUM destacando uma cena de terror misteriosa.',
       'games.services.secret1Title': 'Projeto Confidencial I',
       'games.services.secret1Desc': 'Iniciativa em desenvolvimento sob NDA. Nossa equipe de ferramentas está criando protótipos centrais de combate para o cliente.',
       'games.services.secret2Title': 'Projeto Confidencial II',
@@ -260,8 +264,10 @@
       'games.servicesSubtitle': 'También apoyamos a estudios socios como proveedores de servicios. Estos son algunos de los proyectos en los que colaboramos.',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': 'Aventura arcade de bomberos donde entregamos sistemas cooperativos, controles responsivos y batallas contra jefes.',
+      'games.services.bunsAlt': 'Arte de Buns Of Fire con bomberos atravesando llamas.',
       'games.services.fatumTitle': 'FATUM',
       'games.services.fatumDesc': 'Experiencia de terror narrativo respaldada con guion cinemático, pases de iluminación e integración de captura de performance.',
+      'games.services.fatumAlt': 'Arte de FATUM que destaca una escena de terror misteriosa.',
       'games.services.secret1Title': 'Proyecto Confidencial I',
       'games.services.secret1Desc': 'Iniciativa en desarrollo bajo NDA. Nuestro equipo de herramientas crea prototipos centrales de combate para el cliente.',
       'games.services.secret2Title': 'Proyecto Confidencial II',
@@ -361,8 +367,10 @@
       'games.servicesSubtitle': '我们也以服务提供商的身份支持合作工作室。以下是我们参与打造的部分项目。',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': '我们负责协作系统、灵敏操控与首领战设计的街机消防冒险。',
+      'games.services.bunsAlt': '《Buns Of Fire》宣传画，消防员穿越火焰。',
       'games.services.fatumTitle': 'FATUM',
       'games.services.fatumDesc': '通过电影化脚本、灯光处理和动作捕捉整合支持的叙事向恐怖体验。',
+      'games.services.fatumAlt': '《FATUM》宣传画，呈现神秘恐怖场景。',
       'games.services.secret1Title': '保密项目 I',
       'games.services.secret1Desc': '在保密协议下开发中，我们的工具团队为客户打造核心战斗原型。',
       'games.services.secret2Title': '保密项目 II',
@@ -462,8 +470,10 @@
       'games.servicesSubtitle': '私たちは受託開発としてパートナースタジオも支援しています。その一部のプロジェクトをご紹介します。',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': '協力プレイのシステム、キビキビとした操作感、ボス戦を提供したアーケード消防アドベンチャー。',
+      'games.services.bunsAlt': '『Buns Of Fire』のキービジュアル。炎の中を駆け抜ける消防士たち。',
       'games.services.fatumTitle': 'FATUM',
       'games.services.fatumDesc': 'シネマティックなスクリプト、ライティング調整、パフォーマンスキャプチャ統合で支援した物語ホラー体験。',
+      'games.services.fatumAlt': '『FATUM』のキービジュアル。謎めいたホラーシーンを描写。',
       'games.services.secret1Title': '機密プロジェクト I',
       'games.services.secret1Desc': 'NDA 下で進行中。ツールチームがクライアント向けにコア戦闘プロトタイプを構築。',
       'games.services.secret2Title': '機密プロジェクト II',
@@ -548,6 +558,33 @@
 
   let muted = true;
 
+  const createServiceImages = () => {
+    $$('[data-service-image]').forEach(slot => {
+      const src = (slot.dataset.serviceImage || '').trim();
+      if (!src || slot.querySelector('.card3d-img-media')) return;
+      const img = document.createElement('img');
+      img.src = src;
+      img.className = 'card3d-img-media';
+      const altKey = slot.dataset.serviceAlt;
+      if (altKey){
+        img.dataset.i18nAlt = altKey;
+        const initialAlt = translations[currentLang]?.[altKey] ?? translations.en[altKey];
+        img.alt = initialAlt || '';
+      } else {
+        img.alt = '';
+      }
+      img.addEventListener('load', () => slot.classList.add('has-media'), { once: true });
+      img.addEventListener('error', () => {
+        slot.classList.remove('has-media');
+        img.remove();
+      }, { once: true });
+      slot.prepend(img);
+      if (img.complete && img.naturalWidth > 0){
+        slot.classList.add('has-media');
+      }
+    });
+  };
+
   function refreshMuteBtn(){
     const label = muted ? t('nav.unmute') : t('nav.mute');
     if (muteBtn) muteBtn.textContent = label;
@@ -576,12 +613,18 @@
       const value = translations[lang]?.[key];
       if (value !== undefined) el.setAttribute('aria-label', value);
     });
+    $$('[data-i18n-alt]').forEach(el => {
+      const key = el.dataset.i18nAlt;
+      const value = translations[lang]?.[key];
+      if (value !== undefined) el.setAttribute('alt', value);
+    });
     if (formError && !formError.classList.contains('hidden') && formError.dataset.errorKey){
       formError.textContent = t(formError.dataset.errorKey);
     }
     refreshMuteBtn();
   };
 
+  createServiceImages();
   applyTranslations(currentLang);
 
   if (sfxToggle) sfxToggle.checked = !muted;
