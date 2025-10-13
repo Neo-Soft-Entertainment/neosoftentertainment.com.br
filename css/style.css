@@ -135,9 +135,13 @@ section[id] {
 .card3d::after{ content:''; position:absolute; inset:-1px; border-radius:1rem; box-shadow:0 0 60px rgba(155,93,229,.25); pointer-events:none; }
 
 /* Carousel controls */
-.carousel-controls{ position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none; padding:0 .25rem; }
+.carousel-controls{ position:absolute; top:50%; left:-1.25rem; right:-1.25rem; display:flex; align-items:center; justify-content:space-between; pointer-events:none; transform:translateY(-50%); }
 .carousel-controls button{ pointer-events:auto; height:40px; width:40px; border-radius:9999px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); }
 .carousel-controls button:hover{ background:rgba(255,255,255,.2); }
+
+@media (max-width:640px){
+  .carousel-controls{ top:100%; left:0; right:0; transform:none; margin-top:.75rem; justify-content:center; gap:.75rem; }
+}
 
 #gamesTrack, #pluginsTrack{ scroll-snap-type:x proximity; padding-bottom:.5rem; }
 
@@ -318,8 +322,6 @@ section[id] {
   /* Buttons full width on mobile */
   .btn-primary,
   .btn-outline{ width:100%; }
-
-  .carousel-controls{ display:none; }
 }
 
 @media (max-width: 768px){
