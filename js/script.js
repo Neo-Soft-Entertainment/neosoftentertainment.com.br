@@ -848,13 +848,27 @@
   }
 
   // Carousel controls
+  const focusableCarouselSelector = 'a, button, input, textarea, select, [tabindex]';
+  const toggleCarouselTabState = (el, active) => {
+    if (el.dataset.carouselTabindex === undefined){
+      const original = el.getAttribute('tabindex');
+      el.dataset.carouselTabindex = original === null ? '' : original;
+    }
+    if (!active){
+      el.setAttribute('tabindex', '-1');
+    } else {
+      const original = el.dataset.carouselTabindex;
+      if (original === '') el.removeAttribute('tabindex');
+      else el.setAttribute('tabindex', original);
+    }
+  };
+
   const setupPagedCarousel = (track, prevBtn, nextBtn) => {
     if (!track) return;
     const slides = $$('.carousel-slide', track);
     if (!slides.length) return;
 
     const total = slides.length;
-    const focusableSelector = 'a, button, input, textarea, select, [tabindex]';
 
     slides.forEach((slide, index) => {
       slide.setAttribute('role', 'group');
@@ -864,27 +878,13 @@
 
     let index = 0;
 
-    const restoreTabState = (el, active) => {
-      if (el.dataset.carouselTabindex === undefined){
-        const original = el.getAttribute('tabindex');
-        el.dataset.carouselTabindex = original === null ? '' : original;
-      }
-      if (!active){
-        el.setAttribute('tabindex', '-1');
-      } else {
-        const original = el.dataset.carouselTabindex;
-        if (original === '') el.removeAttribute('tabindex');
-        else el.setAttribute('tabindex', original);
-      }
-    };
-
     const update = () => {
       track.style.transform = `translateX(-${index * 100}%)`;
       slides.forEach((slide, slideIndex) => {
         const active = slideIndex === index;
         slide.setAttribute('aria-hidden', active ? 'false' : 'true');
         slide.style.pointerEvents = active ? 'auto' : 'none';
-        $$(focusableSelector, slide).forEach(el => restoreTabState(el, active));
+        $$(focusableCarouselSelector, slide).forEach(el => toggleCarouselTabState(el, active));
       });
       if (prevBtn) prevBtn.disabled = index === 0;
       if (nextBtn) nextBtn.disabled = index === total - 1;
@@ -910,41 +910,51 @@
     update();
   };
 
-  setupPagedCarousel(gamesTrack, $('#gamesPrev'), $('#gamesNext'));
   setupPagedCarousel(pluginsTrack, $('#pluginsPrev'), $('#pluginsNext'));
 
-  const setupServicesSlider = () => {
-    if (!servicesTrack) return null;
-    const slides = $$('.services-slide', servicesTrack);
-    if (!slides.length) return null;
-    let index = 0;
+  const setupLoopedCarousel = (track, prevBtn, nextBtn, slideSelector = '.services-slide') => {
+    if (!track) return;
+    const slides = $$(slideSelector, track);
+    if (!slides.length) return;
+
     const total = slides.length;
+    slides.forEach((slide, index) => {
+      slide.setAttribute('role', 'group');
+      slide.setAttribute('aria-roledescription', 'slide');
+      slide.setAttribute('aria-label', `${index + 1} / ${total}`);
+    });
+
+    let index = 0;
     const update = () => {
-      servicesTrack.style.transform = `translateX(-${index * 100}%)`;
-      slides.forEach((slide, i) => {
-        slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      track.style.transform = `translateX(-${index * 100}%)`;
+      slides.forEach((slide, slideIndex) => {
+        const active = slideIndex === index;
+        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+        slide.style.pointerEvents = active ? 'auto' : 'none';
+        $$(focusableCarouselSelector, slide).forEach(el => toggleCarouselTabState(el, active));
       });
     };
-    update();
-    return {
-      next(){
-        index = (index + 1) % total;
-        update();
-        blip(720, 0.05, 'triangle');
-      },
-      prev(){
-        index = (index - 1 + total) % total;
-        update();
-        blip(480, 0.05, 'triangle');
-      }
+
+    const goTo = (nextIndex) => {
+      index = (nextIndex + total) % total;
+      update();
     };
+
+    prevBtn && prevBtn.addEventListener('click', () => {
+      goTo(index - 1);
+      blip(480, 0.05, 'triangle');
+    });
+
+    nextBtn && nextBtn.addEventListener('click', () => {
+      goTo(index + 1);
+      blip(720, 0.05, 'triangle');
+    });
+
+    update();
   };
 
-  const servicesSlider = setupServicesSlider();
-  if (servicesSlider){
-    $('#servicesPrev')?.addEventListener('click', () => servicesSlider.prev());
-    $('#servicesNext')?.addEventListener('click', () => servicesSlider.next());
-  }
+  setupLoopedCarousel(gamesTrack, $('#gamesPrev'), $('#gamesNext'));
+  setupLoopedCarousel(servicesTrack, $('#servicesPrev'), $('#servicesNext'));
 
   // Hover SFX
   $$('#navbar a, #heroContent a').forEach(a => a.addEventListener('mouseenter', () => blip(800, 0.05)));
