@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Apocrophia key art placeholder</title>
+  <desc id="desc">Corgi king wearing sunglasses, surrounded by neon biohazard energy for the Apocrophia game.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0aff92" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#0aeb5f" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#032512" stop-opacity="1" />
+    </radialGradient>
+    <linearGradient id="fur" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4c483" />
+      <stop offset="100%" stop-color="#b46c2e" />
+    </linearGradient>
+    <linearGradient id="crown" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffd53b" />
+      <stop offset="100%" stop-color="#ff9f1c" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#060a06" />
+  <circle cx="256" cy="256" r="230" fill="url(#bg)" filter="url(#glow)" />
+  <g transform="translate(110 90)">
+    <path d="M50 60 C70 10 120 0 140 40 C160 0 210 10 230 60 C260 70 280 110 270 150 C260 210 220 250 140 260 C60 250 20 210 10 150 C0 110 20 70 50 60 Z" fill="url(#fur)" stroke="#43260f" stroke-width="6" />
+    <path d="M30 60 C20 40 20 10 40 0 C70 5 85 20 90 50" fill="#f9dca6" stroke="#43260f" stroke-width="5" />
+    <path d="M250 60 C260 40 260 10 240 0 C210 5 195 20 190 50" fill="#f9dca6" stroke="#43260f" stroke-width="5" />
+    <path d="M80 130 C110 110 170 110 200 130 L200 150 C170 180 110 180 80 150 Z" fill="#221c35" stroke="#0aff92" stroke-width="6" />
+    <path d="M90 120 C100 100 130 90 160 100 C180 110 200 130 210 150" fill="none" stroke="#0aff92" stroke-width="16" stroke-linecap="round" />
+    <path d="M210 120 C200 100 170 90 140 100 C120 110 100 130 90 150" fill="none" stroke="#0aff92" stroke-width="16" stroke-linecap="round" />
+    <path d="M70 170 C110 210 170 210 210 170" fill="#ffd7a8" stroke="#43260f" stroke-width="6" />
+    <ellipse cx="120" cy="215" rx="24" ry="18" fill="#43260f" />
+    <ellipse cx="160" cy="215" rx="24" ry="18" fill="#43260f" />
+    <path d="M98 210 C120 240 160 240 182 210" fill="#f4c483" />
+    <path d="M110 240 C130 250 150 250 170 240" fill="#f29f05" />
+    <g transform="translate(90 -35)">
+      <path d="M60 0 L85 -10 L110 0 L100 45 L70 45 Z" fill="url(#crown)" stroke="#af6b16" stroke-width="5" />
+      <circle cx="85" cy="-5" r="6" fill="#ffe066" stroke="#af6b16" stroke-width="3" />
+      <circle cx="70" cy="8" r="5" fill="#ffe066" stroke="#af6b16" stroke-width="3" />
+      <circle cx="100" cy="8" r="5" fill="#ffe066" stroke="#af6b16" stroke-width="3" />
+    </g>
+    <g transform="translate(0 200)" fill="none" stroke="#0aff92" stroke-width="8" stroke-linecap="round">
+      <path d="M30 20 C0 60 0 120 30 160" />
+      <path d="M240 20 C270 60 270 120 240 160" />
+    </g>
+  </g>
+  <g transform="translate(60 340)" fill="#f0f6ff" font-family="'Lilita One', 'Arial Black', sans-serif" font-size="58" letter-spacing="3" text-anchor="middle">
+    <text x="200" y="80" fill="#141414" opacity="0.35">APOCROPHIA</text>
+    <text x="200" y="70" fill="#f0f6ff">APOCROPHIA</text>
+  </g>
+  <g transform="translate(120 90)" fill="#0aff92" opacity="0.55" stroke="#0aff92" stroke-width="4">
+    <path d="M40 200 C-10 220 -20 260 10 300 C-20 260 60 250 40 200 Z" />
+    <path d="M312 200 C362 220 372 260 342 300 C372 260 292 250 312 200 Z" />
+    <path d="M150 40 L170 60 L150 80 L130 60 Z" />
+    <path d="M230 40 L250 60 L230 80 L210 60 Z" />
+  </g>
+</svg>
