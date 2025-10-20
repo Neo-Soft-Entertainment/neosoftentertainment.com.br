@@ -859,7 +859,34 @@
 
   const setupSlider = (track) => {
     if (!track) return null;
-    const slides = $$('.services-slide', track);
+    const limit = parseInt(track.dataset.maxPerSlide || '0', 10);
+    let slides = $$('.services-slide', track);
+    if (limit > 0){
+      const cards = [];
+      if (slides.length){
+        slides.forEach(slide => { cards.push(...$$('.card3d', slide)); });
+      } else {
+        cards.push(...$$('.card3d', track));
+      }
+      if (cards.length){
+        track.innerHTML = '';
+        for (let i = 0; i < cards.length; i += limit){
+          const slide = document.createElement('div');
+          slide.className = 'services-slide';
+          slide.setAttribute('aria-hidden', 'true');
+          const group = cards.slice(i, i + limit);
+          group.forEach(card => slide.appendChild(card));
+          for (let j = group.length; j < limit; j++){
+            const placeholder = document.createElement('div');
+            placeholder.className = 'card3d card3d--placeholder';
+            placeholder.setAttribute('aria-hidden', 'true');
+            slide.appendChild(placeholder);
+          }
+          track.appendChild(slide);
+        }
+        slides = $$('.services-slide', track);
+      }
+    }
     if (!slides.length) return null;
     let index = 0;
     const total = slides.length;
