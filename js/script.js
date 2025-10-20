@@ -49,7 +49,7 @@
       'flair.card3.title': 'Fearless Innovation',
       'flair.card3.copy': 'Proprietary Unreal Engine tools give us the edge to prototype fast and push the boundaries of gameplay.',
       'games.title': 'Our Games',
-      'games.subtitle': 'Worlds built with heart and cutting-edge tech. Drag to explore.',
+      'games.subtitle': 'Worlds built with heart and cutting-edge tech. Use the arrows to explore.',
       'games.frontline': 'An immersive tactical shooter combining realism, intensity, and storytelling — coming soon to Steam. Wishlist now.',
       'games.rampage': 'A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.',
       'games.apocrophia': 'GameJam-born roguelike FPS where you chase the zombie who stole your corgi across frantic runs.',
@@ -160,7 +160,7 @@
       'flair.card3.title': 'Inovação Destemida',
       'flair.card3.copy': 'Ferramentas proprietárias em Unreal Engine nos dão agilidade para prototipar rápido e expandir os limites do gameplay.',
       'games.title': 'Nossos Jogos',
-      'games.subtitle': 'Mundos construídos com coração e tecnologia de ponta. Arraste para explorar.',
+      'games.subtitle': 'Mundos construídos com coração e tecnologia de ponta. Use as setas para explorar.',
       'games.frontline': 'Um shooter tático imersivo que combina realismo, intensidade e narrativa — em breve na Steam. Adicione à lista de desejos.',
       'games.rampage': 'Um brawler musical de ritmo caótico que entrega adrenalina, destruição e caos no modo multiplayer.',
       'games.apocrophia': 'FPS roguelike criado em GameJam. Persiga o zumbi que levou seu cachorro em corridas caóticas.',
@@ -271,7 +271,7 @@
       'flair.card3.title': 'Innovación Sin Miedo',
       'flair.card3.copy': 'Herramientas propietarias en Unreal Engine nos permiten prototipar rápido y empujar los límites del gameplay.',
       'games.title': 'Nuestros Juegos',
-      'games.subtitle': 'Mundos construidos con corazón y tecnología de punta. Arrastra para explorar.',
+      'games.subtitle': 'Mundos construidos con corazón y tecnología de punta. Usa las flechas para explorar.',
       'games.frontline': 'Un shooter táctico inmersivo que combina realismo, intensidad y narrativa — muy pronto en Steam. Agrégalo a tu lista de deseados.',
       'games.rampage': 'Un brawler musical con un ritmo caótico que ofrece adrenalina pura, destrucción y caos en modo multijugador.',
       'games.apocrophia': 'FPS roguelike nacido en una GameJam. Persigue al zombi que robó a tu perro en partidas frenéticas.',
@@ -382,7 +382,7 @@
       'flair.card3.title': '无惧创新',
       'flair.card3.copy': '自研的 Unreal Engine 工具让我们快速原型迭代，不断突破玩法边界。',
       'games.title': '我们的游戏',
-      'games.subtitle': '用热忱与尖端科技构建的世界。拖动浏览。',
+      'games.subtitle': '用热忱与尖端科技构建的世界。使用箭头浏览。',
       'games.frontline': '一款将真实感、张力与叙事融合的沉浸式战术射击——即将登陆 Steam，立即加入愿望单。',
       'games.rampage': '一款节奏混乱的音乐格斗游戏，在多人模式中带来纯粹的肾上腺素、破坏与混乱。',
       'games.apocrophia': 'GameJam 诞生的节奏明快 Roguelike FPS，追击绑走你爱犬的僵尸，冲破混乱轮回。',
@@ -493,7 +493,7 @@
       'flair.card3.title': '恐れないイノベーション',
       'flair.card3.copy': '自社の Unreal Engine ツールで素早くプロトタイプを作り、ゲームプレイの限界に挑み続けます。',
       'games.title': '私たちのゲーム',
-      'games.subtitle': '情熱と最先端技術で作り上げた世界。ドラッグしてご覧ください。',
+      'games.subtitle': '情熱と最先端技術で作り上げた世界。矢印でご覧ください。',
       'games.frontline': 'リアリズム、緊張感、物語性を融合させた没入型タクティカルシューター — まもなく Steam で配信予定。ウィッシュリストに登録しよう。',
       'games.rampage': '混沌としたリズムで展開する音楽系乱闘ゲーム。マルチプレイで純粋な興奮と破壊、カオスを体験。',
       'games.apocrophia': 'GameJam発のハイテンポなローグライクFPS。愛犬をさらったゾンビを追い詰める混沌ランを駆け抜けろ。',
@@ -857,17 +857,6 @@
     });
   }
 
-  // Carousel controls
-  const scrollByCard = (track, dir=1) => {
-    if (!track) return;
-    const card = track.querySelector('[data-card]');
-    const amount = card ? card.clientWidth + 16 : 320;
-    track.scrollBy({ left: amount * dir, behavior:'smooth' });
-    blip(dir>0 ? 720 : 480, 0.05, 'triangle');
-  };
-  $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
-  $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
-
   const setupSlider = (track) => {
     if (!track) return null;
     const slides = $$('.services-slide', track);
@@ -894,6 +883,12 @@
       }
     };
   };
+
+  const gamesSlider = setupSlider(gamesTrack);
+  if (gamesSlider){
+    $('#gamesPrev')?.addEventListener('click', () => gamesSlider.prev());
+    $('#gamesNext')?.addEventListener('click', () => gamesSlider.next());
+  }
 
   const servicesSlider = setupSlider(servicesTrack);
   if (servicesSlider){

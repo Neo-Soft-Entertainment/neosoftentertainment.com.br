@@ -143,8 +143,6 @@ section[id] {
   .carousel-controls{ top:100%; left:0; right:0; transform:none; margin-top:.75rem; justify-content:center; gap:.75rem; }
 }
 
-#gamesTrack{ scroll-snap-type:x proximity; padding-bottom:.5rem; }
-
 /* News cards */
 .news-card{ border:1px solid rgba(255,255,255,.1); padding:1.5rem; border-radius:.75rem; background:linear-gradient(135deg, rgba(255,255,255,.05), transparent); }
 .news-date{ font-size:.75rem; color:rgba(255,255,255,.6); }
