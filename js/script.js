@@ -9,6 +9,8 @@
   const gamesTrack = $('#gamesTrack');
   const servicesTrack = $('#servicesTrack');
   const pluginsTrack = $('#pluginsTrack');
+  const pluginsPrevBtn = $('#pluginsPrev');
+  const pluginsNextBtn = $('#pluginsNext');
   const backToTop = $('#backToTop');
   const sfxToggle = $('#sfxToggle');
   const muteBtn = $('#muteBtn');
@@ -900,16 +902,87 @@
     };
   };
 
+  const setupPluginSlider = () => {
+    if (!pluginsTrack) return null;
+    const cards = $$('#pluginsTrack .card3d:not(.card3d--placeholder)');
+    if (!cards.length) return null;
+    const placeholder = $('#pluginsTrack .card3d--placeholder');
+    let index = 0;
+    const mq = window.matchMedia('(max-width: 640px)');
+
+    const updateControls = (isMobile) => {
+      const disabled = !isMobile || cards.length <= 1;
+      if (pluginsPrevBtn){
+        pluginsPrevBtn.disabled = disabled;
+        pluginsPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      }
+      if (pluginsNextBtn){
+        pluginsNextBtn.disabled = disabled;
+        pluginsNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      }
+    };
+
+    const updateDisplay = (isMobile) => {
+      if (isMobile){
+        cards.forEach((card, i) => {
+          const active = i === index;
+          card.style.display = active ? '' : 'none';
+          card.setAttribute('aria-hidden', active ? 'false' : 'true');
+        });
+        if (placeholder){
+          placeholder.style.display = 'none';
+          placeholder.setAttribute('aria-hidden', 'true');
+        }
+        pluginsTrack.style.transform = '';
+      } else {
+        cards.forEach((card) => {
+          card.style.display = '';
+          card.setAttribute('aria-hidden', 'false');
+        });
+        if (placeholder){
+          placeholder.style.display = '';
+          placeholder.removeAttribute('aria-hidden');
+        }
+      }
+    };
+
+    const applyState = (isMobile) => {
+      index = Math.min(index, cards.length - 1);
+      updateDisplay(isMobile);
+      updateControls(isMobile);
+    };
+
+    applyState(mq.matches);
+
+    const handleChange = (event) => applyState(event.matches);
+    mq.addEventListener('change', handleChange);
+
+    return {
+      next(){
+        if (!mq.matches || cards.length <= 1) return;
+        index = (index + 1) % cards.length;
+        updateDisplay(true);
+        blip(720, 0.05, 'triangle');
+      },
+      prev(){
+        if (!mq.matches || cards.length <= 1) return;
+        index = (index - 1 + cards.length) % cards.length;
+        updateDisplay(true);
+        blip(480, 0.05, 'triangle');
+      }
+    };
+  };
+
   const servicesSlider = setupSlider(servicesTrack);
   if (servicesSlider){
     $('#servicesPrev')?.addEventListener('click', () => servicesSlider.prev());
     $('#servicesNext')?.addEventListener('click', () => servicesSlider.next());
   }
 
-  const pluginsSlider = setupSlider(pluginsTrack);
+  const pluginsSlider = setupPluginSlider();
   if (pluginsSlider){
-    $('#pluginsPrev')?.addEventListener('click', () => pluginsSlider.prev());
-    $('#pluginsNext')?.addEventListener('click', () => pluginsSlider.next());
+    pluginsPrevBtn?.addEventListener('click', () => pluginsSlider.prev());
+    pluginsNextBtn?.addEventListener('click', () => pluginsSlider.next());
   }
 
   // Hover SFX
