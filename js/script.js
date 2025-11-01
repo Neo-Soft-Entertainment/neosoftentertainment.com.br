@@ -9,6 +9,8 @@
   const gamesTrack = $('#gamesTrack');
   const servicesTrack = $('#servicesTrack');
   const pluginsTrack = $('#pluginsTrack');
+  const servicesPrevBtn = $('#servicesPrev');
+  const servicesNextBtn = $('#servicesNext');
   const pluginsPrevBtn = $('#pluginsPrev');
   const pluginsNextBtn = $('#pluginsNext');
   const backToTop = $('#backToTop');
@@ -875,28 +877,127 @@
   $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
   $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
 
-  const setupSlider = (track) => {
+  const setupServicesSlider = (track) => {
     if (!track) return null;
     const slides = $$('.services-slide', track);
     if (!slides.length) return null;
-    let index = 0;
-    const total = slides.length;
-    const update = () => {
-      track.style.transform = `translateX(-${index * 100}%)`;
-      slides.forEach((slide, i) => {
-        slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
-      });
+
+    const cards = slides.flatMap((slide, slideIndex) =>
+      $$('.card3d', slide)
+        .filter(card => !card.classList.contains('card3d--placeholder'))
+        .map(card => ({ card, slide, slideIndex }))
+    );
+
+    if (!cards.length) return null;
+
+    const mq = window.matchMedia('(max-width: 640px)');
+    let isMobile = mq.matches;
+    let desktopIndex = 0;
+    let mobileIndex = 0;
+
+    const updateControls = () => {
+      const total = isMobile ? cards.length : slides.length;
+      const disabled = total <= 1;
+      if (servicesPrevBtn){
+        servicesPrevBtn.disabled = disabled;
+        servicesPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      }
+      if (servicesNextBtn){
+        servicesNextBtn.disabled = disabled;
+        servicesNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      }
     };
-    update();
+
+    const updateDesktop = () => {
+      track.style.transform = `translateX(-${desktopIndex * 100}%)`;
+      slides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === desktopIndex;
+        slide.style.display = '';
+        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        $$('.card3d', slide).forEach(card => {
+          const isPlaceholder = card.classList.contains('card3d--placeholder');
+          card.style.display = '';
+          card.setAttribute('aria-hidden', isPlaceholder ? 'true' : (isActive ? 'false' : 'true'));
+        });
+      });
+      const anchorIndex = cards.findIndex(entry => entry.slideIndex === desktopIndex);
+      if (anchorIndex !== -1){
+        mobileIndex = anchorIndex;
+      }
+    };
+
+    const updateMobile = () => {
+      if (!cards.length) return;
+      const activeEntry = cards[mobileIndex] || cards[0];
+      if (!activeEntry) return;
+      mobileIndex = cards.indexOf(activeEntry);
+      track.style.transform = '';
+      slides.forEach((slide, slideIndex) => {
+        const isActiveSlide = slideIndex === activeEntry.slideIndex;
+        slide.style.display = isActiveSlide ? '' : 'none';
+        slide.setAttribute('aria-hidden', isActiveSlide ? 'false' : 'true');
+        $$('.card3d', slide).forEach(card => {
+          const isPlaceholder = card.classList.contains('card3d--placeholder');
+          if (isPlaceholder){
+            card.style.display = 'none';
+            card.setAttribute('aria-hidden', 'true');
+            return;
+          }
+          const isActiveCard = isActiveSlide && card === activeEntry.card;
+          card.style.display = isActiveCard ? '' : 'none';
+          card.setAttribute('aria-hidden', isActiveCard ? 'false' : 'true');
+        });
+      });
+      desktopIndex = activeEntry.slideIndex;
+    };
+
+    const applyState = (matches) => {
+      isMobile = matches;
+      if (isMobile){
+        mobileIndex = Math.min(mobileIndex, cards.length - 1);
+        updateMobile();
+      } else {
+        desktopIndex = Math.min(desktopIndex, slides.length - 1);
+        updateDesktop();
+      }
+      updateControls();
+    };
+
+    applyState(isMobile);
+
+    mq.addEventListener('change', (event) => {
+      if (event.matches){
+        const anchor = cards.findIndex(entry => entry.slideIndex === desktopIndex);
+        mobileIndex = anchor !== -1 ? anchor : 0;
+      } else {
+        desktopIndex = cards[mobileIndex]?.slideIndex ?? 0;
+      }
+      applyState(event.matches);
+    });
+
     return {
       next(){
-        index = (index + 1) % total;
-        update();
+        if (isMobile){
+          if (cards.length <= 1) return;
+          mobileIndex = (mobileIndex + 1) % cards.length;
+          updateMobile();
+        } else {
+          if (slides.length <= 1) return;
+          desktopIndex = (desktopIndex + 1) % slides.length;
+          updateDesktop();
+        }
         blip(720, 0.05, 'triangle');
       },
       prev(){
-        index = (index - 1 + total) % total;
-        update();
+        if (isMobile){
+          if (cards.length <= 1) return;
+          mobileIndex = (mobileIndex - 1 + cards.length) % cards.length;
+          updateMobile();
+        } else {
+          if (slides.length <= 1) return;
+          desktopIndex = (desktopIndex - 1 + slides.length) % slides.length;
+          updateDesktop();
+        }
         blip(480, 0.05, 'triangle');
       }
     };
@@ -973,10 +1074,10 @@
     };
   };
 
-  const servicesSlider = setupSlider(servicesTrack);
+  const servicesSlider = setupServicesSlider(servicesTrack);
   if (servicesSlider){
-    $('#servicesPrev')?.addEventListener('click', () => servicesSlider.prev());
-    $('#servicesNext')?.addEventListener('click', () => servicesSlider.next());
+    servicesPrevBtn?.addEventListener('click', () => servicesSlider.prev());
+    servicesNextBtn?.addEventListener('click', () => servicesSlider.next());
   }
 
   const pluginsSlider = setupPluginSlider();
