@@ -174,7 +174,9 @@
       <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" data-i18n="games.title">Our Games</h2>
       <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
       <div class="relative">
-        <div id="gamesTrack" class="flex flex-col sm:flex-row gap-4 overflow-visible sm:overflow-x-auto no-scrollbar pb-2">
+        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Games" data-i18n-aria-label="games.title">
+          <div id="gamesTrack" class="services-track">
+            <div class="services-slide" aria-hidden="false">
           <div class="card3d" data-card>
             <div class="card3d-img"><img src="img/frontline.png" alt="Frontline key art" /></div>
             <div class="p-5">
@@ -198,9 +200,10 @@
               <p class="card3d-desc" data-i18n="games.apocrophia">GameJam-born roguelike FPS where you chase the zombie who stole your corgi across frantic runs.</p>
               <a href="https://victorhenmrod.itch.io/apocrophia" target="_blank" rel="noopener" class="card3d-link" data-i18n="games.playApocrophia">Play on itch.io →</a>
             </div>
-          </div>
-          <div class="card3d" data-card>
-            <div class="card3d-img"><img src="img/dissociation.jpg" alt="Bananapocalypse artwork" /></div>
+            </div>
+            <div class="services-slide" aria-hidden="true">
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/dissociation.jpg" alt="Dissociation artwork" /></div>
             <div class="p-5">
               <h3 class="card3d-title">Dissociation</h3>
               <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?</p>
@@ -213,6 +216,9 @@
               <h3 class="card3d-title">Bananapocalypse</h3>
               <p class="card3d-desc" data-i18n="games.banana">Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.</p>
               <!-- <a href="#" class="card3d-link">Learn More →</a> -->
+            </div>
+          </div>
+          <div class="card3d card3d--placeholder" aria-hidden="true"></div>
             </div>
           </div>
         </div>

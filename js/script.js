@@ -971,17 +971,7 @@
     });
   }
 
-  // Carousel controls
-  const scrollByCard = (track, dir=1) => {
-    if (!track) return;
-    const card = track.querySelector('[data-card]');
-    const amount = card ? card.clientWidth + 16 : 320;
-    track.scrollBy({ left: amount * dir, behavior:'smooth' });
-    blip(dir>0 ? 720 : 480, 0.05, 'triangle');
-  };
-  $('#gamesPrev')?.addEventListener('click', () => scrollByCard(gamesTrack, -1));
-  $('#gamesNext')?.addEventListener('click', () => scrollByCard(gamesTrack, 1));
-
+  // Carousel controls - Games slider setup
   const setupServicesSlider = (track) => {
     if (!track) return null;
     const slides = $$('.services-slide', track);
@@ -1183,6 +1173,14 @@
   if (servicesSlider){
     servicesPrevBtn?.addEventListener('click', () => servicesSlider.prev());
     servicesNextBtn?.addEventListener('click', () => servicesSlider.next());
+  }
+
+  const gamesSlider = setupServicesSlider(gamesTrack);
+  const gamesPrevBtn = $('#gamesPrev');
+  const gamesNextBtn = $('#gamesNext');
+  if (gamesSlider){
+    gamesPrevBtn?.addEventListener('click', () => gamesSlider.prev());
+    gamesNextBtn?.addEventListener('click', () => gamesSlider.next());
   }
 
   const pluginsSlider = setupPluginSlider();
