@@ -107,7 +107,7 @@ section[id] {
 /* Card 3D styles */
 .card3d{ position:relative; width:clamp(260px, 70vw, 340px); background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:1rem; overflow:hidden; transition:transform .15s ease, background .2s ease; scroll-snap-align:start; }
 .services-slider{ position:relative; overflow:hidden; padding-bottom:.5rem; }
-.services-track{ display:flex; transition:transform .6s ease; will-change:transform; }
+.services-track{ display:flex; justify-content:flex-start; transition:transform .6s ease; will-change:transform; }
 .services-slide{ flex:0 0 100%; box-sizing:border-box; padding:0 .25rem; display:grid; gap:1rem; }
 .services-slide .card3d{ width:100%; }
 .card3d--placeholder{ visibility:hidden; pointer-events:none; }
@@ -384,7 +384,6 @@ section[id] {
 
 @media (min-width: 1024px){
   .hero-section{ min-height:88vh; }
-  #gamesTrack{ justify-content:center; }
 }
 
 @media (prefers-reduced-motion: reduce){
