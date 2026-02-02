@@ -1,7 +1,7 @@
 // Neo Soft — interactions + EmailJS (no preloader)
-(function(){
-  const $ = (sel, root=document) => root.querySelector(sel);
-  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+(function () {
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const navbar = $('#navbar');
   const cursor = $('#cursor');
@@ -113,6 +113,7 @@
       'plugins.subtitle': 'Fab marketplace listings',
       'plugins.world': 'Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.',
       'plugins.explosion': 'Add fully replicated, network-ready explosions with customizable effects and optimized physics.',
+      'plugins.neolibrary': 'A utility library for Unreal Engine with streamlined settings, localization helpers, and optimized Blueprint-ready utilities.',
       'plugins.view': 'View Plugin →',
       'news.title': 'Latest News',
       'news.frontline.date': 'September 2025',
@@ -245,6 +246,7 @@
       'plugins.subtitle': 'Listagens na Fab',
       'plugins.world': 'Crie mundos abertos vastos e dinâmicos no Unreal Engine com terreno procedural, biomas e posicionamento de assets.',
       'plugins.explosion': 'Adicione explosões totalmente replicadas, prontas para rede, com efeitos personalizáveis e física otimizada.',
+      'plugins.neolibrary': 'Uma biblioteca de utilidades para Unreal Engine com configurações simplificadas, suporte a localização e utilitários otimizados prontos para Blueprint.',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Notícias',
       'news.frontline.date': 'Setembro de 2025',
@@ -377,6 +379,7 @@
       'plugins.subtitle': 'Listados en Fab',
       'plugins.world': 'Crea mundos abiertos vastos y dinámicos en Unreal Engine con terreno procedural, biomas y colocación de assets.',
       'plugins.explosion': 'Añade explosiones totalmente replicadas, listas para red, con efectos personalizables y física optimizada.',
+      'plugins.neolibrary': 'Una biblioteca de utilidades para Unreal Engine con ajustes simplificados, soporte de localización y utilidades optimizadas listas para Blueprint.',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Noticias',
       'news.frontline.date': 'Septiembre de 2025',
@@ -509,6 +512,7 @@
       'plugins.subtitle': 'Fab 市场上架',
       'plugins.world': '使用程序化地形、生物群落与资产布置，在 Unreal Engine 中打造广阔而动态的开放世界。',
       'plugins.explosion': '添加完全复制、即插即用的爆炸效果，可自定义视觉与优化的物理表现。',
+      'plugins.neolibrary': '面向 Unreal Engine 的实用库，提供简化设置、本地化辅助和优化的 Blueprint 即用工具。',
       'plugins.view': '查看插件 →',
       'news.title': '最新消息',
       'news.frontline.date': '2025 年 9 月',
@@ -641,6 +645,7 @@
       'plugins.subtitle': 'Fab マーケット掲載',
       'plugins.world': 'Unreal Engine でプロシージャル地形、バイオーム、アセット配置を使って広大でダイナミックなオープンワールドを構築。',
       'plugins.explosion': '完全レプリケーション対応でネットワーク運用可能な爆発を追加。カスタマイズ可能な演出と最適化された物理を搭載。',
+      'plugins.neolibrary': 'Unreal Engine 向けのユーティリティライブラリ。設定の簡素化、ローカライズ補助、最適化済みの Blueprint 対応ツールを提供。',
       'plugins.view': 'プラグインを見る →',
       'news.title': '最新ニュース',
       'news.frontline.date': '2025年9月',
@@ -715,7 +720,7 @@
       img.src = src;
       img.className = 'card3d-img-media';
       const altKey = slot.dataset.serviceAlt;
-      if (altKey){
+      if (altKey) {
         img.dataset.i18nAlt = altKey;
         const initialAlt = translations[currentLang]?.[altKey] ?? translations.en[altKey];
         img.alt = initialAlt || '';
@@ -728,13 +733,13 @@
         img.remove();
       }, { once: true });
       slot.prepend(img);
-      if (img.complete && img.naturalWidth > 0){
+      if (img.complete && img.naturalWidth > 0) {
         slot.classList.add('has-media');
       }
     });
   };
 
-  function refreshMuteBtn(){
+  function refreshMuteBtn() {
     const label = muted ? t('nav.unmute') : t('nav.mute');
     if (muteBtn) muteBtn.textContent = label;
     if (muteBtnMobile) muteBtnMobile.textContent = label;
@@ -743,7 +748,7 @@
   const applyTranslations = (lang = currentLang) => {
     if (!translations[lang]) lang = 'en';
     currentLang = lang;
-    try { localStorage.setItem(storageKey, lang); } catch (err) {}
+    try { localStorage.setItem(storageKey, lang); } catch (err) { }
     setDocumentLang(lang);
     if (languageSelect) languageSelect.value = lang;
     if (languageSelectMobile) languageSelectMobile.value = lang;
@@ -767,7 +772,7 @@
       const value = translations[lang]?.[key];
       if (value !== undefined) el.setAttribute('alt', value);
     });
-    if (formError && !formError.classList.contains('hidden') && formError.dataset.errorKey){
+    if (formError && !formError.classList.contains('hidden') && formError.dataset.errorKey) {
       formError.textContent = t(formError.dataset.errorKey);
     }
     refreshMuteBtn();
@@ -794,8 +799,8 @@
   const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
   const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
   const enableCustomCursor = hasFinePointer && !isMobileViewport;
-  if (cursor){
-    if (enableCustomCursor){
+  if (cursor) {
+    if (enableCustomCursor) {
       document.body.classList.add('custom-cursor-active');
       let cursorVisible = false;
       let cursorX = 0;
@@ -812,7 +817,7 @@
       };
 
       const reveal = () => {
-        if (!cursorVisible){
+        if (!cursorVisible) {
           cursor.style.opacity = '1';
           cursorVisible = true;
         }
@@ -869,7 +874,7 @@
   // SFX (WebAudio)
   let audioCtx = null;
   const ensureAudio = () => { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; };
-  const blip = (freq=660, time=0.06, type='sine') => {
+  const blip = (freq = 660, time = 0.06, type = 'sine') => {
     if (muted) return;
     const ctx = ensureAudio();
     const o = ctx.createOscillator();
@@ -902,14 +907,14 @@
   backToTop && backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
   // Particles
-  if (particles){
+  if (particles) {
     const ctx = particles.getContext('2d');
-    if (ctx){
+    if (ctx) {
       const DPR = Math.max(1, window.devicePixelRatio || 1);
       const P = Array.from({ length: hasFinePointer ? 80 : 50 }).map(() => ({
         x: Math.random(), y: Math.random(),
-        vx: (Math.random()-0.5)*0.0008, vy: (Math.random()-0.5)*0.0008,
-        r: 1 + Math.random()*2
+        vx: (Math.random() - 0.5) * 0.0008, vy: (Math.random() - 0.5) * 0.0008,
+        r: 1 + Math.random() * 2
       }));
       const resize = () => {
         particles.width = particles.clientWidth * DPR;
@@ -919,26 +924,26 @@
       window.addEventListener('resize', resize);
       const loop = () => {
         const w = particles.width, h = particles.height;
-        ctx.clearRect(0,0,w,h);
-        const grd = ctx.createLinearGradient(0,0,w,h);
-        grd.addColorStop(0, '#0b0114'); grd.addColorStop(1,'#12021c');
-        ctx.fillStyle = grd; ctx.fillRect(0,0,w,h);
+        ctx.clearRect(0, 0, w, h);
+        const grd = ctx.createLinearGradient(0, 0, w, h);
+        grd.addColorStop(0, '#0b0114'); grd.addColorStop(1, '#12021c');
+        ctx.fillStyle = grd; ctx.fillRect(0, 0, w, h);
         P.forEach(p => {
           p.x += p.vx; p.y += p.vy;
           if (p.x < 0 || p.x > 1) p.vx *= -1;
           if (p.y < 0 || p.y > 1) p.vy *= -1;
           const px = p.x * w, py = p.y * h;
-          ctx.beginPath(); ctx.arc(px, py, p.r*DPR, 0, Math.PI*2);
+          ctx.beginPath(); ctx.arc(px, py, p.r * DPR, 0, Math.PI * 2);
           ctx.fillStyle = 'rgba(155,93,229,0.7)'; ctx.fill();
         });
-        for (let i=0;i<P.length;i++){
-          for (let j=i+1;j<P.length;j++){
-            const a=P[i], b=P[j];
-            const dx=(a.x-b.x)*w, dy=(a.y-b.y)*h;
-            const dist=Math.hypot(dx,dy);
-            if (dist < 150){
-              ctx.strokeStyle='rgba(123,47,247,0.15)'; ctx.lineWidth=1;
-              ctx.beginPath(); ctx.moveTo(a.x*w,a.y*h); ctx.lineTo(b.x*w,b.y*h); ctx.stroke();
+        for (let i = 0; i < P.length; i++) {
+          for (let j = i + 1; j < P.length; j++) {
+            const a = P[i], b = P[j];
+            const dx = (a.x - b.x) * w, dy = (a.y - b.y) * h;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 150) {
+              ctx.strokeStyle = 'rgba(123,47,247,0.15)'; ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(a.x * w, a.y * h); ctx.lineTo(b.x * w, b.y * h); ctx.stroke();
             }
           }
         }
@@ -950,7 +955,7 @@
 
   // Card tilt
   const allowTilt = hasFinePointer && window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-  if (allowTilt){
+  if (allowTilt) {
     $$('.card3d').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -988,11 +993,11 @@
     const updateControls = () => {
       const total = isMobile ? cards.length : slides.length;
       const disabled = total <= 1;
-      if (servicesPrevBtn){
+      if (servicesPrevBtn) {
         servicesPrevBtn.disabled = disabled;
         servicesPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
-      if (servicesNextBtn){
+      if (servicesNextBtn) {
         servicesNextBtn.disabled = disabled;
         servicesNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
@@ -1011,7 +1016,7 @@
         });
       });
       const anchorIndex = cards.findIndex(entry => entry.slideIndex === desktopIndex);
-      if (anchorIndex !== -1){
+      if (anchorIndex !== -1) {
         mobileIndex = anchorIndex;
       }
     };
@@ -1028,7 +1033,7 @@
         slide.setAttribute('aria-hidden', isActiveSlide ? 'false' : 'true');
         $$('.card3d', slide).forEach(card => {
           const isPlaceholder = card.classList.contains('card3d--placeholder');
-          if (isPlaceholder){
+          if (isPlaceholder) {
             card.style.display = 'none';
             card.setAttribute('aria-hidden', 'true');
             return;
@@ -1043,7 +1048,7 @@
 
     const applyState = (matches) => {
       isMobile = matches;
-      if (isMobile){
+      if (isMobile) {
         mobileIndex = Math.min(mobileIndex, cards.length - 1);
         updateMobile();
       } else {
@@ -1056,7 +1061,7 @@
     applyState(isMobile);
 
     mq.addEventListener('change', (event) => {
-      if (event.matches){
+      if (event.matches) {
         const anchor = cards.findIndex(entry => entry.slideIndex === desktopIndex);
         mobileIndex = anchor !== -1 ? anchor : 0;
       } else {
@@ -1066,8 +1071,8 @@
     });
 
     return {
-      next(){
-        if (isMobile){
+      next() {
+        if (isMobile) {
           if (cards.length <= 1) return;
           mobileIndex = (mobileIndex + 1) % cards.length;
           updateMobile();
@@ -1078,8 +1083,8 @@
         }
         blip(720, 0.05, 'triangle');
       },
-      prev(){
-        if (isMobile){
+      prev() {
+        if (isMobile) {
           if (cards.length <= 1) return;
           mobileIndex = (mobileIndex - 1 + cards.length) % cards.length;
           updateMobile();
@@ -1103,24 +1108,24 @@
 
     const updateControls = (isMobile) => {
       const disabled = !isMobile || cards.length <= 1;
-      if (pluginsPrevBtn){
+      if (pluginsPrevBtn) {
         pluginsPrevBtn.disabled = disabled;
         pluginsPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
-      if (pluginsNextBtn){
+      if (pluginsNextBtn) {
         pluginsNextBtn.disabled = disabled;
         pluginsNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
     };
 
     const updateDisplay = (isMobile) => {
-      if (isMobile){
+      if (isMobile) {
         cards.forEach((card, i) => {
           const active = i === index;
           card.style.display = active ? '' : 'none';
           card.setAttribute('aria-hidden', active ? 'false' : 'true');
         });
-        if (placeholder){
+        if (placeholder) {
           placeholder.style.display = 'none';
           placeholder.setAttribute('aria-hidden', 'true');
         }
@@ -1130,7 +1135,7 @@
           card.style.display = '';
           card.setAttribute('aria-hidden', 'false');
         });
-        if (placeholder){
+        if (placeholder) {
           placeholder.style.display = '';
           placeholder.removeAttribute('aria-hidden');
         }
@@ -1149,13 +1154,13 @@
     mq.addEventListener('change', handleChange);
 
     return {
-      next(){
+      next() {
         if (!mq.matches || cards.length <= 1) return;
         index = (index + 1) % cards.length;
         updateDisplay(true);
         blip(720, 0.05, 'triangle');
       },
-      prev(){
+      prev() {
         if (!mq.matches || cards.length <= 1) return;
         index = (index - 1 + cards.length) % cards.length;
         updateDisplay(true);
@@ -1165,7 +1170,7 @@
   };
 
   const servicesSlider = setupServicesSlider(servicesTrack);
-  if (servicesSlider){
+  if (servicesSlider) {
     servicesPrevBtn?.addEventListener('click', () => servicesSlider.prev());
     servicesNextBtn?.addEventListener('click', () => servicesSlider.next());
   }
@@ -1173,13 +1178,13 @@
   const gamesSlider = setupServicesSlider(gamesTrack);
   const gamesPrevBtn = $('#gamesPrev');
   const gamesNextBtn = $('#gamesNext');
-  if (gamesSlider){
+  if (gamesSlider) {
     gamesPrevBtn?.addEventListener('click', () => gamesSlider.prev());
     gamesNextBtn?.addEventListener('click', () => gamesSlider.next());
   }
 
   const pluginsSlider = setupPluginSlider();
-  if (pluginsSlider){
+  if (pluginsSlider) {
     pluginsPrevBtn?.addEventListener('click', () => pluginsSlider.prev());
     pluginsNextBtn?.addEventListener('click', () => pluginsSlider.next());
   }
@@ -1189,19 +1194,19 @@
   $('#navbar') && $('#navbar').addEventListener('mouseenter', () => blip(700, 0.05));
 
   // EmailJS form
-  contactForm && contactForm.addEventListener('submit', function(e){
+  contactForm && contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const btn = sendBtn || this.querySelector('button[type="submit"]');
     if (!btn) return;
     const original = btn.innerHTML;
     const disableBtn = () => {
       btn.disabled = true;
-      btn.classList.add('opacity-60','cursor-not-allowed');
+      btn.classList.add('opacity-60', 'cursor-not-allowed');
       btn.innerHTML = `<span class="loader mr-2"></span> ${t('contact.sending')}`;
     };
     const restoreBtn = () => {
       btn.disabled = false;
-      btn.classList.remove('opacity-60','cursor-not-allowed');
+      btn.classList.remove('opacity-60', 'cursor-not-allowed');
       btn.innerHTML = original;
     };
 
@@ -1224,7 +1229,7 @@
     const message = (formData.get('message') || '').toString().trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailPattern.test(fromMail)){
+    if (!emailPattern.test(fromMail)) {
       showError('contact.invalidEmail');
       restoreBtn();
       return;
@@ -1268,7 +1273,7 @@
         blip(540, 0.1, 'square');
         if (formFeedback) formFeedback.classList.remove('hidden');
         contactForm.reset();
-        setTimeout(()=> formFeedback && formFeedback.classList.add('hidden'), 3000);
+        setTimeout(() => formFeedback && formFeedback.classList.add('hidden'), 3000);
         return emailjs.send(serviceId, autoReplyTemplateId, acknowledgementParams).catch(err => {
           console.warn('Auto-reply failed', err);
         });

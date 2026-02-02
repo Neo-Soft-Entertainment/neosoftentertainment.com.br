@@ -1,29 +1,33 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Neo Soft — Creating Worlds. Inspiring Players.</title>
-  <meta name="description" content="Neo Soft is a Brazilian indie studio crafting immersive games and Unreal Engine plugins since 2020." />
+  <meta name="description"
+    content="Neo Soft is a Brazilian indie studio crafting immersive games and Unreal Engine plugins since 2020." />
   <meta name="keywords" content="Neo Soft, games, Unreal Engine, plugins, Brazilian studio, indie, Frontline" />
-  <meta name="theme-color" content="#12021c"/>
+  <meta name="theme-color" content="#12021c" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://neeosoft.com.br" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Neo Soft — Creating Worlds. Inspiring Players."/>
-  <meta property="og:description" content="Frontline coming soon to Steam. Wishlist now. Unreal Engine plugins on Fab."/>
-  <meta property="og:url" content="https://neeosoft.com.br"/>
-  <meta property="og:image" content="Logo Neo.jpg"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Neo Soft — Creating Worlds. Inspiring Players." />
+  <meta property="og:description"
+    content="Frontline coming soon to Steam. Wishlist now. Unreal Engine plugins on Fab." />
+  <meta property="og:url" content="https://neeosoft.com.br" />
+  <meta property="og:image" content="Logo Neo.jpg" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Neo Soft — Creating Worlds. Inspiring Players."/>
-  <meta name="twitter:description" content="Creating worlds, inspiring players. Frontline coming soon to Steam. Wishlist now. Unreal plugins on Fab."/>
-  <meta name="twitter:image" content="Logo Neo.jpg"/>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neo Soft — Creating Worlds. Inspiring Players." />
+  <meta name="twitter:description"
+    content="Creating worlds, inspiring players. Frontline coming soon to Steam. Wishlist now. Unreal plugins on Fab." />
+  <meta name="twitter:image" content="Logo Neo.jpg" />
 
   <!-- Favicons / PWA -->
   <link rel="icon" href="Logo Neo.jpg" type="image/jpeg" />
@@ -45,10 +49,13 @@
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
 
   <!-- Custom Cursor -->
-  <div id="cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm" aria-hidden="true"></div>
+  <div id="cursor"
+    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
+    aria-hidden="true"></div>
 
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
@@ -82,8 +89,10 @@
             <option value="ja">JA</option>
           </select>
         </div>
-        <button id="muteBtn" class="audio-toggle hidden md:inline-flex text-xs" aria-label="Toggle SFX" data-i18n="nav.unmute">Unmute SFX</button>
-        <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded" aria-label="Open menu" aria-expanded="false">
+        <button id="muteBtn" class="audio-toggle hidden md:inline-flex text-xs" aria-label="Toggle SFX"
+          data-i18n="nav.unmute">Unmute SFX</button>
+        <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
+          aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -107,7 +116,8 @@
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="mobile-menu__section">
-        <label for="languageSelectMobile" class="mobile-menu__label" data-i18n="nav.languageLabel">Select language</label>
+        <label for="languageSelectMobile" class="mobile-menu__label" data-i18n="nav.languageLabel">Select
+          language</label>
         <div class="language-select language-select--mobile" data-i18n-aria-label="nav.languageLabel">
           <select id="languageSelectMobile" class="language-select__field text-xs" aria-label="Select language">
             <option value="en">EN</option>
@@ -118,7 +128,8 @@
           </select>
         </div>
       </div>
-      <button id="muteBtnMobile" class="audio-toggle audio-toggle--mobile mt-3 text-xs" data-i18n="nav.unmute">Unmute SFX</button>
+      <button id="muteBtnMobile" class="audio-toggle audio-toggle--mobile mt-3 text-xs" data-i18n="nav.unmute">Unmute
+        SFX</button>
     </div>
   </header>
 
@@ -148,21 +159,26 @@
     <div class="studio-flair__container">
       <header class="studio-flair__header">
         <span class="studio-flair__kicker" data-i18n="flair.kicker">Neo Soft DNA</span>
-        <h2 class="studio-flair__title" data-i18n="flair.title">Immersive universes energized by Neo Soft's signature storytelling.</h2>
-        <p class="studio-flair__subtitle" data-i18n="flair.subtitle">We amplify our worlds with cinematic pacing, rich lore, and visual drama — all anchored by accessible gameplay systems.</p>
+        <h2 class="studio-flair__title" data-i18n="flair.title">Immersive universes energized by Neo Soft's signature
+          storytelling.</h2>
+        <p class="studio-flair__subtitle" data-i18n="flair.subtitle">We amplify our worlds with cinematic pacing, rich
+          lore, and visual drama — all anchored by accessible gameplay systems.</p>
       </header>
       <div class="studio-flair__grid">
         <article class="flair-card">
           <h3 class="flair-card__title" data-i18n="flair.card1.title">Cinematic Worlds</h3>
-          <p class="flair-card__copy" data-i18n="flair.card1.copy">Layered lighting, diagonal compositions, and atmospheric depth guide players through unforgettable journeys.</p>
+          <p class="flair-card__copy" data-i18n="flair.card1.copy">Layered lighting, diagonal compositions, and
+            atmospheric depth guide players through unforgettable journeys.</p>
         </article>
         <article class="flair-card">
           <h3 class="flair-card__title" data-i18n="flair.card2.title">Living Communities</h3>
-          <p class="flair-card__copy" data-i18n="flair.card2.copy">We foster thriving fan hubs with regular updates, developer diaries, and community-driven events.</p>
+          <p class="flair-card__copy" data-i18n="flair.card2.copy">We foster thriving fan hubs with regular updates,
+            developer diaries, and community-driven events.</p>
         </article>
         <article class="flair-card">
           <h3 class="flair-card__title" data-i18n="flair.card3.title">Fearless Innovation</h3>
-          <p class="flair-card__copy" data-i18n="flair.card3.copy">Proprietary Unreal Engine tools give us the edge to prototype fast and push the boundaries of gameplay.</p>
+          <p class="flair-card__copy" data-i18n="flair.card3.copy">Proprietary Unreal Engine tools give us the edge to
+            prototype fast and push the boundaries of gameplay.</p>
         </article>
       </div>
     </div>
@@ -172,33 +188,42 @@
   <section id="games" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" data-i18n="games.title">Our Games</h2>
-      <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech. Drag to explore.</p>
+      <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge tech.
+        Drag to explore.</p>
       <div class="relative">
-        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Games" data-i18n-aria-label="games.title">
+        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Games"
+          data-i18n-aria-label="games.title">
           <div id="gamesTrack" class="services-track">
             <div class="services-slide" aria-hidden="false">
               <div class="card3d" data-card>
                 <div class="card3d-img"><img src="img/frontline.png" alt="Frontline key art" /></div>
                 <div class="p-5">
                   <h3 class="card3d-title">Frontline</h3>
-                  <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism, intensity, and storytelling — coming soon to Steam. Wishlist now.</p>
-                  <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank" rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
+                  <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism,
+                    intensity, and storytelling — coming soon to Steam. Wishlist now.</p>
+                  <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="shared.learnMore">Learn More →</a>
                 </div>
               </div>
               <div class="card3d" data-card>
                 <div class="card3d-img"><img src="img/rampagerush.jpg" alt="Rampage Rush concept art" /></div>
                 <div class="p-5">
                   <h3 class="card3d-title">Rampage Rush</h3>
-                  <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers pure adrenaline, destruction and chaos in multiplayer mode.</p>
+                  <p class="card3d-desc" data-i18n="games.rampage">A musical brawler with a chaotic rhythm that offers
+                    pure adrenaline, destruction and chaos in multiplayer mode.</p>
                   <!-- <a href="#" class="card3d-link">Learn More →</a> -->
                 </div>
               </div>
               <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/acrophobia.png" alt="Stylized illustration of Apocrophia featuring a crowned corgi wearing sunglasses surrounded by biohazard neon" /></div>
+                <div class="card3d-img"><img src="img/acrophobia.png"
+                    alt="Stylized illustration of Apocrophia featuring a crowned corgi wearing sunglasses surrounded by biohazard neon" />
+                </div>
                 <div class="p-5">
                   <h3 class="card3d-title">Apocrophia</h3>
-                  <p class="card3d-desc" data-i18n="games.apocrophia">GameJam-born roguelike FPS where you chase the zombie who stole your corgi across frantic runs.</p>
-                  <a href="https://victorhenmrod.itch.io/apocrophia" target="_blank" rel="noopener" class="card3d-link" data-i18n="games.playApocrophia">Play on itch.io →</a>
+                  <p class="card3d-desc" data-i18n="games.apocrophia">GameJam-born roguelike FPS where you chase the
+                    zombie who stole your corgi across frantic runs.</p>
+                  <a href="https://victorhenmrod.itch.io/apocrophia" target="_blank" rel="noopener" class="card3d-link"
+                    data-i18n="games.playApocrophia">Play on itch.io →</a>
                 </div>
               </div>
             </div>
@@ -207,7 +232,8 @@
                 <div class="card3d-img"><img src="img/dissociation.jpg" alt="Dissociation artwork" /></div>
                 <div class="p-5">
                   <h3 class="card3d-title">Dissociation</h3>
-                  <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what's real?</p>
+                  <p class="card3d-desc" data-i18n="games.dissociation">A psychological horror where an AI manipulates
+                    your every move — no weapons, no escape, only survival. Do you know what's real?</p>
                   <!-- <a href="#" class="card3d-link">Learn More →</a> -->
                 </div>
               </div>
@@ -215,7 +241,8 @@
                 <div class="card3d-img"><img src="img/banapocalypse.png" alt="Bananapocalypse artwork" /></div>
                 <div class="p-5">
                   <h3 class="card3d-title">Bananapocalypse</h3>
-                  <p class="card3d-desc" data-i18n="games.banana">Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.</p>
+                  <p class="card3d-desc" data-i18n="games.banana">Um jogo co-op onde todos os jogadores são macacos
+                    fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.</p>
                   <!-- <a href="#" class="card3d-link">Learn More →</a> -->
                 </div>
               </div>
@@ -232,30 +259,49 @@
   </section>
 
 
-  <section id="services" class="relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900/80 to-purple-950 py-20 sm:py-24">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.45),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(59,130,246,0.4),transparent_35%),radial-gradient(circle_at_60%_70%,rgba(219,39,119,0.35),transparent_40%)]"></div>
+  <section id="services"
+    class="relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900/80 to-purple-950 py-20 sm:py-24">
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.45),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(59,130,246,0.4),transparent_35%),radial-gradient(circle_at_60%_70%,rgba(219,39,119,0.35),transparent_40%)]">
+    </div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-12">
       <div class="w-full lg:w-7/12 space-y-6">
-        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm uppercase tracking-[0.2em] text-white/80 ring-1 ring-white/10 shadow-glow">Unreal Engine Services</div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">World Class Unreal Engine Development Services</h2>
-        <p class="text-white/70 text-base sm:text-lg leading-relaxed">We deliver high performance gameplay systems, multiplayer architecture, AI modules, tools, automation and production pipelines that help studios scale faster — whether augmenting teams, leading full productions, or building reliable release pipelines.</p>
+        <div
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm uppercase tracking-[0.2em] text-white/80 ring-1 ring-white/10 shadow-glow">
+          Unreal Engine Services</div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">World Class Unreal Engine Development
+          Services</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">We deliver high performance gameplay systems,
+          multiplayer architecture, AI modules, tools, automation and production pipelines that help studios scale
+          faster — whether augmenting teams, leading full productions, or building reliable release pipelines.</p>
         <div class="flex flex-wrap items-center gap-4">
-          <a href="#contact" class="btn-primary bg-gradient-to-r from-blue-500 via-purpleNeo to-fuchsiaNeo shadow-glow hover:scale-[1.02] transition-transform">Get in touch</a>
+          <a href="#contact"
+            class="btn-primary bg-gradient-to-r from-blue-500 via-purpleNeo to-fuchsiaNeo shadow-glow hover:scale-[1.02] transition-transform">Get
+            in touch</a>
           <div class="flex items-center gap-3 text-white/70 text-sm">
-            <span class="h-10 w-10 grid place-items-center rounded-full bg-white/10 ring-1 ring-white/10 text-purpleNeo font-semibold">UE</span>
+            <span
+              class="h-10 w-10 grid place-items-center rounded-full bg-white/10 ring-1 ring-white/10 text-purpleNeo font-semibold">UE</span>
             <span>Unreal Engine specialists for co-development, full builds, and release engineering.</span>
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-sm text-white/80">
-          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Co-Development partnerships</div>
-          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Full service game development</div>
-          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Build and release systems</div>
+          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Co-Development partnerships
+          </div>
+          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Full service game development
+          </div>
+          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Build and release systems
+          </div>
         </div>
       </div>
       <div class="w-full lg:w-5/12">
-        <div class="relative rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.4)] backdrop-blur">
-          <div class="absolute -top-10 -right-6 h-28 w-28 rounded-full bg-gradient-to-br from-blue-400/40 via-purpleNeo/40 to-fuchsiaNeo/30 blur-3xl"></div>
-          <div class="absolute -bottom-12 -left-10 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/30 via-fuchsiaNeo/30 to-blue-400/25 blur-3xl"></div>
+        <div
+          class="relative rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.4)] backdrop-blur">
+          <div
+            class="absolute -top-10 -right-6 h-28 w-28 rounded-full bg-gradient-to-br from-blue-400/40 via-purpleNeo/40 to-fuchsiaNeo/30 blur-3xl">
+          </div>
+          <div
+            class="absolute -bottom-12 -left-10 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/30 via-fuchsiaNeo/30 to-blue-400/25 blur-3xl">
+          </div>
           <div class="relative grid gap-4">
             <div class="grid grid-cols-2 gap-3 text-sm">
               <div class="rounded-xl border border-white/10 bg-black/50 px-4 py-3 shadow-glow">
@@ -277,7 +323,8 @@
                 <p class="font-semibold">Pipelines & automation</p>
               </div>
             </div>
-            <div class="rounded-xl border border-white/10 bg-gradient-to-r from-blue-500/10 via-purpleNeo/10 to-fuchsiaNeo/10 px-4 py-5 shadow-glow">
+            <div
+              class="rounded-xl border border-white/10 bg-gradient-to-r from-blue-500/10 via-purpleNeo/10 to-fuchsiaNeo/10 px-4 py-5 shadow-glow">
               <p class="text-white/60 text-sm">Delivery</p>
               <p class="text-lg font-semibold">Production ready engineering for ambitious Unreal teams.</p>
             </div>
@@ -291,71 +338,111 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
       <div class="max-w-3xl">
         <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="services.title">Services for Unreal teams</h2>
-        <p class="text-white/70 text-base sm:text-lg" data-i18n="services.subtitle">From embedded engineering to full productions and build automation, we provide three service pillars tailored to your needs.</p>
+        <p class="text-white/70 text-base sm:text-lg" data-i18n="services.subtitle">From embedded engineering to full
+          productions and build automation, we provide three service pillars tailored to your needs.</p>
       </div>
       <div class="space-y-8">
         <div class="space-y-3">
           <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.coDev.title">Co-Development</h3>
-          <p class="text-white/70" data-i18n="services.coDev.copy">Specialist support that plugs into your team to deliver gameplay, networking, and AI features with production-ready code.</p>
+          <p class="text-white/70" data-i18n="services.coDev.copy">Specialist support that plugs into your team to
+            deliver gameplay, networking, and AI features with production-ready code.</p>
           <div class="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.coDev.gameplayTitle">Gameplay Systems</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.coDev.gameplayDesc">High performance gameplay engineering for Unreal Engine. Complete FPS and TPS systems including weapon frameworks, modular components, procedural recoil, ADS rigs, locomotion logic, melee integration, interaction systems, hit detection, animation graphs, montage driven actions, camera systems, movement refinement, state machines and gameplay tag based architecture.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.coDev.gameplayDesc">High performance gameplay
+                  engineering for Unreal Engine. Complete FPS and TPS systems including weapon frameworks, modular
+                  components, procedural recoil, ADS rigs, locomotion logic, melee integration, interaction systems, hit
+                  detection, animation graphs, montage driven actions, camera systems, movement refinement, state
+                  machines and gameplay tag based architecture.</p>
               </div>
             </div>
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.coDev.multiplayerTitle">Multiplayer and Replication</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.coDev.multiplayerDesc">Robust client server logic built with production standards. Deterministic replication for weapons, abilities, movement, grenades, projectiles, VFX sync, animation replication and inventory systems. Server authority, client prediction, reconciliation, lag compensation, replication condition optimization and stable network performance for real game scenarios.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.coDev.multiplayerDesc">Robust client server
+                  logic built with production standards. Deterministic replication for weapons, abilities, movement,
+                  grenades, projectiles, VFX sync, animation replication and inventory systems. Server authority, client
+                  prediction, reconciliation, lag compensation, replication condition optimization and stable network
+                  performance for real game scenarios.</p>
               </div>
             </div>
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.coDev.aiTitle">AI and Behavior Systems</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.coDev.aiDesc">Design and implementation of intelligent agents using Behavior Trees, Blackboards, EQS and AI Perception. Patrol investigate chase flows, combat decision making, sensory systems, stealth detection, squad coordination, dynamic navigation, reactive enemies and modular AI frameworks that scale with complexity.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.coDev.aiDesc">Design and implementation of
+                  intelligent agents using Behavior Trees, Blackboards, EQS and AI Perception. Patrol investigate chase
+                  flows, combat decision making, sensory systems, stealth detection, squad coordination, dynamic
+                  navigation, reactive enemies and modular AI frameworks that scale with complexity.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="space-y-3">
-          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.full.title">Full Service Game Development</h3>
-          <p class="text-white/70" data-i18n="services.full.copy">End-to-end Unreal delivery including tooling, optimization, and technical direction for complex productions.</p>
+          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.full.title">Full Service Game Development
+          </h3>
+          <p class="text-white/70" data-i18n="services.full.copy">End-to-end Unreal delivery including tooling,
+            optimization, and technical direction for complex productions.</p>
           <div class="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.full.toolsTitle">Tools and Editor Extensions</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.full.toolsDesc">Development of internal tools to accelerate production. Custom Unreal Editor utilities, batch automated asset processes, map validation tools, import optimizers, Blueprint tooling, profiling widgets and full standalone applications in WPF or WinUI for build control, Git integration, content management, data editing and version organization.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.full.toolsDesc">Development of internal tools
+                  to accelerate production. Custom Unreal Editor utilities, batch automated asset processes, map
+                  validation tools, import optimizers, Blueprint tooling, profiling widgets and full standalone
+                  applications in WPF or WinUI for build control, Git integration, content management, data editing and
+                  version organization.</p>
               </div>
             </div>
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.full.performanceTitle">Performance and Optimization</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.full.performanceDesc">Deep optimization for CPU, GPU and network. Profiling and reduction of Blueprint heavy systems, tick minimization, async tasks, animation graph simplification, LOD and HLOD refinement, Nanite setups, streaming tuning, network bandwidth reduction, replication pruning, physics optimization and frame stability improvements for production builds.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.full.performanceDesc">Deep optimization for
+                  CPU, GPU and network. Profiling and reduction of Blueprint heavy systems, tick minimization, async
+                  tasks, animation graph simplification, LOD and HLOD refinement, Nanite setups, streaming tuning,
+                  network bandwidth reduction, replication pruning, physics optimization and frame stability
+                  improvements for production builds.</p>
               </div>
             </div>
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
-                <h3 class="card3d-title" data-i18n="services.full.directionTitle">Technical Direction and Architecture</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.full.directionDesc">Foundational planning for long term Unreal projects. Codebase architecture, modular system planning, scalable gameplay framework design, replication strategy for large features, feature roadmaps, guidelines for component driven systems, data structures and high level technical leadership to align development with production milestones.</p>
+                <h3 class="card3d-title" data-i18n="services.full.directionTitle">Technical Direction and Architecture
+                </h3>
+                <p class="card3d-desc text-white/70" data-i18n="services.full.directionDesc">Foundational planning for
+                  long term Unreal projects. Codebase architecture, modular system planning, scalable gameplay framework
+                  design, replication strategy for large features, feature roadmaps, guidelines for component driven
+                  systems, data structures and high level technical leadership to align development with production
+                  milestones.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="space-y-3">
-          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.build.title">Build &amp; Release Systems</h3>
-          <p class="text-white/70" data-i18n="services.build.copy">Automated delivery, server infrastructure, and deployment pipelines that keep releases stable and repeatable.</p>
+          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.build.title">Build &amp; Release Systems
+          </h3>
+          <p class="text-white/70" data-i18n="services.build.copy">Automated delivery, server infrastructure, and
+            deployment pipelines that keep releases stable and repeatable.</p>
           <div class="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.build.ciTitle">Automation and CI</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.build.ciDesc">Full pipeline automation for Unreal Engine projects. Continuous Integration and Continuous Delivery with GitHub Actions, GitLab CI or Azure DevOps. Automated builds for Windows, Linux and Dedicated Server targets. Cloud storage support including Backblaze B2, AWS S3, Google Cloud Storage and any S3 compatible provider. Packaging automation, versioning scripts, changelog generation, environment bootstrap, artifact distribution, nightly builds, branch based build rules, code quality checks, caching layers, dependency setup and automated deployment flows for production or playtests.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.build.ciDesc">Full pipeline automation for
+                  Unreal Engine projects. Continuous Integration and Continuous Delivery with GitHub Actions, GitLab CI
+                  or Azure DevOps. Automated builds for Windows, Linux and Dedicated Server targets. Cloud storage
+                  support including Backblaze B2, AWS S3, Google Cloud Storage and any S3 compatible provider. Packaging
+                  automation, versioning scripts, changelog generation, environment bootstrap, artifact distribution,
+                  nightly builds, branch based build rules, code quality checks, caching layers, dependency setup and
+                  automated deployment flows for production or playtests.</p>
               </div>
             </div>
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
                 <h3 class="card3d-title" data-i18n="services.build.serversTitle">Dedicated Servers and Deployment</h3>
-                <p class="card3d-desc text-white/70" data-i18n="services.build.serversDesc">Complete support for dedicated server infrastructure. Unreal Engine server builds, Linux configuration, process supervision, crash recovery, runtime monitoring, performance optimization, automated deployment, multi instance orchestration, database connectivity, remote logging, S3 based asset distribution and scripts that simplify testing or staging environments.</p>
+                <p class="card3d-desc text-white/70" data-i18n="services.build.serversDesc">Complete support for
+                  dedicated server infrastructure. Unreal Engine server builds, Linux configuration, process
+                  supervision, crash recovery, runtime monitoring, performance optimization, automated deployment, multi
+                  instance orchestration, database connectivity, remote logging, S3 based asset distribution and scripts
+                  that simplify testing or staging environments.</p>
               </div>
             </div>
           </div>
@@ -367,64 +454,85 @@
   <section id="services-examples" class="py-20 bg-black section-gradient">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" data-i18n="games.servicesTitle">Project Highlights</h3>
-        <p class="text-white/60" data-i18n="games.servicesSubtitle">Exemplos dos nossos trabalhos, mostrando os jogos que fizemos como parceiros de co-dev e serviços.</p>
+        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" data-i18n="games.servicesTitle">Project Highlights
+        </h3>
+        <p class="text-white/60" data-i18n="games.servicesSubtitle">Exemplos dos nossos trabalhos, mostrando os jogos
+          que fizemos como parceiros de co-dev e serviços.</p>
       </div>
       <div class="relative">
-        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Project Highlights" data-i18n-aria-label="games.servicesTitle">
+        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Project Highlights"
+          data-i18n-aria-label="games.servicesTitle">
           <div id="servicesTrack" class="services-track">
             <div class="services-slide" aria-hidden="false">
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--buns" data-service-image="img/services/buns-of-fire-placeholder.svg" data-service-alt="games.services.bunsAlt"><span data-i18n="games.services.bunsTitle">Buns Of Fire</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--buns"
+                  data-service-image="img/services/buns-of-fire-placeholder.svg"
+                  data-service-alt="games.services.bunsAlt"><span data-i18n="games.services.bunsTitle">Buns Of
+                    Fire</span></div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.bunsTitle">Buns Of Fire</h3>
-                  <p class="card3d-desc" data-i18n="games.services.bunsDesc">NSFW fighting game in the spirit of Mortal Kombat where the hook trades fatalities for explicit scenes inspired by Eroico.</p>
+                  <p class="card3d-desc" data-i18n="games.services.bunsDesc">NSFW fighting game in the spirit of Mortal
+                    Kombat where the hook trades fatalities for explicit scenes inspired by Eroico.</p>
                 </div>
               </div>
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--fatum" data-service-image="img/FATUM.png" data-service-alt="games.services.fatumAlt"><span data-i18n="games.services.fatumTitle">FATUM</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--fatum" data-service-image="img/FATUM.png"
+                  data-service-alt="games.services.fatumAlt"><span data-i18n="games.services.fatumTitle">FATUM</span>
+                </div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.fatumTitle">FATUM</h3>
-                  <p class="card3d-desc" data-i18n="games.services.fatumDesc">Futuristic multiplayer FPS where only robots remain after the collapse — we delivered spectator mode, grenade systems, and replication fixes.</p>
+                  <p class="card3d-desc" data-i18n="games.services.fatumDesc">Futuristic multiplayer FPS where only
+                    robots remain after the collapse — we delivered spectator mode, grenade systems, and replication
+                    fixes.</p>
                 </div>
               </div>
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--buildy"><span data-i18n="games.services.buildyTitle">Buildy Game (Working Title)</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--buildy"><span
+                    data-i18n="games.services.buildyTitle">Buildy Game (Working Title)</span></div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.buildyTitle">Buildy Game (Working Title)</h3>
-                  <p class="card3d-desc" data-i18n="games.services.buildyDesc">Construction-focused project where we implemented a complete save system with manual slots and auto-save support.</p>
+                  <p class="card3d-desc" data-i18n="games.services.buildyDesc">Construction-focused project where we
+                    implemented a complete save system with manual slots and auto-save support.</p>
                 </div>
               </div>
             </div>
             <div class="services-slide" aria-hidden="true">
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--phase"><span data-i18n="games.services.phaseTitle">Phase</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--phase"><span
+                    data-i18n="games.services.phaseTitle">Phase</span></div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.phaseTitle">Phase</h3>
-                  <p class="card3d-desc" data-i18n="games.services.phaseDesc">High-mobility FPS centered on Titanfall-inspired movement systems.</p>
+                  <p class="card3d-desc" data-i18n="games.services.phaseDesc">High-mobility FPS centered on
+                    Titanfall-inspired movement systems.</p>
                 </div>
               </div>
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--secret"><span data-i18n="games.services.secret1Title">Confidential Project I</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--secret"><span
+                    data-i18n="games.services.secret1Title">Confidential Project I</span></div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.secret1Title">Confidential Project I</h3>
-                  <p class="card3d-desc" data-i18n="games.services.secret1Desc">In-development initiative under NDA. Our tools team is engineering core combat prototypes for the client.</p>
+                  <p class="card3d-desc" data-i18n="games.services.secret1Desc">In-development initiative under NDA. Our
+                    tools team is engineering core combat prototypes for the client.</p>
                 </div>
               </div>
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--secret"><span data-i18n="games.services.secret2Title">Confidential Project II</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--secret"><span
+                    data-i18n="games.services.secret2Title">Confidential Project II</span></div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.secret2Title">Confidential Project II</h3>
-                  <p class="card3d-desc" data-i18n="games.services.secret2Desc">Ongoing Unreal Engine support providing optimization sprints and multiplayer stability tuning.</p>
+                  <p class="card3d-desc" data-i18n="games.services.secret2Desc">Ongoing Unreal Engine support providing
+                    optimization sprints and multiplayer stability tuning.</p>
                 </div>
               </div>
             </div>
             <div class="services-slide" aria-hidden="true">
               <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--services card3d-img--secret"><span data-i18n="games.services.secret3Title">Confidential Project III</span></div>
+                <div class="card3d-img card3d-img--services card3d-img--secret"><span
+                    data-i18n="games.services.secret3Title">Confidential Project III</span></div>
                 <div class="p-5">
                   <h3 class="card3d-title" data-i18n="games.services.secret3Title">Confidential Project III</h3>
-                  <p class="card3d-desc" data-i18n="games.services.secret3Desc">Next-gen concept where we handle worldbuilding pre-production while respecting strict confidentiality.</p>
+                  <p class="card3d-desc" data-i18n="games.services.secret3Desc">Next-gen concept where we handle
+                    worldbuilding pre-production while respecting strict confidentiality.</p>
                 </div>
               </div>
               <div class="card3d card3d--placeholder" aria-hidden="true"></div>
@@ -443,8 +551,11 @@
   <section id="services-why" class="section-gradient py-16 sm:py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
       <h2 class="text-2xl sm:text-3xl font-bold">Why studios choose Neo Soft</h2>
-      <p class="text-white/70 text-base sm:text-lg">We provide highly specialized engineering for Unreal Engine. From gameplay prototyping to full multiplayer implementation, from editor tools to advanced pipelines, we deliver scalable systems built with clean architecture and production ready quality.</p>
-      <ul class="grid gap-3 sm:gap-4 text-left sm:text-center sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-5xl list-disc list-inside text-white/80">
+      <p class="text-white/70 text-base sm:text-lg">We provide highly specialized engineering for Unreal Engine. From
+        gameplay prototyping to full multiplayer implementation, from editor tools to advanced pipelines, we deliver
+        scalable systems built with clean architecture and production ready quality.</p>
+      <ul
+        class="grid gap-3 sm:gap-4 text-left sm:text-center sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-5xl list-disc list-inside text-white/80">
         <li>Fast delivery and high technical accuracy</li>
         <li>Clean C++ and Blueprint architecture</li>
         <li>Shooter and systems engineering experts</li>
@@ -465,23 +576,40 @@
         <span class="text-xs text-purple-300/70" data-i18n="plugins.subtitle">Fab marketplace listings</span>
       </div>
       <div class="relative">
-        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Plugins" data-i18n-aria-label="plugins.title">
+        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Plugins"
+          data-i18n-aria-label="plugins.title">
           <div id="pluginsTrack" class="services-track">
             <div class="services-slide" aria-hidden="false">
               <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.jpg" alt="World Procedural Generator Plugin cover" /></div>
+                <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.png"
+                    alt="World Procedural Generator Plugin cover" /></div>
                 <div class="p-5">
                   <h3 class="card3d-title">World Procedural Generator Plugin</h3>
-                  <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.</p>
-                  <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                  <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine
+                    with procedural terrain, biomes, and asset placement.</p>
+                  <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
                 </div>
               </div>
               <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.jpg" alt="Replicated Explosion Plugin cover" /></div>
+                <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.png"
+                    alt="Replicated Explosion Plugin cover" /></div>
                 <div class="p-5">
                   <h3 class="card3d-title">Replicated Explosion Plugin</h3>
-                  <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions with customizable effects and optimized physics.</p>
-                  <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank" rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                  <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions
+                    with customizable effects and optimized physics.</p>
+                  <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/NeoLibrary.png" alt="Neo Library plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Neo Library</h3>
+                  <p class="card3d-desc" data-i18n="plugins.neolibrary">A utility library for Unreal Engine with
+                    streamlined settings, localization helpers, and optimized Blueprint-ready utilities.</p>
+                  <a href="https://www.fab.com/pt-br/listings/b4b9e699-62b2-4829-868b-cc2cc3a6bf88" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
                 </div>
               </div>
               <div class="card3d card3d--placeholder" aria-hidden="true"></div>
@@ -504,12 +632,14 @@
         <article class="news-card">
           <p class="news-date" data-i18n="news.frontline.date">September 2025</p>
           <h3 class="news-title" data-i18n="news.frontline.title">Frontline Steam Page Goes Live</h3>
-          <p class="news-summary" data-i18n="news.frontline.copy">After nearly six years in development, our debut title is preparing for launch — wishlist the revolution now.</p>
+          <p class="news-summary" data-i18n="news.frontline.copy">After nearly six years in development, our debut title
+            is preparing for launch — wishlist the revolution now.</p>
         </article>
         <article class="news-card">
           <p class="news-date" data-i18n="news.team.date">July 2025</p>
           <h3 class="news-title" data-i18n="news.team.title">Neo Soft Expands Team</h3>
-          <p class="news-summary" data-i18n="news.team.copy">We’re growing! Neo Soft welcomes new talent as we take on the next chapter of our journey.</p>
+          <p class="news-summary" data-i18n="news.team.copy">We’re growing! Neo Soft welcomes new talent as we take on
+            the next chapter of our journey.</p>
         </article>
       </div>
     </div>
@@ -520,7 +650,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-5 gap-8 md:gap-10 items-center">
       <div class="md:col-span-3">
         <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="careers.title">Careers</h2>
-        <p class="text-white/70" data-i18n="careers.copy">All roles are filled for now, but we’re still happy to hear from passionate developers, artists, and designers who want to collaborate in the future.</p>
+        <p class="text-white/70" data-i18n="careers.copy">All roles are filled for now, but we’re still happy to hear
+          from passionate developers, artists, and designers who want to collaborate in the future.</p>
         <div class="mt-6 flex flex-wrap gap-3">
           <a href="mailto:contact@neeosoft.com.br" class="btn-primary" data-i18n="careers.apply">Send Portfolio</a>
           <a href="#team" class="btn-outline" data-i18n="careers.team">Meet the Team</a>
@@ -528,7 +659,9 @@
       </div>
       <div class="md:col-span-2 rounded-xl border border-white/10 p-6 bg-white/5">
         <h3 class="font-semibold mb-2 text-purple-200" data-i18n="careers.open">All positions filled</h3>
-        <p class="text-sm text-white/80" data-i18n="careers.status">Thank you to everyone who applied. We don’t have open roles right now, but you can still email your portfolio so we can reach out when opportunities return.</p>
+        <p class="text-sm text-white/80" data-i18n="careers.status">Thank you to everyone who applied. We don’t have
+          open roles right now, but you can still email your portfolio so we can reach out when opportunities return.
+        </p>
       </div>
     </div>
   </section>
@@ -538,12 +671,16 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-10 items-center">
       <div>
         <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="about.title">About Neo Soft</h2>
-        <p class="text-white/80 mb-3" data-i18n="about.first">Founded in 2020 by <strong>Victor</strong>, Neo Soft is a Brazilian studio creating games and tools that inspire and empower creators.</p>
-        <p class="text-white/70" data-i18n="about.second">Our debut project, <em>Frontline</em>, represents our commitment to innovation and storytelling. We’ve been building for almost six years with a dedicated team — all driven by the love of games.</p>
+        <p class="text-white/80 mb-3" data-i18n="about.first">Founded in 2020 by <strong>Victor</strong>, Neo Soft is a
+          Brazilian studio creating games and tools that inspire and empower creators.</p>
+        <p class="text-white/70" data-i18n="about.second">Our debut project, <em>Frontline</em>, represents our
+          commitment to innovation and storytelling. We’ve been building for almost six years with a dedicated team —
+          all driven by the love of games.</p>
       </div>
       <div class="rounded-xl border border-white/10 p-8 bg-gradient-to-br from-white/5 to-transparent">
         <h3 class="text-xl font-semibold mb-2 text-purple-200" data-i18n="about.missionTitle">Our Mission</h3>
-        <p class="text-white/80" data-i18n="about.missionCopy">To strengthen the Brazilian gaming scene by delivering world-class projects that showcase creativity and excellence.</p>
+        <p class="text-white/80" data-i18n="about.missionCopy">To strengthen the Brazilian gaming scene by delivering
+          world-class projects that showcase creativity and excellence.</p>
       </div>
     </div>
   </section>
@@ -565,7 +702,8 @@
             <div class="team-card-face team-card-back">
               <h3 class="team-name">Victor Henrique</h3>
               <p class="team-role">Founder, Game Director &amp; Production Director</p>
-              <p class="team-bio" data-i18n="team.victor.bio">Leads Neo Soft’s creative direction and builds Unreal Engine experiences, balancing gameplay, tools, and storytelling.</p>
+              <p class="team-bio" data-i18n="team.victor.bio">Leads Neo Soft’s creative direction and builds Unreal
+                Engine experiences, balancing gameplay, tools, and storytelling.</p>
             </div>
           </div>
         </div>
@@ -581,7 +719,8 @@
             <div class="team-card-face team-card-back">
               <h3 class="team-name">Hiury Francisco</h3>
               <p class="team-role">Co-Founder, Video Editor &amp; Production Lead</p>
-              <p class="team-bio" data-i18n="team.hiury.bio">Transforms game footage into cinematic trailers and coordinates marketing assets that capture each project’s energy.</p>
+              <p class="team-bio" data-i18n="team.hiury.bio">Transforms game footage into cinematic trailers and
+                coordinates marketing assets that capture each project’s energy.</p>
             </div>
           </div>
         </div>
@@ -597,7 +736,8 @@
             <div class="team-card-face team-card-back">
               <h3 class="team-name">José Gabriel</h3>
               <p class="team-role">Lead Developer &amp; Co-Founder</p>
-              <p class="team-bio" data-i18n="team.jose.bio">Builds gameplay systems and optimizes performance so our Unreal projects feel smooth, responsive, and alive.</p>
+              <p class="team-bio" data-i18n="team.jose.bio">Builds gameplay systems and optimizes performance so our
+                Unreal projects feel smooth, responsive, and alive.</p>
             </div>
           </div>
         </div>
@@ -613,7 +753,8 @@
             <div class="team-card-face team-card-back">
               <h3 class="team-name">Isabel Brito</h3>
               <p class="team-role">Voice Director</p>
-              <p class="team-bio" data-i18n="team.isabel.bio">Guides casting and performance for voice talent, ensuring every character sounds authentic and emotionally grounded.</p>
+              <p class="team-bio" data-i18n="team.isabel.bio">Guides casting and performance for voice talent, ensuring
+                every character sounds authentic and emotionally grounded.</p>
             </div>
           </div>
         </div>
@@ -625,49 +766,75 @@
   <section id="contact" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <h2 class="text-2xl sm:text-3xl font-bold mb-6" data-i18n="contact.title">Contact Us</h2>
-      <p class="text-white/70 mb-8 max-w-2xl" data-i18n="contact.copy">Want to collaborate, request services, or share feedback? We also work as service providers — reach out for a quote and we’ll get back to you.</p>
+      <p class="text-white/70 mb-8 max-w-2xl" data-i18n="contact.copy">Want to collaborate, request services, or share
+        feedback? We also work as service providers — reach out for a quote and we’ll get back to you.</p>
       <form id="contactForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input name="from_name" class="input" placeholder="Your name" required data-i18n-placeholder="contact.name" />
-        <input name="from_mail" type="email" class="input" placeholder="Email" required data-i18n-placeholder="contact.email" />
-        <textarea name="message" class="textarea sm:col-span-2" placeholder="Your message" required data-i18n-placeholder="contact.message"></textarea>
+        <input name="from_mail" type="email" class="input" placeholder="Email" required
+          data-i18n-placeholder="contact.email" />
+        <textarea name="message" class="textarea sm:col-span-2" placeholder="Your message" required
+          data-i18n-placeholder="contact.message"></textarea>
         <div class="sm:col-span-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <button type="submit" id="sendBtn" class="btn-primary w-full sm:w-auto" data-i18n="contact.send">Send Message</button>
+          <button type="submit" id="sendBtn" class="btn-primary w-full sm:w-auto" data-i18n="contact.send">Send
+            Message</button>
         </div>
         <p id="formError" class="hidden sm:col-span-2 text-sm text-red-400" role="alert"></p>
       </form>
-      <div id="formFeedback" class="hidden mt-6 inline-flex items-center gap-2 text-green-400" role="status" aria-live="polite">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+      <div id="formFeedback" class="hidden mt-6 inline-flex items-center gap-2 text-green-400" role="status"
+        aria-live="polite">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 6L9 17l-5-5" />
+        </svg>
         <span id="formFeedbackText" data-i18n="contact.success">Message sent! We’ll get back to you soon.</span>
       </div>
       <div class="mt-10">
-        <h3 class="text-lg font-semibold text-purple-200 mb-2" data-i18n="contact.socialTitle">Connect with Neo Soft</h3>
-        <p class="text-white/70 mb-4 max-w-2xl" data-i18n="contact.socialCopy">Follow our latest updates and behind-the-scenes moments.</p>
+        <h3 class="text-lg font-semibold text-purple-200 mb-2" data-i18n="contact.socialTitle">Connect with Neo Soft
+        </h3>
+        <p class="text-white/70 mb-4 max-w-2xl" data-i18n="contact.socialCopy">Follow our latest updates and
+          behind-the-scenes moments.</p>
         <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-          <a href="https://www.instagram.com/neeeosoft/" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Open Neo Soft on Instagram" data-i18n-aria-label="contact.instagramAria">
-            <span class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IG</span>
+          <a href="https://www.instagram.com/neeeosoft/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+            aria-label="Open Neo Soft on Instagram" data-i18n-aria-label="contact.instagramAria">
+            <span
+              class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IG</span>
             <div class="min-w-0">
-              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialInstagram">Instagram @neeeosoft</span>
+              <span class="block text-sm font-semibold text-white leading-tight"
+                data-i18n="contact.socialInstagram">Instagram @neeeosoft</span>
               <span class="block text-xs text-white/50 break-words">instagram.com/neeeosoft</span>
             </div>
           </a>
-          <a href="https://www.linkedin.com/company/neeeosoft/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Open Neo Soft on LinkedIn" data-i18n-aria-label="contact.linkedinAria">
-            <span class="social-pill inline-flex h-9 w-9 aspect-square items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IN</span>
+          <a href="https://www.linkedin.com/company/neeeosoft/?viewAsMember=true" target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+            aria-label="Open Neo Soft on LinkedIn" data-i18n-aria-label="contact.linkedinAria">
+            <span
+              class="social-pill inline-flex h-9 w-9 aspect-square items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">IN</span>
             <div class="min-w-0">
-              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialLinkedIn">LinkedIn / Neo Soft</span>
+              <span class="block text-sm font-semibold text-white leading-tight"
+                data-i18n="contact.socialLinkedIn">LinkedIn / Neo Soft</span>
               <span class="block text-xs text-white/50 break-words">linkedin.com/company/neeeosoft</span>
             </div>
           </a>
-          <a href="https://discord.gg/HA2CBfdCFT" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Join the Neo Soft Discord server" data-i18n-aria-label="contact.discordAria">
-            <span class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">DC</span>
+          <a href="https://discord.gg/HA2CBfdCFT" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+            aria-label="Join the Neo Soft Discord server" data-i18n-aria-label="contact.discordAria">
+            <span
+              class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">DC</span>
             <div class="min-w-0">
-              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialDiscord">Discord / Neo Soft</span>
+              <span class="block text-sm font-semibold text-white leading-tight"
+                data-i18n="contact.socialDiscord">Discord / Neo Soft</span>
               <span class="block text-xs text-white/50 break-words">discord.gg/HA2CBfdCFT</span>
             </div>
           </a>
-          <a href="https://www.youtube.com/@NeoSoft-m2e" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left" aria-label="Open Neo Soft on YouTube" data-i18n-aria-label="contact.youtubeAria">
-            <span class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">YT</span>
+          <a href="https://www.youtube.com/@NeoSoft-m2e" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+            aria-label="Open Neo Soft on YouTube" data-i18n-aria-label="contact.youtubeAria">
+            <span
+              class="social-pill inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo text-xs font-semibold tracking-wide">YT</span>
             <div class="min-w-0">
-              <span class="block text-sm font-semibold text-white leading-tight" data-i18n="contact.socialYouTube">YouTube @NeoSoft-m2e</span>
+              <span class="block text-sm font-semibold text-white leading-tight"
+                data-i18n="contact.socialYouTube">YouTube @NeoSoft-m2e</span>
               <span class="block text-xs text-white/50 break-words">youtube.com/@NeoSoft-m2e</span>
             </div>
           </a>
@@ -677,12 +844,16 @@
   </section>
 
   <!-- Back to top -->
-  <button id="backToTop" class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo shadow-lg hover:scale-105 transition" aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
+  <button id="backToTop"
+    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo shadow-lg hover:scale-105 transition"
+    aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
 
   <!-- Footer -->
   <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
-      <p data-i18n="footer.copy">© 2025 Neo Soft. Founded by Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
+      <p data-i18n="footer.copy">© 2025 Neo Soft. Founded by Victor. - <a href="mailto:contact@neeosoft.com.br"
+          class="hover:text-purple-300">contact@neeosoft.com.br</a></p>
       <div class="flex flex-wrap gap-4">
         <a class="hover:text-purple-300" href="#games" data-i18n="nav.games">Games</a>
         <a class="hover:text-purple-300" href="#plugins" data-i18n="nav.plugins">Plugins</a>
@@ -696,8 +867,9 @@
 
   <!-- EmailJS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>(function(){ emailjs.init('Uvh9uGx_D1u5B7v0j'); })();</script>
+  <script>(function () { emailjs.init('Uvh9uGx_D1u5B7v0j'); })();</script>
   <!-- Main script -->
   <script src="js/script.js"></script>
 </body>
+
 </html>
