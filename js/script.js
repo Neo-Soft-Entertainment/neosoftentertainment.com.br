@@ -977,7 +977,7 @@
   }
 
   // Carousel controls - Games slider setup
-  const setupServicesSlider = (track) => {
+  const setupServicesSlider = (track, prevBtn, nextBtn) => {
     if (!track) return null;
     const slides = $$('.services-slide', track);
     if (!slides.length) return null;
@@ -998,13 +998,13 @@
     const updateControls = () => {
       const total = isMobile ? cards.length : slides.length;
       const disabled = total <= 1;
-      if (servicesPrevBtn) {
-        servicesPrevBtn.disabled = disabled;
-        servicesPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      if (prevBtn) {
+        prevBtn.disabled = disabled;
+        prevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
-      if (servicesNextBtn) {
-        servicesNextBtn.disabled = disabled;
-        servicesNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      if (nextBtn) {
+        nextBtn.disabled = disabled;
+        nextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
     };
 
@@ -1103,92 +1103,21 @@
     };
   };
 
-  const setupPluginSlider = () => {
-    if (!pluginsTrack) return null;
-    const cards = $$('#pluginsTrack .card3d:not(.card3d--placeholder)');
-    if (!cards.length) return null;
-    const placeholder = $('#pluginsTrack .card3d--placeholder');
-    let index = 0;
-    const mq = window.matchMedia('(max-width: 640px)');
-
-    const updateControls = (isMobile) => {
-      const disabled = !isMobile || cards.length <= 1;
-      if (pluginsPrevBtn) {
-        pluginsPrevBtn.disabled = disabled;
-        pluginsPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
-      }
-      if (pluginsNextBtn) {
-        pluginsNextBtn.disabled = disabled;
-        pluginsNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
-      }
-    };
-
-    const updateDisplay = (isMobile) => {
-      if (isMobile) {
-        cards.forEach((card, i) => {
-          const active = i === index;
-          card.style.display = active ? '' : 'none';
-          card.setAttribute('aria-hidden', active ? 'false' : 'true');
-        });
-        if (placeholder) {
-          placeholder.style.display = 'none';
-          placeholder.setAttribute('aria-hidden', 'true');
-        }
-        pluginsTrack.style.transform = '';
-      } else {
-        cards.forEach((card) => {
-          card.style.display = '';
-          card.setAttribute('aria-hidden', 'false');
-        });
-        if (placeholder) {
-          placeholder.style.display = '';
-          placeholder.removeAttribute('aria-hidden');
-        }
-      }
-    };
-
-    const applyState = (isMobile) => {
-      index = Math.min(index, cards.length - 1);
-      updateDisplay(isMobile);
-      updateControls(isMobile);
-    };
-
-    applyState(mq.matches);
-
-    const handleChange = (event) => applyState(event.matches);
-    mq.addEventListener('change', handleChange);
-
-    return {
-      next() {
-        if (!mq.matches || cards.length <= 1) return;
-        index = (index + 1) % cards.length;
-        updateDisplay(true);
-        blip(720, 0.05, 'triangle');
-      },
-      prev() {
-        if (!mq.matches || cards.length <= 1) return;
-        index = (index - 1 + cards.length) % cards.length;
-        updateDisplay(true);
-        blip(480, 0.05, 'triangle');
-      }
-    };
-  };
-
-  const servicesSlider = setupServicesSlider(servicesTrack);
+  const servicesSlider = setupServicesSlider(servicesTrack, servicesPrevBtn, servicesNextBtn);
   if (servicesSlider) {
     servicesPrevBtn?.addEventListener('click', () => servicesSlider.prev());
     servicesNextBtn?.addEventListener('click', () => servicesSlider.next());
   }
 
-  const gamesSlider = setupServicesSlider(gamesTrack);
   const gamesPrevBtn = $('#gamesPrev');
   const gamesNextBtn = $('#gamesNext');
+  const gamesSlider = setupServicesSlider(gamesTrack, gamesPrevBtn, gamesNextBtn);
   if (gamesSlider) {
     gamesPrevBtn?.addEventListener('click', () => gamesSlider.prev());
     gamesNextBtn?.addEventListener('click', () => gamesSlider.next());
   }
 
-  const pluginsSlider = setupPluginSlider();
+  const pluginsSlider = setupServicesSlider(pluginsTrack, pluginsPrevBtn, pluginsNextBtn);
   if (pluginsSlider) {
     pluginsPrevBtn?.addEventListener('click', () => pluginsSlider.prev());
     pluginsNextBtn?.addEventListener('click', () => pluginsSlider.next());
