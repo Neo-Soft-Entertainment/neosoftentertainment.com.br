@@ -114,6 +114,7 @@
       'plugins.world': 'Create vast and dynamic open worlds in Unreal Engine with procedural terrain, biomes, and asset placement.',
       'plugins.explosion': 'Add fully replicated, network-ready explosions with customizable effects and optimized physics.',
       'plugins.neolibrary': 'A utility library for Unreal Engine with streamlined settings, localization helpers, and optimized Blueprint-ready utilities.',
+      'plugins.loot': 'A network-ready procedural loot system for Unreal Engine with customizable generation and replication support.',
       'plugins.view': 'View Plugin →',
       'news.title': 'Latest News',
       'news.frontline.date': 'September 2025',
@@ -247,6 +248,7 @@
       'plugins.world': 'Crie mundos abertos vastos e dinâmicos no Unreal Engine com terreno procedural, biomas e posicionamento de assets.',
       'plugins.explosion': 'Adicione explosões totalmente replicadas, prontas para rede, com efeitos personalizáveis e física otimizada.',
       'plugins.neolibrary': 'Uma biblioteca de utilidades para Unreal Engine com configurações simplificadas, suporte a localização e utilitários otimizados prontos para Blueprint.',
+      'plugins.loot': 'Um sistema de loot procedural pronto para rede no Unreal Engine com geração personalizável e suporte a replicação.',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Notícias',
       'news.frontline.date': 'Setembro de 2025',
@@ -380,6 +382,7 @@
       'plugins.world': 'Crea mundos abiertos vastos y dinámicos en Unreal Engine con terreno procedural, biomas y colocación de assets.',
       'plugins.explosion': 'Añade explosiones totalmente replicadas, listas para red, con efectos personalizables y física optimizada.',
       'plugins.neolibrary': 'Una biblioteca de utilidades para Unreal Engine con ajustes simplificados, soporte de localización y utilidades optimizadas listas para Blueprint.',
+      'plugins.loot': 'Un sistema de botín procedural listo para red en Unreal Engine con generación personalizable y soporte de replicación.',
       'plugins.view': 'Ver plugin →',
       'news.title': 'Últimas Noticias',
       'news.frontline.date': 'Septiembre de 2025',
@@ -513,6 +516,7 @@
       'plugins.world': '使用程序化地形、生物群落与资产布置，在 Unreal Engine 中打造广阔而动态的开放世界。',
       'plugins.explosion': '添加完全复制、即插即用的爆炸效果，可自定义视觉与优化的物理表现。',
       'plugins.neolibrary': '面向 Unreal Engine 的实用库，提供简化设置、本地化辅助和优化的 Blueprint 即用工具。',
+      'plugins.loot': '面向 Unreal Engine 的网络就绪程序化战利品系统，支持可自定义生成和复制功能。',
       'plugins.view': '查看插件 →',
       'news.title': '最新消息',
       'news.frontline.date': '2025 年 9 月',
@@ -646,6 +650,7 @@
       'plugins.world': 'Unreal Engine でプロシージャル地形、バイオーム、アセット配置を使って広大でダイナミックなオープンワールドを構築。',
       'plugins.explosion': '完全レプリケーション対応でネットワーク運用可能な爆発を追加。カスタマイズ可能な演出と最適化された物理を搭載。',
       'plugins.neolibrary': 'Unreal Engine 向けのユーティリティライブラリ。設定の簡素化、ローカライズ補助、最適化済みの Blueprint 対応ツールを提供。',
+      'plugins.loot': 'Unreal Engine 向けのネットワーク対応プロシージャルルートシステム。カスタマイズ可能な生成とレプリケーションサポートを搭載。',
       'plugins.view': 'プラグインを見る →',
       'news.title': '最新ニュース',
       'news.frontline.date': '2025年9月',
@@ -972,7 +977,7 @@
   }
 
   // Carousel controls - Games slider setup
-  const setupServicesSlider = (track) => {
+  const setupServicesSlider = (track, prevBtn, nextBtn) => {
     if (!track) return null;
     const slides = $$('.services-slide', track);
     if (!slides.length) return null;
@@ -993,13 +998,13 @@
     const updateControls = () => {
       const total = isMobile ? cards.length : slides.length;
       const disabled = total <= 1;
-      if (servicesPrevBtn) {
-        servicesPrevBtn.disabled = disabled;
-        servicesPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      if (prevBtn) {
+        prevBtn.disabled = disabled;
+        prevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
-      if (servicesNextBtn) {
-        servicesNextBtn.disabled = disabled;
-        servicesNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+      if (nextBtn) {
+        nextBtn.disabled = disabled;
+        nextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
       }
     };
 
@@ -1098,92 +1103,21 @@
     };
   };
 
-  const setupPluginSlider = () => {
-    if (!pluginsTrack) return null;
-    const cards = $$('#pluginsTrack .card3d:not(.card3d--placeholder)');
-    if (!cards.length) return null;
-    const placeholder = $('#pluginsTrack .card3d--placeholder');
-    let index = 0;
-    const mq = window.matchMedia('(max-width: 640px)');
-
-    const updateControls = (isMobile) => {
-      const disabled = !isMobile || cards.length <= 1;
-      if (pluginsPrevBtn) {
-        pluginsPrevBtn.disabled = disabled;
-        pluginsPrevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
-      }
-      if (pluginsNextBtn) {
-        pluginsNextBtn.disabled = disabled;
-        pluginsNextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
-      }
-    };
-
-    const updateDisplay = (isMobile) => {
-      if (isMobile) {
-        cards.forEach((card, i) => {
-          const active = i === index;
-          card.style.display = active ? '' : 'none';
-          card.setAttribute('aria-hidden', active ? 'false' : 'true');
-        });
-        if (placeholder) {
-          placeholder.style.display = 'none';
-          placeholder.setAttribute('aria-hidden', 'true');
-        }
-        pluginsTrack.style.transform = '';
-      } else {
-        cards.forEach((card) => {
-          card.style.display = '';
-          card.setAttribute('aria-hidden', 'false');
-        });
-        if (placeholder) {
-          placeholder.style.display = '';
-          placeholder.removeAttribute('aria-hidden');
-        }
-      }
-    };
-
-    const applyState = (isMobile) => {
-      index = Math.min(index, cards.length - 1);
-      updateDisplay(isMobile);
-      updateControls(isMobile);
-    };
-
-    applyState(mq.matches);
-
-    const handleChange = (event) => applyState(event.matches);
-    mq.addEventListener('change', handleChange);
-
-    return {
-      next() {
-        if (!mq.matches || cards.length <= 1) return;
-        index = (index + 1) % cards.length;
-        updateDisplay(true);
-        blip(720, 0.05, 'triangle');
-      },
-      prev() {
-        if (!mq.matches || cards.length <= 1) return;
-        index = (index - 1 + cards.length) % cards.length;
-        updateDisplay(true);
-        blip(480, 0.05, 'triangle');
-      }
-    };
-  };
-
-  const servicesSlider = setupServicesSlider(servicesTrack);
+  const servicesSlider = setupServicesSlider(servicesTrack, servicesPrevBtn, servicesNextBtn);
   if (servicesSlider) {
     servicesPrevBtn?.addEventListener('click', () => servicesSlider.prev());
     servicesNextBtn?.addEventListener('click', () => servicesSlider.next());
   }
 
-  const gamesSlider = setupServicesSlider(gamesTrack);
   const gamesPrevBtn = $('#gamesPrev');
   const gamesNextBtn = $('#gamesNext');
+  const gamesSlider = setupServicesSlider(gamesTrack, gamesPrevBtn, gamesNextBtn);
   if (gamesSlider) {
     gamesPrevBtn?.addEventListener('click', () => gamesSlider.prev());
     gamesNextBtn?.addEventListener('click', () => gamesSlider.next());
   }
 
-  const pluginsSlider = setupPluginSlider();
+  const pluginsSlider = setupServicesSlider(pluginsTrack, pluginsPrevBtn, pluginsNextBtn);
   if (pluginsSlider) {
     pluginsPrevBtn?.addEventListener('click', () => pluginsSlider.prev());
     pluginsNextBtn?.addEventListener('click', () => pluginsSlider.next());
