@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -347,16 +347,31 @@
 
   <section id="services-topics" class="py-16 sm:py-20 bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-12">
-      <div class="max-w-3xl">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="services.title">Services for Unreal teams</h2>
-        <p class="text-white/70 text-base sm:text-lg" data-i18n="services.subtitle">From embedded engineering to full
-          productions and build automation, we provide three service pillars tailored to your needs.</p>
+      <div class="services-lead">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="services.title">Services for Unreal teams</h2>
+          <p class="text-white/70 text-base sm:text-lg" data-i18n="services.subtitle">From embedded engineering to full
+            productions and build automation, we provide three service pillars tailored to your needs.</p>
+        </div>
+        <div class="services-lead__panel" aria-hidden="true">
+          <span>C++</span>
+          <span>Blueprints</span>
+          <span>Replication</span>
+          <span>AI</span>
+          <span>Tooling</span>
+          <span>CI/CD</span>
+        </div>
       </div>
       <div class="space-y-8">
-        <div class="space-y-3">
-          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.coDev.title">Co-Development</h3>
-          <p class="text-white/70" data-i18n="services.coDev.copy">Specialist support that plugs into your team to
-            deliver gameplay, networking, and AI features with production-ready code.</p>
+        <article class="service-pillar">
+          <div class="service-pillar__header">
+            <span class="service-pillar__index">01</span>
+            <div class="service-pillar__copy">
+              <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.coDev.title">Co-Development</h3>
+              <p class="text-white/70" data-i18n="services.coDev.copy">Specialist support that plugs into your team to
+                deliver gameplay, networking, and AI features with production-ready code.</p>
+            </div>
+          </div>
           <div class="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
@@ -388,12 +403,17 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="space-y-3">
-          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.full.title">Full Service Game Development
-          </h3>
-          <p class="text-white/70" data-i18n="services.full.copy">End-to-end Unreal delivery including tooling,
-            optimization, and technical direction for complex productions.</p>
+        </article>
+        <article class="service-pillar">
+          <div class="service-pillar__header">
+            <span class="service-pillar__index">02</span>
+            <div class="service-pillar__copy">
+              <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.full.title">Full Service Game Development
+              </h3>
+              <p class="text-white/70" data-i18n="services.full.copy">End-to-end Unreal delivery including tooling,
+                optimization, and technical direction for complex productions.</p>
+            </div>
+          </div>
           <div class="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
@@ -427,12 +447,17 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="space-y-3">
-          <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.build.title">Build &amp; Release Systems
-          </h3>
-          <p class="text-white/70" data-i18n="services.build.copy">Automated delivery, server infrastructure, and
-            deployment pipelines that keep releases stable and repeatable.</p>
+        </article>
+        <article class="service-pillar">
+          <div class="service-pillar__header">
+            <span class="service-pillar__index">03</span>
+            <div class="service-pillar__copy">
+              <h3 class="text-xl sm:text-2xl font-semibold" data-i18n="services.build.title">Build &amp; Release Systems
+              </h3>
+              <p class="text-white/70" data-i18n="services.build.copy">Automated delivery, server infrastructure, and
+                deployment pipelines that keep releases stable and repeatable.</p>
+            </div>
+          </div>
           <div class="grid gap-6 md:gap-8 md:grid-cols-2 xl:grid-cols-3">
             <div class="card3d" data-card>
               <div class="p-6 sm:p-7 space-y-3">
@@ -457,18 +482,21 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
   <section id="services-examples" class="py-20 bg-black section-gradient">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="text-center max-w-3xl mx-auto mb-10">
-        <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" data-i18n="games.servicesTitle">Project Highlights
-        </h3>
-        <p class="text-white/60" data-i18n="games.servicesSubtitle">Exemplos dos nossos trabalhos, mostrando os jogos
-          que fizemos como parceiros de co-dev e serviços.</p>
+      <div class="section-header section-header--compact">
+        <span class="section-header__index">S</span>
+        <div class="section-header__copy">
+          <h3 class="text-xl sm:text-2xl font-semibold text-white mb-3" data-i18n="games.servicesTitle">Project Highlights
+          </h3>
+          <p class="text-white/60 max-w-2xl" data-i18n="games.servicesSubtitle">Exemplos dos nossos trabalhos, mostrando os jogos
+            que fizemos como parceiros de co-dev e serviços.</p>
+        </div>
       </div>
       <div class="relative">
         <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Project Highlights"
@@ -560,22 +588,25 @@
   </section>
 
   <section id="services-why" class="section-gradient py-16 sm:py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
-      <h2 class="text-2xl sm:text-3xl font-bold">Why studios choose Neo Soft</h2>
-      <p class="text-white/70 text-base sm:text-lg">We provide highly specialized engineering for Unreal Engine. From
-        gameplay prototyping to full multiplayer implementation, from editor tools to advanced pipelines, we deliver
-        scalable systems built with clean architecture and production ready quality.</p>
-      <ul
-        class="grid gap-3 sm:gap-4 text-left sm:text-center sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-5xl list-disc list-inside text-white/80">
-        <li>Fast delivery and high technical accuracy</li>
-        <li>Clean C++ and Blueprint architecture</li>
-        <li>Shooter and systems engineering experts</li>
-        <li>Multiplayer and replication specialists</li>
-        <li>Editor tools that improve production workflows</li>
-        <li>Automated pipelines that reduce manual work</li>
-        <li>Dedicated server setup and optimization</li>
-        <li>Clear communication and modular deliveries</li>
-      </ul>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="services-proof">
+        <div class="services-proof__copy">
+          <h2 class="text-2xl sm:text-3xl font-bold">Why studios choose Neo Soft</h2>
+          <p class="text-white/70 text-base sm:text-lg">We provide highly specialized engineering for Unreal Engine. From
+            gameplay prototyping to full multiplayer implementation, from editor tools to advanced pipelines, we deliver
+            scalable systems built with clean architecture and production ready quality.</p>
+        </div>
+        <ul class="services-proof__list grid gap-3 sm:gap-4 text-left sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-5xl text-white/80">
+          <li>Fast delivery and high technical accuracy</li>
+          <li>Clean C++ and Blueprint architecture</li>
+          <li>Shooter and systems engineering experts</li>
+          <li>Multiplayer and replication specialists</li>
+          <li>Editor tools that improve production workflows</li>
+          <li>Automated pipelines that reduce manual work</li>
+          <li>Dedicated server setup and optimization</li>
+          <li>Clear communication and modular deliveries</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -660,15 +691,21 @@
           <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-10" data-i18n="news.title">Latest News</h2>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <article class="news-card">
-          <p class="news-date" data-i18n="news.frontline.date">September 2025</p>
+      <div class="news-grid">
+        <article class="news-card news-card--feature">
+          <div class="news-card__eyebrow">
+            <p class="news-date" data-i18n="news.frontline.date">September 2025</p>
+            <span class="news-card__divider" aria-hidden="true"></span>
+          </div>
           <h3 class="news-title" data-i18n="news.frontline.title">Frontline Steam Page Goes Live</h3>
           <p class="news-summary" data-i18n="news.frontline.copy">After nearly six years in development, our debut title
             is preparing for launch — wishlist the revolution now.</p>
         </article>
-        <article class="news-card">
-          <p class="news-date" data-i18n="news.team.date">July 2025</p>
+        <article class="news-card news-card--stacked">
+          <div class="news-card__eyebrow">
+            <p class="news-date" data-i18n="news.team.date">July 2025</p>
+            <span class="news-card__divider" aria-hidden="true"></span>
+          </div>
           <h3 class="news-title" data-i18n="news.team.title">Neo Soft Expands Team</h3>
           <p class="news-summary" data-i18n="news.team.copy">We’re growing! Neo Soft welcomes new talent as we take on
             the next chapter of our journey.</p>
@@ -720,11 +757,17 @@
   <!-- Team -->
   <section id="team" class="section-gradient py-20 sm:py-24 bg-[#0b0114]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-purple-200 mb-8 sm:mb-10" data-i18n="team.title">Our Team</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="team-card" tabindex="0">
+      <div class="section-header section-header--compact">
+        <span class="section-header__index">04</span>
+        <div class="section-header__copy">
+          <h2 class="text-2xl sm:text-3xl font-bold text-purple-200" data-i18n="team.title">Our Team</h2>
+        </div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card team-card--lead" tabindex="0">
           <div class="team-card-inner">
             <div class="team-card-face team-card-front">
+              <span class="team-card__serial">01</span>
               <div class="team-avatar">
                 <img src="img/victor.jpg" alt="Portrait of Victor Henrique" />
               </div>
@@ -732,6 +775,7 @@
               <p class="team-role">Founder, Game Director &amp; Production Director</p>
             </div>
             <div class="team-card-face team-card-back">
+              <span class="team-card__serial">01</span>
               <h3 class="team-name">Victor Henrique</h3>
               <p class="team-role">Founder, Game Director &amp; Production Director</p>
               <p class="team-bio" data-i18n="team.victor.bio">Leads Neo Soft’s creative direction and builds Unreal
@@ -742,6 +786,7 @@
         <div class="team-card" tabindex="0">
           <div class="team-card-inner">
             <div class="team-card-face team-card-front">
+              <span class="team-card__serial">02</span>
               <div class="team-avatar">
                 <img src="img/hiury.jpg" alt="Portrait of Hiury Francisco" />
               </div>
@@ -749,6 +794,7 @@
               <p class="team-role">Co-Founder, Video Editor &amp; Production Lead</p>
             </div>
             <div class="team-card-face team-card-back">
+              <span class="team-card__serial">02</span>
               <h3 class="team-name">Hiury Francisco</h3>
               <p class="team-role">Co-Founder, Video Editor &amp; Production Lead</p>
               <p class="team-bio" data-i18n="team.hiury.bio">Transforms game footage into cinematic trailers and
@@ -759,6 +805,7 @@
         <div class="team-card" tabindex="0">
           <div class="team-card-inner">
             <div class="team-card-face team-card-front">
+              <span class="team-card__serial">03</span>
               <div class="team-avatar">
                 <img src="img/josegabriel.jpg" alt="Portrait of José Gabriel" />
               </div>
@@ -766,6 +813,7 @@
               <p class="team-role">Lead Developer, Co-Founder &amp; Level Designer</p>
             </div>
             <div class="team-card-face team-card-back">
+              <span class="team-card__serial">03</span>
               <h3 class="team-name">José Gabriel</h3>
               <p class="team-role">Lead Developer, Co-Founder &amp; Level Designer</p>
               <p class="team-bio" data-i18n="team.jose.bio">Builds gameplay systems and optimizes performance so our
@@ -776,6 +824,7 @@
         <div class="team-card" tabindex="0">
           <div class="team-card-inner">
             <div class="team-card-face team-card-front">
+              <span class="team-card__serial">04</span>
               <div class="team-avatar">
                 <img src="img/isabelbrito.jpg" alt="Portrait of Isabel Brito" />
               </div>
@@ -783,6 +832,7 @@
               <p class="team-role">Voice Director</p>
             </div>
             <div class="team-card-face team-card-back">
+              <span class="team-card__serial">04</span>
               <h3 class="team-name">Isabel Brito</h3>
               <p class="team-role">Voice Director</p>
               <p class="team-bio" data-i18n="team.isabel.bio">Guides casting and performance for voice talent, ensuring
@@ -793,6 +843,7 @@
         <div class="team-card" tabindex="0">
           <div class="team-card-inner">
             <div class="team-card-face team-card-front">
+              <span class="team-card__serial">05</span>
               <div class="team-avatar">
                 <img src="img/mats.jpg" alt="Portrait of Matheus Oliveira" />
               </div>
@@ -800,6 +851,7 @@
               <p class="team-role">Game Designer &amp; Marketing Specialist</p>
             </div>
             <div class="team-card-face team-card-back">
+              <span class="team-card__serial">05</span>
               <h3 class="team-name">Matheus Oliveira</h3>
               <p class="team-role">Game Designer &amp; Marketing Specialist</p>
               <p class="team-bio" data-i18n="team.matheus.bio">Designs memorable gameplay experiences and drives
@@ -815,7 +867,7 @@
   <section id="contact" class="section-gradient py-20 sm:py-24 bg-black">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="section-header section-header--contact">
-        <span class="section-header__index">04</span>
+        <span class="section-header__index">05</span>
         <div class="section-header__copy">
           <h2 class="text-2xl sm:text-3xl font-bold mb-6" data-i18n="contact.title">Contact Us</h2>
           <p class="text-white/70 mb-8 max-w-2xl" data-i18n="contact.copy">Want to collaborate, request services, or
