@@ -152,7 +152,7 @@
       'contact.error': 'Something went wrong. Please try again later.',
       'contact.socialTitle': 'Connect with Neo Soft',
       'contact.socialCopy': 'Follow our latest updates and behind-the-scenes moments.',
-      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialInstagram': 'Instagram / Neo Soft',
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Open Neo Soft on Instagram',
       'contact.linkedinAria': 'Open Neo Soft on LinkedIn',
@@ -160,7 +160,7 @@
       'contact.discordAria': 'Open Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Open Neo Soft on YouTube',
-      'footer.copy': '© 2025 Neo Soft. Founded by Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     pt: {
       'nav.games': 'Jogos',
@@ -287,7 +287,7 @@
       'contact.error': 'Algo deu errado. Tente novamente mais tarde.',
       'contact.socialTitle': 'Conecte-se com a Neo Soft',
       'contact.socialCopy': 'Acompanhe as novidades e bastidores do estúdio.',
-      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialInstagram': 'Instagram / Neo Soft',
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Abrir Neo Soft no Instagram',
       'contact.linkedinAria': 'Abrir Neo Soft no LinkedIn',
@@ -295,7 +295,7 @@
       'contact.discordAria': 'Abrir o Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft no YouTube',
-      'footer.copy': '© 2025 Neo Soft. Fundada por Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     es: {
       'nav.games': 'Juegos',
@@ -422,7 +422,7 @@
       'contact.error': 'Algo salió mal. Inténtalo de nuevo más tarde.',
       'contact.socialTitle': 'Conéctate con Neo Soft',
       'contact.socialCopy': 'Sigue nuestras novedades y momentos entre bastidores.',
-      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialInstagram': 'Instagram / Neo Soft',
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Abrir Neo Soft en Instagram',
       'contact.linkedinAria': 'Abrir Neo Soft en LinkedIn',
@@ -430,7 +430,7 @@
       'contact.discordAria': 'Abrir Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft en YouTube',
-      'footer.copy': '© 2025 Neo Soft. Fundado por Victor. - <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     zh: {
       'nav.games': '游戏',
@@ -557,7 +557,7 @@
       'contact.error': '出现问题。请稍后再试。',
       'contact.socialTitle': '关注 Neo Soft',
       'contact.socialCopy': '获取我们的最新动态与幕后花絮。',
-      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialInstagram': 'Instagram / Neo Soft',
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': '在 Instagram 打开 Neo Soft',
       'contact.linkedinAria': '在 LinkedIn 打开 Neo Soft',
@@ -565,7 +565,7 @@
       'contact.discordAria': '打开 Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': '在 YouTube 打开 Neo Soft',
-      'footer.copy': '© 2025 Neo Soft。由 Victor 创立。- <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     ja: {
       'nav.games': 'ゲーム',
@@ -692,7 +692,7 @@
       'contact.error': '問題が発生しました。後でもう一度お試しください。',
       'contact.socialTitle': 'Neo Soft とつながる',
       'contact.socialCopy': '最新情報や舞台裏の様子をチェックしましょう。',
-      'contact.socialInstagram': 'Instagram @neeeosoft',
+      'contact.socialInstagram': 'Instagram / Neo Soft',
       'contact.socialLinkedIn': 'LinkedIn / Neo Soft',
       'contact.instagramAria': 'Instagram で Neo Soft を開く',
       'contact.linkedinAria': 'LinkedIn で Neo Soft を開く',
@@ -700,7 +700,7 @@
       'contact.discordAria': 'Discord / Neo Soft を開く',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'YouTube で Neo Soft を開く',
-      'footer.copy': '© 2025 Neo Soft。Victor により設立。- <a href="mailto:contact@neeosoft.com.br" class="hover:text-purple-300">contact@neeosoft.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     }
   };
 
@@ -1180,7 +1180,7 @@
     const serviceId = 'service_47lqkyt';
     const contactTemplateId = 'template_3yzo1bv';
     const autoReplyTemplateId = 'template_contact_ack';
-    const ownerEmail = 'contact@neeosoft.com.br';
+    const ownerEmail = 'contact@neosoftentertainment.com.br';
 
     if (!emailPattern.test(ownerEmail)) {
       console.error('Invalid owner email configured for EmailJS:', ownerEmail);
@@ -1202,7 +1202,7 @@
       to_name: fromName || 'Friend',
       to_email: fromMail,
       from_name: 'Neo Soft',
-      reply_to: 'contact@neeosoft.com.br',
+      reply_to: 'contact@neosoftentertainment.com.br',
       message: 'Recebemos sua mensagem e responderemos em breve. We received your message and will get back to you shortly.'
     };
 
