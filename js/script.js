@@ -724,6 +724,19 @@
     }
   };
 
+  const mergeCmsTranslations = (content) => {
+    if (!content || typeof content !== 'object') return;
+
+    Object.entries(content).forEach(([lang, values]) => {
+      if (!translations[lang] || !values || typeof values !== 'object') return;
+
+      Object.entries(values).forEach(([key, value]) => {
+        if (typeof value !== 'string') return;
+        translations[lang][key] = value;
+      });
+    });
+  };
+
   const storageKey = 'neoSoftLang';
   let currentLang = 'en';
   try {
@@ -808,8 +821,14 @@
     refreshMuteBtn();
   };
 
+  mergeCmsTranslations(window.neoSoftCmsContent);
   createServiceImages();
   applyTranslations(currentLang);
+
+  window.addEventListener('neo-soft-cms-content', (event) => {
+    mergeCmsTranslations(event.detail);
+    applyTranslations(currentLang);
+  });
 
   if (sfxToggle) sfxToggle.checked = !muted;
 
