@@ -22,6 +22,7 @@
   const languageSelect = $('#languageSelect');
   const languageSelectMobile = $('#languageSelectMobile');
   const contactForm = $('#contactForm');
+  const contactCaptcha = $('#contactCaptcha');
   const formFeedback = $('#formFeedback');
   const formError = $('#formError');
   const sendBtn = $('#sendBtn');
@@ -152,6 +153,9 @@
       'contact.send': 'Send Message',
       'contact.sending': 'Sending...',
       'contact.invalidEmail': 'Please enter a valid email address.',
+      'contact.captchaRequired': 'Please complete the reCAPTCHA verification.',
+      'contact.captchaExpired': 'The reCAPTCHA verification expired. Please try again.',
+      'contact.captchaUnavailable': 'Spam protection is unavailable right now. Please try again in a moment.',
       'contact.success': 'Message sent! We’ll get back to you soon.',
       'contact.error': 'Something went wrong. Please try again later.',
       'contact.socialTitle': 'Connect with Neo Soft',
@@ -291,6 +295,9 @@
       'contact.send': 'Enviar mensagem',
       'contact.sending': 'Enviando...',
       'contact.invalidEmail': 'Por favor, insira um email válido.',
+      'contact.captchaRequired': 'Complete a verificação do reCAPTCHA antes de enviar.',
+      'contact.captchaExpired': 'A verificação do reCAPTCHA expirou. Tente novamente.',
+      'contact.captchaUnavailable': 'A proteção contra spam está indisponível no momento. Tente novamente em instantes.',
       'contact.success': 'Mensagem enviada! Responderemos em breve.',
       'contact.error': 'Algo deu errado. Tente novamente mais tarde.',
       'contact.socialTitle': 'Conecte-se com a Neo Soft',
@@ -430,6 +437,9 @@
       'contact.send': 'Enviar mensaje',
       'contact.sending': 'Enviando...',
       'contact.invalidEmail': 'Por favor, ingresa un correo electrónico válido.',
+      'contact.captchaRequired': 'Completa la verificación de reCAPTCHA antes de enviar.',
+      'contact.captchaExpired': 'La verificación de reCAPTCHA caducó. Inténtalo de nuevo.',
+      'contact.captchaUnavailable': 'La protección contra spam no está disponible en este momento. Inténtalo de nuevo en breve.',
       'contact.success': '¡Mensaje enviado! Nos pondremos en contacto pronto.',
       'contact.error': 'Algo salió mal. Inténtalo de nuevo más tarde.',
       'contact.socialTitle': 'Conéctate con Neo Soft',
@@ -569,6 +579,9 @@
       'contact.send': '发送信息',
       'contact.sending': '正在发送…',
       'contact.invalidEmail': '请输入有效的电子邮件地址。',
+      'contact.captchaRequired': '请先完成 reCAPTCHA 验证。',
+      'contact.captchaExpired': 'reCAPTCHA 验证已过期，请重试。',
+      'contact.captchaUnavailable': '垃圾邮件防护暂时不可用，请稍后再试。',
       'contact.success': '信息已发送！我们会尽快回复。',
       'contact.error': '出现问题。请稍后再试。',
       'contact.socialTitle': '关注 Neo Soft',
@@ -708,6 +721,9 @@
       'contact.send': 'メッセージを送信',
       'contact.sending': '送信中…',
       'contact.invalidEmail': '有効なメールアドレスを入力してください。',
+      'contact.captchaRequired': '送信前に reCAPTCHA 認証を完了してください。',
+      'contact.captchaExpired': 'reCAPTCHA の認証が期限切れになりました。もう一度お試しください。',
+      'contact.captchaUnavailable': '現在スパム対策を利用できません。しばらくしてからもう一度お試しください。',
       'contact.success': 'メッセージを送信しました！追ってご連絡いたします。',
       'contact.error': '問題が発生しました。後でもう一度お試しください。',
       'contact.socialTitle': 'Neo Soft とつながる',
@@ -738,6 +754,7 @@
   };
 
   const storageKey = 'neoSoftLang';
+  const recaptchaSiteKey = (window.neoSoftSupabase?.recaptchaSiteKey || '').trim();
   let currentLang = 'en';
   try {
     const stored = localStorage.getItem(storageKey);
@@ -752,8 +769,46 @@
   };
 
   const t = (key) => translations[currentLang]?.[key] ?? translations.en[key] ?? key;
+  let recaptchaWidgetId = null;
 
   let muted = true;
+
+  const showFormError = (key) => {
+    if (!formError) return;
+    formError.textContent = t(key);
+    formError.dataset.errorKey = key;
+    formError.classList.remove('hidden');
+  };
+
+  const clearFormError = () => {
+    if (!formError) return;
+    formError.classList.add('hidden');
+    delete formError.dataset.errorKey;
+  };
+
+  const resetRecaptcha = () => {
+    if (recaptchaWidgetId === null) return;
+    if (!window.grecaptcha?.reset) return;
+    window.grecaptcha.reset(recaptchaWidgetId);
+  };
+
+  const renderRecaptcha = () => {
+    if (recaptchaWidgetId !== null) return;
+    if (!contactCaptcha || !recaptchaSiteKey) return;
+    if (!window.grecaptcha?.render) return;
+
+    recaptchaWidgetId = window.grecaptcha.render(contactCaptcha, {
+      sitekey: recaptchaSiteKey,
+      theme: 'dark',
+      callback: () => clearFormError(),
+      'expired-callback': () => showFormError('contact.captchaExpired'),
+      'error-callback': () => showFormError('contact.captchaUnavailable')
+    });
+  };
+
+  window.neoSoftRecaptchaReady = () => {
+    renderRecaptcha();
+  };
 
   const createServiceImages = () => {
     $$('[data-service-image]').forEach(slot => {
@@ -824,6 +879,7 @@
   mergeCmsTranslations(window.neoSoftCmsContent);
   createServiceImages();
   applyTranslations(currentLang);
+  renderRecaptcha();
 
   window.addEventListener('neo-soft-cms-content', (event) => {
     mergeCmsTranslations(event.detail);
@@ -1188,19 +1244,6 @@
       btn.innerHTML = original;
     };
 
-    const showError = (key) => {
-      if (!formError) return;
-      formError.textContent = t(key);
-      formError.dataset.errorKey = key;
-      formError.classList.remove('hidden');
-    };
-
-    const clearError = () => {
-      if (!formError) return;
-      formError.classList.add('hidden');
-      delete formError.dataset.errorKey;
-    };
-
     const formData = new FormData(contactForm);
     const fromName = (formData.get('from_name') || '').toString().trim();
     const fromMail = (formData.get('from_mail') || '').toString().trim();
@@ -1208,41 +1251,54 @@
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(fromMail)) {
-      showError('contact.invalidEmail');
+      showFormError('contact.invalidEmail');
       restoreBtn();
       return;
     }
 
-    clearError();
+    if (!recaptchaSiteKey) {
+      showFormError('contact.captchaUnavailable');
+      restoreBtn();
+      return;
+    }
+
+    if (recaptchaWidgetId === null || !window.grecaptcha?.getResponse) {
+      showFormError('contact.captchaUnavailable');
+      restoreBtn();
+      return;
+    }
+
+    const captchaToken = window.grecaptcha.getResponse(recaptchaWidgetId);
+    if (!captchaToken) {
+      showFormError('contact.captchaRequired');
+      restoreBtn();
+      return;
+    }
+
+    clearFormError();
     disableBtn();
 
     const serviceId = 'service_47lqkyt';
     const contactTemplateId = 'template_3yzo1bv';
-    const autoReplyTemplateId = 'template_contact_ack';
     const ownerEmail = 'contact@neosoftentertainment.com.br';
 
     if (!emailPattern.test(ownerEmail)) {
       console.error('Invalid owner email configured for EmailJS:', ownerEmail);
-      showError('contact.error');
+      showFormError('contact.error');
       restoreBtn();
       return;
     }
 
     const templateParams = {
+      name: fromName,
+      email: fromMail,
       from_name: fromName,
       from_mail: fromMail,
       message,
       reply_to: fromMail,
       to_email: ownerEmail,
-      to_name: 'Neo Soft Team'
-    };
-
-    const acknowledgementParams = {
-      to_name: fromName || 'Friend',
-      to_email: fromMail,
-      from_name: 'Neo Soft',
-      reply_to: 'contact@neosoftentertainment.com.br',
-      message: 'Recebemos sua mensagem e responderemos em breve. We received your message and will get back to you shortly.'
+      to_name: 'Neo Soft Team',
+      'g-recaptcha-response': captchaToken
     };
 
     emailjs.send(serviceId, contactTemplateId, templateParams)
@@ -1251,14 +1307,13 @@
         blip(540, 0.1, 'square');
         if (formFeedback) formFeedback.classList.remove('hidden');
         contactForm.reset();
+        resetRecaptcha();
         setTimeout(() => formFeedback && formFeedback.classList.add('hidden'), 3000);
-        return emailjs.send(serviceId, autoReplyTemplateId, acknowledgementParams).catch(err => {
-          console.warn('Auto-reply failed', err);
-        });
       })
       .catch((err) => {
         console.error('Email error', err);
-        showError('contact.error');
+        showFormError('contact.error');
+        resetRecaptcha();
       })
       .finally(() => {
         restoreBtn();

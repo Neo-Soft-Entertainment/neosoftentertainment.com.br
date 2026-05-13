@@ -185,6 +185,8 @@ section[id] {
 /* Inputs / buttons */
 .input, .textarea{ border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); border-radius:.5rem; padding:.6rem .75rem; color:white; }
 .input::placeholder, .textarea::placeholder{ color:rgba(255,255,255,.4); }
+.contact-captcha{ min-height:78px; overflow-x:auto; }
+.contact-captcha > div{ min-width:304px; }
 .btn-primary{ display:inline-flex; align-items:center; justify-content:center; padding:.7rem 1.25rem; border-radius:.5rem; font-weight:600; color:white; background:linear-gradient(90deg, var(--purple), var(--fuchsia)); box-shadow:0 10px 20px rgba(155,93,229,.2); text-align:center; }
 .btn-primary:hover{ filter:brightness(1.05); }
 .btn-outline{ display:inline-flex; align-items:center; justify-content:center; padding:.7rem 1.25rem; border-radius:.5rem; border:1px solid rgba(255,255,255,.2); text-align:center; }
