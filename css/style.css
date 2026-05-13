@@ -59,7 +59,7 @@ section[id] {
   background: rgba(155, 93, 229, .12);
   border: 2px solid rgba(236, 233, 255, .45);
   box-shadow: 0 0 28px rgba(209, 75, 240, .35);
-  transition: opacity .2s ease, transform .1s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+  transition: opacity .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
 
 #cursor.cursor-hover {
