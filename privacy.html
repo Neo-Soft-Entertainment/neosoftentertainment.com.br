@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Política de Privacidade — Neo Soft Entertainment</title>
+  <meta name="description" content="Política de Privacidade da Neo Soft Entertainment LTDA." />
+  <meta name="theme-color" content="#12021c" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://neeosoft.com.br/privacy.html" />
+
+  <!-- Favicons / PWA -->
+  <link rel="icon" href="img/icons/icon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icons/icon-180.png" sizes="180x180" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+          boxShadow: { glow: '0 0 40px rgba(155,93,229,.35)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .prose-privacy h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #d14bf0;
+      margin-top: 2.5rem;
+      margin-bottom: .75rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid rgba(209,75,240,.2);
+    }
+    .prose-privacy h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #9b5de5;
+      margin-top: 1.5rem;
+      margin-bottom: .5rem;
+    }
+    .prose-privacy p {
+      color: rgba(255,255,255,.75);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .prose-privacy ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: rgba(255,255,255,.75);
+    }
+    .prose-privacy ul li {
+      margin-bottom: .4rem;
+      line-height: 1.8;
+    }
+    .prose-privacy a {
+      color: #9b5de5;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .prose-privacy a:hover {
+      color: #d14bf0;
+    }
+    .prose-privacy strong {
+      color: rgba(255,255,255,.9);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+
+  <!-- Custom Cursor -->
+  <div id="cursor"
+    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
+    aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Neo Soft - Home">
+        <img src="img/neosoft.jpg" alt="Neo Soft logo" class="h-9 w-9 rounded-md object-cover" />
+        <span class="text-base sm:text-lg font-semibold">Neo Soft</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex gap-3 lg:gap-5 text-sm font-medium" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="games.html">Games</a>
+        <a class="nav-link" href="plugins.html">Plugins</a>
+        <a class="nav-link" href="studio.html">Studio</a>
+        <a class="nav-link" href="studio.html#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile controls -->
+      <div class="flex items-center gap-3">
+        <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
+          aria-label="Abrir menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Menu mobile">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title">Menu</span>
+      </div>
+      <nav class="mobile-menu__links" aria-label="Navegação mobile">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="games.html">Games</a>
+        <a href="plugins.html">Plugins</a>
+        <a href="studio.html">Studio</a>
+        <a href="studio.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-28 pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
+      <!-- Page header -->
+      <div class="mb-10">
+        <p class="text-xs font-semibold tracking-widest uppercase text-fuchsiaNeo mb-3">Legal</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Política de Privacidade</h1>
+        <p class="text-white/50 text-sm">Última atualização: <time datetime="2026-05-13">13 de maio de 2026</time></p>
+        <div class="mt-6 h-px bg-gradient-to-r from-fuchsiaNeo/40 via-purpleNeo/20 to-transparent"></div>
+      </div>
+
+      <!-- Policy body -->
+      <article class="prose-privacy">
+
+        <p>
+          A <strong>Neo Soft Entertainment LTDA.</strong> ("Neo Soft", "nós" ou "nosso"), inscrita no CNPJ sob o
+          n.º 60.226.829/0001-3, com sede no Brasil, está comprometida com a proteção dos dados pessoais de seus
+          usuários em conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei n.º
+          13.709/2018)</strong> e demais legislações aplicáveis.
+        </p>
+        <p>
+          Esta Política descreve como coletamos, usamos, armazenamos e protegemos seus dados quando você acessa
+          nosso site <a href="https://neeosoft.com.br">neeosoft.com.br</a> ou interage conosco por qualquer canal
+          oficial.
+        </p>
+
+        <h2>1. Controlador de Dados</h2>
+        <p>
+          O controlador responsável pelo tratamento dos seus dados pessoais é:
+        </p>
+        <ul>
+          <li><strong>Razão social:</strong> Neo Soft Entertainment LTDA.</li>
+          <li><strong>CNPJ:</strong> 60.226.829/0001-3</li>
+          <li><strong>E-mail do DPO:</strong> <a href="mailto:privacy@neosoftentertainment.com.br">privacy@neosoftentertainment.com.br</a></li>
+          <li><strong>E-mail de contato geral:</strong> <a href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a></li>
+        </ul>
+
+        <h2>2. Dados que Coletamos</h2>
+
+        <h3>2.1 Dados fornecidos por você</h3>
+        <ul>
+          <li>Nome e endereço de e-mail informados pelo formulário de contato.</li>
+          <li>Mensagens e conteúdos enviados voluntariamente através dos nossos canais.</li>
+        </ul>
+
+        <h3>2.2 Dados coletados automaticamente</h3>
+        <ul>
+          <li>Endereço IP e informações de geolocalização aproximada.</li>
+          <li>Tipo de navegador, sistema operacional e resolução de tela.</li>
+          <li>Páginas visitadas, tempo de permanência e cliques (dados de análise).</li>
+          <li>Cookies técnicos e de desempenho (detalhados na Seção 6).</li>
+        </ul>
+
+        <h2>3. Finalidade do Tratamento</h2>
+        <p>Utilizamos seus dados para as seguintes finalidades:</p>
+        <ul>
+          <li><strong>Comunicação:</strong> responder às suas mensagens e solicitações de contato.</li>
+          <li><strong>Melhoria do site:</strong> analisar o desempenho e a usabilidade das nossas páginas.</li>
+          <li><strong>Segurança:</strong> detectar e prevenir fraudes, abusos e acessos não autorizados.</li>
+          <li><strong>Cumprimento de obrigações legais:</strong> atender requisitos previstos em lei ou ordens judiciais.</li>
+          <li><strong>Marketing (com consentimento):</strong> enviar novidades, atualizações de jogos e plugins caso você
+            tenha optado por recebê-las.</li>
+        </ul>
+
+        <h2>4. Base Legal para o Tratamento</h2>
+        <ul>
+          <li><strong>Consentimento</strong> (art. 7º, I, LGPD) — para comunicações de marketing e cookies não essenciais.</li>
+          <li><strong>Execução de contrato</strong> (art. 7º, V) — para responder a solicitações e prestar suporte.</li>
+          <li><strong>Legítimo interesse</strong> (art. 7º, IX) — para análises de segurança e melhoria do site.</li>
+          <li><strong>Cumprimento de obrigação legal</strong> (art. 7º, II) — quando exigido por lei ou autoridade competente.</li>
+        </ul>
+
+        <h2>5. Compartilhamento de Dados</h2>
+        <p>
+          Não vendemos seus dados pessoais. Podemos compartilhá-los apenas com:
+        </p>
+        <ul>
+          <li><strong>Prestadores de serviço</strong> que atuam em nosso nome (e.g., plataforma de e-mail,
+            hospedagem, análise de dados), sempre sob obrigações contratuais de confidencialidade e segurança.</li>
+          <li><strong>Autoridades competentes</strong>, quando exigido por lei, regulamento ou ordem judicial.</li>
+          <li><strong>Compradores ou sucessores</strong> no caso de fusão, aquisição ou venda de ativos, mediante
+            aviso prévio aos titulares.</li>
+        </ul>
+
+        <h2>6. Cookies e Tecnologias Similares</h2>
+        <p>Utilizamos os seguintes tipos de cookies:</p>
+        <ul>
+          <li><strong>Cookies essenciais:</strong> necessários para o funcionamento básico do site. Não requerem consentimento.</li>
+          <li><strong>Cookies de desempenho/análise:</strong> coletam informações agregadas e anônimas sobre como os
+            visitantes utilizam o site (e.g., Google Analytics). Requerem consentimento.</li>
+          <li><strong>Cookies de preferências:</strong> armazenam suas preferências de idioma e configurações.
+            Requerem consentimento.</li>
+        </ul>
+        <p>
+          Você pode gerenciar ou desativar cookies diretamente nas configurações do seu navegador. A desativação
+          de cookies essenciais pode impactar o funcionamento do site.
+        </p>
+
+        <h2>7. Transferência Internacional de Dados</h2>
+        <p>
+          Alguns de nossos prestadores de serviço podem estar localizados fora do Brasil. Quando isso ocorrer,
+          garantimos que a transferência esteja amparada por cláusulas contratuais adequadas ou que o país
+          destinatário ofereça grau de proteção equivalente ao previsto na LGPD, conforme art. 33 da lei.
+        </p>
+
+        <h2>8. Retenção de Dados</h2>
+        <p>
+          Mantemos seus dados pelo tempo necessário para atingir as finalidades descritas nesta Política, ou pelo
+          prazo mínimo exigido por lei. Após esse período, os dados são excluídos de forma segura ou anonimizados.
+        </p>
+
+        <h2>9. Seus Direitos como Titular</h2>
+        <p>
+          Nos termos da LGPD (art. 18), você tem direito a:
+        </p>
+        <ul>
+          <li>Confirmar a existência de tratamento dos seus dados.</li>
+          <li>Acessar os dados que possuímos sobre você.</li>
+          <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+          <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em
+            desconformidade com a lei.</li>
+          <li>Solicitar a portabilidade dos seus dados a outro fornecedor de serviço.</li>
+          <li>Revogar o consentimento a qualquer momento, sem prejuízo da licitude dos tratamentos realizados
+            antes da revogação.</li>
+          <li>Solicitar informações sobre com quem compartilhamos seus dados.</li>
+          <li>Peticionar à <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong>.</li>
+        </ul>
+        <p>
+          Para exercer qualquer um desses direitos, entre em contato pelo e-mail
+          <a href="mailto:privacy@neosoftentertainment.com.br">privacy@neosoftentertainment.com.br</a>. Responderemos
+          no prazo de até <strong>15 dias úteis</strong>.
+        </p>
+
+        <h2>10. Segurança da Informação</h2>
+        <p>
+          Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados contra acesso não
+          autorizado, perda, destruição, alteração ou divulgação indevida, incluindo criptografia em trânsito
+          (TLS/HTTPS), controle de acesso e revisões periódicas de segurança.
+        </p>
+        <p>
+          Em caso de incidente de segurança que possa acarretar risco ou dano relevante aos titulares,
+          notificaremos a ANPD e os afetados no prazo legalmente estabelecido.
+        </p>
+
+        <h2>11. Links para Sites de Terceiros</h2>
+        <p>
+          Nosso site pode conter links para sites externos (e.g., Steam, Fab, redes sociais). Esta Política não
+          se aplica a esses sites. Recomendamos a leitura das respectivas políticas de privacidade.
+        </p>
+
+        <h2>12. Crianças e Adolescentes</h2>
+        <p>
+          Nosso site não é direcionado a menores de 18 anos. Não coletamos intencionalmente dados de crianças ou
+          adolescentes. Se identificarmos tal coleta inadvertida, os dados serão excluídos imediatamente.
+        </p>
+
+        <h2>13. Alterações nesta Política</h2>
+        <p>
+          Podemos atualizar esta Política periodicamente. A data de "última atualização" no topo desta página
+          indica quando as alterações mais recentes foram realizadas. O uso continuado do site após a publicação
+          de alterações constitui sua aceitação das mudanças.
+        </p>
+
+        <h2>14. Contato</h2>
+        <p>
+          Para dúvidas, solicitações ou reclamações relacionadas ao tratamento de dados pessoais:
+        </p>
+        <ul>
+          <li><strong>E-mail do DPO:</strong> <a href="mailto:privacy@neosoftentertainment.com.br">privacy@neosoftentertainment.com.br</a></li>
+          <li><strong>E-mail geral:</strong> <a href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a></li>
+        </ul>
+
+        <div class="mt-10 p-4 rounded-lg border border-white/10 bg-white/5 text-white/50 text-xs leading-relaxed">
+          Este documento foi elaborado em conformidade com a Lei n.º 13.709/2018 (LGPD) e está sujeito à
+          legislação brasileira. Qualquer disputa relacionada a esta Política será submetida à jurisdição do
+          Brasil.
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
+      <p class="break-words max-w-full text-center sm:text-left">
+        © 2026 Neo Soft Entertainment LTDA. -
+        <a href="mailto:contact@neosoftentertainment.com.br"
+          class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a class="hover:text-purple-300" href="index.html">Home</a>
+        <a class="hover:text-purple-300" href="services.html">Services</a>
+        <a class="hover:text-purple-300" href="games.html">Games</a>
+        <a class="hover:text-purple-300" href="plugins.html">Plugins</a>
+        <a class="hover:text-purple-300" href="studio.html">Studio</a>
+        <a class="hover:text-purple-300" href="studio.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
