@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Neo Soft Plugins — Unreal Engine Tools</title>
+  <meta name="description"
+    content="Browse Neo Soft Unreal Engine plugins, from procedural generation to replicated gameplay utilities." />
+  <meta name="theme-color" content="#12021c" />
+  <link rel="canonical" href="https://neeosoft.com.br/plugins.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Neo Soft Plugins — Unreal Engine Tools" />
+  <meta property="og:description"
+    content="Browse Neo Soft Unreal Engine plugins on Fab, built to accelerate game development." />
+  <meta property="og:url" content="https://neeosoft.com.br/plugins.html" />
+  <meta property="og:image" content="img/neosoft.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neo Soft Plugins — Unreal Engine Tools" />
+  <meta name="twitter:description"
+    content="Browse Neo Soft Unreal Engine plugins on Fab, built to accelerate game development." />
+  <meta name="twitter:image" content="img/neosoft.jpg" />
+
+  <link rel="icon" href="img/icons/icon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icons/icon-180.png" sizes="180x180" />
+  <link rel="manifest" href="manifest.json" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+          boxShadow: { glow: '0 0 40px rgba(155,93,229,.35)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+  <div id="cursor"
+    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
+    aria-hidden="true"></div>
+
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Neo Soft - Home">
+        <img src="img/neosoft.jpg" alt="Neo Soft logo" class="h-9 w-9 rounded-md object-cover" />
+        <span class="text-base sm:text-lg font-semibold">Neo Soft</span>
+      </a>
+
+      <nav class="hidden md:flex gap-3 lg:gap-5 text-sm font-medium" aria-label="Primary">
+        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="nav-link" href="services.html" data-i18n="nav.services">Services</a>
+        <a class="nav-link" href="games.html" data-i18n="nav.games">Games</a>
+        <a class="nav-link" href="plugins.html" aria-current="page" data-i18n="nav.plugins">Plugins</a>
+        <a class="nav-link" href="studio.html" data-i18n="nav.studio">Studio</a>
+        <a class="nav-link" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <label class="sr-only" for="languageSelect" data-i18n="nav.languageLabel">Select language</label>
+        <div class="language-select hidden md:inline-flex" data-i18n-aria-label="nav.languageLabel">
+          <select id="languageSelect" class="language-select__field text-xs" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+            <option value="es">ES</option>
+            <option value="zh">ZH</option>
+            <option value="ja">JA</option>
+          </select>
+        </div>
+        <button id="muteBtn" class="audio-toggle hidden md:inline-flex text-xs" aria-label="Toggle SFX"
+          data-i18n="nav.unmute">Unmute SFX</button>
+        <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
+          aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Mobile menu">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title" data-i18n="nav.menuTitle">Menu</span>
+      </div>
+      <nav class="mobile-menu__links" aria-label="Mobile primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="services.html" data-i18n="nav.services">Services</a>
+        <a href="games.html" data-i18n="nav.games">Games</a>
+        <a href="plugins.html" aria-current="page" data-i18n="nav.plugins">Plugins</a>
+        <a href="studio.html" data-i18n="nav.studio">Studio</a>
+        <a href="studio.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="mobile-menu__section">
+        <label for="languageSelectMobile" class="mobile-menu__label" data-i18n="nav.languageLabel">Select
+          language</label>
+        <div class="language-select language-select--mobile" data-i18n-aria-label="nav.languageLabel">
+          <select id="languageSelectMobile" class="language-select__field text-xs" aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="pt">PT</option>
+            <option value="es">ES</option>
+            <option value="zh">ZH</option>
+            <option value="ja">JA</option>
+          </select>
+        </div>
+      </div>
+      <button id="muteBtnMobile" class="audio-toggle audio-toggle--mobile mt-3 text-xs" data-i18n="nav.unmute">Unmute
+        SFX</button>
+    </div>
+  </header>
+
+  <section id="plugins" class="section-gradient relative pt-28 sm:pt-32 pb-20 sm:pb-24 bg-[#0b0114]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="section-header section-header--compact">
+        <span class="section-header__index">01</span>
+        <div class="section-header__copy">
+          <h1 class="text-2xl sm:text-3xl font-bold" data-i18n="plugins.title">Our Plugins</h1>
+          <span class="section-header__meta text-xs text-purple-300/70" data-i18n="plugins.subtitle">Fab marketplace
+            listings</span>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Plugins"
+          data-i18n-aria-label="plugins.title">
+          <div id="pluginsTrack" class="services-track">
+            <div class="services-slide" aria-hidden="false">
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.png"
+                    alt="World Procedural Generator Plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">World Procedural Generator Plugin</h3>
+                  <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine
+                    with procedural terrain, biomes, and asset placement.</p>
+                  <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.png"
+                    alt="Replicated Explosion Plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Replicated Explosion Plugin</h3>
+                  <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions
+                    with customizable effects and optimized physics.</p>
+                  <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/NeoLibrary.png" alt="Neo Library plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Neo Library</h3>
+                  <p class="card3d-desc" data-i18n="plugins.neolibrary">A utility library for Unreal Engine with
+                    streamlined settings, localization helpers, and optimized Blueprint-ready utilities.</p>
+                  <a href="https://www.fab.com/pt-br/listings/b4b9e699-62b2-4829-868b-cc2cc3a6bf88" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+            </div>
+            <div class="services-slide" aria-hidden="true">
+              <div class="card3d" data-card>
+                <div class="card3d-img"><img src="img/AdvancedLootGenerator.png"
+                    alt="Advanced Loot Generator plugin cover" /></div>
+                <div class="p-5">
+                  <h3 class="card3d-title">Advanced Loot Generator</h3>
+                  <p class="card3d-desc" data-i18n="plugins.loot">A network-ready procedural loot system for Unreal Engine
+                    with customizable generation and replication support.</p>
+                  <a href="https://www.fab.com/listings/09a9dc9f-7a75-4280-8d7b-0f00c86daf37" target="_blank"
+                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
+                </div>
+              </div>
+              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
+              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button id="pluginsPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
+          <button id="pluginsNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gradient py-20 sm:py-24 bg-black">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="contact-panel flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-3" data-i18n="contact.title">Contact Us</h2>
+          <p class="text-white/70" data-i18n="contact.copy">Want to collaborate, request services, or share feedback? We
+            also work as service providers — reach out for a quote and we’ll get back to you.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="studio.html#contact" class="btn-primary" data-i18n="nav.contact">Contact</a>
+          <a href="services.html" class="btn-outline" data-i18n="nav.services">Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <button id="backToTop"
+    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo shadow-lg hover:scale-105 transition"
+    aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
+
+  <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
+      <p class="break-words max-w-full text-center sm:text-left" data-i18n="footer.copy">© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br"
+          class="hover:text-purple-300">contact@neosoftentertainment.com.br</a></p>
+      <div class="flex flex-wrap gap-4">
+        <a class="hover:text-purple-300" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="hover:text-purple-300" href="services.html" data-i18n="nav.services">Services</a>
+        <a class="hover:text-purple-300" href="games.html" data-i18n="nav.games">Games</a>
+        <a class="hover:text-purple-300" href="plugins.html" aria-current="page" data-i18n="nav.plugins">Plugins</a>
+        <a class="hover:text-purple-300" href="studio.html" data-i18n="nav.studio">Studio</a>
+        <a class="hover:text-purple-300" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

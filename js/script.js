@@ -28,8 +28,11 @@
 
   const translations = {
     en: {
+      'nav.home': 'Home',
+      'nav.services': 'Services',
       'nav.games': 'Games',
       'nav.plugins': 'Plugins',
+      'nav.studio': 'Studio',
       'nav.news': 'News',
       'nav.careers': 'Careers',
       'nav.about': 'About',
@@ -167,8 +170,11 @@
       'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     pt: {
+      'nav.home': 'Início',
+      'nav.services': 'Serviços',
       'nav.games': 'Jogos',
       'nav.plugins': 'Plugins',
+      'nav.studio': 'Estúdio',
       'nav.news': 'Notícias',
       'nav.careers': 'Carreiras',
       'nav.about': 'Sobre',
@@ -306,8 +312,11 @@
       'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     es: {
+      'nav.home': 'Inicio',
+      'nav.services': 'Servicios',
       'nav.games': 'Juegos',
       'nav.plugins': 'Plugins',
+      'nav.studio': 'Estudio',
       'nav.news': 'Noticias',
       'nav.careers': 'Carreras',
       'nav.about': 'Acerca de',
@@ -445,8 +454,11 @@
       'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     zh: {
+      'nav.home': '首页',
+      'nav.services': '服务',
       'nav.games': '游戏',
       'nav.plugins': '插件',
+      'nav.studio': '工作室',
       'nav.news': '新闻',
       'nav.careers': '招聘',
       'nav.about': '关于',
@@ -584,8 +596,11 @@
       'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
     },
     ja: {
+      'nav.home': 'ホーム',
+      'nav.services': 'サービス',
       'nav.games': 'ゲーム',
       'nav.plugins': 'プラグイン',
+      'nav.studio': 'スタジオ',
       'nav.news': 'ニュース',
       'nav.careers': '採用情報',
       'nav.about': '概要',
