@@ -739,6 +739,8 @@
     }
   };
 
+  window.NEO_SOFT_TRANSLATIONS = translations;
+
   const storageKey = 'neoSoftLang';
   let currentLang = 'en';
   try {
@@ -825,6 +827,28 @@
 
   createServiceImages();
   applyTranslations(currentLang);
+
+  const siteConfig = window.NEO_SOFT_CONFIG;
+  if (siteConfig?.supabaseUrl && siteConfig.supabaseAnonKey) {
+    fetch(`${siteConfig.supabaseUrl.replace(/\/$/, '')}/rest/v1/site_content?select=key,language,value`, {
+      headers: {
+        apikey: siteConfig.supabaseAnonKey
+      }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Content request failed with ${response.status}`);
+        return response.json();
+      })
+      .then((rows) => {
+        rows.forEach((row) => {
+          if (!translations[row.language] || translations[row.language][row.key] === undefined) return;
+          if (typeof row.value !== 'string') return;
+          translations[row.language][row.key] = row.value;
+        });
+        applyTranslations(currentLang);
+      })
+      .catch((err) => console.warn('Supabase content overrides unavailable.', err));
+  }
 
   if (sfxToggle) sfxToggle.checked = !muted;
 

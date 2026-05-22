@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Neo Soft Admin</title>
+  <meta name="theme-color" content="#12021c" />
+  <link rel="icon" href="img/icons/icon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icons/icon-180.png" sizes="180x180" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+          boxShadow: { glow: '0 0 40px rgba(155,93,229,.35)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Neo Soft - Home">
+        <img src="img/neosoft.jpg" alt="Neo Soft logo" class="h-9 w-9 rounded-md object-cover" />
+        <span class="text-base sm:text-lg font-semibold">Neo Soft Admin</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section id="adminSetup" class="admin-panel hidden" aria-live="polite">
+      <p class="admin-eyebrow">Setup required</p>
+      <h1 class="admin-title">Admin configuration is missing.</h1>
+      <p class="admin-copy">Add the Supabase URL, public key, and reCAPTCHA site key in <code>js/site-config.js</code>.</p>
+    </section>
+
+    <section id="loginPanel" class="admin-panel admin-login">
+      <p class="admin-eyebrow">Direct access</p>
+      <h1 class="admin-title">Sign in</h1>
+      <form id="loginForm" class="admin-form">
+        <label>
+          <span>Email</span>
+          <input id="adminEmail" class="input" name="email" type="email" autocomplete="username" required />
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="adminPassword" class="input" name="password" type="password" autocomplete="current-password"
+            required />
+        </label>
+        <div id="recaptchaSlot" class="admin-recaptcha"></div>
+        <button id="loginButton" class="btn-primary" type="submit">Sign in</button>
+        <p id="loginStatus" class="admin-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="editorPanel" class="admin-editor hidden">
+      <div class="admin-editor__bar">
+        <div>
+          <p class="admin-eyebrow">Published overrides</p>
+          <h1 class="admin-title">Website content</h1>
+        </div>
+        <div class="admin-editor__actions">
+          <button id="saveContent" class="btn-primary" type="button">Save changes</button>
+          <button id="signOut" class="btn-outline" type="button">Sign out</button>
+        </div>
+      </div>
+
+      <div class="admin-filters">
+        <label>
+          <span>Language</span>
+          <select id="contentLanguage" class="input"></select>
+        </label>
+        <label>
+          <span>Filter key</span>
+          <input id="contentFilter" class="input" type="search" autocomplete="off" />
+        </label>
+      </div>
+
+      <p id="editorStatus" class="admin-status" role="status" aria-live="polite"></p>
+      <div id="contentFields" class="admin-content"></div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="hidden" aria-hidden="true" tabindex="-1"></button>
+
+  <script src="js/site-config.js"></script>
+  <script src="js/script.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+
+</html>
