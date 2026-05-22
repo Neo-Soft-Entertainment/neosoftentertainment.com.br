@@ -37,7 +37,7 @@
     <section id="adminSetup" class="admin-panel hidden" aria-live="polite">
       <p class="admin-eyebrow">Setup required</p>
       <h1 class="admin-title">Admin configuration is missing.</h1>
-      <p class="admin-copy">Add the Supabase URL, public key, and reCAPTCHA site key in <code>js/site-config.js</code>.</p>
+      <p class="admin-copy">Add the Supabase URL, public key, and hCaptcha site key in <code>js/site-config.js</code>.</p>
     </section>
 
     <section id="loginPanel" class="admin-panel admin-login">
@@ -53,7 +53,7 @@
           <input id="adminPassword" class="input" name="password" type="password" autocomplete="current-password"
             required />
         </label>
-        <div id="recaptchaSlot" class="admin-recaptcha"></div>
+        <div id="captchaSlot" class="admin-recaptcha"></div>
         <button id="loginButton" class="btn-primary" type="submit">Sign in</button>
         <p id="loginStatus" class="admin-status" role="status" aria-live="polite"></p>
       </form>

@@ -16,11 +16,11 @@ Deno.serve(async (request) => {
     });
   }
 
-  const recaptchaSecret = Deno.env.get('RECAPTCHA_SECRET_KEY');
+  const hcaptchaSecret = Deno.env.get('HCAPTCHA_SECRET_KEY');
   const supabaseUrl = Deno.env.get('SUPABASE_URL');
   const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY');
 
-  if (!recaptchaSecret || !supabaseUrl || !supabaseAnonKey) {
+  if (!hcaptchaSecret || !supabaseUrl || !supabaseAnonKey) {
     return new Response(JSON.stringify({ error: 'Admin login is not configured.' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -30,31 +30,31 @@ Deno.serve(async (request) => {
   const body = await request.json().catch(() => ({}));
   const email = typeof body.email === 'string' ? body.email.trim() : '';
   const password = typeof body.password === 'string' ? body.password : '';
-  const recaptchaToken = typeof body.recaptchaToken === 'string' ? body.recaptchaToken : '';
+  const hcaptchaToken = typeof body.hcaptchaToken === 'string' ? body.hcaptchaToken : '';
 
-  if (!email || !password || !recaptchaToken) {
-    return new Response(JSON.stringify({ error: 'Email, password, and reCAPTCHA are required.' }), {
+  if (!email || !password || !hcaptchaToken) {
+    return new Response(JSON.stringify({ error: 'Email, password, and hCaptcha are required.' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 
-  const recaptchaBody = new URLSearchParams({
-    secret: recaptchaSecret,
-    response: recaptchaToken
+  const hcaptchaBody = new URLSearchParams({
+    secret: hcaptchaSecret,
+    response: hcaptchaToken
   });
   const forwardedFor = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
-  if (forwardedFor) recaptchaBody.set('remoteip', forwardedFor);
+  if (forwardedFor) hcaptchaBody.set('remoteip', forwardedFor);
 
-  const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+  const hcaptchaResponse = await fetch('https://hcaptcha.com/siteverify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: recaptchaBody
+    body: hcaptchaBody
   });
-  const recaptchaResult = await recaptchaResponse.json().catch(() => ({}));
+  const hcaptchaResult = await hcaptchaResponse.json().catch(() => ({}));
 
-  if (!recaptchaResult.success) {
-    return new Response(JSON.stringify({ error: 'reCAPTCHA verification failed.' }), {
+  if (!hcaptchaResult.success) {
+    return new Response(JSON.stringify({ error: 'hCaptcha verification failed.' }), {
       status: 400,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });

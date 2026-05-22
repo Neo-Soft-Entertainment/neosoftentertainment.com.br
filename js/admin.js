@@ -14,14 +14,14 @@ const contentFilter = document.querySelector('#contentFilter');
 const contentFields = document.querySelector('#contentFields');
 const saveContent = document.querySelector('#saveContent');
 const signOut = document.querySelector('#signOut');
-const recaptchaSlot = document.querySelector('#recaptchaSlot');
+const captchaSlot = document.querySelector('#captchaSlot');
 const languages = Object.keys(translations);
 let supabase;
-let recaptchaWidget;
+let hcaptchaWidgetId;
 let adminUser;
 let overrides = new Map();
 
-if (!config.supabaseUrl || !config.supabaseAnonKey || !config.recaptchaSiteKey || !languages.length) {
+if (!config.supabaseUrl || !config.supabaseAnonKey || !config.hcaptchaSiteKey || !languages.length) {
   setupPanel.classList.remove('hidden');
   loginPanel.classList.add('hidden');
 } else {
@@ -34,17 +34,18 @@ if (!config.supabaseUrl || !config.supabaseAnonKey || !config.recaptchaSiteKey |
     contentLanguage.append(option);
   });
 
-  const recaptchaScript = document.createElement('script');
-  recaptchaScript.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
-  recaptchaScript.async = true;
-  recaptchaScript.defer = true;
-  recaptchaScript.addEventListener('load', () => {
-    recaptchaWidget = window.grecaptcha.render(recaptchaSlot, {
-      sitekey: config.recaptchaSiteKey,
+  const hcaptchaScript = document.createElement('script');
+  hcaptchaScript.src = 'https://js.hcaptcha.com/1/api.js?render=explicit';
+  hcaptchaScript.async = true;
+  hcaptchaScript.defer = true;
+  hcaptchaScript.addEventListener('load', () => {
+    if (!window.hcaptcha) return;
+    hcaptchaWidgetId = window.hcaptcha.render(captchaSlot, {
+      sitekey: config.hcaptchaSiteKey,
       theme: 'dark'
     });
   });
-  document.head.append(recaptchaScript);
+  document.head.append(hcaptchaScript);
 
   supabase.auth.getSession().then(({ data }) => {
     if (data.session) openEditor(data.session.user);
@@ -55,14 +56,14 @@ loginForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
   loginStatus.textContent = '';
 
-  if (recaptchaWidget === undefined) {
-    loginStatus.textContent = 'reCAPTCHA is still loading.';
+  if (hcaptchaWidgetId === undefined) {
+    loginStatus.textContent = 'hCaptcha is still loading.';
     return;
   }
 
-  const recaptchaToken = window.grecaptcha.getResponse(recaptchaWidget);
-  if (!recaptchaToken) {
-    loginStatus.textContent = 'Complete reCAPTCHA before signing in.';
+  const hcaptchaToken = window.hcaptcha.getResponse(hcaptchaWidgetId);
+  if (!hcaptchaToken) {
+    loginStatus.textContent = 'Complete hCaptcha before signing in.';
     return;
   }
 
@@ -78,12 +79,12 @@ loginForm?.addEventListener('submit', async (event) => {
     body: JSON.stringify({
       email: loginForm.email.value.trim(),
       password: loginForm.password.value,
-      recaptchaToken
+      hcaptchaToken
     })
   });
   const result = await response.json().catch(() => ({}));
 
-  window.grecaptcha.reset(recaptchaWidget);
+  window.hcaptcha.reset(hcaptchaWidgetId);
   loginButton.disabled = false;
   loginButton.textContent = 'Sign in';
 
@@ -151,7 +152,7 @@ signOut?.addEventListener('click', async () => {
   loginPanel.classList.remove('hidden');
   editorStatus.textContent = '';
   loginStatus.textContent = '';
-  if (recaptchaWidget !== undefined) window.grecaptcha.reset(recaptchaWidget);
+  if (hcaptchaWidgetId !== undefined) window.hcaptcha.reset(hcaptchaWidgetId);
 });
 
 async function openEditor(user) {
