@@ -149,23 +149,27 @@
     });
 
     if (!reduceMotion) {
-      gsap.from('[data-hero-copy] > *', {
-        y: 44,
-        opacity: 0,
-        duration: .9,
-        stagger: .09,
-        ease: 'power3.out',
-        delay: .18
-      });
+      if (document.querySelector('[data-hero-copy]')) {
+        gsap.from('[data-hero-copy] > *', {
+          y: 44,
+          opacity: 0,
+          duration: .9,
+          stagger: .09,
+          ease: 'power3.out',
+          delay: .18
+        });
+      }
 
-      gsap.from('[data-hero-stage]', {
-        y: 34,
-        rotationY: -8,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        delay: .42
-      });
+      if (document.querySelector('[data-hero-stage]')) {
+        gsap.from('[data-hero-stage]', {
+          y: 34,
+          rotationY: -8,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          delay: .42
+        });
+      }
 
       gsap.utils.toArray('[data-reveal]').forEach(function OnRevealSetupCallback(element) {
         gsap.fromTo(element,
@@ -188,38 +192,44 @@
         );
       });
 
-      gsap.to('.hero-console', {
-        yPercent: 10,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#home',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
+      if (document.querySelector('.hero-console')) {
+        gsap.to('.hero-console', {
+          yPercent: 10,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#home',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
 
-      gsap.to('.studio-marquee__track', {
-        xPercent: -4,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.studio-marquee',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
+      if (document.querySelector('.studio-marquee')) {
+        gsap.to('.studio-marquee__track', {
+          xPercent: -4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.studio-marquee',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
 
-      gsap.to('.capabilities-grid', {
-        y: -28,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '#capabilities',
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true
-        }
-      });
+      if (document.querySelector('#capabilities')) {
+        gsap.to('.capabilities-grid', {
+          y: -28,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#capabilities',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
     }
 
     ScrollTrigger.refresh();
