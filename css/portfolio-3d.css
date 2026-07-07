@@ -1,22 +1,61 @@
 .neo-portfolio-3d {
+  --portfolio-bg:
+    radial-gradient(circle at 58% 24%, rgba(105, 183, 255, .18), transparent 34%),
+    radial-gradient(circle at 78% 64%, rgba(34, 197, 94, .12), transparent 30%),
+    linear-gradient(180deg, #030405 0%, #080909 54%, #000 100%);
+  --portfolio-text: #fff;
+  --portfolio-strong: rgba(255, 255, 255, .9);
+  --portfolio-body: rgba(255, 255, 255, .68);
+  --portfolio-muted: rgba(255, 255, 255, .72);
+  --portfolio-soft: rgba(255, 255, 255, .58);
+  --portfolio-border: rgba(255, 255, 255, .16);
+  --portfolio-panel: rgba(255, 255, 255, .08);
+  --portfolio-control-hover-bg: rgba(105, 183, 255, .14);
+  --portfolio-accent: #69b7ff;
+  --portfolio-button-bg: #fff;
+  --portfolio-button-text: #05070d;
+  --portfolio-button-hover: rgba(255, 255, 255, .86);
+  --portfolio-image-bg: #05070d;
+  --portfolio-scrim:
+    linear-gradient(90deg, rgba(0, 0, 0, .82), rgba(0, 0, 0, .34) 48%, rgba(0, 0, 0, .74)),
+    linear-gradient(180deg, rgba(0, 0, 0, .34), transparent 30%, rgba(0, 0, 0, .66));
   position: relative;
   min-height: 150vh;
   overflow: clip;
   isolation: isolate;
-  background:
-    radial-gradient(circle at 58% 24%, rgba(105, 183, 255, .18), transparent 34%),
-    radial-gradient(circle at 78% 64%, rgba(34, 197, 94, .12), transparent 30%),
-    linear-gradient(180deg, #030405 0%, #080909 54%, #000 100%);
-  color: #fff;
+  background: var(--portfolio-bg);
+  color: var(--portfolio-text);
   outline: none;
 }
 
+html[data-theme="light"] .neo-portfolio-3d {
+  --portfolio-bg:
+    radial-gradient(circle at 58% 22%, rgba(13, 116, 206, .16), transparent 34%),
+    radial-gradient(circle at 80% 66%, rgba(22, 163, 74, .12), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #fff 52%, #f5f7fb 100%);
+  --portfolio-text: #171717;
+  --portfolio-strong: rgba(23, 23, 23, .9);
+  --portfolio-body: rgba(23, 23, 23, .68);
+  --portfolio-muted: rgba(23, 23, 23, .72);
+  --portfolio-soft: rgba(23, 23, 23, .58);
+  --portfolio-border: rgba(23, 23, 23, .14);
+  --portfolio-panel: rgba(255, 255, 255, .74);
+  --portfolio-control-hover-bg: rgba(13, 116, 206, .1);
+  --portfolio-accent: #0d74ce;
+  --portfolio-button-bg: #171717;
+  --portfolio-button-text: #fff;
+  --portfolio-button-hover: #1a1a1a;
+  --portfolio-image-bg: #f0f0f3;
+  --portfolio-scrim:
+    linear-gradient(90deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .42) 48%, rgba(255, 255, 255, .78)),
+    linear-gradient(180deg, rgba(255, 255, 255, .42), transparent 34%, rgba(255, 255, 255, .7));
+}
+
 .neo-portfolio-3d:focus-visible {
-  outline: 2px solid rgba(105, 183, 255, .86);
+  outline: 2px solid var(--portfolio-accent);
   outline-offset: -4px;
 }
 
-.neo-portfolio-3d::before,
 .neo-portfolio-3d::after {
   content: "";
   position: absolute;
@@ -25,19 +64,8 @@
   z-index: 1;
 }
 
-.neo-portfolio-3d::before {
-  background:
-    linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at 60% 42%, black, transparent 68%);
-  opacity: .34;
-}
-
 .neo-portfolio-3d::after {
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, .82), rgba(0, 0, 0, .34) 48%, rgba(0, 0, 0, .74)),
-    linear-gradient(180deg, rgba(0, 0, 0, .34), transparent 30%, rgba(0, 0, 0, .66));
+  background: var(--portfolio-scrim);
 }
 
 .neo-portfolio-3d__canvas-wrap {
@@ -84,20 +112,20 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: rgba(255, 255, 255, .72);
+  color: var(--portfolio-muted);
 }
 
 .neo-portfolio-3d__eyebrow::before {
   content: "";
   width: 34px;
   height: 1px;
-  background: rgba(105, 183, 255, .72);
+  background: var(--portfolio-accent);
 }
 
 .neo-portfolio-3d__title {
   max-width: 12ch;
   margin: 18px 0 0;
-  color: #fff;
+  color: var(--portfolio-text);
   font-size: clamp(2.4rem, 7vw, 5.9rem);
   font-weight: 600;
   line-height: .92;
@@ -108,7 +136,7 @@
 .neo-portfolio-3d__tagline {
   max-width: 560px;
   margin: 24px 0 0;
-  color: rgba(255, 255, 255, .9);
+  color: var(--portfolio-strong);
   font-size: clamp(1rem, 2vw, 1.28rem);
   line-height: 1.5;
 }
@@ -116,7 +144,7 @@
 .neo-portfolio-3d__description {
   max-width: 600px;
   margin: 14px 0 0;
-  color: rgba(255, 255, 255, .68);
+  color: var(--portfolio-body);
   line-height: 1.75;
 }
 
@@ -132,10 +160,10 @@
   align-items: center;
   min-height: 30px;
   padding: 0 11px;
-  border: 1px solid rgba(255, 255, 255, .16);
+  border: 1px solid var(--portfolio-border);
   border-radius: var(--radius-md, 8px);
-  background: rgba(255, 255, 255, .08);
-  color: rgba(255, 255, 255, .82);
+  background: var(--portfolio-panel);
+  color: var(--portfolio-muted);
   backdrop-filter: blur(12px);
 }
 
@@ -163,32 +191,32 @@
 
 .neo-portfolio-3d__button {
   padding: 0 18px;
-  border: 1px solid #fff;
-  background: #fff;
-  color: #05070d;
+  border: 1px solid var(--portfolio-button-bg);
+  background: var(--portfolio-button-bg);
+  color: var(--portfolio-button-text);
 }
 
 .neo-portfolio-3d__button:hover {
-  background: rgba(255, 255, 255, .86);
-  border-color: rgba(255, 255, 255, .86);
+  background: var(--portfolio-button-hover);
+  border-color: var(--portfolio-button-hover);
 }
 
 .neo-portfolio-3d__control {
   padding: 0 14px;
-  border: 1px solid rgba(255, 255, 255, .18);
-  background: rgba(255, 255, 255, .08);
-  color: #fff;
+  border: 1px solid var(--portfolio-border);
+  background: var(--portfolio-panel);
+  color: var(--portfolio-text);
   cursor: pointer;
 }
 
 .neo-portfolio-3d__control:hover {
-  border-color: rgba(105, 183, 255, .72);
-  background: rgba(105, 183, 255, .14);
+  border-color: var(--portfolio-accent);
+  background: var(--portfolio-control-hover-bg);
 }
 
 .neo-portfolio-3d__button:focus-visible,
 .neo-portfolio-3d__control:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid var(--portfolio-text);
   outline-offset: 3px;
 }
 
@@ -197,7 +225,7 @@
   align-items: center;
   gap: 18px;
   margin-top: 24px;
-  color: rgba(255, 255, 255, .58);
+  color: var(--portfolio-soft);
 }
 
 .neo-portfolio-3d__hint,
@@ -208,7 +236,7 @@
 .neo-portfolio-3d__count {
   display: inline-flex;
   gap: 6px;
-  color: rgba(255, 255, 255, .82);
+  color: var(--portfolio-muted);
 }
 
 .neo-portfolio-3d.is-ready {
@@ -220,7 +248,7 @@
 }
 
 .neo-portfolio-3d.is-hovering-card .neo-portfolio-3d__hint {
-  color: rgba(105, 183, 255, .92);
+  color: var(--portfolio-accent);
 }
 
 .neo-portfolio-3d__fallback {
@@ -236,10 +264,10 @@
 
 .neo-portfolio-3d__fallback-card {
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, .14);
+  border: 1px solid var(--portfolio-border);
   border-radius: var(--radius-lg, 12px);
-  background: rgba(255, 255, 255, .07);
-  color: rgba(255, 255, 255, .72);
+  background: var(--portfolio-panel);
+  color: var(--portfolio-muted);
 }
 
 .neo-portfolio-3d__fallback-card img {
@@ -247,7 +275,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  background: #05070d;
+  background: var(--portfolio-image-bg);
 }
 
 .neo-portfolio-3d__fallback-copy {
@@ -256,7 +284,7 @@
 
 .neo-portfolio-3d__fallback-copy h3 {
   margin: 0;
-  color: #fff;
+  color: var(--portfolio-text);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.35;
@@ -264,7 +292,7 @@
 
 .neo-portfolio-3d__fallback-copy p {
   margin: 10px 0 0;
-  color: rgba(255, 255, 255, .68);
+  color: var(--portfolio-body);
   font-size: 14px;
   line-height: 1.65;
 }
@@ -272,7 +300,7 @@
 .neo-portfolio-3d__fallback-copy a {
   display: inline-flex;
   margin-top: 16px;
-  color: #69b7ff;
+  color: var(--portfolio-accent);
   font-weight: 600;
   text-decoration: none;
 }
