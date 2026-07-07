@@ -1,532 +1,394 @@
-﻿<!doctype html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script>
-    (function () {
-      try {
-        var stored = localStorage.getItem('neosoft-theme');
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) {}
-    })();
+    document.documentElement.setAttribute('data-theme', 'dark');
   </script>
 
-  <title>Neo Soft Entertainment — Creating Worlds. Inspiring Players.</title>
+  <title>Neo Soft Entertainment - Interactive Game Studio</title>
   <meta name="description"
-    content="Neo Soft Entertainment is a Brazilian indie studio crafting immersive games and Unreal Engine plugins since 2020." />
-  <meta name="keywords" content="Neo Soft, games, Unreal Engine, plugins, Brazilian studio, indie, Frontline" />
-  <meta name="theme-color" content="#12021c" />
-
-  <!-- Canonical -->
+    content="Neo Soft Entertainment is a Brazilian game and software studio building interactive systems, Unreal Engine tools, and cinematic digital worlds." />
+  <meta name="keywords" content="Neo Soft, game studio, Unreal Engine, WebGL, Frontline, games, plugins, Brazil" />
+  <meta name="theme-color" content="#03050a" />
   <link rel="canonical" href="https://neeosoft.com.br" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Neo Soft — Creating Worlds. Inspiring Players." />
+  <meta property="og:title" content="Neo Soft - Interactive Game Studio" />
   <meta property="og:description"
-    content="Frontline coming soon to Steam. Wishlist now. Unreal Engine plugins on Fab." />
+    content="Games, Unreal Engine systems, plugins, and interactive technology from Neo Soft Entertainment." />
   <meta property="og:url" content="https://neeosoft.com.br" />
   <meta property="og:image" content="img/neosoft.jpg" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Neo Soft — Creating Worlds. Inspiring Players." />
+  <meta name="twitter:title" content="Neo Soft - Interactive Game Studio" />
   <meta name="twitter:description"
-    content="Creating worlds, inspiring players. Frontline coming soon to Steam. Wishlist now. Unreal plugins on Fab." />
+    content="A premium game and software studio crafting systems, worlds, and interactive tools." />
   <meta name="twitter:image" content="img/neosoft.jpg" />
 
-  <!-- Favicons / PWA -->
   <link rel="icon" href="img/icons/icon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="img/icons/icon-180.png" sizes="180x180" />
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
-          boxShadow: { glow: '0 1px 2px rgba(0,0,0,.4)' }
-        }
-      }
-    }
-  </script>
-
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portfolio-3d.css" />
+  <link rel="stylesheet" href="css/experience.css" />
 </head>
 
-<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+<body class="experience-site">
+  <canvas id="neoWebglCanvas" class="neo-webgl-canvas" aria-hidden="true"></canvas>
+  <div id="webglFallback" class="webgl-fallback" aria-hidden="true"></div>
+  <div id="cursor" class="cursor-follower" aria-hidden="true"></div>
 
-  <!-- Custom Cursor -->
-  <div id="cursor"
-    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
-    aria-hidden="true"></div>
+  <div class="site-loader" data-loader aria-hidden="true">
+    <div class="site-loader__mark">Neo Soft</div>
+    <div class="site-loader__line"><span></span></div>
+    <p>Initializing interactive studio layer</p>
+  </div>
 
-  <!-- Navbar -->
-  <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3" aria-label="Neo Soft - Home">
-        <img src="img/neosoft.jpg" alt="Neo Soft logo" class="h-9 w-9 rounded-md object-cover" />
-        <span class="text-base sm:text-lg font-semibold">Neo Soft</span>
-      </a>
+  <header id="navbar" class="site-header">
+    <a href="index.html" class="brand-link" aria-label="Neo Soft home">
+      <img src="img/neosoft.jpg" alt="Neo Soft logo" />
+      <span>Neo Soft</span>
+    </a>
 
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex gap-3 lg:gap-5 text-sm font-medium" aria-label="Primary">
-        <a class="nav-link" href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
-        <a class="nav-link" href="services.html" data-i18n="nav.services">Services</a>
-        <a class="nav-link" href="games.html" data-i18n="nav.games">Games</a>
-        <a class="nav-link" href="plugins.html" data-i18n="nav.plugins">Plugins</a>
-        <a class="nav-link" href="studio.html" data-i18n="nav.studio">Studio</a>
-        <a class="nav-link" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
-      </nav>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link" aria-current="page">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="plugins.html" class="nav-link">Plugins</a>
+      <a href="studio.html" class="nav-link">Studio</a>
+      <a href="studio.html#contact" class="nav-link">Contact</a>
+    </nav>
 
-      <!-- Mobile controls -->
-      <div class="flex items-center gap-3">
-        <label class="sr-only" for="languageSelect" data-i18n="nav.languageLabel">Select language</label>
-        <div class="language-select hidden md:inline-flex" data-i18n-aria-label="nav.languageLabel">
-          <select id="languageSelect" class="language-select__field text-xs" aria-label="Select language">
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-            <option value="es">ES</option>
-            <option value="zh">ZH</option>
-            <option value="ja">JA</option>
-          </select>
-        </div>
-        <button id="themeToggle" class="theme-toggle hidden md:inline-flex" aria-label="Toggle light and dark theme"
-          type="button">
-          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4" />
-            <path
-              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-          </svg>
-          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
-          </svg>
-        </button>
-        <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
-          aria-label="Open menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Mobile menu">
-      <div class="mobile-menu__header">
-        <span class="mobile-menu__title" data-i18n="nav.menuTitle">Menu</span>
-      </div>
-      <nav class="mobile-menu__links" aria-label="Mobile primary">
-        <a href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
-        <a href="services.html" data-i18n="nav.services">Services</a>
-        <a href="games.html" data-i18n="nav.games">Games</a>
-        <a href="plugins.html" data-i18n="nav.plugins">Plugins</a>
-        <a href="studio.html" data-i18n="nav.studio">Studio</a>
-        <a href="studio.html#contact" data-i18n="nav.contact">Contact</a>
-      </nav>
-      <div class="mobile-menu__section">
-        <label for="languageSelectMobile" class="mobile-menu__label" data-i18n="nav.languageLabel">Select
-          language</label>
-        <div class="language-select language-select--mobile" data-i18n-aria-label="nav.languageLabel">
-          <select id="languageSelectMobile" class="language-select__field text-xs" aria-label="Select language">
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-            <option value="es">ES</option>
-            <option value="zh">ZH</option>
-            <option value="ja">JA</option>
-          </select>
-        </div>
-      </div>
-      <button id="themeToggleMobile" class="theme-toggle theme-toggle--mobile mt-3" type="button">
-        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
-        </svg>
-        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path
-            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-        </svg>
-        <span>Light mode</span>
-      </button>
-    </div>
+    <button id="hamburger" class="menu-button magnetic" type="button" aria-label="Open menu" aria-expanded="false"
+      aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero-section relative overflow-hidden">
-    <div class="hero-container px-4 sm:px-6" id="heroContent">
-      <div class="hero-copy">
-        <span class="hero-kicker" data-i18n="hero.kicker">From indie passion to global stages</span>
-        <h1 class="hero-title" data-i18n="hero.title">
-          Creating Worlds. <span class="hero-title__accent">Inspiring Players.</span>
-        </h1>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">
-          Brazilian game studio crafting immersive experiences with technology, creativity and passion.
-        </p>
-        <div class="hero-actions">
-          <a href="games.html" class="btn-primary shadow-lg" data-i18n="hero.ctaGames">Explore Games</a>
-          <a href="plugins.html" class="btn-outline" data-i18n="hero.ctaPlugins">See Plugins</a>
-        </div>
-        <div class="hero-links" aria-label="Featured areas">
-          <a href="services.html" class="hero-link-chip" data-i18n="nav.services">Services</a>
-          <a href="games.html" class="hero-link-chip" data-i18n="nav.games">Games</a>
-          <a href="studio.html" class="hero-link-chip" data-i18n="nav.studio">Studio</a>
-        </div>
+  <div id="mobileMenu" class="menu-overlay hidden" aria-label="Site menu">
+    <div class="menu-overlay__inner">
+      <p class="menu-overlay__eyebrow">Navigation</p>
+      <nav class="menu-overlay__links" aria-label="Expanded navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="games.html">Games</a>
+        <a href="plugins.html">Plugins</a>
+        <a href="studio.html">Studio</a>
+        <a href="studio.html#contact">Contact</a>
+      </nav>
+      <div class="menu-overlay__pages" aria-label="On this page">
+        <a href="#manifesto" data-smooth-link>Manifesto</a>
+        <a href="#neo-portfolio-3d" data-smooth-link>Projects deck</a>
+        <a href="#capabilities" data-smooth-link>Capabilities</a>
+        <a href="#pipeline" data-smooth-link>Pipeline</a>
       </div>
-      <div class="hero-stage" aria-hidden="true">
-        <div class="hero-stage__frame">
-          <div class="hero-stage__image">
-            <img src="img/frontline.png" alt="" />
-          </div>
-          <div class="hero-stage__scan"></div>
-          <div class="hero-stage__feature">
-            <div class="hero-stage__pills">
-              <span data-i18n="games.frontlinePlatform">Steam</span>
-              <span>UE</span>
-              <span>BR</span>
-            </div>
-            <h3 class="hero-stage__title">Frontline</h3>
-          </div>
-          <div class="hero-stage__mini hero-stage__mini--top">
-            <span class="hero-stage__mini-index">02</span>
-            <strong>Plugins</strong>
-          </div>
-          <div class="hero-stage__mini hero-stage__mini--bottom">
-            <span class="hero-stage__mini-index">03</span>
-            <strong>Co-Dev</strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span class="marquee__item">Frontline<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Imobi<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Neolytics<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Vector Toys<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Unreal Engine Plugins<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Co-Development<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Frontline<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Imobi<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Neolytics<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Vector Toys<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Unreal Engine Plugins<span class="marquee__dot"></span></span>
-      <span class="marquee__item">Co-Development<span class="marquee__dot"></span></span>
     </div>
   </div>
 
-  <section class="studio-flair section-gradient" aria-label="Neo Soft studio highlights">
-    <div class="studio-flair__container">
-      <header class="studio-flair__header">
-        <span class="studio-flair__kicker" data-i18n="flair.kicker">Neo Soft DNA</span>
-        <h2 class="studio-flair__title" data-i18n="flair.title">Immersive universes energized by Neo Soft's signature
-          storytelling.</h2>
-        <p class="studio-flair__subtitle" data-i18n="flair.subtitle">We amplify our worlds with cinematic pacing, rich
-          lore, and visual drama — all anchored by accessible gameplay systems.</p>
-      </header>
-      <div class="studio-flair__grid">
-        <article class="flair-card">
-          <h3 class="flair-card__title" data-i18n="flair.card1.title">Cinematic Worlds</h3>
-          <p class="flair-card__copy" data-i18n="flair.card1.copy">Layered lighting, diagonal compositions, and
-            atmospheric depth guide players through unforgettable journeys.</p>
-        </article>
-        <article class="flair-card">
-          <h3 class="flair-card__title" data-i18n="flair.card2.title">Living Communities</h3>
-          <p class="flair-card__copy" data-i18n="flair.card2.copy">We foster thriving fan hubs with regular updates,
-            developer diaries, and community-driven events.</p>
-        </article>
-        <article class="flair-card">
-          <h3 class="flair-card__title" data-i18n="flair.card3.title">Fearless Innovation</h3>
-          <p class="flair-card__copy" data-i18n="flair.card3.copy">Proprietary Unreal Engine tools give us the edge to
-            prototype fast and push the boundaries of gameplay.</p>
-        </article>
+  <main id="main-content">
+    <section id="home" class="hero-section experience-section" data-webgl-section="hero"
+      aria-labelledby="hero-title">
+      <div class="section-shell hero-shell">
+        <div class="hero-copy" data-hero-copy>
+          <p class="eyebrow">Brazilian game and software studio</p>
+          <h1 id="hero-title" class="hero-title" aria-label="Neo Soft">
+            <span>Neo</span>
+            <span>Soft</span>
+          </h1>
+          <p class="hero-subtitle">
+            We build interactive systems, games, tools, and digital worlds with a focus on performance, identity, and
+            technical execution.
+          </p>
+          <div class="hero-actions">
+            <a href="games.html" class="btn btn-primary magnetic">Explore games</a>
+            <a href="services.html" class="btn btn-secondary magnetic">View services</a>
+          </div>
+        </div>
+
+        <aside class="hero-console" aria-label="Neo Soft live studio signals" data-hero-stage>
+          <div class="hero-console__screen image-tilt">
+            <img src="img/frontline.png" alt="Frontline project artwork" loading="eager" />
+            <div class="hero-console__scan" aria-hidden="true"></div>
+          </div>
+          <div class="hero-console__meta">
+            <span>Signal 01</span>
+            <strong>Frontline: New Revolution</strong>
+          </div>
+          <div class="hero-console__chips" aria-label="Studio focus">
+            <span>Games</span>
+            <span>Unreal</span>
+            <span>Tools</span>
+          </div>
+        </aside>
+      </div>
+
+      <a href="#manifesto" class="scroll-cue" data-smooth-link>
+        <span>Scroll</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <div class="studio-marquee" aria-hidden="true">
+      <div class="studio-marquee__track">
+        <span>Frontline</span>
+        <span>Unreal Engine Plugins</span>
+        <span>Co-Development</span>
+        <span>Production Tools</span>
+        <span>Interactive Web</span>
+        <span>Multiplayer Systems</span>
+        <span>Frontline</span>
+        <span>Unreal Engine Plugins</span>
+        <span>Co-Development</span>
+        <span>Production Tools</span>
+        <span>Interactive Web</span>
+        <span>Multiplayer Systems</span>
       </div>
     </div>
-  </section>
 
-  <!-- Games -->
-  <section id="games" class="section-gradient py-20 sm:py-24 bg-black">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="section-header">
-        <span class="section-header__index">01</span>
-        <div class="section-header__copy">
-          <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" data-i18n="games.title">Our Products</h2>
-          <p class="text-white/60 mb-6 max-w-3xl" data-i18n="games.subtitle">Worlds built with heart and cutting-edge
-            tech. Drag to explore.</p>
+    <section id="manifesto" class="manifesto-section experience-section section-transition"
+      data-webgl-section="about" aria-labelledby="manifesto-title">
+      <div class="section-shell manifesto-grid">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Studio manifesto</p>
+          <h2 id="manifesto-title">Systems with soul. Worlds with readable impact.</h2>
         </div>
-      </div>
-      <div class="relative">
-        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Games"
-          data-i18n-aria-label="games.title">
-          <div id="gamesTrack" class="services-track">
-            <div class="services-slide" aria-hidden="false">
-              <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/frontline.png" alt="Frontline key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Frontline</h3>
-                  <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism,
-                    intensity, and storytelling — coming soon to Steam. Wishlist now.</p>
-                  <div class="card3d-footer">
-                    <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank"
-                      rel="noopener" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.frontlinePlatform">Steam</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--icon">
-                  <img src="img/imobi-icon.png" alt="Imobi icon" class="card3d-svg-icon" />
-                </div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Imobi</h3>
-                  <p class="card3d-desc" data-i18n="games.imobi">A mobile app for Android and iOS that simplifies property discovery through an interactive map — browse listings, filter by type, and find your next home with ease.</p>
-                  <div class="card3d-footer">
-                    <a href="#" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.imobiAndroid">Android</a>
-                    <a href="#" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.imobiIos">iOS</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--icon"
-                  style="background:#154b4a;">
-                  <span class="px-6 text-center text-sm font-semibold uppercase"
-                    style="letter-spacing:.28em; color:rgba(255,255,255,.8);">Neolytics</span>
-                </div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Neolytics</h3>
-                  <p class="card3d-desc" data-i18n="games.neolytics">A Steam viability analysis platform that helps teams validate project potential with clearer market signals, positioning, and decision support before production scales.</p>
-                  <div class="card3d-footer">
-                    <a href="https://project-pqd61.vercel.app/" target="_blank" rel="noopener"
-                      class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.neolyticsTag">Steam Analytics</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="services-slide" aria-hidden="true">
-              <div class="card3d" data-card>
-                <div class="card3d-img card3d-img--icon"
-                  style="background:#5c3a22;">
-                  <span class="px-6 text-center text-sm font-semibold uppercase"
-                    style="letter-spacing:.22em; color:rgba(255,255,255,.8);">Vector Toys</span>
-                </div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Vector Toys Calculator</h3>
-                  <p class="card3d-desc" data-i18n="games.vectorToys">Pricing hub built for Vector Toys that centralizes 3D printing cost models, materials, printer profiles, and margin-based pricing in one workflow.</p>
-                  <div class="card3d-footer">
-                    <span class="card3d-link--badge" data-i18n="games.vectorToysTag">Completed Work</span>
-                    <a href="https://victorhmrod.github.io/vectortoys-calculator/" target="_blank" rel="noopener"
-                      class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.vectorToysLink">Open project →</a>
-                  </div>
-                </div>
-              </div>
-              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
-              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button id="gamesPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-          <button id="gamesNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
+        <div class="manifesto-copy" data-reveal>
+          <p class="statement-text">
+            Neo Soft blends game feel, engineering discipline, and cinematic direction into products that players and
+            creators can actually use.
+          </p>
+          <p>
+            Founded in 2020, the studio builds original games, Unreal Engine plugins, production platforms, and
+            interactive experiences for teams that need sharp execution without losing identity.
+          </p>
+        </div>
 
-  <section id="services" class="relative overflow-hidden bg-[#140b24] py-20 sm:py-24">
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-12">
-      <div class="w-full lg:w-7/12 space-y-6">
-        <div
-          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs sm:text-sm uppercase tracking-[0.2em] text-white/80 ring-1 ring-white/10 shadow-glow">
-          Unreal Engine Services</div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">World Class Unreal Engine Development
-          Services</h2>
-        <p class="text-white/70 text-base sm:text-lg leading-relaxed">We deliver high performance gameplay systems,
-          multiplayer architecture, AI modules, tools, automation and production pipelines that help studios scale
-          faster — whether augmenting teams, leading full productions, or building reliable release pipelines.</p>
-        <div class="flex flex-wrap items-center gap-4">
-          <a href="studio.html#contact" class="btn-primary">Get
-            in touch</a>
-          <a href="services.html" class="btn-outline" data-i18n="shared.learnMore">Learn More →</a>
-          <div class="flex items-center gap-3 text-white/70 text-sm">
-            <span
-              class="h-10 w-10 grid place-items-center rounded-full bg-white/10 ring-1 ring-white/10 text-purpleNeo font-semibold">UE</span>
-            <span>Unreal Engine specialists for co-development, full builds, and release engineering.</span>
-          </div>
+        <div class="manifesto-panel image-tilt" data-reveal>
+          <span class="panel-label">Operating mode</span>
+          <h3>Prototype fast. Profile early. Ship clean.</h3>
+          <p>
+            The work is technical, but the goal is emotional clarity: systems that feel responsive, worlds that feel
+            intentional, and tools that make production move.
+          </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-sm text-white/80">
-          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Co-Development partnerships
-          </div>
-          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Full service game development
-          </div>
-          <div class="rounded-lg border border-white/10 bg-white/5 px-4 py-3 shadow-glow">Build and release systems
-          </div>
-        </div>
-      </div>
-      <div class="w-full lg:w-5/12">
-        <div class="relative rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
-          <div class="relative grid gap-4">
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="rounded-xl border border-white/10 bg-black/50 px-4 py-3 shadow-glow">
-                <p class="text-white/60">Core</p>
-                <p class="font-semibold">Gameplay systems</p>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-black/50 px-4 py-3 shadow-glow">
-                <p class="text-white/60">Network</p>
-                <p class="font-semibold">Multiplayer & replication</p>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3 text-sm">
-              <div class="rounded-xl border border-white/10 bg-black/50 px-4 py-3 shadow-glow">
-                <p class="text-white/60">AI</p>
-                <p class="font-semibold">Behaviors & perception</p>
-              </div>
-              <div class="rounded-xl border border-white/10 bg-black/50 px-4 py-3 shadow-glow">
-                <p class="text-white/60">Scale</p>
-                <p class="font-semibold">Pipelines & automation</p>
-              </div>
-            </div>
-            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-5 shadow-glow">
-              <p class="text-white/60 text-sm">Delivery</p>
-              <p class="text-lg font-semibold">Production ready engineering for ambitious Unreal teams.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Plugins -->
-  <section id="plugins" class="section-gradient relative py-20 sm:py-24 bg-[#0b0114]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="section-header section-header--compact">
-        <span class="section-header__index">02</span>
-        <div class="section-header__copy">
-          <h2 class="text-2xl sm:text-3xl font-bold" data-i18n="plugins.title">Our Plugins</h2>
-          <span class="section-header__meta text-xs text-purple-300/70" data-i18n="plugins.subtitle">Fab marketplace
-            listings</span>
+        <div class="stat-grid" aria-label="Studio highlights" data-reveal>
+          <div class="stat-card">
+            <strong>2020</strong>
+            <span>Studio founded</span>
+          </div>
+          <div class="stat-card">
+            <strong>6+</strong>
+            <span>Products and plugins</span>
+          </div>
+          <div class="stat-card">
+            <strong>UE</strong>
+            <span>Core technology</span>
+          </div>
         </div>
       </div>
-      <div class="relative">
-        <div class="services-slider" role="group" aria-roledescription="carousel" aria-label="Our Plugins"
-          data-i18n-aria-label="plugins.title">
-          <div id="pluginsTrack" class="services-track">
-            <div class="services-slide" aria-hidden="false">
-              <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/WorldProceduralGeneratorPlugin.png"
-                    alt="World Procedural Generator Plugin cover" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title">World Procedural Generator Plugin</h3>
-                  <p class="card3d-desc" data-i18n="plugins.world">Create vast and dynamic open worlds in Unreal Engine
-                    with procedural terrain, biomes, and asset placement.</p>
-                  <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank"
-                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-                </div>
-              </div>
-              <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/ReplicatedExplosionPlugin.png"
-                    alt="Replicated Explosion Plugin cover" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Replicated Explosion Plugin</h3>
-                  <p class="card3d-desc" data-i18n="plugins.explosion">Add fully replicated, network-ready explosions
-                    with customizable effects and optimized physics.</p>
-                  <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank"
-                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-                </div>
-              </div>
-              <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/NeoLibrary.png" alt="Neo Library plugin cover" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Neo Library</h3>
-                  <p class="card3d-desc" data-i18n="plugins.neolibrary">A utility library for Unreal Engine with
-                    streamlined settings, localization helpers, and optimized Blueprint-ready utilities.</p>
-                  <a href="https://www.fab.com/pt-br/listings/b4b9e699-62b2-4829-868b-cc2cc3a6bf88" target="_blank"
-                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-                </div>
-              </div>
+    </section>
+
+    <section id="neo-portfolio-3d" class="neo-portfolio-3d experience-section" data-webgl-section="projects"
+      aria-labelledby="neo-portfolio-title" tabindex="0">
+      <div class="neo-portfolio-3d__canvas-wrap">
+        <canvas id="neoPortfolioCanvas" class="neo-portfolio-3d__canvas" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="neo-portfolio-3d__overlay">
+        <div class="neo-portfolio-3d__content">
+          <p class="neo-portfolio-3d__eyebrow">Interactive projects</p>
+          <h2 id="neo-portfolio-title" class="neo-portfolio-3d__title">FRONTLINE</h2>
+          <p class="neo-portfolio-3d__tagline" id="neoPortfolioTagline">
+            A cinematic competitive FPS built around speed, tactics, and arcane technology.
+          </p>
+          <p class="neo-portfolio-3d__description" id="neoPortfolioDescription">
+            Explore selected Neo Soft projects through an interactive 3D project deck.
+          </p>
+          <div class="neo-portfolio-3d__meta">
+            <span id="neoPortfolioCategory">Competitive FPS</span>
+            <span id="neoPortfolioStatus">In Development</span>
+          </div>
+          <div class="neo-portfolio-3d__actions">
+            <a id="neoPortfolioCTA" href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/"
+              target="_blank" rel="noopener" class="neo-portfolio-3d__button magnetic">
+              View project
+            </a>
+            <button type="button" id="neoPortfolioPrev" class="neo-portfolio-3d__control"
+              aria-label="Previous project">Prev</button>
+            <button type="button" id="neoPortfolioNext" class="neo-portfolio-3d__control"
+              aria-label="Next project">Next</button>
+          </div>
+          <div class="neo-portfolio-3d__footer">
+            <p class="neo-portfolio-3d__hint">Drag, swipe, or use arrow keys</p>
+            <p class="neo-portfolio-3d__count" aria-live="polite">
+              <span id="neoPortfolioCurrent">01</span>
+              <span aria-hidden="true">/</span>
+              <span id="neoPortfolioTotal">06</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="neo-portfolio-3d__fallback" hidden></div>
+    </section>
+
+    <section id="capabilities" class="capabilities-section experience-section section-transition"
+      data-webgl-section="technology" aria-labelledby="capabilities-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading--wide" data-reveal>
+          <p class="eyebrow">Technology layer</p>
+          <h2 id="capabilities-title">Capabilities for game teams, product teams, and interactive launches.</h2>
+          <p>
+            The stack spans gameplay systems, production tooling, infrastructure, and interactive web experiences.
+          </p>
+        </div>
+
+        <div class="capabilities-grid" aria-label="Neo Soft capabilities">
+          <article class="capability-card tilt-card" data-reveal>
+            <span>01</span>
+            <h3>Game Development</h3>
+            <p>Original projects, playable prototypes, combat loops, game feel, and release-minded production support.</p>
+          </article>
+          <article class="capability-card tilt-card" data-reveal>
+            <span>02</span>
+            <h3>Unreal Engine Systems</h3>
+            <p>Gameplay architecture, editor tools, Blueprint-ready utilities, optimization, and production plugins.</p>
+          </article>
+          <article class="capability-card tilt-card" data-reveal>
+            <span>03</span>
+            <h3>Multiplayer Architecture</h3>
+            <p>Replication, authority, prediction, gameplay synchronization, and readable combat networking.</p>
+          </article>
+          <article class="capability-card tilt-card" data-reveal>
+            <span>04</span>
+            <h3>Backend and Infrastructure</h3>
+            <p>Build automation, dedicated server workflows, deployment support, analytics, and internal dashboards.</p>
+          </article>
+          <article class="capability-card tilt-card" data-reveal>
+            <span>05</span>
+            <h3>Interactive Web Experiences</h3>
+            <p>WebGL landing pages, product showcases, browser tools, data interfaces, and launch-ready campaign sites.</p>
+          </article>
+          <article class="capability-card tilt-card" data-reveal>
+            <span>06</span>
+            <h3>UI and UX Systems</h3>
+            <p>Readable HUDs, product interfaces, motion systems, navigation flows, and creator-facing tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pipeline" class="pipeline-section experience-section" data-webgl-section="pipeline"
+      aria-labelledby="pipeline-title">
+      <div class="section-shell">
+        <div class="section-heading section-heading--split" data-reveal>
+          <div>
+            <p class="eyebrow">Drag to explore</p>
+            <h2 id="pipeline-title">A production loop built for momentum.</h2>
+          </div>
+          <p>
+            Move through the studio principles horizontally. This interaction is separate from the project deck and
+            keeps the entire page exploratory.
+          </p>
+        </div>
+
+        <div class="drag-section" data-drag-section>
+          <div class="drag-viewport" data-drag-viewport tabindex="0" aria-label="Studio pipeline carousel">
+            <div class="drag-track" data-drag-track>
+              <article class="drag-card">
+                <span>Phase 01</span>
+                <h3>Signal</h3>
+                <p>Define the fantasy, player promise, platform constraints, and technical risk before production expands.</p>
+              </article>
+              <article class="drag-card">
+                <span>Phase 02</span>
+                <h3>Prototype</h3>
+                <p>Build the smallest playable proof that can validate feel, input, networking, tools, or visual direction.</p>
+              </article>
+              <article class="drag-card">
+                <span>Phase 03</span>
+                <h3>Systemize</h3>
+                <p>Turn discoveries into durable gameplay components, editor workflows, data models, and production rules.</p>
+              </article>
+              <article class="drag-card">
+                <span>Phase 04</span>
+                <h3>Polish</h3>
+                <p>Shape readability, frame stability, interaction feedback, UI rhythm, camera behavior, and deployment paths.</p>
+              </article>
+              <article class="drag-card">
+                <span>Phase 05</span>
+                <h3>Launch</h3>
+                <p>Package builds, prepare storefronts, monitor signals, support updates, and keep the product alive.</p>
+              </article>
             </div>
-            <div class="services-slide" aria-hidden="true">
-              <div class="card3d" data-card>
-                <div class="card3d-img"><img src="img/AdvancedLootGenerator.png" alt="Advanced Loot Generator plugin cover" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title">Advanced Loot Generator</h3>
-                  <p class="card3d-desc" data-i18n="plugins.loot">A network-ready procedural loot system for Unreal Engine with customizable generation and replication support.</p>
-                  <a href="https://www.fab.com/listings/09a9dc9f-7a75-4280-8d7b-0f00c86daf37" target="_blank"
-                    rel="noopener" class="card3d-link" data-i18n="plugins.view">View Plugin →</a>
-                </div>
-              </div>
-              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
-              <div class="card3d card3d--placeholder" aria-hidden="true"></div>
+          </div>
+          <div class="drag-controls">
+            <p data-drag-status aria-live="polite">01 / 05</p>
+            <div>
+              <button type="button" data-drag-prev aria-label="Previous pipeline item">Prev</button>
+              <button type="button" data-drag-next aria-label="Next pipeline item">Next</button>
             </div>
           </div>
         </div>
-        <div class="carousel-controls">
-          <button id="pluginsPrev" aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-          <button id="pluginsNext" aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="studio" class="section-gradient py-20 sm:py-24 bg-black">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,.9fr)] gap-8 md:gap-10 items-center">
-      <div>
-        <div class="section-header section-header--compact">
-          <span class="section-header__index">03</span>
-          <div class="section-header__copy">
-            <h2 class="text-2xl sm:text-3xl font-bold" data-i18n="about.title">About Neo Soft</h2>
+    <section id="contact" class="contact-section experience-section" data-webgl-section="contact"
+      aria-labelledby="contact-title">
+      <div class="section-shell contact-grid">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">Final transmission</p>
+          <h2 id="contact-title">Bring Neo Soft into your next build.</h2>
+          <p>
+            For game development, Unreal Engine systems, interactive web experiences, or production tooling, send a
+            clear signal and the team will answer.
+          </p>
+          <a href="mailto:contact@neosoftentertainment.com.br" class="btn btn-primary magnetic">Start a conversation</a>
+        </div>
+
+        <div class="contact-panel" data-reveal>
+          <a href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a>
+          <div class="contact-links" aria-label="Social links">
+            <a href="https://www.instagram.com/neosoftentertainment/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.linkedin.com/company/neeeosoft/?viewAsMember=true" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://discord.gg/HA2CBfdCFT" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://www.youtube.com/@NeoSoft-m2e" target="_blank" rel="noopener noreferrer">YouTube</a>
           </div>
         </div>
-        <p class="text-white/80 mb-3" data-i18n="about.first">Founded in 2020 by <strong>Victor</strong>, Neo Soft is a
-          Brazilian studio creating games and tools that inspire and empower creators.</p>
-        <p class="text-white/70" data-i18n="about.second">Our debut project, <em>Frontline</em>, represents our
-          commitment to innovation and storytelling. We’ve been building for almost six years with a dedicated team —
-          all driven by the love of games.</p>
       </div>
-      <div class="contact-panel">
-        <h3 class="text-xl font-semibold mb-2 text-purple-200" data-i18n="about.missionTitle">Our Mission</h3>
-        <p class="text-white/80 mb-6" data-i18n="about.missionCopy">To strengthen the Brazilian gaming scene by delivering
-          world-class projects that showcase creativity and excellence.</p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="studio.html" class="btn-primary" data-i18n="shared.learnMore">Learn More →</a>
-          <a href="studio.html#contact" class="btn-outline" data-i18n="nav.contact">Contact</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Back to top -->
-  <button id="backToTop"
-    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-purpleNeo hover:bg-fuchsiaNeo shadow-lg transition-colors"
-    aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
+  <button id="backToTop" class="back-to-top hidden" type="button" aria-label="Back to top">Top</button>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
-    <div
-      class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
-        <p class="break-words max-w-full text-center sm:text-left" data-i18n="footer.copy">© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br"
-          class="hover:text-purple-300">contact@neosoftentertainment.com.br</a></p>
-      <div class="flex flex-wrap gap-4">
-        <a class="hover:text-purple-300" href="index.html" aria-current="page" data-i18n="nav.home">Home</a>
-        <a class="hover:text-purple-300" href="services.html" data-i18n="nav.services">Services</a>
-        <a class="hover:text-purple-300" href="games.html" data-i18n="nav.games">Games</a>
-        <a class="hover:text-purple-300" href="plugins.html" data-i18n="nav.plugins">Plugins</a>
-        <a class="hover:text-purple-300" href="studio.html" data-i18n="nav.studio">Studio</a>
-        <a class="hover:text-purple-300" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
-        <a class="hover:text-purple-300" href="/legal">Legal</a>
-      </div>
+  <footer class="site-footer">
+    <div class="section-shell site-footer__inner">
+      <p>&copy; 2026 Neo Soft Entertainment LTDA.</p>
+      <nav aria-label="Footer">
+        <a href="games.html">Games</a>
+        <a href="plugins.html">Plugins</a>
+        <a href="services.html">Services</a>
+        <a href="studio.html">Studio</a>
+        <a href="/legal">Legal</a>
+      </nav>
     </div>
   </footer>
 
-  <script src="js/site-config.js"></script>
-  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/webgl-experience.js"></script>
+  <script src="js/motion-experience.js"></script>
+  <script src="js/drag-experience.js"></script>
+  <script src="js/portfolio-3d.js"></script>
 </body>
 
 </html>

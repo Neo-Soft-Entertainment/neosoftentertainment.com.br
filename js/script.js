@@ -4,20 +4,7 @@
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const navbar = $('#navbar');
-  const cursor = $('#cursor');
-  const particles = $('#particles');
-  const gamesTrack = $('#gamesTrack');
-  const servicesTrack = $('#servicesTrack');
-  const pluginsTrack = $('#pluginsTrack');
-  const servicesPrevBtn = $('#servicesPrev');
-  const servicesNextBtn = $('#servicesNext');
-  const pluginsPrevBtn = $('#pluginsPrev');
-  const pluginsNextBtn = $('#pluginsNext');
   const backToTop = $('#backToTop');
-  const mobileMenu = $('#mobileMenu');
-  const hamburger = $('#hamburger');
-  const languageSelect = $('#languageSelect');
-  const languageSelectMobile = $('#languageSelectMobile');
   const contactForm = $('#contactForm');
   const formFeedback = $('#formFeedback');
   const formError = $('#formError');
@@ -25,20 +12,31 @@
   const themeToggle = $('#themeToggle');
   const themeToggleMobile = $('#themeToggleMobile');
 
+  // Pages fully migrated to the experience system (js/motion-experience.js,
+  // js/webgl-experience.js, js/drag-experience.js) own cursor, hamburger/menu,
+  // sticky-nav, card tilt, magnetic buttons, and carousels there — this file
+  // only needs to keep i18n, EmailJS, and (for admin.html) the legacy chrome.
+  const isExperienceSite = document.body.classList.contains('experience-site');
+
   // Theme (light/dark)
   const themeStorageKey = 'neosoft-theme';
   const getTheme = () => document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  const setThemeMobileLabel = (theme) => {
-    const label = themeToggleMobile?.querySelector('span');
-    if (label) label.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
-  };
   const applyTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
     try { localStorage.setItem(themeStorageKey, theme); } catch (e) { }
-    setThemeMobileLabel(theme);
+
+    const themeColor = $('meta[name="theme-color"]');
+    if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
+
+    const isDark = theme === 'dark';
+    themeToggle && themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    themeToggleMobile && themeToggleMobile.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+
+    const mobileLabel = themeToggleMobile?.querySelector('span');
+    if (mobileLabel) mobileLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
   };
   const toggleTheme = () => applyTheme(getTheme() === 'light' ? 'dark' : 'light');
-  setThemeMobileLabel(getTheme());
+  applyTheme(getTheme());
   themeToggle && themeToggle.addEventListener('click', toggleTheme);
   themeToggleMobile && themeToggleMobile.addEventListener('click', toggleTheme);
 
@@ -54,10 +52,9 @@
       'nav.about': 'About',
       'nav.team': 'Team',
       'nav.contact': 'Contact',
-      'nav.languageLabel': 'Select language',
       'nav.menuTitle': 'Menu',
       'hero.kicker': 'From indie passion to global stages',
-      'hero.title': 'Creating Worlds. <span class="text-purpleNeo">Inspiring Players.</span>',
+      'hero.title': 'Creating Worlds. <span class="text-neutral-900">Inspiring Players.</span>',
       'hero.subtitle': 'Brazilian game studio crafting immersive experiences with technology, creativity and passion.',
       'hero.ctaGames': 'Explore Games',
       'hero.ctaPlugins': 'See Plugins',
@@ -186,7 +183,7 @@
       'contact.discordAria': 'Open Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Open Neo Soft on YouTube',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     pt: {
       'nav.home': 'Início',
@@ -199,10 +196,9 @@
       'nav.about': 'Sobre',
       'nav.team': 'Equipe',
       'nav.contact': 'Contato',
-      'nav.languageLabel': 'Selecionar idioma',
       'nav.menuTitle': 'Menu',
       'hero.kicker': 'Da paixão indie aos palcos globais',
-      'hero.title': 'Criando Mundos. <span class="text-purpleNeo">Inspirando Jogadores.</span>',
+      'hero.title': 'Criando Mundos. <span class="text-neutral-900">Inspirando Jogadores.</span>',
       'hero.subtitle': 'Estúdio brasileiro de jogos criando experiências imersivas com tecnologia, criatividade e paixão.',
       'hero.ctaGames': 'Explorar jogos',
       'hero.ctaPlugins': 'Ver plugins',
@@ -331,7 +327,7 @@
       'contact.discordAria': 'Abrir o Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft no YouTube',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     es: {
       'nav.home': 'Inicio',
@@ -344,10 +340,9 @@
       'nav.about': 'Acerca de',
       'nav.team': 'Equipo',
       'nav.contact': 'Contacto',
-      'nav.languageLabel': 'Seleccionar idioma',
       'nav.menuTitle': 'Menú',
       'hero.kicker': 'De la pasión indie a los escenarios globales',
-      'hero.title': 'Creando Mundos. <span class="text-purpleNeo">Inspirando Jugadores.</span>',
+      'hero.title': 'Creando Mundos. <span class="text-neutral-900">Inspirando Jugadores.</span>',
       'hero.subtitle': 'Estudio brasileño de videojuegos que crea experiencias inmersivas con tecnología, creatividad y pasión.',
       'hero.ctaGames': 'Explorar juegos',
       'hero.ctaPlugins': 'Ver plugins',
@@ -476,7 +471,7 @@
       'contact.discordAria': 'Abrir Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft en YouTube',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     zh: {
       'nav.home': '首页',
@@ -489,10 +484,9 @@
       'nav.about': '关于',
       'nav.team': '团队',
       'nav.contact': '联系',
-      'nav.languageLabel': '选择语言',
       'nav.menuTitle': '菜单',
       'hero.kicker': '从独立热忱走向全球舞台',
-      'hero.title': '创造世界。<span class="text-purpleNeo">激发玩家。</span>',
+      'hero.title': '创造世界。<span class="text-neutral-900">激发玩家。</span>',
       'hero.subtitle': '巴西游戏工作室，以技术、创意与热情打造沉浸式体验。',
       'hero.ctaGames': '探索游戏',
       'hero.ctaPlugins': '查看插件',
@@ -621,7 +615,7 @@
       'contact.discordAria': '打开 Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': '在 YouTube 打开 Neo Soft',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     ja: {
       'nav.home': 'ホーム',
@@ -634,10 +628,9 @@
       'nav.about': '概要',
       'nav.team': 'チーム',
       'nav.contact': 'お問い合わせ',
-      'nav.languageLabel': '言語を選択',
       'nav.menuTitle': 'メニュー',
       'hero.kicker': 'インディーの情熱から世界の舞台へ',
-      'hero.title': '世界を創造する。<span class="text-purpleNeo">プレイヤーを刺激する。</span>',
+      'hero.title': '世界を創造する。<span class="text-neutral-900">プレイヤーを刺激する。</span>',
       'hero.subtitle': 'テクノロジー、創造性、情熱で没入型体験を生み出すブラジルのゲームスタジオ。',
       'hero.ctaGames': 'ゲームを見る',
       'hero.ctaPlugins': 'プラグインを見る',
@@ -766,20 +759,22 @@
       'contact.discordAria': 'Discord / Neo Soft を開く',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'YouTube で Neo Soft を開く',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     }
   };
 
   window.NEO_SOFT_TRANSLATIONS = translations;
 
-  const storageKey = 'neoSoftLang';
-  let currentLang = 'en';
-  try {
-    const stored = localStorage.getItem(storageKey);
-    if (stored && translations[stored]) currentLang = stored;
-  } catch (err) {
-    currentLang = 'en';
-  }
+  const getBrowserLanguage = () => {
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language || 'en'];
+    for (const language of languages) {
+      const code = language.toLowerCase().split('-')[0];
+      if (translations[code]) return code;
+    }
+    return 'en';
+  };
+
+  let currentLang = getBrowserLanguage();
 
   const setDocumentLang = (lang) => {
     const map = { pt: 'pt-BR', es: 'es-ES', en: 'en', zh: 'zh-CN', ja: 'ja-JP' };
@@ -818,10 +813,7 @@
   const applyTranslations = (lang = currentLang) => {
     if (!translations[lang]) lang = 'en';
     currentLang = lang;
-    try { localStorage.setItem(storageKey, lang); } catch (err) { }
     setDocumentLang(lang);
-    if (languageSelect) languageSelect.value = lang;
-    if (languageSelectMobile) languageSelectMobile.value = lang;
     $$('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
       const value = translations[lang]?.[key];
@@ -908,175 +900,20 @@
       .catch((err) => console.warn('Supabase posts unavailable.', err));
   }
 
-  languageSelect && languageSelect.addEventListener('change', (e) => applyTranslations(e.target.value));
-  languageSelectMobile && languageSelectMobile.addEventListener('change', (e) => applyTranslations(e.target.value));
+  // Navbar scroll / back-to-top — the experience pages get this from
+  // motion-experience.js's updateScrollProgress(); admin.html still needs it here.
+  if (!isExperienceSite) {
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y > 40) navbar.classList.add('sticky-nav'); else navbar.classList.remove('sticky-nav');
+      backToTop && backToTop.classList.toggle('hidden', y < 600);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+    backToTop && backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 
-  // Navbar scroll / back-to-top
-  const onScroll = () => {
-    const y = window.scrollY;
-    if (y > 40) navbar.classList.add('sticky-nav'); else navbar.classList.remove('sticky-nav');
-    backToTop && backToTop.classList.toggle('hidden', y < 600);
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll);
-
-  // Custom cursor
   const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
-  const isMobileViewport = window.matchMedia('(max-width: 768px)').matches;
-  const enableCustomCursor = hasFinePointer && !isMobileViewport;
-  if (cursor) {
-    if (enableCustomCursor) {
-      document.body.classList.add('custom-cursor-active');
-      let cursorVisible = false;
-      let cursorX = 0;
-      let cursorY = 0;
-
-      const updateCursorTransform = () => {
-        const baseScale = 0.9;
-        const scale = cursor.classList.contains('cursor-press')
-          ? baseScale * 0.85
-          : cursor.classList.contains('cursor-hover')
-            ? baseScale * 1.5
-            : baseScale;
-        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) scale(${scale})`;
-      };
-
-      const reveal = () => {
-        if (!cursorVisible) {
-          cursor.style.opacity = '1';
-          cursorVisible = true;
-        }
-      };
-
-      const hideCursor = () => {
-        cursorVisible = false;
-        cursor.style.opacity = '0';
-        cursor.classList.remove('cursor-hover', 'cursor-press');
-        updateCursorTransform();
-      };
-
-      window.addEventListener('mousemove', (e) => {
-        reveal();
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-        updateCursorTransform();
-      });
-
-      window.addEventListener('mouseleave', hideCursor);
-
-      const interactiveElements = $$('a, button');
-      const handleEnter = () => {
-        cursor.classList.add('cursor-hover');
-        updateCursorTransform();
-      };
-      const handleLeave = () => {
-        cursor.classList.remove('cursor-hover', 'cursor-press');
-        updateCursorTransform();
-      };
-      const handleDown = () => {
-        cursor.classList.add('cursor-press');
-        updateCursorTransform();
-      };
-      const handleUp = () => {
-        cursor.classList.remove('cursor-press');
-        updateCursorTransform();
-      };
-
-      interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', handleEnter);
-        el.addEventListener('mouseleave', handleLeave);
-        el.addEventListener('mousedown', handleDown);
-        el.addEventListener('mouseup', handleUp);
-      });
-
-      window.addEventListener('mouseup', handleUp);
-
-    } else {
-      cursor.remove();
-    }
-  }
-
-  // Mobile menu toggle
-  const setMobileMenuOpen = (open) => {
-    if (!mobileMenu) return;
-    mobileMenu.classList.toggle('hidden', !open);
-    hamburger?.setAttribute('aria-expanded', open ? 'true' : 'false');
-  };
-
-  hamburger && hamburger.addEventListener('click', () => {
-    const shouldOpen = mobileMenu.classList.contains('hidden');
-    setMobileMenuOpen(shouldOpen);
-  });
-
-  $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => setMobileMenuOpen(false)));
-
-  // Back to top
-  backToTop && backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // Particles
-  if (particles) {
-    const ctx = particles.getContext('2d');
-    if (ctx) {
-      const DPR = Math.max(1, window.devicePixelRatio || 1);
-      const P = Array.from({ length: hasFinePointer ? 80 : 50 }).map(() => ({
-        x: Math.random(), y: Math.random(),
-        vx: (Math.random() - 0.5) * 0.0008, vy: (Math.random() - 0.5) * 0.0008,
-        r: 1 + Math.random() * 2
-      }));
-      const resize = () => {
-        particles.width = particles.clientWidth * DPR;
-        particles.height = particles.clientHeight * DPR;
-      };
-      resize();
-      window.addEventListener('resize', resize);
-      const loop = () => {
-        const w = particles.width, h = particles.height;
-        ctx.clearRect(0, 0, w, h);
-        const grd = ctx.createLinearGradient(0, 0, w, h);
-        grd.addColorStop(0, '#0b0114'); grd.addColorStop(1, '#12021c');
-        ctx.fillStyle = grd; ctx.fillRect(0, 0, w, h);
-        P.forEach(p => {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > 1) p.vx *= -1;
-          if (p.y < 0 || p.y > 1) p.vy *= -1;
-          const px = p.x * w, py = p.y * h;
-          ctx.beginPath(); ctx.arc(px, py, p.r * DPR, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(155,93,229,0.7)'; ctx.fill();
-        });
-        for (let i = 0; i < P.length; i++) {
-          for (let j = i + 1; j < P.length; j++) {
-            const a = P[i], b = P[j];
-            const dx = (a.x - b.x) * w, dy = (a.y - b.y) * h;
-            const dist = Math.hypot(dx, dy);
-            if (dist < 150) {
-              ctx.strokeStyle = 'rgba(123,47,247,0.15)'; ctx.lineWidth = 1;
-              ctx.beginPath(); ctx.moveTo(a.x * w, a.y * h); ctx.lineTo(b.x * w, b.y * h); ctx.stroke();
-            }
-          }
-        }
-        requestAnimationFrame(loop);
-      };
-      loop();
-    }
-  }
-
-  // Card tilt
-  const allowTilt = hasFinePointer && window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-  if (allowTilt) {
-    $$('.card3d').forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const px = (e.clientX - rect.left) / rect.width;
-        const py = (e.clientY - rect.top) / rect.height;
-        const ry = (px - 0.5) * 10;
-        const rx = (0.5 - py) * 10;
-        card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
-      });
-    });
-  }
 
   // Scroll reveal
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1093,7 +930,8 @@
     revealTargets.forEach(el => revealObserver.observe(el));
   }
 
-  // Magnetic buttons
+  // Magnetic buttons — experience pages use motion-experience.js's .magnetic handler instead.
+  const allowTilt = !isExperienceSite && hasFinePointer && window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
   if (allowTilt) {
     $$('.btn-primary, .btn-outline').forEach(btn => {
       btn.addEventListener('mousemove', (e) => {
@@ -1106,150 +944,7 @@
     });
   }
 
-  // Carousel controls - Games slider setup
-  const setupServicesSlider = (track, prevBtn, nextBtn) => {
-    if (!track) return null;
-    const slides = $$('.services-slide', track);
-    if (!slides.length) return null;
-
-    const cards = slides.flatMap((slide, slideIndex) =>
-      $$('.card3d', slide)
-        .filter(card => !card.classList.contains('card3d--placeholder'))
-        .map(card => ({ card, slide, slideIndex }))
-    );
-
-    if (!cards.length) return null;
-
-    const mq = window.matchMedia('(max-width: 640px)');
-    let isMobile = mq.matches;
-    let desktopIndex = 0;
-    let mobileIndex = 0;
-
-    const updateControls = () => {
-      const total = isMobile ? cards.length : slides.length;
-      const disabled = total <= 1;
-      if (prevBtn) {
-        prevBtn.disabled = disabled;
-        prevBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
-      }
-      if (nextBtn) {
-        nextBtn.disabled = disabled;
-        nextBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
-      }
-    };
-
-    const updateDesktop = () => {
-      track.style.transform = `translateX(-${desktopIndex * 100}%)`;
-      slides.forEach((slide, slideIndex) => {
-        const isActive = slideIndex === desktopIndex;
-        slide.style.display = '';
-        slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-        $$('.card3d', slide).forEach(card => {
-          const isPlaceholder = card.classList.contains('card3d--placeholder');
-          card.style.display = '';
-          card.setAttribute('aria-hidden', isPlaceholder ? 'true' : (isActive ? 'false' : 'true'));
-        });
-      });
-      const anchorIndex = cards.findIndex(entry => entry.slideIndex === desktopIndex);
-      if (anchorIndex !== -1) {
-        mobileIndex = anchorIndex;
-      }
-    };
-
-    const updateMobile = () => {
-      if (!cards.length) return;
-      const activeEntry = cards[mobileIndex] || cards[0];
-      if (!activeEntry) return;
-      mobileIndex = cards.indexOf(activeEntry);
-      track.style.transform = '';
-      slides.forEach((slide, slideIndex) => {
-        const isActiveSlide = slideIndex === activeEntry.slideIndex;
-        slide.style.display = isActiveSlide ? '' : 'none';
-        slide.setAttribute('aria-hidden', isActiveSlide ? 'false' : 'true');
-        $$('.card3d', slide).forEach(card => {
-          const isPlaceholder = card.classList.contains('card3d--placeholder');
-          if (isPlaceholder) {
-            card.style.display = 'none';
-            card.setAttribute('aria-hidden', 'true');
-            return;
-          }
-          const isActiveCard = isActiveSlide && card === activeEntry.card;
-          card.style.display = isActiveCard ? '' : 'none';
-          card.setAttribute('aria-hidden', isActiveCard ? 'false' : 'true');
-        });
-      });
-      desktopIndex = activeEntry.slideIndex;
-    };
-
-    const applyState = (matches) => {
-      isMobile = matches;
-      if (isMobile) {
-        mobileIndex = Math.min(mobileIndex, cards.length - 1);
-        updateMobile();
-      } else {
-        desktopIndex = Math.min(desktopIndex, slides.length - 1);
-        updateDesktop();
-      }
-      updateControls();
-    };
-
-    applyState(isMobile);
-
-    mq.addEventListener('change', (event) => {
-      if (event.matches) {
-        const anchor = cards.findIndex(entry => entry.slideIndex === desktopIndex);
-        mobileIndex = anchor !== -1 ? anchor : 0;
-      } else {
-        desktopIndex = cards[mobileIndex]?.slideIndex ?? 0;
-      }
-      applyState(event.matches);
-    });
-
-    return {
-      next() {
-        if (isMobile) {
-          if (cards.length <= 1) return;
-          mobileIndex = (mobileIndex + 1) % cards.length;
-          updateMobile();
-        } else {
-          if (slides.length <= 1) return;
-          desktopIndex = (desktopIndex + 1) % slides.length;
-          updateDesktop();
-        }
-      },
-      prev() {
-        if (isMobile) {
-          if (cards.length <= 1) return;
-          mobileIndex = (mobileIndex - 1 + cards.length) % cards.length;
-          updateMobile();
-        } else {
-          if (slides.length <= 1) return;
-          desktopIndex = (desktopIndex - 1 + slides.length) % slides.length;
-          updateDesktop();
-        }
-      }
-    };
-  };
-
-  const servicesSlider = setupServicesSlider(servicesTrack, servicesPrevBtn, servicesNextBtn);
-  if (servicesSlider) {
-    servicesPrevBtn?.addEventListener('click', () => servicesSlider.prev());
-    servicesNextBtn?.addEventListener('click', () => servicesSlider.next());
-  }
-
-  const gamesPrevBtn = $('#gamesPrev');
-  const gamesNextBtn = $('#gamesNext');
-  const gamesSlider = setupServicesSlider(gamesTrack, gamesPrevBtn, gamesNextBtn);
-  if (gamesSlider) {
-    gamesPrevBtn?.addEventListener('click', () => gamesSlider.prev());
-    gamesNextBtn?.addEventListener('click', () => gamesSlider.next());
-  }
-
-  const pluginsSlider = setupServicesSlider(pluginsTrack, pluginsPrevBtn, pluginsNextBtn);
-  if (pluginsSlider) {
-    pluginsPrevBtn?.addEventListener('click', () => pluginsSlider.prev());
-    pluginsNextBtn?.addEventListener('click', () => pluginsSlider.next());
-  }
+  // Services/Games/Plugins carousels now run on js/drag-experience.js (data-drag-section).
 
   // EmailJS form
   contactForm && contactForm.addEventListener('submit', function (e) {

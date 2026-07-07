@@ -84,7 +84,7 @@
     const w = particles.width, h = particles.height;
     ctx.clearRect(0,0,w,h);
     const grd = ctx.createLinearGradient(0,0,w,h);
-    grd.addColorStop(0, '#0b0114'); grd.addColorStop(1,'#12021c');
+    grd.addColorStop(0, '#ffffff'); grd.addColorStop(1,'#f5f5f7');
     ctx.fillStyle = grd; ctx.fillRect(0,0,w,h);
     P.forEach(p => {
       p.x += p.vx; p.y += p.vy;
@@ -92,7 +92,7 @@
       if (p.y < 0 || p.y > 1) p.vy *= -1;
       const px = p.x * w, py = p.y * h;
       ctx.beginPath(); ctx.arc(px, py, p.r*DPR, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(155,93,229,0.7)'; ctx.fill();
+      ctx.fillStyle = 'rgba(220,222,224,0.7)'; ctx.fill();
     });
     // lines
     for (let i=0;i<P.length;i++){
