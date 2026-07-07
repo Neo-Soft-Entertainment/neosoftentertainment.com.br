@@ -7,8 +7,11 @@
   <script>
     (function () {
       try {
+        var theme = localStorage.getItem('neosoft-theme') === 'dark' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
         document.documentElement.setAttribute('data-theme', 'light');
-      } catch (e) {}
+      }
     })();
   </script>
   <meta name="robots" content="noindex,nofollow" />

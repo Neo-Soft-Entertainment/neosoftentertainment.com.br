@@ -26,17 +26,22 @@
   // Theme (light/dark)
   const themeStorageKey = 'neosoft-theme';
   const getTheme = () => document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-  const setThemeMobileLabel = (theme) => {
-    const label = themeToggleMobile?.querySelector('span');
-    if (label) label.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
-  };
   const applyTheme = (theme) => {
     document.documentElement.setAttribute('data-theme', theme);
     try { localStorage.setItem(themeStorageKey, theme); } catch (e) { }
-    setThemeMobileLabel(theme);
+
+    const themeColor = $('meta[name="theme-color"]');
+    if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? '#000000' : '#ffffff');
+
+    const isDark = theme === 'dark';
+    themeToggle && themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    themeToggleMobile && themeToggleMobile.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+
+    const mobileLabel = themeToggleMobile?.querySelector('span');
+    if (mobileLabel) mobileLabel.textContent = isDark ? 'Light mode' : 'Dark mode';
   };
   const toggleTheme = () => applyTheme(getTheme() === 'light' ? 'dark' : 'light');
-  setThemeMobileLabel(getTheme());
+  applyTheme(getTheme());
   themeToggle && themeToggle.addEventListener('click', toggleTheme);
   themeToggleMobile && themeToggleMobile.addEventListener('click', toggleTheme);
 
