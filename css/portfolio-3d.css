@@ -30,25 +30,25 @@
 
 html[data-theme="light"] .neo-portfolio-3d {
   --portfolio-bg:
-    radial-gradient(circle at 58% 22%, rgba(13, 116, 206, .16), transparent 34%),
-    radial-gradient(circle at 80% 66%, rgba(22, 163, 74, .12), transparent 30%),
-    linear-gradient(180deg, #f8fbff 0%, #fff 52%, #f5f7fb 100%);
-  --portfolio-text: #171717;
-  --portfolio-strong: rgba(23, 23, 23, .9);
-  --portfolio-body: rgba(23, 23, 23, .68);
-  --portfolio-muted: rgba(23, 23, 23, .72);
-  --portfolio-soft: rgba(23, 23, 23, .58);
-  --portfolio-border: rgba(23, 23, 23, .14);
-  --portfolio-panel: rgba(255, 255, 255, .74);
-  --portfolio-control-hover-bg: rgba(13, 116, 206, .1);
-  --portfolio-accent: #0d74ce;
-  --portfolio-button-bg: #171717;
-  --portfolio-button-text: #fff;
-  --portfolio-button-hover: #1a1a1a;
-  --portfolio-image-bg: #f0f0f3;
+    radial-gradient(circle at 58% 22%, rgba(105, 183, 255, .22), transparent 34%),
+    radial-gradient(circle at 80% 66%, rgba(22, 163, 74, .13), transparent 30%),
+    linear-gradient(180deg, #101722 0%, #111317 52%, #05070d 100%);
+  --portfolio-text: #fff;
+  --portfolio-strong: rgba(255, 255, 255, .9);
+  --portfolio-body: rgba(255, 255, 255, .7);
+  --portfolio-muted: rgba(255, 255, 255, .76);
+  --portfolio-soft: rgba(255, 255, 255, .6);
+  --portfolio-border: rgba(255, 255, 255, .18);
+  --portfolio-panel: rgba(255, 255, 255, .09);
+  --portfolio-control-hover-bg: rgba(105, 183, 255, .16);
+  --portfolio-accent: #69b7ff;
+  --portfolio-button-bg: #fff;
+  --portfolio-button-text: #05070d;
+  --portfolio-button-hover: rgba(255, 255, 255, .88);
+  --portfolio-image-bg: #05070d;
   --portfolio-scrim:
-    linear-gradient(90deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .42) 48%, rgba(255, 255, 255, .78)),
-    linear-gradient(180deg, rgba(255, 255, 255, .42), transparent 34%, rgba(255, 255, 255, .7));
+    linear-gradient(90deg, rgba(0, 0, 0, .8), rgba(0, 0, 0, .36) 48%, rgba(0, 0, 0, .7)),
+    linear-gradient(180deg, rgba(0, 0, 0, .32), transparent 30%, rgba(0, 0, 0, .62));
 }
 
 .neo-portfolio-3d:focus-visible {

@@ -2,7 +2,7 @@
   window.NEO_PORTFOLIO_PROJECTS = [
     {
       id: 'frontline',
-      title: 'FRONTLINE: New Revolution',
+      title: 'FRONTLINE',
       category: 'Competitive FPS',
       status: 'In Development',
       tagline: 'A cinematic competitive FPS built around speed, tactics, and arcane technology.',
