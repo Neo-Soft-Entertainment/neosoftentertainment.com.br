@@ -45,6 +45,7 @@
   let hasInitialized = false;
   let scrollTrigger;
   let lazyObserver;
+  let themeObserver;
   let raycaster;
   let pointer;
   let mouse = { x: 0, y: 0 };
@@ -163,6 +164,7 @@
   }
 
   function layoutCards() {
+    const lightTheme = document.documentElement.getAttribute('data-theme') === 'light';
     cards.forEach((card, index) => {
       const offset = getWrappedOffset(index);
       const distance = Math.abs(offset);
@@ -172,7 +174,7 @@
       card.targetZ = offset === 0 ? 0 : -1.2 - distance * .32;
       card.targetRotationY = -offset * .2;
       card.targetRotationZ = offset * .025;
-      card.targetOpacity = offset === 0 ? 1 : Math.max(.18, .54 - distance * .1);
+      card.targetOpacity = offset === 0 ? 1 : Math.max(lightTheme ? .36 : .18, (lightTheme ? .72 : .54) - distance * .1);
     });
   }
 
@@ -547,6 +549,13 @@
       createScene();
       setupScrollAnimation();
       updateOverlay(projects[0], true);
+      themeObserver = new MutationObserver(function OnPortfolioThemeChangedCallback(mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.attributeName !== 'data-theme') return;
+          layoutCards();
+        });
+      });
+      themeObserver.observe(document.documentElement, { attributes: true });
 
       section.addEventListener('pointerdown', OnPointerDownCallback);
       section.addEventListener('pointermove', OnPointerMoveCallback);
@@ -567,6 +576,7 @@
     if (resizeFrame) cancelAnimationFrame(resizeFrame);
     if (scrollTrigger) scrollTrigger.kill();
     if (lazyObserver) lazyObserver.disconnect();
+    if (themeObserver) themeObserver.disconnect();
 
     section.removeEventListener('pointerdown', OnPointerDownCallback);
     section.removeEventListener('pointermove', OnPointerMoveCallback);
