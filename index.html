@@ -58,6 +58,7 @@
   </script>
 
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/portfolio-3d.css" />
 </head>
 
 <body class="bg-black text-white selection:bg-neutral-200 antialiased overflow-x-hidden">
@@ -227,6 +228,64 @@
             prototype fast and push the boundaries of gameplay.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="neo-portfolio-3d" class="neo-portfolio-3d" aria-labelledby="neo-portfolio-title" tabindex="0">
+    <div class="neo-portfolio-3d__canvas-wrap">
+      <canvas id="neoPortfolioCanvas" class="neo-portfolio-3d__canvas" aria-hidden="true"></canvas>
+    </div>
+
+    <div class="neo-portfolio-3d__overlay">
+      <div class="neo-portfolio-3d__content">
+        <p class="neo-portfolio-3d__eyebrow">Neo Soft Portfolio</p>
+
+        <h2 id="neo-portfolio-title" class="neo-portfolio-3d__title">
+          FRONTLINE: New Revolution
+        </h2>
+
+        <p class="neo-portfolio-3d__tagline" id="neoPortfolioTagline">
+          A cinematic competitive FPS built around speed, tactics, and arcane technology.
+        </p>
+
+        <p class="neo-portfolio-3d__description" id="neoPortfolioDescription">
+          Explore selected Neo Soft projects through an interactive 3D portfolio experience.
+        </p>
+
+        <div class="neo-portfolio-3d__meta">
+          <span id="neoPortfolioCategory">Competitive FPS</span>
+          <span id="neoPortfolioStatus">In Development</span>
+        </div>
+
+        <div class="neo-portfolio-3d__actions">
+          <a id="neoPortfolioCTA" href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/"
+            target="_blank" rel="noopener" class="neo-portfolio-3d__button">
+            View Project
+          </a>
+
+          <button type="button" id="neoPortfolioPrev" class="neo-portfolio-3d__control"
+            aria-label="Previous project">
+            Prev
+          </button>
+
+          <button type="button" id="neoPortfolioNext" class="neo-portfolio-3d__control" aria-label="Next project">
+            Next
+          </button>
+        </div>
+
+        <div class="neo-portfolio-3d__footer">
+          <p class="neo-portfolio-3d__hint">Drag to explore</p>
+          <p class="neo-portfolio-3d__count" aria-live="polite">
+            <span id="neoPortfolioCurrent">01</span>
+            <span aria-hidden="true">/</span>
+            <span id="neoPortfolioTotal">06</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="neo-portfolio-3d__fallback" hidden>
+      <!-- Static fallback portfolio cards are rendered here by JavaScript. -->
     </div>
   </section>
 
@@ -504,6 +563,11 @@
 
   <script src="js/site-config.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/portfolio-3d.js"></script>
 </body>
 
 </html>
