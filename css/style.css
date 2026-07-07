@@ -1649,7 +1649,8 @@ footer a[aria-current="page"] {
 
 /* Tailwind utility overrides kept here because the HTML still uses CDN classes. */
 body.bg-black,
-.bg-black {
+.bg-black,
+.bg-white {
   background-color: var(--canvas) !important;
 }
 
