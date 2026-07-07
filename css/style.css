@@ -1361,14 +1361,19 @@ section[id] {
   z-index: 40;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--hairline-strong);
   border-radius: var(--radius-md);
-  background: var(--primary);
-  color: var(--on-primary);
-  font-size: 20px;
+  background: var(--surface-card);
+  color: transparent;
+  font-size: 0;
   font-weight: 600;
   line-height: 1;
   box-shadow: 0 8px 20px rgba(23, 23, 23, .16);
+}
+
+#backToTop:hover {
+  border-color: var(--ink);
+  background: var(--canvas-soft);
 }
 
 #backToTop:not(.hidden) {
@@ -1378,7 +1383,8 @@ section[id] {
 }
 
 #backToTop::before {
-  content: "";
+  content: "↑";
+  color: var(--ink);
   font-size: 20px;
   line-height: 1;
 }
