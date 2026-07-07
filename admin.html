@@ -7,15 +7,13 @@
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem('neosoft-theme');
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', 'light');
       } catch (e) {}
     })();
   </script>
   <meta name="robots" content="noindex,nofollow" />
   <title>Neo Soft Admin</title>
-  <meta name="theme-color" content="#12021c" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="img/icons/icon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="img/icons/icon-180.png" sizes="180x180" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +21,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+
           boxShadow: { glow: '0 1px 2px rgba(0,0,0,.4)' }
         }
       }
@@ -32,7 +30,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+<body class="bg-black text-white selection:bg-neutral-200 antialiased overflow-x-hidden">
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3" aria-label="Neo Soft - Home">

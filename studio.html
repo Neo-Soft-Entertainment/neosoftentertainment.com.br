@@ -7,9 +7,7 @@
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem('neosoft-theme');
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', 'light');
       } catch (e) {}
     })();
   </script>
@@ -17,7 +15,7 @@
   <title>Neo Soft Studio — About, Team and Contact</title>
   <meta name="description"
     content="Meet the Neo Soft team, learn about the studio, follow updates, and get in touch." />
-  <meta name="theme-color" content="#12021c" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://neeosoft.com.br/studio.html" />
 
   <meta property="og:type" content="website" />
@@ -42,7 +40,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+
           boxShadow: { glow: '0 1px 2px rgba(0,0,0,.4)' }
         }
       }
@@ -52,9 +50,9 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+<body class="bg-black text-white selection:bg-neutral-200 antialiased overflow-x-hidden">
   <div id="cursor"
-    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
+    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-neutral-300 shadow-glow backdrop-blur-sm"
     aria-hidden="true"></div>
 
   <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
@@ -74,16 +72,6 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <label class="sr-only" for="languageSelect" data-i18n="nav.languageLabel">Select language</label>
-        <div class="language-select hidden md:inline-flex" data-i18n-aria-label="nav.languageLabel">
-          <select id="languageSelect" class="language-select__field text-xs" aria-label="Select language">
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-            <option value="es">ES</option>
-            <option value="zh">ZH</option>
-            <option value="ja">JA</option>
-          </select>
-        </div>
         <button id="themeToggle" class="theme-toggle hidden md:inline-flex" aria-label="Toggle light and dark theme"
           type="button">
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -117,19 +105,6 @@
         <a href="studio.html" aria-current="page" data-i18n="nav.studio">Studio</a>
         <a href="studio.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
-      <div class="mobile-menu__section">
-        <label for="languageSelectMobile" class="mobile-menu__label" data-i18n="nav.languageLabel">Select
-          language</label>
-        <div class="language-select language-select--mobile" data-i18n-aria-label="nav.languageLabel">
-          <select id="languageSelectMobile" class="language-select__field text-xs" aria-label="Select language">
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-            <option value="es">ES</option>
-            <option value="zh">ZH</option>
-            <option value="ja">JA</option>
-          </select>
-        </div>
-      </div>
       <button id="themeToggleMobile" class="theme-toggle theme-toggle--mobile mt-3" type="button">
         <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
@@ -161,7 +136,7 @@
           all driven by the love of games.</p>
       </div>
       <div class="contact-panel">
-        <h2 class="text-xl font-semibold mb-2 text-purple-200" data-i18n="about.missionTitle">Our Mission</h2>
+        <h2 class="text-xl font-semibold mb-2 text-neutral-900" data-i18n="about.missionTitle">Our Mission</h2>
         <p class="text-white/80 mb-6" data-i18n="about.missionCopy">To strengthen the Brazilian gaming scene by delivering
           world-class projects that showcase creativity and excellence.</p>
         <div class="flex flex-col sm:flex-row gap-3">
@@ -215,7 +190,7 @@
         </div>
       </div>
       <div class="md:col-span-2 rounded-xl border border-white/10 p-6 bg-white/5">
-        <h3 class="font-semibold mb-2 text-purple-200" data-i18n="careers.open">All positions filled</h3>
+        <h3 class="font-semibold mb-2 text-neutral-900" data-i18n="careers.open">All positions filled</h3>
         <p class="text-sm text-white/80" data-i18n="careers.status">Thank you to everyone who applied. We don’t have
           open roles right now, but you can still email your portfolio so we can reach out when opportunities return.
         </p>
@@ -223,12 +198,12 @@
     </div>
   </section>
 
-  <section id="team" class="section-gradient py-20 sm:py-24 bg-[#0b0114]">
+  <section id="team" class="section-gradient py-20 sm:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="section-header section-header--compact">
         <span class="section-header__index">03</span>
         <div class="section-header__copy">
-          <h2 class="text-2xl sm:text-3xl font-bold text-purple-200" data-i18n="team.title">Our Team</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900" data-i18n="team.title">Our Team</h2>
         </div>
       </div>
       <div class="team-grid">
@@ -365,16 +340,16 @@
           </div>
         </div>
         <div class="contact-panel contact-panel--social">
-          <h3 class="text-lg font-semibold text-purple-200 mb-2" data-i18n="contact.socialTitle">Connect with Neo Soft
+          <h3 class="text-lg font-semibold text-neutral-900 mb-2" data-i18n="contact.socialTitle">Connect with Neo Soft
           </h3>
           <p class="text-white/70 mb-4 max-w-2xl" data-i18n="contact.socialCopy">Follow our latest updates and
             behind-the-scenes moments.</p>
           <div class="grid gap-3 sm:grid-cols-2">
             <a href="https://www.instagram.com/neosoftentertainment/" target="_blank" rel="noopener noreferrer"
-              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-neutral-300 hover:bg-white/10 w-full text-left"
               aria-label="Open Neo Soft on Instagram" data-i18n-aria-label="contact.instagramAria">
               <span
-                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-purpleNeo text-xs font-semibold tracking-wide">IG</span>
+                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-black text-xs font-semibold tracking-wide">IG</span>
               <div class="min-w-0">
                 <span class="block text-sm font-semibold text-white leading-tight break-words"
                   data-i18n="contact.socialInstagram">Instagram / Neo Soft</span>
@@ -383,10 +358,10 @@
             </a>
             <a href="https://www.linkedin.com/company/neeeosoft/?viewAsMember=true" target="_blank"
               rel="noopener noreferrer"
-              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-neutral-300 hover:bg-white/10 w-full text-left"
               aria-label="Open Neo Soft on LinkedIn" data-i18n-aria-label="contact.linkedinAria">
               <span
-                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-purpleNeo text-xs font-semibold tracking-wide">IN</span>
+                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-black text-xs font-semibold tracking-wide">IN</span>
               <div class="min-w-0">
                 <span class="block text-sm font-semibold text-white leading-tight"
                   data-i18n="contact.socialLinkedIn">LinkedIn / Neo Soft</span>
@@ -394,10 +369,10 @@
               </div>
             </a>
             <a href="https://discord.gg/HA2CBfdCFT" target="_blank" rel="noopener noreferrer"
-              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-neutral-300 hover:bg-white/10 w-full text-left"
               aria-label="Join the Neo Soft Discord server" data-i18n-aria-label="contact.discordAria">
               <span
-                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-purpleNeo text-xs font-semibold tracking-wide">DC</span>
+                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-black text-xs font-semibold tracking-wide">DC</span>
               <div class="min-w-0">
                 <span class="block text-sm font-semibold text-white leading-tight"
                   data-i18n="contact.socialDiscord">Discord / Neo Soft</span>
@@ -405,10 +380,10 @@
               </div>
             </a>
             <a href="https://www.youtube.com/@NeoSoft-m2e" target="_blank" rel="noopener noreferrer"
-              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-purple-400/60 hover:bg-white/10 w-full text-left"
+              class="group inline-flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-neutral-300 hover:bg-white/10 w-full text-left"
               aria-label="Open Neo Soft on YouTube" data-i18n-aria-label="contact.youtubeAria">
               <span
-                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-purpleNeo text-xs font-semibold tracking-wide">YT</span>
+                class="social-pill inline-flex h-9 w-9 aspect-square shrink-0 items-center justify-center rounded-full bg-black text-xs font-semibold tracking-wide">YT</span>
               <div class="min-w-0">
                 <span class="block text-sm font-semibold text-white leading-tight"
                   data-i18n="contact.socialYouTube">YouTube @NeoSoft-m2e</span>
@@ -422,22 +397,22 @@
   </section>
 
   <button id="backToTop"
-    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-purpleNeo hover:bg-fuchsiaNeo shadow-lg transition-colors"
+    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-black hover:bg-neutral-900 shadow-lg transition-colors"
     aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
 
   <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
     <div
       class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
       <p class="break-words max-w-full text-center sm:text-left" data-i18n="footer.copy">© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br"
-          class="hover:text-purple-300">contact@neosoftentertainment.com.br</a></p>
+          class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a></p>
       <div class="flex flex-wrap gap-4">
-        <a class="hover:text-purple-300" href="index.html" data-i18n="nav.home">Home</a>
-        <a class="hover:text-purple-300" href="services.html" data-i18n="nav.services">Services</a>
-        <a class="hover:text-purple-300" href="games.html" data-i18n="nav.games">Games</a>
-        <a class="hover:text-purple-300" href="plugins.html" data-i18n="nav.plugins">Plugins</a>
-        <a class="hover:text-purple-300" href="studio.html" aria-current="page" data-i18n="nav.studio">Studio</a>
-        <a class="hover:text-purple-300" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
-        <a class="hover:text-purple-300" href="/legal">Legal</a>
+        <a class="hover:text-neutral-900" href="index.html" data-i18n="nav.home">Home</a>
+        <a class="hover:text-neutral-900" href="services.html" data-i18n="nav.services">Services</a>
+        <a class="hover:text-neutral-900" href="games.html" data-i18n="nav.games">Games</a>
+        <a class="hover:text-neutral-900" href="plugins.html" data-i18n="nav.plugins">Plugins</a>
+        <a class="hover:text-neutral-900" href="studio.html" aria-current="page" data-i18n="nav.studio">Studio</a>
+        <a class="hover:text-neutral-900" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
+        <a class="hover:text-neutral-900" href="/legal">Legal</a>
       </div>
     </div>
   </footer>

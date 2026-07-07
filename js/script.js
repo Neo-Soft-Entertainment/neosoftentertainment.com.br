@@ -16,8 +16,6 @@
   const backToTop = $('#backToTop');
   const mobileMenu = $('#mobileMenu');
   const hamburger = $('#hamburger');
-  const languageSelect = $('#languageSelect');
-  const languageSelectMobile = $('#languageSelectMobile');
   const contactForm = $('#contactForm');
   const formFeedback = $('#formFeedback');
   const formError = $('#formError');
@@ -54,10 +52,9 @@
       'nav.about': 'About',
       'nav.team': 'Team',
       'nav.contact': 'Contact',
-      'nav.languageLabel': 'Select language',
       'nav.menuTitle': 'Menu',
       'hero.kicker': 'From indie passion to global stages',
-      'hero.title': 'Creating Worlds. <span class="text-purpleNeo">Inspiring Players.</span>',
+      'hero.title': 'Creating Worlds. <span class="text-neutral-900">Inspiring Players.</span>',
       'hero.subtitle': 'Brazilian game studio crafting immersive experiences with technology, creativity and passion.',
       'hero.ctaGames': 'Explore Games',
       'hero.ctaPlugins': 'See Plugins',
@@ -186,7 +183,7 @@
       'contact.discordAria': 'Open Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Open Neo Soft on YouTube',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     pt: {
       'nav.home': 'Início',
@@ -199,10 +196,9 @@
       'nav.about': 'Sobre',
       'nav.team': 'Equipe',
       'nav.contact': 'Contato',
-      'nav.languageLabel': 'Selecionar idioma',
       'nav.menuTitle': 'Menu',
       'hero.kicker': 'Da paixão indie aos palcos globais',
-      'hero.title': 'Criando Mundos. <span class="text-purpleNeo">Inspirando Jogadores.</span>',
+      'hero.title': 'Criando Mundos. <span class="text-neutral-900">Inspirando Jogadores.</span>',
       'hero.subtitle': 'Estúdio brasileiro de jogos criando experiências imersivas com tecnologia, criatividade e paixão.',
       'hero.ctaGames': 'Explorar jogos',
       'hero.ctaPlugins': 'Ver plugins',
@@ -331,7 +327,7 @@
       'contact.discordAria': 'Abrir o Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft no YouTube',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     es: {
       'nav.home': 'Inicio',
@@ -344,10 +340,9 @@
       'nav.about': 'Acerca de',
       'nav.team': 'Equipo',
       'nav.contact': 'Contacto',
-      'nav.languageLabel': 'Seleccionar idioma',
       'nav.menuTitle': 'Menú',
       'hero.kicker': 'De la pasión indie a los escenarios globales',
-      'hero.title': 'Creando Mundos. <span class="text-purpleNeo">Inspirando Jugadores.</span>',
+      'hero.title': 'Creando Mundos. <span class="text-neutral-900">Inspirando Jugadores.</span>',
       'hero.subtitle': 'Estudio brasileño de videojuegos que crea experiencias inmersivas con tecnología, creatividad y pasión.',
       'hero.ctaGames': 'Explorar juegos',
       'hero.ctaPlugins': 'Ver plugins',
@@ -476,7 +471,7 @@
       'contact.discordAria': 'Abrir Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'Abrir Neo Soft en YouTube',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     zh: {
       'nav.home': '首页',
@@ -489,10 +484,9 @@
       'nav.about': '关于',
       'nav.team': '团队',
       'nav.contact': '联系',
-      'nav.languageLabel': '选择语言',
       'nav.menuTitle': '菜单',
       'hero.kicker': '从独立热忱走向全球舞台',
-      'hero.title': '创造世界。<span class="text-purpleNeo">激发玩家。</span>',
+      'hero.title': '创造世界。<span class="text-neutral-900">激发玩家。</span>',
       'hero.subtitle': '巴西游戏工作室，以技术、创意与热情打造沉浸式体验。',
       'hero.ctaGames': '探索游戏',
       'hero.ctaPlugins': '查看插件',
@@ -621,7 +615,7 @@
       'contact.discordAria': '打开 Discord / Neo Soft',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': '在 YouTube 打开 Neo Soft',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     },
     ja: {
       'nav.home': 'ホーム',
@@ -634,10 +628,9 @@
       'nav.about': '概要',
       'nav.team': 'チーム',
       'nav.contact': 'お問い合わせ',
-      'nav.languageLabel': '言語を選択',
       'nav.menuTitle': 'メニュー',
       'hero.kicker': 'インディーの情熱から世界の舞台へ',
-      'hero.title': '世界を創造する。<span class="text-purpleNeo">プレイヤーを刺激する。</span>',
+      'hero.title': '世界を創造する。<span class="text-neutral-900">プレイヤーを刺激する。</span>',
       'hero.subtitle': 'テクノロジー、創造性、情熱で没入型体験を生み出すブラジルのゲームスタジオ。',
       'hero.ctaGames': 'ゲームを見る',
       'hero.ctaPlugins': 'プラグインを見る',
@@ -766,20 +759,22 @@
       'contact.discordAria': 'Discord / Neo Soft を開く',
       'contact.socialYouTube': 'YouTube @NeoSoft-m2e',
       'contact.youtubeAria': 'YouTube で Neo Soft を開く',
-      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>'
+      'footer.copy': '© 2026 Neo Soft Entertainment LTDA. - <a href="mailto:contact@neosoftentertainment.com.br" class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>'
     }
   };
 
   window.NEO_SOFT_TRANSLATIONS = translations;
 
-  const storageKey = 'neoSoftLang';
-  let currentLang = 'en';
-  try {
-    const stored = localStorage.getItem(storageKey);
-    if (stored && translations[stored]) currentLang = stored;
-  } catch (err) {
-    currentLang = 'en';
-  }
+  const getBrowserLanguage = () => {
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language || 'en'];
+    for (const language of languages) {
+      const code = language.toLowerCase().split('-')[0];
+      if (translations[code]) return code;
+    }
+    return 'en';
+  };
+
+  let currentLang = getBrowserLanguage();
 
   const setDocumentLang = (lang) => {
     const map = { pt: 'pt-BR', es: 'es-ES', en: 'en', zh: 'zh-CN', ja: 'ja-JP' };
@@ -818,10 +813,7 @@
   const applyTranslations = (lang = currentLang) => {
     if (!translations[lang]) lang = 'en';
     currentLang = lang;
-    try { localStorage.setItem(storageKey, lang); } catch (err) { }
     setDocumentLang(lang);
-    if (languageSelect) languageSelect.value = lang;
-    if (languageSelectMobile) languageSelectMobile.value = lang;
     $$('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
       const value = translations[lang]?.[key];
@@ -907,9 +899,6 @@
       })
       .catch((err) => console.warn('Supabase posts unavailable.', err));
   }
-
-  languageSelect && languageSelect.addEventListener('change', (e) => applyTranslations(e.target.value));
-  languageSelectMobile && languageSelectMobile.addEventListener('change', (e) => applyTranslations(e.target.value));
 
   // Navbar scroll / back-to-top
   const onScroll = () => {
@@ -1033,7 +1022,7 @@
         const w = particles.width, h = particles.height;
         ctx.clearRect(0, 0, w, h);
         const grd = ctx.createLinearGradient(0, 0, w, h);
-        grd.addColorStop(0, '#0b0114'); grd.addColorStop(1, '#12021c');
+        grd.addColorStop(0, '#ffffff'); grd.addColorStop(1, '#f5f5f7');
         ctx.fillStyle = grd; ctx.fillRect(0, 0, w, h);
         P.forEach(p => {
           p.x += p.vx; p.y += p.vy;
@@ -1041,7 +1030,7 @@
           if (p.y < 0 || p.y > 1) p.vy *= -1;
           const px = p.x * w, py = p.y * h;
           ctx.beginPath(); ctx.arc(px, py, p.r * DPR, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(155,93,229,0.7)'; ctx.fill();
+          ctx.fillStyle = 'rgba(220,222,224,0.7)'; ctx.fill();
         });
         for (let i = 0; i < P.length; i++) {
           for (let j = i + 1; j < P.length; j++) {

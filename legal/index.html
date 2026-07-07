@@ -7,9 +7,7 @@
   <script>
     (function () {
       try {
-        var stored = localStorage.getItem('neosoft-theme');
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.setAttribute('data-theme', 'light');
       } catch (e) {}
     })();
   </script>
@@ -17,7 +15,7 @@
   <title>Legal — Neo Soft Entertainment</title>
   <meta name="description"
     content="Privacy Policy, Terms of Use, End User License Agreement (EULA) and data deletion request for the applications, games, and digital services operated by Neo Soft Entertainment." />
-  <meta name="theme-color" content="#12021c" />
+  <meta name="theme-color" content="#ffffff" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://neeosoft.com.br/legal" />
@@ -41,7 +39,7 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+
           boxShadow: { glow: '0 1px 2px rgba(0,0,0,.4)' }
         }
       }
@@ -53,22 +51,22 @@
   <style>
     .prose-legal h2 {
       font-size: 1.35rem;
-      font-weight: 700;
-      color: #d14bf0;
+      font-weight: 600;
+      color: #171717;
       margin-top: 3rem;
       margin-bottom: .75rem;
       padding-bottom: .4rem;
-      border-bottom: 1px solid rgba(209,75,240,.2);
+      border-bottom: 1px solid #f0f0f3;
     }
     .prose-legal h3 {
       font-size: 1.05rem;
       font-weight: 600;
-      color: #9b5de5;
+      color: #171717;
       margin-top: 1.75rem;
       margin-bottom: .5rem;
     }
     .prose-legal p {
-      color: rgba(255,255,255,.75);
+      color: #60646c;
       line-height: 1.8;
       margin-bottom: 1rem;
     }
@@ -76,7 +74,7 @@
     .prose-legal ol {
       padding-left: 1.5rem;
       margin-bottom: 1rem;
-      color: rgba(255,255,255,.75);
+      color: #60646c;
     }
     .prose-legal ul {
       list-style: disc;
@@ -89,15 +87,15 @@
       line-height: 1.8;
     }
     .prose-legal a {
-      color: #9b5de5;
+      color: #0d74ce;
       text-decoration: underline;
       text-underline-offset: 3px;
     }
     .prose-legal a:hover {
-      color: #d14bf0;
+      color: #171717;
     }
     .prose-legal strong {
-      color: rgba(255,255,255,.9);
+      color: #171717;
     }
     .legal-toc {
       display: flex;
@@ -109,9 +107,9 @@
       align-items: center;
       padding: .5rem 1rem;
       border-radius: 9999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.78);
+      border: 1px solid #f0f0f3;
+      background: #f0f0f3;
+      color: #171717;
       font-size: .82rem;
       letter-spacing: .02em;
       transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
@@ -119,18 +117,18 @@
     }
     .legal-toc a:hover {
       transform: translateY(-2px);
-      border-color: rgba(209,75,240,.4);
-      background: rgba(209,75,240,.12);
-      color: #fff;
+      border-color: #dcdee0;
+      background: #ffffff;
+      color: #171717;
     }
   </style>
 </head>
 
-<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+<body class="bg-black text-white selection:bg-neutral-200 antialiased overflow-x-hidden">
 
   <!-- Custom Cursor -->
   <div id="cursor"
-    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
+    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-neutral-300 shadow-glow backdrop-blur-sm"
     aria-hidden="true"></div>
 
   <!-- Navbar -->
@@ -208,7 +206,7 @@
 
       <!-- Hero / Page header -->
       <div class="mb-10">
-        <p class="text-xs font-semibold tracking-widest uppercase text-fuchsiaNeo mb-3">Neo Soft Entertainment</p>
+        <p class="text-xs font-semibold tracking-widest uppercase text-neutral-900 mb-3">Neo Soft Entertainment</p>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Legal</h1>
         <p class="text-white/70 text-base sm:text-lg mb-4">
           Privacy Policy, Terms of Use, EULA and Data Deletion Request
@@ -441,16 +439,16 @@
       <p class="break-words max-w-full text-center sm:text-left">
         © 2026 Neo Soft Entertainment LTDA. -
         <a href="mailto:contact@neosoftentertainment.com.br"
-          class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>
+          class="hover:text-neutral-900">contact@neosoftentertainment.com.br</a>
       </p>
       <div class="flex flex-wrap gap-4">
-        <a class="hover:text-purple-300" href="../index.html">Home</a>
-        <a class="hover:text-purple-300" href="../services.html">Services</a>
-        <a class="hover:text-purple-300" href="../games.html">Games</a>
-        <a class="hover:text-purple-300" href="../plugins.html">Plugins</a>
-        <a class="hover:text-purple-300" href="../studio.html">Studio</a>
-        <a class="hover:text-purple-300" href="../studio.html#contact">Contact</a>
-        <a class="hover:text-purple-300" href="/legal" aria-current="page">Legal</a>
+        <a class="hover:text-neutral-900" href="../index.html">Home</a>
+        <a class="hover:text-neutral-900" href="../services.html">Services</a>
+        <a class="hover:text-neutral-900" href="../games.html">Games</a>
+        <a class="hover:text-neutral-900" href="../plugins.html">Plugins</a>
+        <a class="hover:text-neutral-900" href="../studio.html">Studio</a>
+        <a class="hover:text-neutral-900" href="../studio.html#contact">Contact</a>
+        <a class="hover:text-neutral-900" href="/legal" aria-current="page">Legal</a>
       </div>
     </div>
   </footer>
