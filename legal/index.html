@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Legal — Neo Soft Entertainment</title>
+  <meta name="description"
+    content="Privacy Policy, Terms of Use, End User License Agreement (EULA) and data deletion request for Imóbi, an application by Neo Soft Entertainment." />
+  <meta name="theme-color" content="#12021c" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://neeosoft.com.br/legal" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Legal — Neo Soft Entertainment" />
+  <meta property="og:description"
+    content="Privacy Policy, Terms of Use, EULA and Data Deletion Request for the Imóbi application." />
+  <meta property="og:url" content="https://neeosoft.com.br/legal" />
+  <meta property="og:image" content="../img/neosoft.jpg" />
+
+  <!-- Favicons / PWA -->
+  <link rel="icon" href="../img/icons/icon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../img/icons/icon-180.png" sizes="180x180" />
+  <link rel="manifest" href="../manifest.json" />
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
+          boxShadow: { glow: '0 0 40px rgba(155,93,229,.35)' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    .prose-legal h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #d14bf0;
+      margin-top: 3rem;
+      margin-bottom: .75rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid rgba(209,75,240,.2);
+    }
+    .prose-legal h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #9b5de5;
+      margin-top: 1.75rem;
+      margin-bottom: .5rem;
+    }
+    .prose-legal p {
+      color: rgba(255,255,255,.75);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .prose-legal ul,
+    .prose-legal ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: rgba(255,255,255,.75);
+    }
+    .prose-legal ul {
+      list-style: disc;
+    }
+    .prose-legal ol {
+      list-style: decimal;
+    }
+    .prose-legal li {
+      margin-bottom: .5rem;
+      line-height: 1.8;
+    }
+    .prose-legal a {
+      color: #9b5de5;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .prose-legal a:hover {
+      color: #d14bf0;
+    }
+    .prose-legal strong {
+      color: rgba(255,255,255,.9);
+    }
+    .legal-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+    }
+    .legal-toc a {
+      display: inline-flex;
+      align-items: center;
+      padding: .5rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.78);
+      font-size: .82rem;
+      letter-spacing: .02em;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+      text-decoration: none;
+    }
+    .legal-toc a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(209,75,240,.4);
+      background: rgba(209,75,240,.12);
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white selection:bg-purple-500/30 antialiased overflow-x-hidden">
+
+  <!-- Custom Cursor -->
+  <div id="cursor"
+    class="pointer-events-none fixed left-0 top-0 z-[9999] -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-2 border-purple-200/70 shadow-glow backdrop-blur-sm"
+    aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 w-full z-50 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3" aria-label="Neo Soft - Home">
+        <img src="../img/neosoft.jpg" alt="Neo Soft logo" class="h-9 w-9 rounded-md object-cover" />
+        <span class="text-base sm:text-lg font-semibold">Neo Soft</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex gap-3 lg:gap-5 text-sm font-medium" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link" href="../games.html">Games</a>
+        <a class="nav-link" href="../plugins.html">Plugins</a>
+        <a class="nav-link" href="../studio.html">Studio</a>
+        <a class="nav-link" href="../studio.html#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile controls -->
+      <div class="flex items-center gap-3">
+        <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
+          aria-label="Open menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden" aria-label="Mobile menu">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title">Menu</span>
+      </div>
+      <nav class="mobile-menu__links" aria-label="Mobile primary">
+        <a href="../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../games.html">Games</a>
+        <a href="../plugins.html">Plugins</a>
+        <a href="../studio.html">Studio</a>
+        <a href="../studio.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-28 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+
+      <!-- Hero / Page header -->
+      <div class="mb-10">
+        <p class="text-xs font-semibold tracking-widest uppercase text-fuchsiaNeo mb-3">Neo Soft Entertainment</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-3">Legal</h1>
+        <p class="text-white/70 text-base sm:text-lg mb-4">
+          Privacy Policy, Terms of Use, EULA and Data Deletion Request
+        </p>
+        <p class="text-white/60 text-sm leading-relaxed max-w-2xl">
+          This page contains the Privacy Policy, Terms of Use, End User License Agreement (EULA), and data
+          deletion instructions for Imóbi, an application operated by NEO SOFT ENTERTAINMENT.
+        </p>
+        <div class="mt-6 h-px bg-gradient-to-r from-fuchsiaNeo/40 via-purpleNeo/20 to-transparent"></div>
+      </div>
+
+      <!-- Internal navigation -->
+      <nav class="legal-toc mb-12" aria-label="Sections on this page">
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms-of-use">Terms of Use</a>
+        <a href="#eula">EULA</a>
+        <a href="#data-deletion">Data Deletion Request</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <article class="prose-legal">
+
+        <!-- Privacy Policy -->
+        <section id="privacy-policy">
+          <h2>Privacy Policy and Data Processing Notice – Imóbi App</h2>
+
+          <p>
+            This Privacy Policy and Data Processing Notice establishes the rules regarding the collection, use,
+            storage, protection, and rights of users in relation to the personal data processed by the Imóbi
+            application, owned and operated by <strong>NEO SOFT ENTERTAINMENT</strong>, a private legal entity, in
+            compliance with the Brazilian General Data Protection Law – LGPD, Law No. 13.709/2018.
+          </p>
+          <p>
+            By using Imóbi, the user acknowledges and agrees to the terms described in this document.
+          </p>
+
+          <h3>1. Data Collected and Purposes</h3>
+          <p>
+            To enable the purchase, sale, and listing of real estate properties, Imóbi collects only the data
+            strictly necessary for the operation of the application, divided into the following categories:
+          </p>
+          <ul>
+            <li><strong>Social Authentication Data (Google):</strong> When logging in through a Google account,
+              Imóbi may collect the user's public profile photo exclusively for visual identification and account
+              personalization inside the application.</li>
+            <li><strong>Mandatory Registration Data:</strong> Imóbi collects the user's full name, CPF, and phone
+              number.</li>
+            <li><strong>Purpose:</strong> To ensure legal security in transactions and listings, prevent fraud such
+              as fake profiles, identify users, and enable essential contact between potential buyers and sellers.</li>
+            <li><strong>Geographic Location Data:</strong> Imóbi may request permission to access the user's
+              real-time location only while the application is in use.</li>
+            <li><strong>Purpose:</strong> To intelligently display nearby properties and allow automatic and
+              accurate address completion when the user publishes a listing.</li>
+            <li><strong>Photo Gallery Access:</strong> Imóbi may request permission to access the user's device
+              photo gallery.</li>
+            <li><strong>Purpose:</strong> To allow the user to upload property photos for listings or voluntarily
+              update their profile picture.</li>
+          </ul>
+
+          <h3>2. Legal Bases for Processing</h3>
+          <p>
+            NEO SOFT ENTERTAINMENT processes user data based on the legal bases established by Article 7 of the
+            LGPD, including:
+          </p>
+          <ul>
+            <li><strong>Performance of Contract or Preliminary Procedures:</strong> Processing required to fulfill
+              the app's Terms of Use and enable the purchase, sale, and listing platform.</li>
+            <li><strong>Legitimate Interest:</strong> Processing required to maintain the internal security of the
+              ecosystem, improve property searches based on location, and enhance the user experience.</li>
+            <li><strong>Fraud Prevention and User Safety:</strong> Use of CPF data to validate the identity of
+              advertisers and buyers.</li>
+          </ul>
+
+          <h3>3. Data Storage and Security</h3>
+          <p>
+            The security of user data is a priority. NEO SOFT ENTERTAINMENT adopts technical and organizational
+            measures designed to protect personal data, including:
+          </p>
+          <ul>
+            <li><strong>Encryption in Transit:</strong> All information transmitted between the application and
+              servers uses secure encrypted communication protocols, such as HTTPS/TLS.</li>
+            <li><strong>Cloud Storage:</strong> Personal data collected by Imóbi is stored in secure cloud
+              infrastructure.</li>
+            <li><strong>No Sale of Personal Data:</strong> NEO SOFT ENTERTAINMENT does not sell users' personal
+              data.</li>
+            <li><strong>No Advertising Sharing:</strong> NEO SOFT ENTERTAINMENT does not share users' personal data
+              with advertising companies.</li>
+            <li><strong>Limited Visibility of Contact Data:</strong> Contact data from a property advertiser may
+              become visible to other users only when necessary to allow negotiation related to a property
+              listing.</li>
+          </ul>
+
+          <h3>4. Age Restriction</h3>
+          <p>
+            Imóbi is intended for users aged 16 years or older.
+          </p>
+          <p>
+            Users under 18 and over 16 must register and use the application with the assistance of their parents
+            or legal guardians, who are responsible for the acts performed by the minor within the platform.
+          </p>
+
+          <h3>5. Rights of Data Subjects</h3>
+          <p>
+            Under Article 18 of the LGPD, users may request from NEO SOFT ENTERTAINMENT, at any time:
+          </p>
+          <ol>
+            <li>Confirmation of the existence of personal data processing.</li>
+            <li>Access to personal data stored by the company.</li>
+            <li>Correction or update of incomplete, inaccurate, or outdated data.</li>
+            <li>Deletion of personal data, subject to cases where retention is required by legal, regulatory, tax,
+              or contractual obligations.</li>
+          </ol>
+
+          <h3>6. Contact and Exercise of Rights</h3>
+          <p>
+            To exercise any of the rights listed above, ask questions about this Privacy Policy, or request account
+            deletion, the user may contact NEO SOFT ENTERTAINMENT through the following channel:
+          </p>
+          <ul>
+            <li><strong>Privacy Contact Email:</strong>
+              <a href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a></li>
+            <li><strong>Company Name:</strong> NEO SOFT ENTERTAINMENT</li>
+          </ul>
+        </section>
+
+        <!-- Terms of Use -->
+        <section id="terms-of-use">
+          <h2>Terms of Use – Imóbi</h2>
+          <p>
+            Imóbi is a platform for advertising, searching, buying, and selling real estate properties. By
+            downloading, accessing, or using the application, the user agrees to the following terms:
+          </p>
+          <ul>
+            <li>The user is responsible for the accuracy and truthfulness of the information provided when
+              registering an account or publishing a property listing.</li>
+            <li>The user may not publish listings that are false, fraudulent, illegal, offensive, or that violate
+              the rights of third parties.</li>
+            <li>NEO SOFT ENTERTAINMENT may remove listings, suspend accounts, or restrict access in cases of
+              misuse of the platform.</li>
+            <li>The platform may undergo changes, updates, maintenance, or temporary periods of unavailability.</li>
+            <li>Continued use of the application after any update to these Terms of Use constitutes acceptance of
+              the revised terms.</li>
+            <li>The use of Imóbi implies full acceptance of these Terms of Use.</li>
+          </ul>
+        </section>
+
+        <!-- EULA -->
+        <section id="eula">
+          <h2>End User License Agreement (EULA) – Imóbi</h2>
+          <p>
+            This End User License Agreement governs the use of the Imóbi application and applies to every user who
+            installs or accesses it.
+          </p>
+          <ul>
+            <li>NEO SOFT ENTERTAINMENT grants the user a limited, revocable, non-exclusive, and non-transferable
+              license to use the Imóbi application.</li>
+            <li>This license does not grant the user any ownership rights over the software, source code,
+              trademarks, layout, database, interface, or any other assets of the application.</li>
+            <li>The user may not copy, modify, reverse engineer, exploit vulnerabilities, automate improper use of,
+              or attempt to access restricted areas of the system.</li>
+            <li>This license may be terminated if the user violates the Terms of Use, applicable law, or the
+              rights of NEO SOFT ENTERTAINMENT.</li>
+            <li>The application may receive updates, fixes, improvements, and functional changes over time.</li>
+          </ul>
+        </section>
+
+        <!-- Data Deletion Request -->
+        <section id="data-deletion">
+          <h2>Data Deletion Request</h2>
+          <p>
+            Users may request the deletion of their Imóbi account and associated personal data at any time.
+          </p>
+          <p>
+            To request data deletion, send an email to
+            <a href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a> using the
+            subject: <strong>"Imóbi Data Deletion Request"</strong>.
+          </p>
+          <p>The email should include:</p>
+          <ul>
+            <li>Full name</li>
+            <li>Registered phone number</li>
+            <li>Registered email address</li>
+            <li>CPF, when necessary for identity verification</li>
+            <li>A clear statement requesting account and data deletion</li>
+          </ul>
+          <p>
+            After receiving the request, NEO SOFT ENTERTAINMENT will process the deletion of the user's personal
+            data, except where data retention is required to comply with legal, regulatory, tax, security, fraud
+            prevention, or contractual obligations.
+          </p>
+          <a href="mailto:contact@neosoftentertainment.com.br?subject=Im%C3%B3bi%20Data%20Deletion%20Request"
+            class="btn-primary mt-2">
+            Request Data Deletion
+          </a>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>
+            For privacy, legal, or data protection matters related to Imóbi, contact NEO SOFT ENTERTAINMENT at:
+          </p>
+          <p>
+            <a href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a>
+          </p>
+        </section>
+
+        <div class="mt-10 p-4 rounded-lg border border-white/10 bg-white/5 text-white/50 text-xs leading-relaxed">
+          This document is provided as an initial reference for the Imóbi application and does not constitute a
+          definitive legal opinion. It is subject to future legal review and updates.
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-black text-white/60 text-sm">
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-3 footer-inner">
+      <p class="break-words max-w-full text-center sm:text-left">
+        © 2026 Neo Soft Entertainment LTDA. -
+        <a href="mailto:contact@neosoftentertainment.com.br"
+          class="hover:text-purple-300">contact@neosoftentertainment.com.br</a>
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a class="hover:text-purple-300" href="../index.html">Home</a>
+        <a class="hover:text-purple-300" href="../services.html">Services</a>
+        <a class="hover:text-purple-300" href="../games.html">Games</a>
+        <a class="hover:text-purple-300" href="../plugins.html">Plugins</a>
+        <a class="hover:text-purple-300" href="../studio.html">Studio</a>
+        <a class="hover:text-purple-300" href="../studio.html#contact">Contact</a>
+        <a class="hover:text-purple-300" href="/legal" aria-current="page">Legal</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/site-config.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
