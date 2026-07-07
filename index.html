@@ -41,7 +41,7 @@
       theme: {
         extend: {
           colors: { purpleNeo: '#9b5de5', fuchsiaNeo: '#d14bf0' },
-          boxShadow: { glow: '0 0 40px rgba(155,93,229,.35)' }
+          boxShadow: { glow: '0 1px 2px rgba(0,0,0,.4)' }
         }
       }
     }
@@ -129,12 +129,8 @@
     </div>
   </header>
 
-  <!-- Hero with Particles -->
+  <!-- Hero -->
   <section id="home" class="hero-section relative overflow-hidden">
-    <canvas id="particles" class="absolute inset-0 w-full h-full"></canvas>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-glow"></div>
     <div class="hero-container px-4 sm:px-6" id="heroContent">
       <div class="hero-copy">
         <span class="hero-kicker" data-i18n="hero.kicker">From indie passion to global stages</span>
@@ -155,8 +151,6 @@
         </div>
       </div>
       <div class="hero-stage" aria-hidden="true">
-        <div class="hero-stage__halo hero-stage__halo--one"></div>
-        <div class="hero-stage__halo hero-stage__halo--two"></div>
         <div class="hero-stage__frame">
           <div class="hero-stage__image">
             <img src="img/frontline.png" alt="" />
@@ -255,7 +249,7 @@
               </div>
               <div class="card3d" data-card>
                 <div class="card3d-img card3d-img--icon"
-                  style="background:linear-gradient(135deg, rgba(18,193,166,.42), rgba(18,51,102,.88));">
+                  style="background:#154b4a;">
                   <span class="px-6 text-center text-sm font-semibold uppercase text-white/80"
                     style="letter-spacing:.28em;">Neolytics</span>
                 </div>
@@ -272,7 +266,7 @@
             <div class="services-slide" aria-hidden="true">
               <div class="card3d" data-card>
                 <div class="card3d-img card3d-img--icon"
-                  style="background:linear-gradient(135deg, rgba(255,151,64,.48), rgba(92,28,126,.86));">
+                  style="background:#5c3a22;">
                   <span class="px-6 text-center text-sm font-semibold uppercase text-white/80"
                     style="letter-spacing:.22em;">Vector Toys</span>
                 </div>
@@ -300,11 +294,7 @@
   </section>
 
 
-  <section id="services"
-    class="relative overflow-hidden bg-gradient-to-br from-blue-900 via-purple-900/80 to-purple-950 py-20 sm:py-24">
-    <div
-      class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(79,70,229,0.45),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(59,130,246,0.4),transparent_35%),radial-gradient(circle_at_60%_70%,rgba(219,39,119,0.35),transparent_40%)]">
-    </div>
+  <section id="services" class="relative overflow-hidden bg-[#140b24] py-20 sm:py-24">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-12">
       <div class="w-full lg:w-7/12 space-y-6">
         <div
@@ -316,8 +306,7 @@
           multiplayer architecture, AI modules, tools, automation and production pipelines that help studios scale
           faster — whether augmenting teams, leading full productions, or building reliable release pipelines.</p>
         <div class="flex flex-wrap items-center gap-4">
-          <a href="studio.html#contact"
-            class="btn-primary bg-gradient-to-r from-blue-500 via-purpleNeo to-fuchsiaNeo shadow-glow hover:scale-[1.02] transition-transform">Get
+          <a href="studio.html#contact" class="btn-primary">Get
             in touch</a>
           <a href="services.html" class="btn-outline" data-i18n="shared.learnMore">Learn More →</a>
           <div class="flex items-center gap-3 text-white/70 text-sm">
@@ -336,14 +325,7 @@
         </div>
       </div>
       <div class="w-full lg:w-5/12">
-        <div
-          class="relative rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.4)] backdrop-blur">
-          <div
-            class="absolute -top-10 -right-6 h-28 w-28 rounded-full bg-gradient-to-br from-blue-400/40 via-purpleNeo/40 to-fuchsiaNeo/30 blur-3xl">
-          </div>
-          <div
-            class="absolute -bottom-12 -left-10 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/30 via-fuchsiaNeo/30 to-blue-400/25 blur-3xl">
-          </div>
+        <div class="relative rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
           <div class="relative grid gap-4">
             <div class="grid grid-cols-2 gap-3 text-sm">
               <div class="rounded-xl border border-white/10 bg-black/50 px-4 py-3 shadow-glow">
@@ -365,8 +347,7 @@
                 <p class="font-semibold">Pipelines & automation</p>
               </div>
             </div>
-            <div
-              class="rounded-xl border border-white/10 bg-gradient-to-r from-blue-500/10 via-purpleNeo/10 to-fuchsiaNeo/10 px-4 py-5 shadow-glow">
+            <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-5 shadow-glow">
               <p class="text-white/60 text-sm">Delivery</p>
               <p class="text-lg font-semibold">Production ready engineering for ambitious Unreal teams.</p>
             </div>
@@ -477,7 +458,7 @@
 
   <!-- Back to top -->
   <button id="backToTop"
-    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-gradient-to-br from-purpleNeo to-fuchsiaNeo shadow-lg hover:scale-105 transition"
+    class="hidden fixed bottom-6 right-6 z-40 h-11 w-11 rounded-full bg-purpleNeo hover:bg-fuchsiaNeo shadow-lg transition-colors"
     aria-label="Back to top" data-i18n-aria-label="shared.backToTop">↑</button>
 
   <!-- Footer -->
