@@ -14,9 +14,6 @@
   const pluginsPrevBtn = $('#pluginsPrev');
   const pluginsNextBtn = $('#pluginsNext');
   const backToTop = $('#backToTop');
-  const sfxToggle = $('#sfxToggle');
-  const muteBtn = $('#muteBtn');
-  const muteBtnMobile = $('#muteBtnMobile');
   const mobileMenu = $('#mobileMenu');
   const hamburger = $('#hamburger');
   const languageSelect = $('#languageSelect');
@@ -25,6 +22,25 @@
   const formFeedback = $('#formFeedback');
   const formError = $('#formError');
   const sendBtn = $('#sendBtn');
+  const themeToggle = $('#themeToggle');
+  const themeToggleMobile = $('#themeToggleMobile');
+
+  // Theme (light/dark)
+  const themeStorageKey = 'neosoft-theme';
+  const getTheme = () => document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  const setThemeMobileLabel = (theme) => {
+    const label = themeToggleMobile?.querySelector('span');
+    if (label) label.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+  };
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try { localStorage.setItem(themeStorageKey, theme); } catch (e) { }
+    setThemeMobileLabel(theme);
+  };
+  const toggleTheme = () => applyTheme(getTheme() === 'light' ? 'dark' : 'light');
+  setThemeMobileLabel(getTheme());
+  themeToggle && themeToggle.addEventListener('click', toggleTheme);
+  themeToggleMobile && themeToggleMobile.addEventListener('click', toggleTheme);
 
   const translations = {
     en: {
@@ -38,8 +54,6 @@
       'nav.about': 'About',
       'nav.team': 'Team',
       'nav.contact': 'Contact',
-      'nav.unmute': 'Unmute SFX',
-      'nav.mute': 'Mute SFX',
       'nav.languageLabel': 'Select language',
       'nav.menuTitle': 'Menu',
       'hero.kicker': 'From indie passion to global stages',
@@ -185,8 +199,6 @@
       'nav.about': 'Sobre',
       'nav.team': 'Equipe',
       'nav.contact': 'Contato',
-      'nav.unmute': 'Ativar efeitos',
-      'nav.mute': 'Desativar efeitos',
       'nav.languageLabel': 'Selecionar idioma',
       'nav.menuTitle': 'Menu',
       'hero.kicker': 'Da paixão indie aos palcos globais',
@@ -332,8 +344,6 @@
       'nav.about': 'Acerca de',
       'nav.team': 'Equipo',
       'nav.contact': 'Contacto',
-      'nav.unmute': 'Activar efectos',
-      'nav.mute': 'Silenciar efectos',
       'nav.languageLabel': 'Seleccionar idioma',
       'nav.menuTitle': 'Menú',
       'hero.kicker': 'De la pasión indie a los escenarios globales',
@@ -479,8 +489,6 @@
       'nav.about': '关于',
       'nav.team': '团队',
       'nav.contact': '联系',
-      'nav.unmute': '开启音效',
-      'nav.mute': '关闭音效',
       'nav.languageLabel': '选择语言',
       'nav.menuTitle': '菜单',
       'hero.kicker': '从独立热忱走向全球舞台',
@@ -626,8 +634,6 @@
       'nav.about': '概要',
       'nav.team': 'チーム',
       'nav.contact': 'お問い合わせ',
-      'nav.unmute': '効果音をオン',
-      'nav.mute': '効果音をオフ',
       'nav.languageLabel': '言語を選択',
       'nav.menuTitle': 'メニュー',
       'hero.kicker': 'インディーの情熱から世界の舞台へ',
@@ -782,8 +788,6 @@
 
   const t = (key) => translations[currentLang]?.[key] ?? translations.en[key] ?? key;
 
-  let muted = true;
-
   const createServiceImages = () => {
     $$('[data-service-image]').forEach(slot => {
       const src = (slot.dataset.serviceImage || '').trim();
@@ -810,12 +814,6 @@
       }
     });
   };
-
-  function refreshMuteBtn() {
-    const label = muted ? t('nav.unmute') : t('nav.mute');
-    if (muteBtn) muteBtn.textContent = label;
-    if (muteBtnMobile) muteBtnMobile.textContent = label;
-  }
 
   const applyTranslations = (lang = currentLang) => {
     if (!translations[lang]) lang = 'en';
@@ -847,7 +845,6 @@
     if (formError && !formError.classList.contains('hidden') && formError.dataset.errorKey) {
       formError.textContent = t(formError.dataset.errorKey);
     }
-    refreshMuteBtn();
   };
 
   createServiceImages();
@@ -875,7 +872,41 @@
       .catch((err) => console.warn('Supabase content overrides unavailable.', err));
   }
 
-  if (sfxToggle) sfxToggle.checked = !muted;
+  const newsGrid = $('#newsGrid');
+  if (newsGrid && siteConfig?.supabaseUrl && siteConfig.supabaseAnonKey) {
+    const base = siteConfig.supabaseUrl.replace(/\/$/, '');
+    fetch(`${base}/rest/v1/posts?select=title,excerpt,published_at,updated_at&published=eq.true&order=published_at.desc.nullslast&limit=6`, {
+      headers: { apikey: siteConfig.supabaseAnonKey }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Posts request failed with ${response.status}`);
+        return response.json();
+      })
+      .then((rows) => {
+        if (!Array.isArray(rows) || !rows.length) return;
+        newsGrid.replaceChildren();
+        rows.forEach((post, index) => {
+          const article = document.createElement('article');
+          article.className = `news-card ${index === 0 ? 'news-card--feature' : 'news-card--stacked'}`;
+          const dateValue = post.published_at || post.updated_at;
+          const dateLabel = dateValue
+            ? new Date(dateValue).toLocaleDateString(undefined, { year: 'numeric', month: 'long' })
+            : '';
+          article.innerHTML = `
+            <div class="news-card__eyebrow">
+              <p class="news-date">${dateLabel}</p>
+              <span class="news-card__divider" aria-hidden="true"></span>
+            </div>
+            <h3 class="news-title"></h3>
+            <p class="news-summary"></p>
+          `;
+          article.querySelector('.news-title').textContent = post.title;
+          article.querySelector('.news-summary').textContent = post.excerpt;
+          newsGrid.append(article);
+        });
+      })
+      .catch((err) => console.warn('Supabase posts unavailable.', err));
+  }
 
   languageSelect && languageSelect.addEventListener('change', (e) => applyTranslations(e.target.value));
   languageSelectMobile && languageSelectMobile.addEventListener('change', (e) => applyTranslations(e.target.value));
@@ -965,24 +996,6 @@
     }
   }
 
-  // SFX (WebAudio)
-  let audioCtx = null;
-  const ensureAudio = () => { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; };
-  const blip = (freq = 660, time = 0.06, type = 'sine') => {
-    if (muted) return;
-    const ctx = ensureAudio();
-    const o = ctx.createOscillator();
-    const g = ctx.createGain();
-    o.type = type; o.frequency.value = freq; g.gain.value = 0.03;
-    o.connect(g); g.connect(ctx.destination);
-    o.start(); o.stop(ctx.currentTime + time);
-  };
-
-  // Toggle SFX
-  muteBtn && muteBtn.addEventListener('click', () => { muted = !muted; refreshMuteBtn(); });
-  muteBtnMobile && muteBtnMobile.addEventListener('click', () => { muted = !muted; refreshMuteBtn(); });
-  sfxToggle && sfxToggle.addEventListener('change', (e) => { muted = !e.target.checked; refreshMuteBtn(); });
-
   // Mobile menu toggle
   const setMobileMenuOpen = (open) => {
     if (!mobileMenu) return;
@@ -1062,6 +1075,34 @@
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
       });
+    });
+  }
+
+  // Scroll reveal
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const revealTargets = $$('.section-header, .card3d, .flair-card, .news-card, .team-card, .service-pillar, .services-proof, .services-lead__panel, .contact-panel, .admin-panel, .admin-editor, .hero-copy, .hero-stage');
+    revealTargets.forEach(el => el.classList.add('reveal'));
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
+
+  // Magnetic buttons
+  if (allowTilt) {
+    $$('.btn-primary, .btn-outline').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const relX = e.clientX - rect.left - rect.width / 2;
+        const relY = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${relX * 0.16}px, ${relY * 0.35}px)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
     });
   }
 
@@ -1175,7 +1216,6 @@
           desktopIndex = (desktopIndex + 1) % slides.length;
           updateDesktop();
         }
-        blip(720, 0.05, 'triangle');
       },
       prev() {
         if (isMobile) {
@@ -1187,7 +1227,6 @@
           desktopIndex = (desktopIndex - 1 + slides.length) % slides.length;
           updateDesktop();
         }
-        blip(480, 0.05, 'triangle');
       }
     };
   };
@@ -1211,10 +1250,6 @@
     pluginsPrevBtn?.addEventListener('click', () => pluginsSlider.prev());
     pluginsNextBtn?.addEventListener('click', () => pluginsSlider.next());
   }
-
-  // Hover SFX
-  $$('#navbar a, #heroContent a').forEach(a => a.addEventListener('mouseenter', () => blip(800, 0.05)));
-  $('#navbar') && $('#navbar').addEventListener('mouseenter', () => blip(700, 0.05));
 
   // EmailJS form
   contactForm && contactForm.addEventListener('submit', function (e) {
@@ -1293,7 +1328,6 @@
     emailjs.send(serviceId, contactTemplateId, templateParams)
       .then((res) => {
         console.log('Email sent', res.status);
-        blip(540, 0.1, 'square');
         if (formFeedback) formFeedback.classList.remove('hidden');
         contactForm.reset();
         setTimeout(() => formFeedback && formFeedback.classList.add('hidden'), 3000);

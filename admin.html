@@ -4,6 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('neosoft-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
   <meta name="robots" content="noindex,nofollow" />
   <title>Neo Soft Admin</title>
   <meta name="theme-color" content="#12021c" />
@@ -30,6 +39,17 @@
         <img src="img/neosoft.jpg" alt="Neo Soft logo" class="h-9 w-9 rounded-md object-cover" />
         <span class="text-base sm:text-lg font-semibold">Neo Soft Admin</span>
       </a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark theme" type="button">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -56,6 +76,67 @@
         <div id="captchaSlot" class="admin-recaptcha"></div>
         <button id="loginButton" class="btn-primary" type="submit">Sign in</button>
         <p id="loginStatus" class="admin-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <nav id="adminTabs" class="admin-editor__actions hidden" style="margin-bottom:1.5rem;" aria-label="Admin sections">
+      <button id="tabPosts" class="btn-primary" type="button">Posts</button>
+      <button id="tabContent" class="btn-outline" type="button">Website content</button>
+    </nav>
+
+    <section id="postsPanel" class="admin-editor hidden">
+      <div class="admin-editor__bar">
+        <div>
+          <p class="admin-eyebrow">News / Blog</p>
+          <h1 class="admin-title">Posts</h1>
+        </div>
+        <div class="admin-editor__actions">
+          <button id="newPostBtn" class="btn-primary" type="button">New post</button>
+          <button id="signOutPosts" class="btn-outline" type="button">Sign out</button>
+        </div>
+      </div>
+      <p id="postsStatus" class="admin-status" role="status" aria-live="polite"></p>
+      <div id="postsList" class="admin-content"></div>
+    </section>
+
+    <section id="postEditor" class="admin-editor hidden">
+      <div class="admin-editor__bar">
+        <div>
+          <p class="admin-eyebrow" id="postEditorEyebrow">New post</p>
+          <h1 class="admin-title" id="postEditorTitle">Create post</h1>
+        </div>
+        <div class="admin-editor__actions">
+          <button id="savePost" class="btn-primary" type="button">Save post</button>
+          <button id="cancelPostEdit" class="btn-outline" type="button">Cancel</button>
+        </div>
+      </div>
+      <p id="postEditorStatus" class="admin-status" role="status" aria-live="polite"></p>
+      <form id="postForm" class="admin-form" onsubmit="return false">
+        <label>
+          <span>Title</span>
+          <input id="postTitle" class="input" type="text" required />
+        </label>
+        <label>
+          <span>Slug</span>
+          <input id="postSlug" class="input" type="text" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" required />
+        </label>
+        <label>
+          <span>Excerpt</span>
+          <textarea id="postExcerpt" class="textarea" rows="2" required></textarea>
+        </label>
+        <label>
+          <span>Body</span>
+          <textarea id="postBody" class="textarea" rows="8"></textarea>
+        </label>
+        <label>
+          <span>Cover image URL</span>
+          <input id="postCoverImage" class="input" type="url" />
+        </label>
+        <label style="display:flex; flex-direction:row; align-items:center; gap:.6rem;">
+          <input id="postPublished" type="checkbox" style="width:1.1rem; height:1.1rem;" />
+          <span>Published</span>
+        </label>
+        <button id="deletePost" class="btn-outline hidden" type="button">Delete post</button>
       </form>
     </section>
 

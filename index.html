@@ -4,6 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('neosoft-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 
   <title>Neo Soft Entertainment — Creating Worlds. Inspiring Players.</title>
   <meta name="description"
@@ -87,8 +96,18 @@
             <option value="ja">JA</option>
           </select>
         </div>
-        <button id="muteBtn" class="audio-toggle hidden md:inline-flex text-xs" aria-label="Toggle SFX"
-          data-i18n="nav.unmute">Unmute SFX</button>
+        <button id="themeToggle" class="theme-toggle hidden md:inline-flex" aria-label="Toggle light and dark theme"
+          type="button">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
+          </svg>
+        </button>
         <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
           aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
@@ -124,8 +143,18 @@
           </select>
         </div>
       </div>
-      <button id="muteBtnMobile" class="audio-toggle audio-toggle--mobile mt-3 text-xs" data-i18n="nav.unmute">Unmute
-        SFX</button>
+      <button id="themeToggleMobile" class="theme-toggle theme-toggle--mobile mt-3" type="button">
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
+        </svg>
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+        <span>Light mode</span>
+      </button>
     </div>
   </header>
 
@@ -176,6 +205,23 @@
       </div>
     </div>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item">Frontline<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Imobi<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Neolytics<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Vector Toys<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Unreal Engine Plugins<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Co-Development<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Frontline<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Imobi<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Neolytics<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Vector Toys<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Unreal Engine Plugins<span class="marquee__dot"></span></span>
+      <span class="marquee__item">Co-Development<span class="marquee__dot"></span></span>
+    </div>
+  </div>
 
   <section class="studio-flair section-gradient" aria-label="Neo Soft studio highlights">
     <div class="studio-flair__container">
@@ -250,8 +296,8 @@
               <div class="card3d" data-card>
                 <div class="card3d-img card3d-img--icon"
                   style="background:#154b4a;">
-                  <span class="px-6 text-center text-sm font-semibold uppercase text-white/80"
-                    style="letter-spacing:.28em;">Neolytics</span>
+                  <span class="px-6 text-center text-sm font-semibold uppercase"
+                    style="letter-spacing:.28em; color:rgba(255,255,255,.8);">Neolytics</span>
                 </div>
                 <div class="p-5">
                   <h3 class="card3d-title">Neolytics</h3>
@@ -267,8 +313,8 @@
               <div class="card3d" data-card>
                 <div class="card3d-img card3d-img--icon"
                   style="background:#5c3a22;">
-                  <span class="px-6 text-center text-sm font-semibold uppercase text-white/80"
-                    style="letter-spacing:.22em;">Vector Toys</span>
+                  <span class="px-6 text-center text-sm font-semibold uppercase"
+                    style="letter-spacing:.22em; color:rgba(255,255,255,.8);">Vector Toys</span>
                 </div>
                 <div class="p-5">
                   <h3 class="card3d-title">Vector Toys Calculator</h3>

@@ -4,6 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('neosoft-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 
   <title>Legal — Neo Soft Entertainment</title>
   <meta name="description"
@@ -144,6 +153,18 @@
 
       <!-- Mobile controls -->
       <div class="flex items-center gap-3">
+        <button id="themeToggle" class="theme-toggle hidden md:inline-flex" aria-label="Toggle light and dark theme"
+          type="button">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
+          </svg>
+        </button>
         <button id="hamburger" class="md:hidden h-9 w-9 grid place-items-center border border-white/20 rounded"
           aria-label="Open menu" aria-expanded="false">
           <span class="hamburger-line"></span>
@@ -166,6 +187,18 @@
         <a href="../studio.html">Studio</a>
         <a href="../studio.html#contact">Contact</a>
       </nav>
+      <button id="themeToggleMobile" class="theme-toggle theme-toggle--mobile mt-3" type="button">
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z" />
+        </svg>
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+        <span>Light mode</span>
+      </button>
     </div>
   </header>
 
