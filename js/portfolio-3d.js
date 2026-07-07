@@ -184,6 +184,7 @@
     section.classList.remove('is-hovering-card');
     layoutCards();
     updateOverlay(projects[activeIndex], false);
+    if (window.NeoSoftExperience) window.NeoSoftExperience.setActiveProject(activeIndex);
   }
 
   function nextProject() {
@@ -604,6 +605,7 @@
 
   renderFallback();
   updateOverlay(projects[0], true);
+  if (window.NeoSoftExperience) window.NeoSoftExperience.setActiveProject(0);
   section.addEventListener('keydown', OnKeyDownCallback);
   prevButton && prevButton.addEventListener('click', previousProject);
   nextButton && nextButton.addEventListener('click', nextProject);
