@@ -931,13 +931,18 @@ section[id] {
 .card3d-img--phase,
 .card3d-img--secret,
 .card3d-img--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--surface-dark) !important;
+  color: var(--on-dark);
+  text-align: center;
 }
 
 .card3d-svg-icon {
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: min(42%, 140px);
+  height: min(42%, 96px);
   object-fit: contain;
 }
 
@@ -1009,6 +1014,9 @@ section[id] {
 }
 
 .carousel-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: auto;
   width: 44px;
   height: 44px;
@@ -1017,6 +1025,7 @@ section[id] {
   background: var(--surface-card);
   color: var(--ink);
   font-size: 24px;
+  font-weight: 500;
   line-height: 1;
   transition: background .2s ease, border-color .2s ease;
 }
@@ -1356,11 +1365,20 @@ section[id] {
   border-radius: var(--radius-md);
   background: var(--primary);
   color: var(--on-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
   box-shadow: 0 8px 20px rgba(23, 23, 23, .16);
 }
 
+#backToTop:not(.hidden) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #backToTop::before {
-  content: "↑";
+  content: "";
   font-size: 20px;
   line-height: 1;
 }
