@@ -623,6 +623,7 @@
   const applyTranslations = (lang = currentLang) => {
     if (!translations[lang]) lang = 'en';
     currentLang = lang;
+    window.NEO_SOFT_CURRENT_LANG = lang;
     setDocumentLang(lang);
     $$('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;

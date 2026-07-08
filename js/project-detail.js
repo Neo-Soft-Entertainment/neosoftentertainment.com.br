@@ -54,6 +54,27 @@
     }
   }
 
+  function getLocalizedOverview() {
+    const lang = window.NEO_SOFT_CURRENT_LANG || 'en';
+    if (lang !== 'pt' && project.overviewByLang && project.overviewByLang[lang]) {
+      return project.overviewByLang[lang];
+    }
+    return { title: project.overviewTitle, intro: project.overviewIntro, sections: project.overviewSections };
+  }
+
+  function getLocalizedLegal() {
+    const lang = window.NEO_SOFT_CURRENT_LANG || 'en';
+    if (lang !== 'pt' && project.legalByLang && project.legalByLang[lang]) {
+      return project.legalByLang[lang];
+    }
+    return {
+      title: project.legalTitle,
+      intro: project.legalIntro,
+      preamble: project.legalPreamble,
+      sections: project.legalSections
+    };
+  }
+
   function setPageContent() {
     document.title = project.title + ' - Neo Soft Project';
 
@@ -85,14 +106,13 @@
     if (description) description.textContent = project.description;
     if (fallbackImage) fallbackImage.src = project.thumbnail;
 
-    const isPlugin = project.externalLabel === 'Open on Fab';
     if (back) {
-      back.href = isPlugin ? 'plugins.html' : 'products.html';
-      back.textContent = isPlugin ? 'Back to plugins' : 'Back to products';
+      back.href = 'products.html';
+      back.textContent = 'Back to products';
     }
     if (allProjects) {
-      allProjects.href = isPlugin ? 'plugins.html' : 'products.html';
-      allProjects.textContent = isPlugin ? 'All plugins' : 'All products';
+      allProjects.href = 'products.html';
+      allProjects.textContent = 'All products';
     }
 
     if (chips) {
@@ -106,11 +126,12 @@
 
     if (overviewSection && overviewTitle && overviewIntro && overviewContent) {
       overviewContent.replaceChildren();
-      overviewTitle.textContent = project.overviewTitle || 'Project description';
-      overviewIntro.textContent = project.overviewIntro || 'System and project overview.';
+      const localizedOverview = getLocalizedOverview();
+      overviewTitle.textContent = localizedOverview.title || 'Project description';
+      overviewIntro.textContent = localizedOverview.intro || 'System and project overview.';
 
-      const overviewSections = project.overviewSections && project.overviewSections.length
-        ? project.overviewSections
+      const overviewSections = localizedOverview.sections && localizedOverview.sections.length
+        ? localizedOverview.sections
         : [{ title: 'Overview', paragraphs: [project.description] }];
 
       overviewSections.forEach((section) => {
@@ -143,24 +164,25 @@
 
     if (legalSection && legalTitle && legalIntro && legalContent) {
       legalContent.replaceChildren();
+      const localizedLegal = getLocalizedLegal();
 
-      if (!project.legalSections || !project.legalSections.length) {
+      if (!localizedLegal.sections || !localizedLegal.sections.length) {
         legalSection.classList.add('hidden');
       }
 
-      if (project.legalSections && project.legalSections.length) {
+      if (localizedLegal.sections && localizedLegal.sections.length) {
         legalSection.classList.remove('hidden');
-        legalTitle.textContent = project.legalTitle || 'Privacy Policy';
-        legalIntro.textContent = project.legalIntro || 'Project-specific legal notes.';
+        legalTitle.textContent = localizedLegal.title || 'Privacy Policy';
+        legalIntro.textContent = localizedLegal.intro || 'Project-specific legal notes.';
 
-        (project.legalPreamble || []).forEach((text) => {
+        (localizedLegal.preamble || []).forEach((text) => {
           const paragraph = document.createElement('p');
           paragraph.className = 'project-legal__preamble';
           paragraph.textContent = text;
           legalContent.append(paragraph);
         });
 
-        project.legalSections.forEach((section) => {
+        localizedLegal.sections.forEach((section) => {
           const article = document.createElement('article');
           article.className = 'project-legal__block';
 
