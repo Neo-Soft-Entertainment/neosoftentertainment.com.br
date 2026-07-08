@@ -5,13 +5,9 @@
   const menuButton = document.getElementById('hamburger');
   const menu = document.getElementById('mobileMenu');
   const backToTop = document.getElementById('backToTop');
-  const cursor = document.getElementById('cursor');
   const sections = Array.from(document.querySelectorAll('[data-webgl-section]'));
   const navLinks = Array.from(document.querySelectorAll('[data-nav-link]'));
   let currentSection = 'hero';
-  let cursorX = -100;
-  let cursorY = -100;
-  let cursorVisible = false;
 
   function setLoaded() {
     document.body.classList.add('is-loaded');
@@ -236,47 +232,6 @@
     setCurrentSection('hero');
   }
 
-  function OnCursorMoveCallback(event) {
-    cursorX = event.clientX;
-    cursorY = event.clientY;
-    cursor.style.opacity = '1';
-    cursor.style.transform = 'translate3d(' + (cursorX - cursor.offsetWidth / 2) + 'px, ' + (cursorY - cursor.offsetHeight / 2) + 'px, 0)';
-    cursorVisible = true;
-  }
-
-  function OnCursorLeaveCallback() {
-    cursorVisible = false;
-    cursor.style.opacity = '0';
-  }
-
-  function setCursorHover(isHovering) {
-    if (!cursor) return;
-    cursor.classList.toggle('is-hovering', isHovering);
-  }
-
-  function setupCursor() {
-    const smallViewport = window.matchMedia('(max-width: 760px)').matches;
-    if (!cursor || !finePointer || reduceMotion || smallViewport) {
-      if (cursor) cursor.remove();
-      return;
-    }
-
-    document.body.classList.add('custom-cursor-active');
-    window.addEventListener('pointermove', OnCursorMoveCallback, { passive: true });
-    window.addEventListener('pointerleave', OnCursorLeaveCallback);
-
-    document.querySelectorAll('a, button, [data-drag-viewport], .neo-portfolio-3d').forEach(function OnCursorTargetSetupCallback(element) {
-      element.addEventListener('mouseenter', function OnCursorTargetEnterCallback() {
-        setCursorHover(true);
-      });
-      element.addEventListener('mouseleave', function OnCursorTargetLeaveCallback() {
-        setCursorHover(false);
-      });
-    });
-
-    window.addEventListener('blur', OnCursorLeaveCallback);
-  }
-
   function setupMagneticElements() {
     if (!finePointer || reduceMotion) return;
 
@@ -321,7 +276,6 @@
   function init() {
     setupNavigation();
     setupScrollTriggers();
-    setupCursor();
     setupMagneticElements();
     setupTiltElements();
     setupBackToTop();

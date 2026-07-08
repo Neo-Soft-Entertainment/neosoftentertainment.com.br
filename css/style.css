@@ -145,10 +145,6 @@ section[id] {
   scroll-margin-top: 88px;
 }
 
-#cursor {
-  display: none !important;
-}
-
 .theme-toggle {
   position: relative;
   flex: 0 0 auto;

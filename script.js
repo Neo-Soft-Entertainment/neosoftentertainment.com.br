@@ -4,7 +4,6 @@
   const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 
   const navbar = $('#navbar');
-  const cursor = $('#cursor');
   const particles = $('#particles');
   const gamesTrack = $('#gamesTrack');
   const pluginsTrack = $('#pluginsTrack');
@@ -35,12 +34,6 @@
   };
   onScroll();
   window.addEventListener('scroll', onScroll);
-
-  // Custom cursor
-  window.addEventListener('mousemove', (e) => {
-    if (!cursor) return;
-    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-  });
 
   // SFX (WebAudio)
   let audioCtx = null;

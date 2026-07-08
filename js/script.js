@@ -13,7 +13,7 @@
   const themeToggleMobile = $('#themeToggleMobile');
 
   // Pages fully migrated to the experience system (js/motion-experience.js,
-  // js/webgl-experience.js, js/drag-experience.js) own cursor, hamburger/menu,
+  // js/webgl-experience.js, js/drag-experience.js) own hamburger/menu,
   // sticky-nav, card tilt, magnetic buttons, and carousels there — this file
   // only needs to keep i18n, EmailJS, and (for admin.html) the legacy chrome.
   const isExperienceSite = document.body.classList.contains('experience-site');

@@ -59,7 +59,6 @@
       velocity = 0;
       section.classList.add('is-dragging');
       document.body.classList.add('is-dragging');
-      document.getElementById('cursor')?.classList.add('is-dragging');
       viewport.setPointerCapture(event.pointerId);
     }
 
@@ -82,7 +81,6 @@
       isDragging = false;
       section.classList.remove('is-dragging');
       document.body.classList.remove('is-dragging');
-      document.getElementById('cursor')?.classList.remove('is-dragging');
       if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
 
       const projected = currentTranslate + velocity * 180;
@@ -94,7 +92,6 @@
       isDragging = false;
       section.classList.remove('is-dragging');
       document.body.classList.remove('is-dragging');
-      document.getElementById('cursor')?.classList.remove('is-dragging');
       if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
       goToIndex(index);
     }
