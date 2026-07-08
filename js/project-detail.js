@@ -19,6 +19,10 @@
   const allProjects = document.getElementById('projectDetailAll');
   const external = document.getElementById('projectDetailExternal');
   const fallbackImage = document.getElementById('projectDetailImage');
+  const overviewSection = document.getElementById('projectOverviewSection');
+  const overviewTitle = document.getElementById('projectOverviewTitle');
+  const overviewIntro = document.getElementById('projectOverviewIntro');
+  const overviewContent = document.getElementById('projectOverviewContent');
   const legalSection = document.getElementById('projectLegalSection');
   const legalTitle = document.getElementById('projectLegalTitle');
   const legalIntro = document.getElementById('projectLegalIntro');
@@ -82,12 +86,12 @@
 
     const isPlugin = project.externalLabel === 'Open on Fab';
     if (back) {
-      back.href = isPlugin ? 'plugins.html' : 'games.html';
-      back.textContent = isPlugin ? 'Back to plugins' : 'Back to games';
+      back.href = isPlugin ? 'plugins.html' : 'products.html';
+      back.textContent = isPlugin ? 'Back to plugins' : 'Back to products';
     }
     if (allProjects) {
-      allProjects.href = isPlugin ? 'plugins.html' : 'games.html';
-      allProjects.textContent = isPlugin ? 'All plugins' : 'All projects';
+      allProjects.href = isPlugin ? 'plugins.html' : 'products.html';
+      allProjects.textContent = isPlugin ? 'All plugins' : 'All products';
     }
 
     if (chips) {
@@ -96,6 +100,43 @@
         const chip = document.createElement('span');
         chip.textContent = detail;
         chips.append(chip);
+      });
+    }
+
+    if (overviewSection && overviewTitle && overviewIntro && overviewContent) {
+      overviewContent.replaceChildren();
+      overviewTitle.textContent = project.overviewTitle || 'Project description';
+      overviewIntro.textContent = project.overviewIntro || 'System and project overview.';
+
+      const overviewSections = project.overviewSections && project.overviewSections.length
+        ? project.overviewSections
+        : [{ title: 'Overview', paragraphs: [project.description] }];
+
+      overviewSections.forEach((section) => {
+        const article = document.createElement('article');
+        article.className = 'project-overview__block';
+
+        const heading = document.createElement('h3');
+        heading.textContent = section.title;
+        article.append(heading);
+
+        (section.paragraphs || []).forEach((text) => {
+          const paragraph = document.createElement('p');
+          paragraph.textContent = text;
+          article.append(paragraph);
+        });
+
+        if (section.items && section.items.length) {
+          const list = document.createElement('ul');
+          section.items.forEach((text) => {
+            const li = document.createElement('li');
+            li.textContent = text;
+            list.append(li);
+          });
+          article.append(list);
+        }
+
+        overviewContent.append(article);
       });
     }
 
@@ -108,7 +149,7 @@
 
       if (project.legalSections && project.legalSections.length) {
         legalSection.classList.remove('hidden');
-        legalTitle.textContent = project.legalTitle || 'Privacy and EULA';
+        legalTitle.textContent = project.legalTitle || 'Privacy Policy';
         legalIntro.textContent = project.legalIntro || 'Project-specific legal notes.';
 
         (project.legalPreamble || []).forEach((text) => {

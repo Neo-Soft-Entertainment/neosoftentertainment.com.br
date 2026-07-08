@@ -11,7 +11,187 @@
       href: 'project.html?id=frontline',
       externalHref: 'https://store.steampowered.com/app/1772220/Frontline_New_Revolution/',
       externalLabel: 'Wishlist on Steam',
-      details: ['Competitive FPS', 'Hero identity', 'Arcane technology', 'Built in Unreal Engine']
+      details: ['Competitive FPS', 'Hero identity', 'Arcane technology', 'Built in Unreal Engine'],
+      overviewTitle: 'Descrição do Projeto',
+      overviewIntro: 'Visão do sistema, experiência e estado atual do FRONTLINE.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'FRONTLINE é um FPS competitivo em desenvolvimento pela NEO SOFT ENTERTAINMENT, criado para combinar combate tático, leitura visual clara, ritmo cinematográfico e tecnologia Unreal Engine.',
+            'O projeto é pensado como um produto multiplayer para PC, com distribuição planejada pela Steam e foco em partidas intensas, identidade de personagens e execução técnica consistente.'
+          ]
+        },
+        {
+          title: 'Experiência de jogo',
+          paragraphs: [
+            'A experiência gira em torno de confrontos rápidos, decisões táticas e um universo visual de ficção tecnológica. O objetivo é entregar partidas responsivas, legíveis e com impacto audiovisual forte, sem perder a clareza competitiva necessária para um shooter multiplayer.'
+          ],
+          items: [
+            'Combate em primeira pessoa com foco competitivo.',
+            'Identidade de personagens e tecnologia arcana como parte da direção criativa.',
+            'Sistemas multiplayer, feedback visual e direção cinematográfica integrados ao gameplay.',
+            'Página na Steam aberta para lista de desejos enquanto o produto segue em desenvolvimento.'
+          ]
+        }
+      ],
+      legalTitle: 'Política de Privacidade',
+      legalIntro: 'Política de privacidade e licença de uso aplicáveis ao FRONTLINE.',
+      legalPreamble: [
+        'Este documento estabelece as regras sobre coleta, uso, armazenamento, proteção e direitos dos usuários em relação aos dados pessoais tratados pelo jogo FRONTLINE, desenvolvido e operado pela NEO SOFT ENTERTAINMENT, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).',
+        'Ao acessar, instalar, executar ou jogar FRONTLINE, você declara ter ciência dos termos aqui dispostos, além dos termos aplicáveis da plataforma de distribuição utilizada, como a Steam.'
+      ],
+      legalSections: [
+        {
+          title: '1. DOS DADOS COLETADOS E SUAS FINALIDADES',
+          paragraphs: [
+            'Para operar o jogo, oferecer suporte, proteger a integridade competitiva e melhorar a estabilidade técnica do produto, podemos tratar apenas os dados necessários às seguintes finalidades:'
+          ],
+          items: [
+            {
+              label: 'Dados de Plataforma e Autenticação',
+              text: 'Quando o jogo for acessado pela Steam, poderemos tratar identificadores de plataforma, como Steam ID, nome público, avatar, idioma, região e informações de titularidade da licença, conforme disponibilizado pela própria plataforma. Finalidade: autenticar o acesso, validar licença, habilitar recursos online, suporte, matchmaking e funcionamento multiplayer.'
+            },
+            {
+              label: 'Dados Técnicos e de Dispositivo',
+              text: 'Podemos tratar informações técnicas como endereço IP, sistema operacional, versão do jogo, hardware, configurações gráficas, logs de erro, relatórios de falha e métricas de desempenho. Finalidade: manter a segurança, investigar falhas, corrigir bugs, otimizar performance e prevenir abuso dos serviços online.'
+            },
+            {
+              label: 'Dados de Gameplay e Multiplayer',
+              text: 'Podemos tratar dados de partidas, estatísticas, progresso, configurações, ranking, matchmaking, denúncias, histórico de moderação e eventos de integridade competitiva. Finalidade: operar partidas online, manter progressão, balancear sistemas, moderar condutas e proteger a experiência dos jogadores.'
+            },
+            {
+              label: 'Dados de Comunicação e Suporte',
+              text: 'Quando o usuário entra em contato conosco, podemos tratar nome, e-mail, identificador da plataforma e conteúdo da mensagem. Finalidade: responder solicitações, investigar problemas, prestar suporte e cumprir obrigações relacionadas ao atendimento.'
+            },
+            {
+              label: 'Dados de Compra e Pagamento',
+              text: 'Compras, pagamentos, reembolsos e dados financeiros realizados pela Steam são processados pela própria plataforma. A NEO SOFT ENTERTAINMENT não coleta nem armazena dados completos de cartão ou informações financeiras sensíveis dessas transações.'
+            }
+          ]
+        },
+        {
+          title: '2. DAS BASES LEGAIS PARA O TRATAMENTO',
+          paragraphs: [
+            'A NEO SOFT ENTERTAINMENT trata dados pessoais com fundamento nas bases legais previstas na LGPD, especialmente:'
+          ],
+          items: [
+            {
+              label: 'Execução de Contrato ou Procedimentos Preliminares',
+              text: 'Tratamento necessário para permitir o acesso ao jogo, validar a licença de uso, operar recursos online, prestar suporte e cumprir os termos aplicáveis ao produto.'
+            },
+            {
+              label: 'Legítimo Interesse',
+              text: 'Tratamento necessário para melhorar estabilidade, segurança, desempenho, balanceamento, experiência de usuário e proteção do ecossistema multiplayer.'
+            },
+            {
+              label: 'Prevenção à Fraude e Segurança',
+              text: 'Tratamento necessário para detectar abuso, trapaça, manipulação de partidas, uso indevido dos serviços online e violações de integridade competitiva.'
+            },
+            {
+              label: 'Consentimento',
+              text: 'Quando determinado recurso exigir consentimento específico, a coleta será apresentada de forma destacada e poderá ser gerenciada conforme os meios disponíveis.'
+            },
+            {
+              label: 'Obrigação Legal ou Regulatória',
+              text: 'Tratamento necessário para cumprimento de determinações legais, regulatórias, fiscais, judiciais ou administrativas aplicáveis.'
+            }
+          ]
+        },
+        {
+          title: '3. DO COMPARTILHAMENTO DE DADOS',
+          paragraphs: [
+            'A NEO SOFT ENTERTAINMENT não vende dados pessoais de jogadores e não compartilha dados com empresas de publicidade comportamental. O compartilhamento poderá ocorrer apenas quando necessário para operar o jogo ou cumprir obrigações legais.'
+          ],
+          items: [
+            {
+              label: 'Plataformas de Distribuição',
+              text: 'Dados relacionados à conta, compra, licença, conquistas, loja, pagamentos e recursos da Steam são tratados conforme os termos e políticas da Valve/Steam.'
+            },
+            {
+              label: 'Infraestrutura e Serviços Técnicos',
+              text: 'Podemos utilizar provedores de hospedagem, servidores online, analytics técnicos, relatórios de crash, suporte e segurança, sempre de forma limitada às finalidades necessárias para operação do produto.'
+            },
+            {
+              label: 'Autoridades Competentes',
+              text: 'Podemos compartilhar informações quando exigido por lei, ordem judicial, autoridade pública competente ou para proteção de direitos da NEO SOFT ENTERTAINMENT, usuários e terceiros.'
+            }
+          ]
+        },
+        {
+          title: '4. DO ARMAZENAMENTO E SEGURANÇA DOS DADOS',
+          paragraphs: [
+            'A segurança dos dados dos jogadores é tratada como prioridade. Adotamos medidas técnicas e organizacionais proporcionais ao produto e aos riscos envolvidos.'
+          ],
+          items: [
+            {
+              label: 'Criptografia em Trânsito',
+              text: 'As comunicações entre cliente, servidores e serviços associados utilizam protocolos seguros sempre que aplicável, como HTTPS/TLS.'
+            },
+            {
+              label: 'Armazenamento Controlado',
+              text: 'Dados operacionais podem ser armazenados em infraestrutura própria ou de provedores de nuvem, com acesso restrito a pessoas e sistemas autorizados.'
+            },
+            {
+              label: 'Retenção Necessária',
+              text: 'Os dados são mantidos pelo período necessário para operar o jogo, prestar suporte, prevenir fraudes, cumprir obrigações legais ou proteger direitos, sendo eliminados ou anonimizados quando não forem mais necessários.'
+            }
+          ]
+        },
+        {
+          title: '5. DA RESTRIÇÃO DE IDADE E CLASSIFICAÇÃO',
+          paragraphs: [
+            'FRONTLINE não é direcionado a crianças. O usuário deve respeitar a classificação indicativa exibida na loja, plataforma ou região em que o jogo for disponibilizado.',
+            'Usuários menores de idade deverão acessar o jogo apenas com autorização e supervisão de seus pais ou responsáveis legais, que respondem pelo uso da plataforma e pelas compras realizadas.'
+          ]
+        },
+        {
+          title: '6. DOS DIREITOS DOS TITULARES DE DADOS',
+          paragraphs: [
+            'Nos termos do Artigo 18 da LGPD, o titular pode solicitar à NEO SOFT ENTERTAINMENT, a qualquer momento:'
+          ],
+          orderedItems: [
+            'Confirmação da existência de tratamento de dados pessoais.',
+            'Acesso aos dados pessoais tratados pela NEO SOFT ENTERTAINMENT.',
+            'Correção ou atualização de dados incompletos, inexatos ou desatualizados.',
+            'Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a LGPD.',
+            'Informações sobre compartilhamento de dados, quando aplicável.',
+            'Eliminação de dados pessoais tratados com base em consentimento, ressalvadas hipóteses legais de retenção.'
+          ]
+        },
+        {
+          title: '7. DO CONTATO E EXERCÍCIO DE DIREITOS (DPO)',
+          paragraphs: [
+            'Para exercer direitos, tirar dúvidas sobre esta política ou solicitar informações sobre tratamento de dados relacionados ao FRONTLINE, o usuário poderá entrar em contato com a NEO SOFT ENTERTAINMENT:'
+          ],
+          items: [
+            {
+              label: 'E-mail de Contrato/Privacidade',
+              text: 'contact@neosoftentertainment.com.br',
+              href: 'mailto:contact@neosoftentertainment.com.br'
+            },
+            {
+              label: 'Razão Social',
+              text: 'NEO SOFT ENTERTAINMENT'
+            }
+          ]
+        },
+        {
+          title: 'Contrato de Licença de Usuário Final (EULA)',
+          paragraphs: [
+            'Este Contrato de Licença de Usuário Final rege o uso de FRONTLINE e se aplica a todo usuário que instalar, acessar ou executar o jogo.'
+          ],
+          items: [
+            'A NEO SOFT ENTERTAINMENT concede ao usuário uma licença limitada, revogável, não exclusiva, pessoal e intransferível para instalar e jogar FRONTLINE, conforme os termos da plataforma de distribuição aplicável.',
+            'A licença não concede qualquer direito de propriedade sobre o jogo, código-fonte, marcas, personagens, artes, interfaces, servidores, bancos de dados, trilhas, sons, ferramentas ou demais ativos do produto.',
+            'O usuário não pode copiar, vender, sublicenciar, alugar, distribuir, modificar, fazer engenharia reversa, extrair ativos, criar cheats, explorar vulnerabilidades, automatizar uso indevido ou acessar áreas restritas do jogo e de seus serviços online.',
+            'Em partidas online, o usuário deve respeitar regras de conduta, integridade competitiva e fair play. Trapaças, manipulação de partidas, abuso de bugs, assédio, discurso de ódio e uso de software não autorizado podem resultar em restrição, suspensão ou encerramento do acesso aos serviços online.',
+            'FRONTLINE poderá receber atualizações, correções, balanceamentos, mudanças de conteúdo, ajustes de servidores e alterações funcionais ao longo do tempo.',
+            'Recursos online poderão depender de servidores, serviços de terceiros, conexão à internet, contas de plataforma e disponibilidade técnica. A NEO SOFT ENTERTAINMENT poderá alterar, suspender ou encerrar recursos online quando necessário por razões técnicas, comerciais, legais ou de segurança.',
+            'Esta licença poderá ser encerrada se o usuário violar este EULA, os termos da plataforma de distribuição, a legislação aplicável ou os direitos da NEO SOFT ENTERTAINMENT e de terceiros.'
+          ]
+        }
+      ]
     },
     {
       id: 'fatum',
@@ -22,8 +202,8 @@
       description: 'A service project focused on spectator systems, grenade gameplay, replication fixes, and readable combat in fast arena modes.',
       thumbnail: 'img/portfolio/fatum.jpg',
       href: 'project.html?id=fatum',
-      externalHref: 'games.html',
-      externalLabel: 'View games',
+      externalHref: 'products.html',
+      externalLabel: 'View products',
       details: ['Arena combat', 'Spectator systems', 'Grenade gameplay', 'Replication fixes']
     },
     {
@@ -35,10 +215,34 @@
       description: 'Imobi simplifies property discovery with an interactive map, listing filters, and a cleaner flow for finding the next home.',
       thumbnail: 'img/imobi-icon.png',
       href: 'project.html?id=imobi',
-      externalHref: 'games.html',
+      externalHref: 'products.html',
       externalLabel: 'View product',
       details: ['Android', 'iOS', 'Interactive map', 'Property discovery'],
-      legalTitle: 'Política de Privacidade e EULA - Imóbi',
+      overviewTitle: 'Descrição do Sistema',
+      overviewIntro: 'Visão do aplicativo, principais fluxos e finalidade do Imóbi.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Imóbi é um aplicativo mobile de descoberta, compra, venda e anúncio de imóveis, criado para organizar a busca por propriedades em uma experiência simples, visual e centrada em mapa.',
+            'O sistema conecta usuários interessados em anunciar ou encontrar imóveis, com foco em localização, filtros práticos, cadastro seguro e publicação de anúncios com fotos.'
+          ]
+        },
+        {
+          title: 'Funcionalidades principais',
+          paragraphs: [
+            'O produto foi pensado para reduzir atrito em uma jornada comum: encontrar imóveis próximos, entender detalhes do anúncio, entrar em contato e publicar novas ofertas com informações confiáveis.'
+          ],
+          items: [
+            'Mapa interativo para descoberta de imóveis por região.',
+            'Filtros de listagem para facilitar busca por tipo e características do imóvel.',
+            'Cadastro com dados essenciais para aumentar segurança e reduzir perfis falsos.',
+            'Uso de localização para imóveis próximos e preenchimento preciso de endereço em anúncios.',
+            'Upload de fotos para anúncios e atualização voluntária de imagem de perfil.'
+          ]
+        }
+      ],
+      legalTitle: 'Política de Privacidade',
       legalIntro: 'Regras de privacidade, tratamento de dados e licença de uso aplicáveis ao aplicativo Imóbi.',
       legalPreamble: [
         'Este documento tem como objetivo estabelecer as regras sobre a coleta, uso, armazenamento, proteção e direitos dos usuários em relação aos dados pessoais tratados pelo aplicativo Imóbi, de propriedade e operado pela NEO SOFT ENTERTAINMENT, pessoa jurídica de direito privado, em total conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).',

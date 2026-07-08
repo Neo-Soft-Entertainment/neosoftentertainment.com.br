@@ -44,7 +44,7 @@
     en: {
       'nav.home': 'Home',
       'nav.services': 'Services',
-      'nav.games': 'Games',
+      'nav.games': 'Products',
       'nav.plugins': 'Plugins',
       'nav.studio': 'Studio',
       'nav.news': 'News',
@@ -56,7 +56,7 @@
       'hero.kicker': 'From indie passion to global stages',
       'hero.title': 'Creating Worlds. <span class="text-neutral-900">Inspiring Players.</span>',
       'hero.subtitle': 'Brazilian game studio crafting immersive experiences with technology, creativity and passion.',
-      'hero.ctaGames': 'Explore Games',
+      'hero.ctaGames': 'Explore Products',
       'hero.ctaPlugins': 'See Plugins',
       'flair.kicker': 'Neo Soft DNA',
       'flair.title': 'Immersive universes energized by Neo Soft’s signature storytelling.',
@@ -85,7 +85,7 @@
       'games.dissociation': 'A psychological horror where an AI manipulates your every move — no weapons, no escape, only survival. Do you know what’s real?',
       'games.banana': 'A co-op adventure where every player is a monkey escaping a lab, sprinting for freedom while causing monkey mischief.',
       'games.servicesTitle': 'Project Highlights',
-      'games.servicesSubtitle': 'Examples of our work showcasing the games we built as co-dev and services partners.',
+      'games.servicesSubtitle': 'Examples of our work across games, tools, and interactive systems.',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': 'NSFW fighting game in the spirit of Mortal Kombat where the hook trades fatalities for explicit scenes inspired by Eroico.',
       'games.services.bunsAlt': 'Key art from Buns Of Fire showing fighters mid-finish as the screen cuts to an explicit vignette.',
@@ -188,7 +188,7 @@
     pt: {
       'nav.home': 'Início',
       'nav.services': 'Serviços',
-      'nav.games': 'Jogos',
+      'nav.games': 'Produtos',
       'nav.plugins': 'Plugins',
       'nav.studio': 'Estúdio',
       'nav.news': 'Notícias',
@@ -200,7 +200,7 @@
       'hero.kicker': 'Da paixão indie aos palcos globais',
       'hero.title': 'Criando Mundos. <span class="text-neutral-900">Inspirando Jogadores.</span>',
       'hero.subtitle': 'Estúdio brasileiro de jogos criando experiências imersivas com tecnologia, criatividade e paixão.',
-      'hero.ctaGames': 'Explorar jogos',
+      'hero.ctaGames': 'Explorar produtos',
       'hero.ctaPlugins': 'Ver plugins',
       'flair.kicker': 'DNA Neo Soft',
       'flair.title': 'Universos imersivos energizados pela narrativa exclusiva da Neo Soft.',
@@ -229,7 +229,7 @@
       'games.dissociation': 'Um terror psicológico em que uma IA manipula cada movimento seu — sem armas, sem escape, só sobrevivência. Você sabe o que é real?',
       'games.banana': 'Um jogo co-op onde todos os jogadores são macacos fugindo de um laboratório — todos precisam correr e escapar enquanto fazem macacagens.',
       'games.servicesTitle': 'Destaques de Projetos',
-      'games.servicesSubtitle': 'Exemplos dos nossos trabalhos, mostrando os jogos que fizemos como parceiros de co-dev e serviços.',
+      'games.servicesSubtitle': 'Exemplos dos nossos trabalhos em jogos, ferramentas e sistemas interativos.',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': 'Jogo de luta NSFW no espírito de Mortal Kombat, em que o gancho troca fatalities por cenas explícitas inspiradas em Eroico.',
       'games.services.bunsAlt': 'Arte de Buns Of Fire mostrando lutadores em um final explícito.',
@@ -332,7 +332,7 @@
     es: {
       'nav.home': 'Inicio',
       'nav.services': 'Servicios',
-      'nav.games': 'Juegos',
+      'nav.games': 'Productos',
       'nav.plugins': 'Plugins',
       'nav.studio': 'Estudio',
       'nav.news': 'Noticias',
@@ -344,7 +344,7 @@
       'hero.kicker': 'De la pasión indie a los escenarios globales',
       'hero.title': 'Creando Mundos. <span class="text-neutral-900">Inspirando Jugadores.</span>',
       'hero.subtitle': 'Estudio brasileño de videojuegos que crea experiencias inmersivas con tecnología, creatividad y pasión.',
-      'hero.ctaGames': 'Explorar juegos',
+      'hero.ctaGames': 'Explorar productos',
       'hero.ctaPlugins': 'Ver plugins',
       'flair.kicker': 'ADN Neo Soft',
       'flair.title': 'Universos inmersivos impulsados por la narrativa distintiva de Neo Soft.',
@@ -373,7 +373,7 @@
       'games.dissociation': 'Un terror psicológico donde una IA manipula cada uno de tus movimientos — sin armas, sin escape, solo supervivencia. ¿Sabes qué es real?',
       'games.banana': 'Un juego cooperativo donde todos los jugadores son monos escapando de un laboratorio; todos deben correr y huir mientras hacen travesuras de mono.',
       'games.servicesTitle': 'Proyectos Destacados',
-      'games.servicesSubtitle': 'Ejemplos de nuestros trabajos, mostrando los juegos que hicimos como socios de co-dev y servicios.',
+      'games.servicesSubtitle': 'Ejemplos de nuestro trabajo en juegos, herramientas y sistemas interactivos.',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': 'Juego de lucha NSFW en la línea de Mortal Kombat donde el gancho cambia los fatalities por escenas explícitas inspiradas en Eroico.',
       'games.services.bunsAlt': 'Arte de Buns Of Fire con luchadores en un remate explícito.',
@@ -476,7 +476,7 @@
     zh: {
       'nav.home': '首页',
       'nav.services': '服务',
-      'nav.games': '游戏',
+      'nav.games': '产品',
       'nav.plugins': '插件',
       'nav.studio': '工作室',
       'nav.news': '新闻',
@@ -488,7 +488,7 @@
       'hero.kicker': '从独立热忱走向全球舞台',
       'hero.title': '创造世界。<span class="text-neutral-900">激发玩家。</span>',
       'hero.subtitle': '巴西游戏工作室，以技术、创意与热情打造沉浸式体验。',
-      'hero.ctaGames': '探索游戏',
+      'hero.ctaGames': '探索产品',
       'hero.ctaPlugins': '查看插件',
       'flair.kicker': 'Neo Soft 基因',
       'flair.title': '沉浸式宇宙由 Neo Soft 标志性的叙事驱动。',
@@ -517,7 +517,7 @@
       'games.dissociation': '一部心理恐怖作品，AI 操控你的每一步——无武器、无逃脱，只有求生。你还能分辨真实吗？',
       'games.banana': '一款合作游戏，所有玩家都是逃离实验室的猴子，一边拼命奔逃，一边制造猴子般的恶作剧。',
       'games.servicesTitle': '项目亮点',
-      'games.servicesSubtitle': '展示我们以共同开发和服务合作伙伴身份打造的游戏案例。',
+      'games.servicesSubtitle': '展示我们在游戏、工具和交互系统中的项目案例。',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': '成人向格斗游戏，风格类似《真人快打》，卖点是把终结技换成如《Eroico》般的露骨场景。',
       'games.services.bunsAlt': '《Buns Of Fire》宣传画，展示选手在露骨终结场景中的瞬间。',
@@ -620,7 +620,7 @@
     ja: {
       'nav.home': 'ホーム',
       'nav.services': 'サービス',
-      'nav.games': 'ゲーム',
+      'nav.games': 'プロダクト',
       'nav.plugins': 'プラグイン',
       'nav.studio': 'スタジオ',
       'nav.news': 'ニュース',
@@ -632,7 +632,7 @@
       'hero.kicker': 'インディーの情熱から世界の舞台へ',
       'hero.title': '世界を創造する。<span class="text-neutral-900">プレイヤーを刺激する。</span>',
       'hero.subtitle': 'テクノロジー、創造性、情熱で没入型体験を生み出すブラジルのゲームスタジオ。',
-      'hero.ctaGames': 'ゲームを見る',
+      'hero.ctaGames': 'プロダクトを見る',
       'hero.ctaPlugins': 'プラグインを見る',
       'flair.kicker': 'Neo Soft DNA',
       'flair.title': 'Neo Soft ならではの物語性が、没入型の世界を駆動する。',
@@ -661,7 +661,7 @@
       'games.dissociation': 'AI があなたの一挙手一投足を操るサイコホラー — 武器も逃げ場もなく、生き残りだけが目的。現実を見分けられますか？',
       'games.banana': 'すべてのプレイヤーが研究所から脱走するサルとなり、自由を求めて走りながらおサルのいたずらを繰り広げる協力ゲーム。',
       'games.servicesTitle': 'プロジェクトのハイライト',
-      'games.servicesSubtitle': '共同開発やサービスパートナーとして携わったゲーム実績の例を紹介します。',
+      'games.servicesSubtitle': 'ゲーム、ツール、インタラクティブシステムにまたがる制作実績の例です。',
       'games.services.bunsTitle': 'Buns Of Fire',
       'games.services.bunsDesc': '『モータルコンバット』を想起させるNSFW格闘ゲーム。ファタリティの代わりに『Eroico』のような露骨シーンが展開するのがフック。',
       'games.services.bunsAlt': '『Buns Of Fire』のキービジュアル。露骨なフィニッシュシーンに臨む闘士たち。',
@@ -944,7 +944,7 @@
     });
   }
 
-  // Services/Games/Plugins carousels now run on js/drag-experience.js (data-drag-section).
+  // Services/Products/Plugins carousels now run on js/drag-experience.js (data-drag-section).
 
   // EmailJS form
   contactForm && contactForm.addEventListener('submit', function (e) {

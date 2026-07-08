@@ -1379,21 +1379,25 @@ textarea {
   object-fit: cover;
 }
 
+.project-overview,
 .project-legal {
   background:
     radial-gradient(circle at 18% 0%, rgba(106, 255, 210, .08), transparent 22rem),
     linear-gradient(180deg, #020309, #000);
 }
 
+.project-overview .section-shell,
 .project-legal .section-shell {
   max-width: 980px;
 }
 
+.project-overview__content,
 .project-legal__content {
   display: grid;
   gap: 16px;
 }
 
+.project-overview__block,
 .project-legal__preamble,
 .project-legal__block {
   margin: 0;
@@ -1405,6 +1409,7 @@ textarea {
   line-height: 1.78;
 }
 
+.project-overview__block h3,
 .project-legal__block h3 {
   margin: 0 0 14px;
   color: var(--text);
@@ -1412,6 +1417,8 @@ textarea {
   line-height: 1.25;
 }
 
+.project-overview__block p,
+.project-overview__block ul,
 .project-legal__block p,
 .project-legal__block ul,
 .project-legal__block ol {
@@ -1420,21 +1427,26 @@ textarea {
   line-height: 1.78;
 }
 
+.project-overview__block p:last-child,
+.project-overview__block ul:last-child,
 .project-legal__block p:last-child,
 .project-legal__block ul:last-child,
 .project-legal__block ol:last-child {
   margin-bottom: 0;
 }
 
+.project-overview__block ul,
 .project-legal__block ul,
 .project-legal__block ol {
   padding-left: 1.25rem;
 }
 
+.project-overview__block li,
 .project-legal__block li {
   margin-bottom: 10px;
 }
 
+.project-overview__block li:last-child,
 .project-legal__block li:last-child {
   margin-bottom: 0;
 }
@@ -1448,7 +1460,7 @@ textarea {
   text-underline-offset: 3px;
 }
 
-/* Listing cards (Services / Games / Plugins) */
+/* Listing cards (Services / Products / Plugins) */
 .card3d,
 .team-card,
 .news-card {
@@ -2188,7 +2200,7 @@ textarea {
   }
 }
 
-/* Secondary CTA band (Games / Plugins / Services footers) */
+/* Secondary CTA band (Products / Plugins / Services footers) */
 .cta-band {
   display: flex;
   flex-direction: column;
