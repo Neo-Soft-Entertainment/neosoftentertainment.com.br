@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Neolytics project artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#041415"/>
+      <stop offset="1" stop-color="#123d3a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#6affd2"/>
+      <stop offset="1" stop-color="#69b7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity=".22" stroke="#69b7ff" stroke-width="2">
+    <path d="M120 700h1360M120 580h1360M120 460h1360M120 340h1360M120 220h1360"/>
+    <path d="M220 120v660M460 120v660M700 120v660M940 120v660M1180 120v660M1420 120v660"/>
+  </g>
+  <path d="M180 650c160-190 260-170 370-90s210 42 320-98 224-224 410-86c70 52 126 72 206 50"
+    fill="none" stroke="url(#line)" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#f7fbff">
+    <text x="140" y="285" font-family="Inter, Arial, sans-serif" font-size="132" font-weight="800" letter-spacing="8">NEOLYTICS</text>
+    <text x="146" y="360" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700" letter-spacing="10" fill="#6affd2">STEAM VIABILITY ANALYSIS</text>
+  </g>
+  <g transform="translate(1080 560)" fill="none" stroke="#6affd2" stroke-width="10">
+    <rect x="0" y="-180" width="280" height="280" rx="26" opacity=".72"/>
+    <path d="M52 20l62-84 56 44 58-96"/>
+    <circle cx="52" cy="20" r="10" fill="#6affd2"/>
+    <circle cx="114" cy="-64" r="10" fill="#6affd2"/>
+    <circle cx="170" cy="-20" r="10" fill="#6affd2"/>
+    <circle cx="228" cy="-116" r="10" fill="#6affd2"/>
+  </g>
+</svg>

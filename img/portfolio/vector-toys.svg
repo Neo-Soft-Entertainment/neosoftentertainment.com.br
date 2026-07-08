@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Vector Toys Calculator project artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#211409"/>
+      <stop offset="1" stop-color="#5c3a22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd08a"/>
+      <stop offset="1" stop-color="#6affd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#ffd08a" stroke-width="2">
+    <path d="M100 170h1400M100 310h1400M100 450h1400M100 590h1400M100 730h1400"/>
+    <path d="M260 100v700M520 100v700M780 100v700M1040 100v700M1300 100v700"/>
+  </g>
+  <g transform="translate(1050 218)" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linejoin="round">
+    <path d="M170 0l170 98v196l-170 98L0 294V98z"/>
+    <path d="M0 98l170 98 170-98M170 196v196"/>
+  </g>
+  <g fill="#f7fbff">
+    <text x="130" y="306" font-family="Inter, Arial, sans-serif" font-size="102" font-weight="800" letter-spacing="5">VECTOR TOYS</text>
+    <text x="136" y="388" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="760" letter-spacing="4">CALCULATOR</text>
+    <text x="140" y="468" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="8" fill="#ffd08a">3D PRINT PRICING HUB</text>
+  </g>
+  <g transform="translate(150 610)" fill="none" stroke="#6affd2" stroke-width="8">
+    <rect x="0" y="0" width="470" height="120" rx="20" opacity=".72"/>
+    <path d="M38 78h394M38 42h180"/>
+    <circle cx="378" cy="60" r="24" fill="#6affd2" opacity=".9"/>
+  </g>
+</svg>

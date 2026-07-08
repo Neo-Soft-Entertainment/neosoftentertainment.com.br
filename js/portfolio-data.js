@@ -27,6 +27,45 @@
       details: ['Arena combat', 'Spectator systems', 'Grenade gameplay', 'Replication fixes']
     },
     {
+      id: 'imobi',
+      title: 'Imobi',
+      category: 'Mobile Product',
+      status: 'Prototype',
+      tagline: 'A mobile property discovery app built around map-first browsing.',
+      description: 'Imobi simplifies property discovery with an interactive map, listing filters, and a cleaner flow for finding the next home.',
+      thumbnail: 'img/imobi-icon.png',
+      href: 'project.html?id=imobi',
+      externalHref: 'games.html',
+      externalLabel: 'View product',
+      details: ['Android', 'iOS', 'Interactive map', 'Property discovery']
+    },
+    {
+      id: 'neolytics',
+      title: 'Neolytics',
+      category: 'Steam Analytics',
+      status: 'Prototype',
+      tagline: 'A viability analysis platform for Steam projects before production scales.',
+      description: 'Neolytics helps teams read market signals, clarify positioning, and make better decisions before committing more production time.',
+      thumbnail: 'img/portfolio/neolytics.png',
+      href: 'project.html?id=neolytics',
+      externalHref: 'https://project-pqd61.vercel.app/',
+      externalLabel: 'Open project',
+      details: ['Steam signals', 'Market positioning', 'Decision support', 'Production planning']
+    },
+    {
+      id: 'vector-toys',
+      title: 'Vector Toys Calculator',
+      category: 'Pricing Tool',
+      status: 'Delivered Work',
+      tagline: 'A pricing hub for 3D printing costs, materials, printer profiles, and margins.',
+      description: 'Vector Toys Calculator centralizes the pricing workflow for 3D printed products, keeping cost inputs and margin-based decisions in one place.',
+      thumbnail: 'img/portfolio/vector-toys.png',
+      href: 'project.html?id=vector-toys',
+      externalHref: 'https://victorhmrod.github.io/vectortoys-calculator/',
+      externalLabel: 'Open project',
+      details: ['3D print costs', 'Material profiles', 'Margin pricing', 'Delivered tool']
+    },
+    {
       id: 'world-procedural-generator',
       title: 'World Procedural Generator',
       category: 'Unreal Engine Plugin',

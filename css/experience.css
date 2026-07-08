@@ -1271,6 +1271,7 @@ textarea {
 
 .project-detail__copy {
   max-width: 700px;
+  min-width: 0;
 }
 
 .project-detail__back {
@@ -1289,7 +1290,7 @@ textarea {
 }
 
 .project-detail h1 {
-  max-width: 12ch;
+  max-width: 14ch;
   margin: 16px 0 0;
   color: var(--text);
   font-size: clamp(3.3rem, 8vw, 8.6rem);
@@ -1393,6 +1394,10 @@ textarea {
 
 .card3d:hover {
   border-color: rgba(106, 255, 210, .38);
+}
+
+.card3d[data-detail-href] {
+  cursor: pointer;
 }
 
 .card3d--placeholder {
@@ -2259,7 +2264,9 @@ textarea {
   }
 
   .project-detail h1 {
-    font-size: clamp(3rem, 18vw, 5rem);
+    max-width: 100%;
+    font-size: clamp(2.5rem, 14vw, 4.2rem);
+    overflow-wrap: anywhere;
   }
 
   .project-detail__actions {

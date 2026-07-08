@@ -15,6 +15,8 @@
   const tagline = document.getElementById('projectDetailTagline');
   const description = document.getElementById('projectDetailDescription');
   const chips = document.getElementById('projectDetailChips');
+  const back = document.getElementById('projectDetailBack');
+  const allProjects = document.getElementById('projectDetailAll');
   const external = document.getElementById('projectDetailExternal');
   const fallbackImage = document.getElementById('projectDetailImage');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -73,6 +75,16 @@
     if (tagline) tagline.textContent = project.tagline;
     if (description) description.textContent = project.description;
     if (fallbackImage) fallbackImage.src = project.thumbnail;
+
+    const isPlugin = project.externalLabel === 'Open on Fab';
+    if (back) {
+      back.href = isPlugin ? 'plugins.html' : 'games.html';
+      back.textContent = isPlugin ? 'Back to plugins' : 'Back to games';
+    }
+    if (allProjects) {
+      allProjects.href = isPlugin ? 'plugins.html' : 'games.html';
+      allProjects.textContent = isPlugin ? 'All plugins' : 'All projects';
+    }
 
     if (chips) {
       chips.replaceChildren();
