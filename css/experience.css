@@ -1843,6 +1843,7 @@ textarea {
 .project-detail__visual-fallback {
   justify-self: end;
   width: min(560px, 100%);
+  aspect-ratio: 16 / 10;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
@@ -1858,8 +1859,10 @@ textarea {
 
 .project-detail__visual-fallback img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  padding: clamp(16px, 3vw, 28px);
+  background: #05070d;
 }
 
 .project-overview,

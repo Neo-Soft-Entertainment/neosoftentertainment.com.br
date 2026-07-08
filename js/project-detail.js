@@ -238,6 +238,24 @@
     if (canvas) canvas.setAttribute('aria-hidden', 'true');
   }
 
+  function fitImageMeshToTexture(mesh, texture, planeWidth, planeHeight) {
+    const image = texture.image || {};
+    const imageWidth = image.naturalWidth || image.videoWidth || image.width || 0;
+    const imageHeight = image.naturalHeight || image.videoHeight || image.height || 0;
+    if (!imageWidth || !imageHeight) return;
+
+    const textureAspect = imageWidth / imageHeight;
+    const planeAspect = planeWidth / planeHeight;
+    mesh.scale.set(1, 1, 1);
+
+    if (textureAspect > planeAspect) {
+      mesh.scale.y = planeAspect / textureAspect;
+      return;
+    }
+
+    mesh.scale.x = textureAspect / planeAspect;
+  }
+
   function createParticles() {
     const particleCount = isMobile ? 90 : 180;
     const positions = new Float32Array(particleCount * 3);
@@ -263,8 +281,10 @@
 
   function createProjectCard() {
     const textureLoader = new THREE.TextureLoader();
-    const cardGeometry = new THREE.PlaneGeometry(isMobile ? 3 : 4.35, isMobile ? 1.8 : 2.55, 24, 14);
+    const cardWidth = isMobile ? 3 : 4.35;
+    const cardHeight = isMobile ? 1.8 : 2.55;
     const frameGeometry = new THREE.PlaneGeometry(isMobile ? 3.2 : 4.62, isMobile ? 1.98 : 2.76);
+    const cardGeometry = new THREE.PlaneGeometry(cardWidth, cardHeight, 24, 14);
     const accentMaterial = new THREE.MeshBasicMaterial({
       color: 0x69b7ff,
       transparent: true,
@@ -296,6 +316,7 @@
         texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
         cardMaterial.map = texture;
         cardMaterial.needsUpdate = true;
+        fitImageMeshToTexture(card, texture, cardWidth, cardHeight);
       },
       undefined,
       function OnProjectTextureErrorCallback() {

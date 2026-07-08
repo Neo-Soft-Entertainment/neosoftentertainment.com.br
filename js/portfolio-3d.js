@@ -320,6 +320,24 @@
       camera.updateProjectionMatrix();
     }
 
+    function fitImageMeshToTexture(mesh, texture, planeWidth, planeHeight) {
+      const image = texture.image || {};
+      const imageWidth = image.naturalWidth || image.videoWidth || image.width || 0;
+      const imageHeight = image.naturalHeight || image.videoHeight || image.height || 0;
+      if (!imageWidth || !imageHeight) return;
+
+      const textureAspect = imageWidth / imageHeight;
+      const planeAspect = planeWidth / planeHeight;
+      mesh.scale.set(1, 1, 1);
+
+      if (textureAspect > planeAspect) {
+        mesh.scale.y = planeAspect / textureAspect;
+        return;
+      }
+
+      mesh.scale.x = textureAspect / planeAspect;
+    }
+
     function updateHover() {
       if (!raycaster || !pointer || !camera || !cards.length || !isFinePointer) return;
 
@@ -358,8 +376,12 @@
       scene.add(stageGroup, fragmentGroup);
 
       const textureLoader = new THREE.TextureLoader();
-      const cardGeometry = new THREE.PlaneGeometry(isMobile ? 2.35 : 3.35, isMobile ? 1.42 : 1.9, 20, 12);
-      const frameGeometry = new THREE.PlaneGeometry(isMobile ? 2.52 : 3.55, isMobile ? 1.58 : 2.08);
+      const cardWidth = isMobile ? 2.35 : 3.35;
+      const cardHeight = isMobile ? 1.42 : 1.9;
+      const frameWidth = isMobile ? 2.52 : 3.55;
+      const frameHeight = isMobile ? 1.58 : 2.08;
+      const cardGeometry = new THREE.PlaneGeometry(cardWidth, cardHeight, 20, 12);
+      const frameGeometry = new THREE.PlaneGeometry(frameWidth, frameHeight);
       const rimGeometry = new THREE.EdgesGeometry(cardGeometry);
       geometries.push(cardGeometry, frameGeometry, rimGeometry);
 
@@ -376,18 +398,28 @@
           transparent: true,
           opacity: index === 0 ? 1 : .42
         });
+        const hitMaterial = new THREE.MeshBasicMaterial({
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0,
+          depthWrite: false
+        });
         const rimMaterial = new THREE.LineBasicMaterial({
           color: 0xffffff,
           transparent: true,
           opacity: index === 0 ? .54 : .16
         });
-        materials.push(frameMaterial, material, rimMaterial);
+        materials.push(frameMaterial, material, hitMaterial, rimMaterial);
 
         const frame = new THREE.Mesh(frameGeometry, frameMaterial);
         frame.position.z = -.04;
 
-        const mesh = new THREE.Mesh(cardGeometry, material);
-        mesh.userData.index = index;
+        const imageMesh = new THREE.Mesh(cardGeometry, material);
+        imageMesh.position.z = .015;
+
+        const hitMesh = new THREE.Mesh(cardGeometry, hitMaterial);
+        hitMesh.position.z = .05;
+        hitMesh.userData.index = index;
 
         const rim = new THREE.LineSegments(rimGeometry, rimMaterial);
         rim.position.z = .03;
@@ -401,6 +433,7 @@
             texture.magFilter = THREE.LinearFilter;
             material.map = texture;
             material.needsUpdate = true;
+            fitImageMeshToTexture(imageMesh, texture, cardWidth, cardHeight);
             textures.push(texture);
           },
           undefined,
@@ -409,11 +442,12 @@
           }
         );
 
-        group.add(frame, mesh, rim);
+        group.add(frame, imageMesh, rim, hitMesh);
         stageGroup.add(group);
         cards.push({
           group: group,
-          mesh: mesh,
+          mesh: hitMesh,
+          imageMesh: imageMesh,
           material: material,
           frameMaterial: frameMaterial,
           rimMaterial: rimMaterial,

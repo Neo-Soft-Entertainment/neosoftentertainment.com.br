@@ -279,7 +279,8 @@ html[data-theme="light"] .neo-portfolio-3d {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 16px;
   background: var(--portfolio-image-bg);
 }
 
