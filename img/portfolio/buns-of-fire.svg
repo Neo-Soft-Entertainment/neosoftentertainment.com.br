@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Buns Of Fire project artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2a0a12"/>
+      <stop offset="1" stop-color="#5c1420"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" x2="0" y1="1" y2="0">
+      <stop offset="0" stop-color="#ff6a3d"/>
+      <stop offset="1" stop-color="#ffd08a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity=".2" stroke="#ff8a5c" stroke-width="2">
+    <path d="M120 700h1360M120 580h1360M120 460h1360M120 340h1360M120 220h1360"/>
+    <path d="M220 120v660M460 120v660M700 120v660M940 120v660M1180 120v660M1420 120v660"/>
+  </g>
+  <g fill="#f7fbff">
+    <text x="140" y="290" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="800" letter-spacing="4">BUNS OF FIRE</text>
+    <text x="146" y="360" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="10" fill="#ff8a5c">FIGHTING GAME</text>
+  </g>
+  <g transform="translate(1120 470)" fill="none" stroke="url(#flame)" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M0 220c-40-60-56-118-30-176 10 40 32 62 58 70-14-56 4-112 52-150-6 48 8 88 36 112 26 22 40 52 40 88 0 92-70 156-156 156-46 0-88-18-120-52 30 6 70-4 90-32"/>
+  </g>
+  <g transform="translate(150 610)" fill="none" stroke="#ff8a5c" stroke-width="8">
+    <rect x="0" y="0" width="360" height="120" rx="20" opacity=".72"/>
+    <path d="M38 78h284M38 42h140"/>
+    <circle cx="298" cy="60" r="24" fill="#ff8a5c" opacity=".9"/>
+  </g>
+</svg>

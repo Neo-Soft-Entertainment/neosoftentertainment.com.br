@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Confidential Project III artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#100a10"/>
+      <stop offset="1" stop-color="#2c1c2a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#c8a0c0" stroke-width="2">
+    <path d="M120 700h1360M120 580h1360M120 460h1360M120 340h1360M120 220h1360"/>
+    <path d="M220 120v660M460 120v660M700 120v660M940 120v660M1180 120v660M1420 120v660"/>
+  </g>
+  <g fill="#f7fbff">
+    <text x="140" y="290" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="800" letter-spacing="6">CONFIDENTIAL</text>
+    <text x="146" y="360" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="10" fill="#ffb8e6">PROJECT III</text>
+  </g>
+  <g transform="translate(1160 470)" fill="none" stroke="#ffb8e6" stroke-width="10">
+    <rect x="-70" y="0" width="140" height="110" rx="14"/>
+    <path d="M-46 0v-40a46 46 0 0 1 92 0v40"/>
+    <circle cx="0" cy="52" r="10" fill="#ffb8e6" stroke="none"/>
+  </g>
+  <g transform="translate(150 610)" fill="none" stroke="#ffb8e6" stroke-width="8">
+    <rect x="0" y="0" width="360" height="120" rx="20" opacity=".6"/>
+    <path d="M38 78h284M38 42h140"/>
+    <circle cx="298" cy="60" r="24" fill="#ffb8e6" opacity=".8"/>
+  </g>
+</svg>

@@ -214,6 +214,11 @@ html[data-theme="light"] .neo-portfolio-3d {
   background: var(--portfolio-control-hover-bg);
 }
 
+.neo-portfolio-3d__button[hidden],
+.neo-portfolio-3d__control[hidden] {
+  display: none;
+}
+
 .neo-portfolio-3d__button:focus-visible,
 .neo-portfolio-3d__control:focus-visible {
   outline: 2px solid var(--portfolio-text);

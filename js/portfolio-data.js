@@ -5,6 +5,7 @@
       title: 'FRONTLINE',
       category: 'Competitive FPS',
       status: 'In Development',
+      group: 'own',
       tagline: 'A cinematic competitive FPS built around speed, tactics, and arcane technology.',
       description: 'Neo Soft debut title: a multiplayer FPS experience combining tactical combat, hero identity, and high-impact visual direction.',
       thumbnail: 'img/portfolio/frontline.jpg',
@@ -197,20 +198,151 @@
       id: 'fatum',
       title: 'FATUM',
       category: 'Arena Combat',
-      status: 'Prototype',
+      status: 'Service Project',
+      group: 'client',
       tagline: 'A futuristic multiplayer FPS set after collapse, where only machines remain.',
-      description: 'A service project focused on spectator systems, grenade gameplay, replication fixes, and readable combat in fast arena modes.',
+      description: 'Futuristic multiplayer FPS set after the world collapses, where only robots remain. Battle across Domination, Capture the Flag, and Deathmatch modes inspired by Splitgate. We implemented the spectator system, grenade gameplay, and fixed replication issues.',
       thumbnail: 'img/portfolio/fatum.jpg',
       href: 'project.html?id=fatum',
-      externalHref: 'products.html',
-      externalLabel: 'View products',
-      details: ['Arena combat', 'Spectator systems', 'Grenade gameplay', 'Replication fixes']
+      externalHref: 'services.html',
+      externalLabel: 'View services',
+      details: ['Arena combat', 'Spectator systems', 'Grenade gameplay', 'Replication fixes'],
+      overviewTitle: 'Descrição do Projeto',
+      overviewIntro: 'Visão do projeto e escopo do trabalho da Neo Soft no FATUM.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'FATUM é um FPS multiplayer futurista ambientado após o colapso do mundo, onde apenas robôs restam. O jogo é inspirado em Splitgate e reúne modos como Dominação, Captura de Bandeira e Deathmatch em arenas rápidas.',
+            'A Neo Soft atuou como parceira de desenvolvimento, prestando serviço em sistemas específicos de gameplay do projeto.'
+          ]
+        },
+        {
+          title: 'Escopo do trabalho',
+          paragraphs: ['Nosso time foi responsável por sistemas de combate e correções de rede do jogo.'],
+          items: [
+            'Sistema de espectador para acompanhamento de partidas.',
+            'Gameplay de granadas, incluindo comportamento e efeitos.',
+            'Correção de falhas de replicação em rede para combate mais consistente.',
+            'Ajustes de legibilidade de combate em modos de arena rápidos.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'buns-of-fire',
+      title: 'Buns Of Fire',
+      category: 'Fighting Game',
+      status: 'Service Project',
+      group: 'client',
+      tagline: 'A Mortal Kombat-inspired fighter where finishers trade blood for something else entirely.',
+      description: 'NSFW fighting game in the spirit of Mortal Kombat where the hook trades fatalities for explicit scenes inspired by Eroico.',
+      thumbnail: 'img/portfolio/buns-of-fire.svg',
+      href: 'project.html?id=buns-of-fire',
+      externalHref: 'services.html',
+      externalLabel: 'View services',
+      details: ['Fighting mechanics', 'Finisher system', 'Character roster', 'Service project'],
+      overviewTitle: 'Descrição do Projeto',
+      overviewIntro: 'Visão do projeto e escopo do trabalho da Neo Soft em Buns Of Fire.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Buns Of Fire é um jogo de luta adulto (NSFW) no espírito de Mortal Kombat, em que o gancho de gameplay troca as fatalities tradicionais por cenas explícitas, com inspiração em Eroico.',
+            'A Neo Soft atuou como parceira de desenvolvimento neste projeto de conteúdo adulto para um cliente externo, em regime de prestação de serviço.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'buildy-game',
+      title: 'Buildy Game (Working Title)',
+      category: 'Construction Sim',
+      status: 'Service Project',
+      group: 'client',
+      tagline: 'A construction-focused project built around a complete save system.',
+      description: 'Construction-focused project where we implemented a complete save system with manual slots and auto-save support.',
+      thumbnail: 'img/portfolio/buildy-game.svg',
+      href: 'project.html?id=buildy-game',
+      externalHref: 'services.html',
+      externalLabel: 'View services',
+      details: ['Save system', 'Manual slots', 'Auto-save', 'Service project'],
+      overviewTitle: 'Descrição do Projeto',
+      overviewIntro: 'Visão do projeto e escopo do trabalho da Neo Soft em Buildy Game.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Buildy Game (título provisório) é um projeto focado em construção, desenvolvido para um cliente externo em regime de prestação de serviço.',
+            'A Neo Soft foi responsável por implementar o sistema de save do jogo, com suporte a slots manuais e salvamento automático, garantindo que o progresso do jogador em estruturas construídas seja preservado de forma confiável.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'phase',
+      title: 'Phase',
+      category: 'Movement Shooter',
+      status: 'Service Project',
+      group: 'client',
+      tagline: 'A high-mobility FPS built around Titanfall-inspired movement.',
+      description: 'High-mobility FPS centered on Titanfall-inspired movement systems.',
+      thumbnail: 'img/portfolio/phase.svg',
+      href: 'project.html?id=phase',
+      externalHref: 'services.html',
+      externalLabel: 'View services',
+      details: ['High mobility', 'Wall-running', 'Movement systems', 'Service project'],
+      overviewTitle: 'Descrição do Projeto',
+      overviewIntro: 'Visão do projeto e escopo do trabalho da Neo Soft em Phase.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Phase é um FPS de alta mobilidade, com sistemas de movimentação inspirados em Titanfall — como corrida na parede e deslocamento vertical rápido — como elemento central da experiência de combate.',
+            'A Neo Soft atuou como parceira de desenvolvimento neste projeto de prestação de serviço.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'confidential-1',
+      title: 'Confidential Project I',
+      category: 'Confidential',
+      status: 'Under NDA',
+      group: 'client',
+      tagline: 'Details protected under client confidentiality.',
+      description: 'In-development initiative under NDA. Our tools team is engineering core combat prototypes for the client.',
+      thumbnail: 'img/portfolio/confidential-1.svg',
+      details: ['Combat prototypes', 'Tools engineering', 'Under NDA']
+    },
+    {
+      id: 'confidential-2',
+      title: 'Confidential Project II',
+      category: 'Confidential',
+      status: 'Under NDA',
+      group: 'client',
+      tagline: 'Details protected under client confidentiality.',
+      description: 'Ongoing Unreal Engine support providing optimization sprints and multiplayer stability tuning.',
+      thumbnail: 'img/portfolio/confidential-2.svg',
+      details: ['Optimization sprints', 'Multiplayer stability', 'Under NDA']
+    },
+    {
+      id: 'confidential-3',
+      title: 'Confidential Project III',
+      category: 'Confidential',
+      status: 'Under NDA',
+      group: 'client',
+      tagline: 'Details protected under client confidentiality.',
+      description: 'Next-gen concept where we handle worldbuilding pre-production while respecting strict confidentiality.',
+      thumbnail: 'img/portfolio/confidential-3.svg',
+      details: ['Worldbuilding', 'Pre-production', 'Under NDA']
     },
     {
       id: 'imobi',
       title: 'Imobi',
       category: 'Mobile Product',
       status: 'Prototype',
+      group: 'own',
       tagline: 'A mobile property discovery app built around map-first browsing.',
       description: 'Imobi simplifies property discovery with an interactive map, listing filters, and a cleaner flow for finding the next home.',
       thumbnail: 'img/imobi-icon.png',
@@ -369,78 +501,206 @@
       title: 'Neolytics',
       category: 'Steam Analytics',
       status: 'Prototype',
+      group: 'own',
       tagline: 'A viability analysis platform for Steam projects before production scales.',
       description: 'Neolytics helps teams read market signals, clarify positioning, and make better decisions before committing more production time.',
       thumbnail: 'img/portfolio/neolytics.png',
       href: 'project.html?id=neolytics',
       externalHref: 'https://project-pqd61.vercel.app/',
       externalLabel: 'Open project',
-      details: ['Steam signals', 'Market positioning', 'Decision support', 'Production planning']
+      details: ['Steam signals', 'Market positioning', 'Decision support', 'Production planning'],
+      overviewTitle: 'Descrição do Sistema',
+      overviewIntro: 'Visão da plataforma, módulos principais e proposta do Neolytics.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Neolytics é um centro de comando operacional para estúdios de jogos, unindo inteligência de mercado, execução de projetos e um ERP financeiro em um único sistema, pensado para apoiar decisões de produção, financiamento e lançamento com base em dados reais.',
+            'A plataforma conecta pesquisa de mercado, planejamento de projeto e operação do estúdio em um fluxo único, permitindo que times avaliem a viabilidade de um jogo antes de comprometer tempo de produção.'
+          ]
+        },
+        {
+          title: 'Funcionalidades principais',
+          paragraphs: ['O sistema é dividido em módulos que cobrem desde a validação de mercado até a gestão financeira do estúdio.'],
+          items: [
+            'Análise de mercado com dados reais da Steam: histórico de receita, estratégias de preço, avaliações de jogadores e janelas de lançamento para benchmarking competitivo.',
+            'Gestão de projetos com conversão de conceitos em Game Design Documents, quadros de projeto, marcos, responsáveis e priorização de tarefas.',
+            'Operações financeiras integradas: orçamento, contratos e contas a pagar/receber conectados diretamente ao portfólio de jogos do estúdio.',
+            'Dashboard operacional ao vivo com sinais de mercado, status de projetos (marcos e riscos) e métricas financeiras como orçamento e posição de caixa.'
+          ]
+        }
+      ]
     },
     {
       id: 'vector-toys',
       title: 'Vector Toys Calculator',
       category: 'Pricing Tool',
       status: 'Delivered Work',
+      group: 'client',
       tagline: 'A pricing hub for 3D printing costs, materials, printer profiles, and margins.',
       description: 'Vector Toys Calculator centralizes the pricing workflow for 3D printed products, keeping cost inputs and margin-based decisions in one place.',
       thumbnail: 'img/portfolio/vector-toys.png',
       href: 'project.html?id=vector-toys',
       externalHref: 'https://victorhmrod.github.io/vectortoys-calculator/',
       externalLabel: 'Open project',
-      details: ['3D print costs', 'Material profiles', 'Margin pricing', 'Delivered tool']
+      details: ['3D print costs', 'Material profiles', 'Margin pricing', 'Delivered tool'],
+      overviewTitle: 'Descrição do Sistema',
+      overviewIntro: 'Visão da ferramenta, módulos e fluxo de precificação do Vector Toys Calculator.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Vector Toys Calculator é uma calculadora de precificação voltada para negócios de impressão 3D, criada para a Vector Toys. A ferramenta permite configurar a infraestrutura de produção uma única vez e, a partir dela, calcular o custo de cada peça, pedido e preço de venda por canal.',
+            'O sistema acompanha energia, materiais, depreciação de equipamento, taxas de canal e margem de lucro em um fluxo único, reduzindo o trabalho manual de precificação.'
+          ]
+        },
+        {
+          title: 'Funcionalidades principais',
+          paragraphs: ['A calculadora é organizada em três módulos que cobrem toda a jornada, da produção até a venda.'],
+          items: [
+            'Produção: cadastro de impressoras (tecnologia FDM/Resina, consumo de energia, valor de compra, vida útil), custo de manutenção e cálculo de ROI.',
+            'Operação: rateio de custos mensais, processamento de arquivos 3D, embalagem, taxas de serviço e metas de vendas.',
+            'Vendas: precificação final considerando taxas de serviço, horas de produção, canal de venda, margem desejada e lucro líquido.',
+            'Perfis configuráveis de materiais, canais de venda e produtos, com opção de salvar configurações via login ou usar a calculadora em modo convidado.'
+          ]
+        }
+      ]
     },
     {
       id: 'world-procedural-generator',
       title: 'World Procedural Generator',
       category: 'Unreal Engine Plugin',
       status: 'Fab Marketplace',
+      group: 'own',
       tagline: 'Procedural terrain, biomes, and placement tools for ambitious Unreal worlds.',
       description: 'A production plugin built to help teams author vast open worlds with faster iteration and reliable procedural workflows.',
       thumbnail: 'img/portfolio/world-procedural-generator.jpg',
       href: 'project.html?id=world-procedural-generator',
       externalHref: 'https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb',
       externalLabel: 'Open on Fab',
-      details: ['Procedural worlds', 'Biome tools', 'Placement workflows', 'Unreal Engine']
+      details: ['Procedural worlds', 'Biome tools', 'Placement workflows', 'Unreal Engine'],
+      overviewTitle: 'Descrição do Plugin',
+      overviewIntro: 'Visão geral e funcionalidades do World Procedural Generator.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'World Procedural Generator é um plugin para Unreal Engine desenvolvido pela Neo Soft e publicado na Fab Marketplace, criado para ajudar equipes a construir mundos abertos vastos com iteração mais rápida.',
+            'A ferramenta reúne geração de terreno procedural, distribuição de biomas e posicionamento automatizado de assets em um fluxo de trabalho confiável, pensado para produções que precisam escalar a criação de ambientes sem perder controle criativo.'
+          ]
+        },
+        {
+          title: 'Funcionalidades',
+          items: [
+            'Geração procedural de terreno.',
+            'Ferramentas de biomas para variação natural do ambiente.',
+            'Fluxos de posicionamento automatizado de assets.',
+            'Disponível na Fab Marketplace para uso em projetos Unreal Engine.'
+          ]
+        }
+      ]
     },
     {
       id: 'neo-library',
       title: 'Neo Library',
       category: 'Unreal Engine Toolkit',
       status: 'Fab Marketplace',
+      group: 'own',
       tagline: 'A utility layer for localization, settings, and Blueprint-ready production helpers.',
       description: 'A focused Unreal Engine library that packages recurring studio needs into practical tools for game teams and technical designers.',
       thumbnail: 'img/portfolio/neo-library.jpg',
       href: 'project.html?id=neo-library',
       externalHref: 'https://www.fab.com/pt-br/listings/b4b9e699-62b2-4829-868b-cc2cc3a6bf88',
       externalLabel: 'Open on Fab',
-      details: ['Localization', 'Settings', 'Blueprint helpers', 'Production utilities']
+      details: ['Localization', 'Settings', 'Blueprint helpers', 'Production utilities'],
+      overviewTitle: 'Descrição do Plugin',
+      overviewIntro: 'Visão geral e funcionalidades do Neo Library.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Neo Library é uma biblioteca de utilidades para Unreal Engine, publicada pela Neo Soft na Fab Marketplace, criada para empacotar necessidades recorrentes de estúdio em ferramentas prontas para uso.',
+            'A biblioteca reúne helpers de localização, gerenciamento de configurações e utilitários prontos para Blueprint, reduzindo trabalho repetitivo em produções Unreal Engine.'
+          ]
+        },
+        {
+          title: 'Funcionalidades',
+          items: [
+            'Helpers de localização para times multi-idioma.',
+            'Sistema de configurações reutilizável.',
+            'Utilitários prontos para uso direto em Blueprint.',
+            'Voltada para equipes de jogos e technical designers.'
+          ]
+        }
+      ]
     },
     {
       id: 'replicated-explosion',
       title: 'Replicated Explosion Plugin',
       category: 'Networked Gameplay',
       status: 'Fab Marketplace',
+      group: 'own',
       tagline: 'Network-ready explosive gameplay with replicated effects and tuned physics.',
       description: 'A gameplay plugin designed for multiplayer Unreal projects that need reliable impact, VFX synchronization, and configurable blast behavior.',
       thumbnail: 'img/portfolio/replicated-explosion.jpg',
       href: 'project.html?id=replicated-explosion',
       externalHref: 'https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d',
       externalLabel: 'Open on Fab',
-      details: ['Network gameplay', 'Replicated VFX', 'Blast physics', 'Multiplayer ready']
+      details: ['Network gameplay', 'Replicated VFX', 'Blast physics', 'Multiplayer ready'],
+      overviewTitle: 'Descrição do Plugin',
+      overviewIntro: 'Visão geral e funcionalidades do Replicated Explosion Plugin.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Replicated Explosion Plugin é um plugin de gameplay para Unreal Engine, publicado pela Neo Soft na Fab Marketplace, feito para projetos multiplayer que precisam de explosões com replicação de rede confiável.',
+            'O plugin sincroniza efeitos visuais entre clientes e oferece comportamento de explosão configurável, com física ajustada para impacto consistente em partidas online.'
+          ]
+        },
+        {
+          title: 'Funcionalidades',
+          items: [
+            'Explosões replicadas em rede, prontas para multiplayer.',
+            'Sincronização de efeitos visuais (VFX) entre clientes.',
+            'Física de explosão configurável.',
+            'Disponível na Fab Marketplace.'
+          ]
+        }
+      ]
     },
     {
       id: 'advanced-loot-generator',
       title: 'Advanced Loot Generator',
       category: 'Gameplay Systems',
       status: 'Fab Marketplace',
+      group: 'own',
       tagline: 'A procedural loot foundation for configurable, network-ready reward systems.',
       description: 'A plugin for Unreal teams that need flexible loot generation, replication support, and production-minded controls for item drops.',
       thumbnail: 'img/portfolio/advanced-loot-generator.jpg',
       href: 'project.html?id=advanced-loot-generator',
       externalHref: 'https://www.fab.com/listings/09a9dc9f-7a75-4280-8d7b-0f00c86daf37',
       externalLabel: 'Open on Fab',
-      details: ['Procedural loot', 'Reward systems', 'Replication support', 'Configurable drops']
+      details: ['Procedural loot', 'Reward systems', 'Replication support', 'Configurable drops'],
+      overviewTitle: 'Descrição do Plugin',
+      overviewIntro: 'Visão geral e funcionalidades do Advanced Loot Generator.',
+      overviewSections: [
+        {
+          title: 'Visão geral',
+          paragraphs: [
+            'Advanced Loot Generator é um plugin para Unreal Engine, publicado pela Neo Soft na Fab Marketplace, criado para equipes que precisam de um sistema de loot procedural flexível e pronto para multiplayer.',
+            'A ferramenta oferece geração configurável de itens, suporte a replicação de rede e controles pensados para produção, permitindo ajustar taxas e regras de drop sem reescrever lógica de jogo.'
+          ]
+        },
+        {
+          title: 'Funcionalidades',
+          items: [
+            'Geração procedural de loot.',
+            'Sistema de recompensas configurável.',
+            'Suporte a replicação de rede para uso em multiplayer.',
+            'Controles de drop pensados para produção.'
+          ]
+        }
+      ]
     }
   ];
 })();

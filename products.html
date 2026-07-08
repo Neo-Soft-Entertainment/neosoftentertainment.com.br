@@ -32,6 +32,7 @@
   <link rel="manifest" href="manifest.json" />
 
   <link rel="stylesheet" href="css/experience.css" />
+  <link rel="stylesheet" href="css/portfolio-3d.css" />
 </head>
 
 <body class="experience-site">
@@ -54,7 +55,6 @@
       <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
       <a class="nav-link" href="services.html" data-i18n="nav.services">Services</a>
       <a class="nav-link" href="products.html" aria-current="page" data-i18n="nav.games">Products</a>
-      <a class="nav-link" href="plugins.html" data-i18n="nav.plugins">Plugins</a>
       <a class="nav-link" href="studio.html" data-i18n="nav.studio">Studio</a>
       <a class="nav-link" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
     </nav>
@@ -73,7 +73,6 @@
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="services.html" data-i18n="nav.services">Services</a>
         <a href="products.html" aria-current="page" data-i18n="nav.games">Products</a>
-        <a href="plugins.html" data-i18n="nav.plugins">Plugins</a>
         <a href="studio.html" data-i18n="nav.studio">Studio</a>
         <a href="studio.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -81,181 +80,43 @@
   </div>
 
   <main id="main-content">
-    <section id="products" class="page-hero-section experience-section">
-      <div class="section-shell">
-        <div class="section-header" data-reveal>
-          <span class="section-header__index">01</span>
-          <div class="section-header__copy">
-            <h1 data-i18n="games.title">Our Products</h1>
-            <p data-i18n="games.ownSubtitle">Games, tools, and plugins we design, build, and ship ourselves. Drag to explore.</p>
-          </div>
-        </div>
+    <section id="own-products-3d" class="neo-portfolio-3d experience-section" data-portfolio-group="own"
+      aria-label="Our products interactive showcase" tabindex="0">
+      <div class="neo-portfolio-3d__canvas-wrap">
+        <canvas class="neo-portfolio-3d__canvas" aria-hidden="true"></canvas>
+      </div>
 
-        <div class="drag-section" data-drag-section data-reveal>
-          <div class="drag-viewport" data-drag-viewport tabindex="0" aria-label="Our products carousel">
-            <div class="drag-track" data-drag-track>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=frontline">
-                <div class="card3d-img"><img src="img/frontline.png" alt="Frontline key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=frontline">Frontline</a></h3>
-                  <p class="card3d-desc" data-i18n="games.frontline">An immersive tactical shooter combining realism,
-                    intensity, and storytelling — coming soon to Steam. Wishlist now.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=frontline" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="https://store.steampowered.com/app/1772220/Frontline_New_Revolution/" target="_blank"
-                      rel="noopener" class="card3d-link--badge card3d-link--badge-btn"
-                      data-i18n="games.frontlinePlatform">Steam</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=imobi">
-                <div class="card3d-img card3d-img--icon">
-                  <img src="img/imobi-icon.png" alt="Imobi icon" class="card3d-svg-icon" />
-                </div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=imobi">Imobi</a></h3>
-                  <p class="card3d-desc" data-i18n="games.imobi">A mobile app for Android and iOS that simplifies
-                    property discovery through an interactive map — browse listings, filter by type, and find your
-                    next home with ease.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=imobi" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="#" class="card3d-link--badge card3d-link--badge-btn"
-                      data-i18n="games.imobiAndroid">Android</a>
-                    <a href="#" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.imobiIos">iOS</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=neolytics">
-                <div class="card3d-img"><img src="img/portfolio/neolytics.png" alt="Neolytics key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=neolytics">Neolytics</a></h3>
-                  <p class="card3d-desc" data-i18n="games.neolytics">A Steam viability analysis platform that helps
-                    teams validate project potential with clearer market signals, positioning, and decision support
-                    before production scales.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=neolytics" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="https://project-pqd61.vercel.app/" target="_blank" rel="noopener"
-                      class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.neolyticsTag">Steam
-                      Analytics</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=world-procedural-generator">
-                <div class="card3d-img"><img src="img/portfolio/world-procedural-generator.jpg" alt="World Procedural Generator key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=world-procedural-generator">World Procedural Generator</a></h3>
-                  <p class="card3d-desc" data-i18n="games.worldProcGen">A production plugin built to help teams
-                    author vast open worlds with faster iteration and reliable procedural workflows.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=world-procedural-generator" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="https://www.fab.com/pt-br/listings/5b18f63c-894d-40b8-846a-bf4670ee9eeb" target="_blank"
-                      rel="noopener" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.openOnFab">Open
-                      on Fab</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=neo-library">
-                <div class="card3d-img"><img src="img/portfolio/neo-library.jpg" alt="Neo Library key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=neo-library">Neo Library</a></h3>
-                  <p class="card3d-desc" data-i18n="games.neoLibrary">A focused Unreal Engine library that packages
-                    recurring studio needs into practical tools for game teams and technical designers.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=neo-library" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="https://www.fab.com/pt-br/listings/b4b9e699-62b2-4829-868b-cc2cc3a6bf88" target="_blank"
-                      rel="noopener" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.openOnFab">Open
-                      on Fab</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=replicated-explosion">
-                <div class="card3d-img"><img src="img/portfolio/replicated-explosion.jpg" alt="Replicated Explosion Plugin key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=replicated-explosion">Replicated Explosion Plugin</a></h3>
-                  <p class="card3d-desc" data-i18n="games.replicatedExplosion">A gameplay plugin designed for
-                    multiplayer Unreal projects that need reliable impact, VFX synchronization, and configurable
-                    blast behavior.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=replicated-explosion" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="https://www.fab.com/pt-br/listings/13134d3a-256f-44bc-9052-3dd69e87932d" target="_blank"
-                      rel="noopener" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.openOnFab">Open
-                      on Fab</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=advanced-loot-generator">
-                <div class="card3d-img"><img src="img/portfolio/advanced-loot-generator.jpg" alt="Advanced Loot Generator key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=advanced-loot-generator">Advanced Loot Generator</a></h3>
-                  <p class="card3d-desc" data-i18n="games.advancedLoot">A plugin for Unreal teams that need flexible
-                    loot generation, replication support, and production-minded controls for item drops.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=advanced-loot-generator" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <a href="https://www.fab.com/listings/09a9dc9f-7a75-4280-8d7b-0f00c86daf37" target="_blank"
-                      rel="noopener" class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.openOnFab">Open
-                      on Fab</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="neo-portfolio-3d__overlay">
+        <div class="neo-portfolio-3d__content">
+          <p class="neo-portfolio-3d__eyebrow" data-i18n="games.title">Our Products</p>
+          <h2 class="neo-portfolio-3d__title"></h2>
+          <p class="neo-portfolio-3d__tagline"></p>
+          <p class="neo-portfolio-3d__description"></p>
+          <div class="neo-portfolio-3d__meta">
+            <span class="neo-portfolio-3d__category"></span>
+            <span class="neo-portfolio-3d__status"></span>
           </div>
-          <div class="carousel-controls">
-            <button id="ownProductsPrev" data-drag-prev aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-            <button id="ownProductsNext" data-drag-next aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
+          <div class="neo-portfolio-3d__actions">
+            <a href="#" class="neo-portfolio-3d__button magnetic">
+              View details
+            </a>
+            <button type="button" class="neo-portfolio-3d__control neo-portfolio-3d__control--prev"
+              aria-label="Previous project">Prev</button>
+            <button type="button" class="neo-portfolio-3d__control neo-portfolio-3d__control--next"
+              aria-label="Next project">Next</button>
+          </div>
+          <div class="neo-portfolio-3d__footer">
+            <p class="neo-portfolio-3d__hint">Drag, swipe, use arrows, or click the active card</p>
+            <p class="neo-portfolio-3d__count" aria-live="polite">
+              <span class="neo-portfolio-3d__current"></span>
+              <span aria-hidden="true">/</span>
+              <span class="neo-portfolio-3d__total"></span>
+            </p>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="client-work" class="page-section experience-section section-transition">
-      <div class="section-shell">
-        <div class="section-header" data-reveal>
-          <span class="section-header__index">02</span>
-          <div class="section-header__copy">
-            <h2 data-i18n="games.clientsTitle">Client Work</h2>
-            <p data-i18n="games.clientsSubtitle">Projects and tools we delivered for outside clients and partners.</p>
-          </div>
-        </div>
-
-        <div class="drag-section" data-drag-section data-reveal>
-          <div class="drag-viewport" data-drag-viewport tabindex="0" aria-label="Client work carousel">
-            <div class="drag-track" data-drag-track>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=vector-toys">
-                <div class="card3d-img"><img src="img/portfolio/vector-toys.png" alt="Vector Toys Calculator key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=vector-toys">Vector Toys Calculator</a></h3>
-                  <p class="card3d-desc" data-i18n="games.vectorToys">Pricing hub built for Vector Toys that
-                    centralizes 3D printing cost models, materials, printer profiles, and margin-based pricing in one
-                    workflow.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=vector-toys" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <span class="card3d-link--badge" data-i18n="games.vectorToysTag">Completed Work</span>
-                    <a href="https://victorhmrod.github.io/vectortoys-calculator/" target="_blank" rel="noopener"
-                      class="card3d-link--badge card3d-link--badge-btn" data-i18n="games.vectorToysLink">Open
-                      project →</a>
-                  </div>
-                </div>
-              </div>
-              <div class="drag-card card3d" data-card data-detail-href="project.html?id=fatum">
-                <div class="card3d-img"><img src="img/portfolio/fatum.jpg" alt="Fatum key art" /></div>
-                <div class="p-5">
-                  <h3 class="card3d-title"><a href="project.html?id=fatum">Fatum</a></h3>
-                  <p class="card3d-desc" data-i18n="games.fatum">A service project focused on spectator systems,
-                    grenade gameplay, replication fixes, and readable combat in fast arena modes.</p>
-                  <div class="card3d-footer">
-                    <a href="project.html?id=fatum" class="card3d-link--badge card3d-link--badge-btn">Details</a>
-                    <span class="card3d-link--badge" data-i18n="games.fatumTag">Service Project</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-controls">
-            <button id="clientWorkPrev" data-drag-prev aria-label="Previous" data-i18n-aria-label="carousel.prev">‹</button>
-            <button id="clientWorkNext" data-drag-next aria-label="Next" data-i18n-aria-label="carousel.next">›</button>
-          </div>
-        </div>
-      </div>
+      <div class="neo-portfolio-3d__fallback" hidden></div>
     </section>
 
     <section class="page-section experience-section section-transition">
@@ -286,7 +147,6 @@
         <a href="index.html" data-i18n="nav.home">Home</a>
         <a href="services.html" data-i18n="nav.services">Services</a>
         <a href="products.html" aria-current="page" data-i18n="nav.games">Products</a>
-        <a href="plugins.html" data-i18n="nav.plugins">Plugins</a>
         <a href="studio.html" data-i18n="nav.studio">Studio</a>
         <a href="/legal">Legal</a>
       </nav>
@@ -296,9 +156,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/portfolio-data.js"></script>
   <script src="js/webgl-experience.js"></script>
   <script src="js/motion-experience.js"></script>
-  <script src="js/drag-experience.js"></script>
+  <script src="js/portfolio-3d.js"></script>
   <script src="js/site-config.js"></script>
   <script src="js/script.js"></script>
 </body>
