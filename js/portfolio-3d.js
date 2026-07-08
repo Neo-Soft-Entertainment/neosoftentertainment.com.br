@@ -320,24 +320,6 @@
       camera.updateProjectionMatrix();
     }
 
-    function fitImageMeshToTexture(mesh, texture, planeWidth, planeHeight) {
-      const image = texture.image || {};
-      const imageWidth = image.naturalWidth || image.videoWidth || image.width || 0;
-      const imageHeight = image.naturalHeight || image.videoHeight || image.height || 0;
-      if (!imageWidth || !imageHeight) return;
-
-      const textureAspect = imageWidth / imageHeight;
-      const planeAspect = planeWidth / planeHeight;
-      mesh.scale.set(1, 1, 1);
-
-      if (textureAspect > planeAspect) {
-        mesh.scale.y = planeAspect / textureAspect;
-        return;
-      }
-
-      mesh.scale.x = textureAspect / planeAspect;
-    }
-
     function updateHover() {
       if (!raycaster || !pointer || !camera || !cards.length || !isFinePointer) return;
 
@@ -375,6 +357,7 @@
       stageGroup.position.set(isMobile ? .18 : 1.55, isMobile ? -.42 : 0, 0);
       scene.add(stageGroup, fragmentGroup);
 
+      const media = window.NeoPortfolioMedia;
       const textureLoader = new THREE.TextureLoader();
       const cardWidth = isMobile ? 2.35 : 3.35;
       const cardHeight = isMobile ? 1.42 : 1.9;
@@ -416,6 +399,13 @@
 
         const imageMesh = new THREE.Mesh(cardGeometry, material);
         imageMesh.position.z = .015;
+        const placeholderTexture = media && media.createPlaceholderTexture(project, renderer);
+        if (placeholderTexture) {
+          material.map = placeholderTexture;
+          material.needsUpdate = true;
+          media.fitMeshToTexture(imageMesh, placeholderTexture, cardWidth, cardHeight);
+          textures.push(placeholderTexture);
+        }
 
         const hitMesh = new THREE.Mesh(cardGeometry, hitMaterial);
         hitMesh.position.z = .05;
@@ -427,21 +417,15 @@
         textureLoader.load(
           project.thumbnail,
           function OnPortfolioTextureLoadedCallback(texture) {
-            texture.colorSpace = THREE.SRGBColorSpace;
-            texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
-            texture.generateMipmaps = false;
-            texture.minFilter = THREE.LinearFilter;
-            texture.magFilter = THREE.LinearFilter;
-            texture.wrapS = THREE.ClampToEdgeWrapping;
-            texture.wrapT = THREE.ClampToEdgeWrapping;
+            if (media) media.configureTexture(texture, renderer);
             material.map = texture;
             material.needsUpdate = true;
-            fitImageMeshToTexture(imageMesh, texture, cardWidth, cardHeight);
+            if (media) media.fitMeshToTexture(imageMesh, texture, cardWidth, cardHeight);
             textures.push(texture);
           },
           undefined,
           function OnPortfolioTextureErrorCallback() {
-            material.color.set(0x111827);
+            if (!material.map) material.color.set(0x111827);
           }
         );
 
@@ -600,7 +584,7 @@
       if (hasInitialized) return;
       hasInitialized = true;
 
-      if (!canvas || !canvasWrap || !window.THREE || !isWebGLAvailable()) {
+      if (!canvas || !canvasWrap || !window.THREE || !window.NeoPortfolioMedia || !isWebGLAvailable()) {
         showFallback();
         return;
       }

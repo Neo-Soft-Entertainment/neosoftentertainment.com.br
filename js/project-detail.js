@@ -40,6 +40,7 @@
   let mouseX = 0;
   let mouseY = 0;
   let particleMaterial;
+  let textures = [];
 
   function isWebGLAvailable() {
     try {
@@ -238,24 +239,6 @@
     if (canvas) canvas.setAttribute('aria-hidden', 'true');
   }
 
-  function fitImageMeshToTexture(mesh, texture, planeWidth, planeHeight) {
-    const image = texture.image || {};
-    const imageWidth = image.naturalWidth || image.videoWidth || image.width || 0;
-    const imageHeight = image.naturalHeight || image.videoHeight || image.height || 0;
-    if (!imageWidth || !imageHeight) return;
-
-    const textureAspect = imageWidth / imageHeight;
-    const planeAspect = planeWidth / planeHeight;
-    mesh.scale.set(1, 1, 1);
-
-    if (textureAspect > planeAspect) {
-      mesh.scale.y = planeAspect / textureAspect;
-      return;
-    }
-
-    mesh.scale.x = textureAspect / planeAspect;
-  }
-
   function createParticles() {
     const particleCount = isMobile ? 90 : 180;
     const positions = new Float32Array(particleCount * 3);
@@ -280,6 +263,7 @@
   }
 
   function createProjectCard() {
+    const media = window.NeoPortfolioMedia;
     const textureLoader = new THREE.TextureLoader();
     const cardWidth = isMobile ? 3 : 4.35;
     const cardHeight = isMobile ? 1.8 : 2.55;
@@ -308,24 +292,26 @@
     const card = new THREE.Mesh(cardGeometry, cardMaterial);
     const rim = new THREE.LineSegments(new THREE.EdgesGeometry(cardGeometry), rimMaterial);
     rim.position.z = .04;
+    const placeholderTexture = media && media.createPlaceholderTexture(project, renderer);
+    if (placeholderTexture) {
+      cardMaterial.map = placeholderTexture;
+      cardMaterial.needsUpdate = true;
+      media.fitMeshToTexture(card, placeholderTexture, cardWidth, cardHeight);
+      textures.push(placeholderTexture);
+    }
 
     textureLoader.load(
       project.thumbnail,
       function OnProjectTextureLoadedCallback(texture) {
-        texture.colorSpace = THREE.SRGBColorSpace;
-        texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
-        texture.generateMipmaps = false;
-        texture.minFilter = THREE.LinearFilter;
-        texture.magFilter = THREE.LinearFilter;
-        texture.wrapS = THREE.ClampToEdgeWrapping;
-        texture.wrapT = THREE.ClampToEdgeWrapping;
+        if (media) media.configureTexture(texture, renderer);
         cardMaterial.map = texture;
         cardMaterial.needsUpdate = true;
-        fitImageMeshToTexture(card, texture, cardWidth, cardHeight);
+        if (media) media.fitMeshToTexture(card, texture, cardWidth, cardHeight);
+        textures.push(texture);
       },
       undefined,
       function OnProjectTextureErrorCallback() {
-        cardMaterial.color.set(0x101827);
+        if (!cardMaterial.map) cardMaterial.color.set(0x101827);
       }
     );
 
@@ -396,7 +382,7 @@
   }
 
   function setupScene() {
-    if (!canvas || !window.THREE || !isWebGLAvailable() || reduceMotion) {
+    if (!canvas || !window.THREE || !window.NeoPortfolioMedia || !isWebGLAvailable() || reduceMotion) {
       showFallback();
       return;
     }
@@ -437,6 +423,7 @@
     if (resizeFrame) cancelAnimationFrame(resizeFrame);
     window.removeEventListener('resize', OnResizeCallback);
     window.removeEventListener('pointermove', OnPointerMoveCallback);
+    textures.forEach((texture) => texture.dispose());
     if (renderer) renderer.dispose();
   }
 
