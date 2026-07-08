@@ -231,12 +231,12 @@
     },
     {
       id: 'buns-of-fire',
-      title: 'Buns Of Fire',
-      category: 'Fighting Game',
+      title: 'Buns Of Fire (18+)',
+      category: 'Fighting Game · NSFW',
       status: 'Service Project',
       group: 'client',
       tagline: 'A Mortal Kombat-inspired fighter where finishers trade blood for something else entirely.',
-      description: 'NSFW fighting game in the spirit of Mortal Kombat where the hook trades fatalities for explicit scenes inspired by Eroico.',
+      description: 'Adult content (18+). NSFW fighting game in the spirit of Mortal Kombat where the hook trades fatalities for explicit scenes inspired by Eroico.',
       thumbnail: 'img/portfolio/buns-of-fire.svg',
       href: 'project.html?id=buns-of-fire',
       externalHref: 'services.html',
@@ -529,6 +529,59 @@
             'Dashboard operacional ao vivo com sinais de mercado, status de projetos (marcos e riscos) e métricas financeiras como orçamento e posição de caixa.'
           ]
         }
+      ],
+      legalTitle: 'Política de Privacidade',
+      legalIntro: 'Política de privacidade e licença de uso aplicáveis ao Neolytics.',
+      legalPreamble: [
+        'Este documento estabelece as regras sobre coleta, uso, armazenamento, proteção e direitos dos usuários em relação aos dados pessoais tratados pela plataforma Neolytics, desenvolvida e operada pela NEO SOFT ENTERTAINMENT, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).',
+        'Ao acessar ou utilizar o Neolytics, você declara ter ciência dos termos aqui dispostos.'
+      ],
+      legalSections: [
+        {
+          title: '1. DOS DADOS COLETADOS E SUAS FINALIDADES',
+          paragraphs: ['Para operar a plataforma e prestar suporte, podemos tratar os seguintes dados:'],
+          items: [
+            { label: 'Dados de Conta', text: 'Nome, e-mail e senha (armazenada de forma criptografada) utilizados para criar e autenticar sua conta. Finalidade: viabilizar login, segurança da conta e comunicação sobre o serviço.' },
+            { label: 'Dados de Projeto e Operação', text: 'Informações inseridas pelo usuário no sistema, como dados de mercado, planejamento de projetos, marcos, orçamento e informações financeiras do estúdio. Finalidade: viabilizar o funcionamento dos módulos de análise de mercado, gestão de projetos e operação financeira.' },
+            { label: 'Dados Técnicos', text: 'Endereço IP, navegador, dispositivo e registros de uso da plataforma. Finalidade: segurança, prevenção de fraude e melhoria contínua do serviço.' },
+            { label: 'Dados de Comunicação', text: 'Nome, e-mail e conteúdo de mensagens quando o usuário entra em contato conosco. Finalidade: prestar suporte e responder solicitações.' }
+          ]
+        },
+        {
+          title: '2. DAS BASES LEGAIS PARA O TRATAMENTO',
+          paragraphs: ['A NEO SOFT ENTERTAINMENT trata dados pessoais com fundamento nas bases legais previstas na LGPD, especialmente:'],
+          items: [
+            { label: 'Execução de Contrato', text: 'Tratamento necessário para viabilizar o acesso e uso da plataforma pelo usuário.' },
+            { label: 'Legítimo Interesse', text: 'Tratamento necessário para melhorar segurança, estabilidade e experiência de uso do serviço.' },
+            { label: 'Obrigação Legal ou Regulatória', text: 'Tratamento necessário para cumprimento de determinações legais, fiscais ou judiciais aplicáveis.' }
+          ]
+        },
+        {
+          title: '3. DO COMPARTILHAMENTO DE DADOS',
+          paragraphs: ['A NEO SOFT ENTERTAINMENT não vende dados pessoais e não compartilha dados com empresas de publicidade. O compartilhamento ocorre apenas quando necessário para operar a plataforma ou cumprir obrigações legais, incluindo provedores de hospedagem e infraestrutura técnica utilizados para operar o serviço.']
+        },
+        {
+          title: '4. DO ARMAZENAMENTO E SEGURANÇA DOS DADOS',
+          paragraphs: ['Adotamos medidas técnicas e organizacionais para proteger os dados dos usuários, incluindo criptografia em trânsito (HTTPS/TLS) e controle de acesso a sistemas e infraestrutura de armazenamento.']
+        },
+        {
+          title: '5. DOS DIREITOS DOS TITULARES DE DADOS',
+          paragraphs: ['Nos termos do Artigo 18 da LGPD, o titular pode solicitar à NEO SOFT ENTERTAINMENT, a qualquer momento:'],
+          orderedItems: [
+            'Confirmação da existência de tratamento de dados pessoais.',
+            'Acesso aos dados pessoais tratados.',
+            'Correção de dados incompletos, inexatos ou desatualizados.',
+            'Eliminação da conta e dos dados pessoais associados, ressalvadas hipóteses legais de retenção.'
+          ]
+        },
+        {
+          title: '6. DO CONTATO E EXERCÍCIO DE DIREITOS (DPO)',
+          paragraphs: ['Para exercer direitos ou tirar dúvidas sobre esta política, entre em contato:'],
+          items: [
+            { label: 'E-mail de Contato/Privacidade', text: 'contact@neosoftentertainment.com.br', href: 'mailto:contact@neosoftentertainment.com.br' },
+            { label: 'Razão Social', text: 'NEO SOFT ENTERTAINMENT' }
+          ]
+        }
       ]
     },
     {
@@ -562,6 +615,53 @@
             'Operação: rateio de custos mensais, processamento de arquivos 3D, embalagem, taxas de serviço e metas de vendas.',
             'Vendas: precificação final considerando taxas de serviço, horas de produção, canal de venda, margem desejada e lucro líquido.',
             'Perfis configuráveis de materiais, canais de venda e produtos, com opção de salvar configurações via login ou usar a calculadora em modo convidado.'
+          ]
+        }
+      ],
+      legalTitle: 'Política de Privacidade',
+      legalIntro: 'Política de privacidade e licença de uso aplicáveis ao Vector Toys Calculator.',
+      legalPreamble: [
+        'Este documento estabelece as regras sobre coleta, uso, armazenamento, proteção e direitos dos usuários em relação aos dados pessoais tratados pelo Vector Toys Calculator, desenvolvido pela NEO SOFT ENTERTAINMENT para a Vector Toys, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).',
+        'Ao acessar ou utilizar o Vector Toys Calculator, você declara ter ciência dos termos aqui dispostos.'
+      ],
+      legalSections: [
+        {
+          title: '1. DOS DADOS COLETADOS E SUAS FINALIDADES',
+          paragraphs: ['A ferramenta pode ser utilizada em modo convidado, sem persistência de dados, ou com login para salvar configurações. Quando o login é utilizado, podemos tratar:'],
+          items: [
+            { label: 'Dados de Conta', text: 'E-mail e senha (armazenada de forma criptografada) utilizados para autenticação. Finalidade: viabilizar o login e salvar configurações entre sessões.' },
+            { label: 'Dados de Configuração e Precificação', text: 'Informações inseridas pelo usuário, como perfis de impressoras, materiais, canais de venda e parâmetros de precificação. Finalidade: viabilizar os cálculos de custo e permitir salvar e recuperar configurações.' },
+            { label: 'Dados Técnicos', text: 'Endereço IP, navegador e registros de uso. Finalidade: segurança e melhoria do serviço.' }
+          ]
+        },
+        {
+          title: '2. DO MODO CONVIDADO',
+          paragraphs: ['Quando utilizado sem login, o Vector Toys Calculator não persiste dados de configuração inseridos pelo usuário além da sessão local do navegador.']
+        },
+        {
+          title: '3. DAS BASES LEGAIS PARA O TRATAMENTO',
+          paragraphs: ['A NEO SOFT ENTERTAINMENT trata dados pessoais com fundamento nas bases legais previstas na LGPD, especialmente execução de contrato, para viabilizar o uso da ferramenta com login, e legítimo interesse, para melhorar segurança e estabilidade do serviço.']
+        },
+        {
+          title: '4. DO COMPARTILHAMENTO DE DADOS',
+          paragraphs: ['A NEO SOFT ENTERTAINMENT não vende dados pessoais e não compartilha dados com empresas de publicidade. O compartilhamento ocorre apenas quando necessário para operar a ferramenta ou cumprir obrigações legais.']
+        },
+        {
+          title: '5. DOS DIREITOS DOS TITULARES DE DADOS',
+          paragraphs: ['Nos termos do Artigo 18 da LGPD, o titular pode solicitar à NEO SOFT ENTERTAINMENT, a qualquer momento:'],
+          orderedItems: [
+            'Confirmação da existência de tratamento de dados pessoais.',
+            'Acesso aos dados pessoais tratados.',
+            'Correção de dados incompletos, inexatos ou desatualizados.',
+            'Eliminação da conta e das configurações salvas, ressalvadas hipóteses legais de retenção.'
+          ]
+        },
+        {
+          title: '6. DO CONTATO E EXERCÍCIO DE DIREITOS (DPO)',
+          paragraphs: ['Para exercer direitos ou tirar dúvidas sobre esta política, entre em contato:'],
+          items: [
+            { label: 'E-mail de Contato/Privacidade', text: 'contact@neosoftentertainment.com.br', href: 'mailto:contact@neosoftentertainment.com.br' },
+            { label: 'Razão Social', text: 'NEO SOFT ENTERTAINMENT' }
           ]
         }
       ]
