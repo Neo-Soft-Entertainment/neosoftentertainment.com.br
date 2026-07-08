@@ -90,7 +90,7 @@
 
       const link = document.createElement('a');
       link.href = project.href;
-      link.textContent = 'View Project';
+      link.textContent = 'View details';
       if (/^https?:\/\//.test(project.href)) {
         link.target = '_blank';
         link.rel = 'noopener';
@@ -121,6 +121,7 @@
       if (status) status.textContent = project.status;
       if (cta) {
         cta.href = project.href;
+        cta.textContent = 'View details';
         if (/^https?:\/\//.test(project.href)) {
           cta.target = '_blank';
           cta.rel = 'noopener';
@@ -248,7 +249,12 @@
     if (projectedDrag < -70) nextProject();
     if (projectedDrag > 70) previousProject();
 
-    if (!dragExceededThreshold && hoveredIndex !== -1 && hoveredIndex !== activeIndex) {
+    if (!dragExceededThreshold && hoveredIndex === activeIndex) {
+      window.location.href = projects[activeIndex].href;
+      return;
+    }
+
+    if (!dragExceededThreshold && hoveredIndex !== -1) {
       goToProject(hoveredIndex);
     }
 

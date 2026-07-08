@@ -21,6 +21,7 @@
     let lastX = 0;
     let lastTime = 0;
     let velocity = 0;
+    let pressedDetailHref = '';
 
     function getStep() {
       const style = window.getComputedStyle(track);
@@ -49,7 +50,9 @@
     }
 
     function OnPointerDownCallback(event) {
-      if (reduceMotion || event.button > 0) return;
+      if (reduceMotion || event.button > 0 || event.target.closest('a, button')) return;
+      const card = event.target.closest('[data-detail-href]');
+      pressedDetailHref = card ? card.dataset.detailHref : '';
       isDragging = true;
       hasDragged = false;
       startX = event.clientX;
@@ -90,6 +93,7 @@
     function OnPointerCancelCallback(event) {
       if (!isDragging) return;
       isDragging = false;
+      pressedDetailHref = '';
       section.classList.remove('is-dragging');
       document.body.classList.remove('is-dragging');
       if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
@@ -97,10 +101,21 @@
     }
 
     function OnClickCaptureCallback(event) {
-      if (!hasDragged) return;
-      event.preventDefault();
-      event.stopPropagation();
-      hasDragged = false;
+      if (hasDragged) {
+        event.preventDefault();
+        event.stopPropagation();
+        hasDragged = false;
+        pressedDetailHref = '';
+        return;
+      }
+
+      if (event.target.closest('a, button')) return;
+
+      const card = event.target.closest('[data-detail-href]');
+      const detailHref = pressedDetailHref || (card ? card.dataset.detailHref : '');
+      pressedDetailHref = '';
+      if (!detailHref) return;
+      window.location.href = detailHref;
     }
 
     function OnKeydownCallback(event) {

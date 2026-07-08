@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+
+  <title>Neo Soft Project Detail</title>
+  <meta name="description"
+    content="Explore a Neo Soft project detail page with an interactive Three.js scene." />
+  <meta name="theme-color" content="#03050a" />
+  <link rel="canonical" href="https://neeosoft.com.br/project.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Neo Soft Project Detail" />
+  <meta property="og:description" content="Interactive project details from Neo Soft Entertainment." />
+  <meta property="og:url" content="https://neeosoft.com.br/project.html" />
+  <meta property="og:image" content="img/neosoft.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Neo Soft Project Detail" />
+  <meta name="twitter:description" content="Interactive project details from Neo Soft Entertainment." />
+  <meta name="twitter:image" content="img/neosoft.jpg" />
+
+  <link rel="icon" href="img/icons/icon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="img/icons/icon-180.png" sizes="180x180" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="stylesheet" href="css/experience.css" />
+</head>
+
+<body class="experience-site project-detail-site">
+  <div class="site-loader" data-loader aria-hidden="true">
+    <div class="site-loader__mark">Neo Soft</div>
+    <div class="site-loader__line"><span></span></div>
+    <p>Initializing</p>
+  </div>
+
+  <header id="navbar" class="site-header">
+    <a href="index.html" class="brand-link" aria-label="Neo Soft - Home">
+      <img src="img/neosoft.jpg" alt="Neo Soft logo" />
+      <span>Neo Soft</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
+      <a class="nav-link" href="services.html" data-i18n="nav.services">Services</a>
+      <a class="nav-link" href="games.html" aria-current="page" data-i18n="nav.games">Games</a>
+      <a class="nav-link" href="plugins.html" data-i18n="nav.plugins">Plugins</a>
+      <a class="nav-link" href="studio.html" data-i18n="nav.studio">Studio</a>
+      <a class="nav-link" href="studio.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <button id="hamburger" class="menu-button magnetic" type="button" aria-label="Open menu" aria-expanded="false"
+      aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <div id="mobileMenu" class="menu-overlay hidden" aria-label="Site menu">
+    <div class="menu-overlay__inner">
+      <p class="menu-overlay__eyebrow" data-i18n="nav.menuTitle">Menu</p>
+      <nav class="menu-overlay__links" aria-label="Expanded navigation">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="services.html" data-i18n="nav.services">Services</a>
+        <a href="games.html" aria-current="page" data-i18n="nav.games">Games</a>
+        <a href="plugins.html" data-i18n="nav.plugins">Plugins</a>
+        <a href="studio.html" data-i18n="nav.studio">Studio</a>
+        <a href="studio.html#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="project-detail" data-project-detail aria-labelledby="projectDetailTitle">
+      <canvas id="projectDetailCanvas" class="project-detail__canvas" aria-hidden="true"></canvas>
+      <div class="project-detail__scrim" aria-hidden="true"></div>
+
+      <div class="section-shell project-detail__shell">
+        <div class="project-detail__copy" data-reveal>
+          <a href="games.html" class="project-detail__back">Back to games</a>
+          <p class="eyebrow" id="projectDetailCategory">Project</p>
+          <h1 id="projectDetailTitle">Neo Soft Project</h1>
+          <p class="project-detail__tagline" id="projectDetailTagline"></p>
+          <p class="project-detail__description" id="projectDetailDescription"></p>
+
+          <div class="project-detail__meta">
+            <span id="projectDetailStatus"></span>
+          </div>
+
+          <div class="project-detail__chips" id="projectDetailChips" aria-label="Project details"></div>
+
+          <div class="project-detail__actions">
+            <a href="games.html" class="btn btn-secondary magnetic">All projects</a>
+            <a id="projectDetailExternal" href="games.html" class="btn btn-primary magnetic">Open project</a>
+          </div>
+        </div>
+
+        <div class="project-detail__visual-fallback" aria-hidden="true">
+          <img id="projectDetailImage" src="img/portfolio/frontline.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top hidden" type="button" aria-label="Back to top"
+    data-i18n-aria-label="shared.backToTop">Top</button>
+
+  <footer class="site-footer">
+    <div class="section-shell site-footer__inner">
+      <p data-i18n="footer.copy">© 2026 Neo Soft Entertainment LTDA. - <a
+          href="mailto:contact@neosoftentertainment.com.br">contact@neosoftentertainment.com.br</a></p>
+      <nav aria-label="Footer">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="services.html" data-i18n="nav.services">Services</a>
+        <a href="games.html" aria-current="page" data-i18n="nav.games">Games</a>
+        <a href="plugins.html" data-i18n="nav.plugins">Plugins</a>
+        <a href="studio.html" data-i18n="nav.studio">Studio</a>
+        <a href="/legal">Legal</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/motion-experience.js"></script>
+  <script src="js/site-config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/project-detail.js"></script>
+</body>
+
+</html>
