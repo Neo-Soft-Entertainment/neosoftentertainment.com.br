@@ -257,7 +257,7 @@ html[data-theme="light"] .neo-portfolio-3d {
   display: none;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  max-width: 1180px;
+  max-width: var(--shell, 1540px);
   margin: 0 auto;
   padding: 0 clamp(20px, 6vw, 96px) 88px;
 }
