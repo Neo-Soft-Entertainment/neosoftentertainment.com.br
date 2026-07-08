@@ -314,6 +314,11 @@
       function OnProjectTextureLoadedCallback(texture) {
         texture.colorSpace = THREE.SRGBColorSpace;
         texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
+        texture.generateMipmaps = false;
+        texture.minFilter = THREE.LinearFilter;
+        texture.magFilter = THREE.LinearFilter;
+        texture.wrapS = THREE.ClampToEdgeWrapping;
+        texture.wrapT = THREE.ClampToEdgeWrapping;
         cardMaterial.map = texture;
         cardMaterial.needsUpdate = true;
         fitImageMeshToTexture(card, texture, cardWidth, cardHeight);

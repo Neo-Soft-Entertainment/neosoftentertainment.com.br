@@ -429,8 +429,11 @@
           function OnPortfolioTextureLoadedCallback(texture) {
             texture.colorSpace = THREE.SRGBColorSpace;
             texture.anisotropy = Math.min(renderer.capabilities.getMaxAnisotropy(), 4);
-            texture.minFilter = THREE.LinearMipmapLinearFilter;
+            texture.generateMipmaps = false;
+            texture.minFilter = THREE.LinearFilter;
             texture.magFilter = THREE.LinearFilter;
+            texture.wrapS = THREE.ClampToEdgeWrapping;
+            texture.wrapT = THREE.ClampToEdgeWrapping;
             material.map = texture;
             material.needsUpdate = true;
             fitImageMeshToTexture(imageMesh, texture, cardWidth, cardHeight);
