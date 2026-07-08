@@ -345,7 +345,7 @@
       group: 'own',
       tagline: 'A mobile property discovery app built around map-first browsing.',
       description: 'Imobi simplifies property discovery with an interactive map, listing filters, and a cleaner flow for finding the next home.',
-      thumbnail: 'img/imobi-icon.png',
+      thumbnail: 'img/portfolio/imobi.svg',
       href: 'project.html?id=imobi',
       externalHref: 'products.html',
       externalLabel: 'View product',

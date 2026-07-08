@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Imobi project artwork">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#040a18"/>
+      <stop offset="1" stop-color="#0d1f4a"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#2f6bff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#2f6bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#5b8dff" stroke-width="2">
+    <path d="M120 700h1360M120 580h1360M120 460h1360M120 340h1360M120 220h1360"/>
+    <path d="M220 120v660M460 120v660M700 120v660M940 120v660M1180 120v660M1420 120v660"/>
+  </g>
+  <circle cx="1220" cy="330" r="260" fill="url(#pulse)"/>
+  <g fill="none" stroke="#5b8dff" opacity=".5">
+    <circle cx="1220" cy="330" r="70" stroke-width="3"/>
+    <circle cx="1220" cy="330" r="130" stroke-width="2" opacity=".65"/>
+    <circle cx="1220" cy="330" r="190" stroke-width="1.5" opacity=".4"/>
+  </g>
+  <image href="../imobi-icon.png" x="205" y="330" width="1190" height="333" preserveAspectRatio="xMidYMid meet"/>
+  <text x="212" y="700" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="10" fill="#5b8dff">MOBILE PROPERTY DISCOVERY</text>
+  <g transform="translate(150 750)" fill="none" stroke="#5b8dff" stroke-width="8">
+    <rect x="0" y="-30" width="360" height="90" rx="18" opacity=".55"/>
+    <path d="M32 15h296M32 -8h150"/>
+    <circle cx="270" cy="8" r="16" fill="#5b8dff" opacity=".8" stroke="none"/>
+  </g>
+</svg>
