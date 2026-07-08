@@ -19,6 +19,10 @@
   const allProjects = document.getElementById('projectDetailAll');
   const external = document.getElementById('projectDetailExternal');
   const fallbackImage = document.getElementById('projectDetailImage');
+  const legalSection = document.getElementById('projectLegalSection');
+  const legalTitle = document.getElementById('projectLegalTitle');
+  const legalIntro = document.getElementById('projectLegalIntro');
+  const legalContent = document.getElementById('projectLegalContent');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = window.matchMedia('(max-width: 760px)').matches;
 
@@ -93,6 +97,85 @@
         chip.textContent = detail;
         chips.append(chip);
       });
+    }
+
+    if (legalSection && legalTitle && legalIntro && legalContent) {
+      legalContent.replaceChildren();
+
+      if (!project.legalSections || !project.legalSections.length) {
+        legalSection.classList.add('hidden');
+      }
+
+      if (project.legalSections && project.legalSections.length) {
+        legalSection.classList.remove('hidden');
+        legalTitle.textContent = project.legalTitle || 'Privacy and EULA';
+        legalIntro.textContent = project.legalIntro || 'Project-specific legal notes.';
+
+        (project.legalPreamble || []).forEach((text) => {
+          const paragraph = document.createElement('p');
+          paragraph.className = 'project-legal__preamble';
+          paragraph.textContent = text;
+          legalContent.append(paragraph);
+        });
+
+        project.legalSections.forEach((section) => {
+          const article = document.createElement('article');
+          article.className = 'project-legal__block';
+
+          const heading = document.createElement('h3');
+          heading.textContent = section.title;
+          article.append(heading);
+
+          (section.paragraphs || []).forEach((text) => {
+            const paragraph = document.createElement('p');
+            paragraph.textContent = text;
+            article.append(paragraph);
+          });
+
+          if (section.items && section.items.length) {
+            const list = document.createElement('ul');
+            section.items.forEach((item) => {
+              const li = document.createElement('li');
+              if (typeof item === 'string') {
+                li.textContent = item;
+                list.append(li);
+                return;
+              }
+
+              if (item.label) {
+                const strong = document.createElement('strong');
+                strong.textContent = item.label + ': ';
+                li.append(strong);
+              }
+
+              if (item.href) {
+                const link = document.createElement('a');
+                link.href = item.href;
+                link.textContent = item.text;
+                li.append(link);
+                list.append(li);
+                return;
+              }
+
+              li.append(item.text || '');
+              list.append(li);
+            });
+            article.append(list);
+          }
+
+          if (section.orderedItems && section.orderedItems.length) {
+            const list = document.createElement('ol');
+            section.orderedItems.forEach((text) => {
+              const li = document.createElement('li');
+              li.textContent = text;
+              list.append(li);
+            });
+            article.append(list);
+          }
+
+          legalContent.append(article);
+        });
+      }
     }
 
     if (!external) return;

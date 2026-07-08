@@ -1379,6 +1379,75 @@ textarea {
   object-fit: cover;
 }
 
+.project-legal {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(106, 255, 210, .08), transparent 22rem),
+    linear-gradient(180deg, #020309, #000);
+}
+
+.project-legal .section-shell {
+  max-width: 980px;
+}
+
+.project-legal__content {
+  display: grid;
+  gap: 16px;
+}
+
+.project-legal__preamble,
+.project-legal__block {
+  margin: 0;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, .045);
+  color: var(--text-soft);
+  line-height: 1.78;
+}
+
+.project-legal__block h3 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+  line-height: 1.25;
+}
+
+.project-legal__block p,
+.project-legal__block ul,
+.project-legal__block ol {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  line-height: 1.78;
+}
+
+.project-legal__block p:last-child,
+.project-legal__block ul:last-child,
+.project-legal__block ol:last-child {
+  margin-bottom: 0;
+}
+
+.project-legal__block ul,
+.project-legal__block ol {
+  padding-left: 1.25rem;
+}
+
+.project-legal__block li {
+  margin-bottom: 10px;
+}
+
+.project-legal__block li:last-child {
+  margin-bottom: 0;
+}
+
+.project-legal__block strong {
+  color: var(--text);
+}
+
+.project-legal__block a {
+  color: var(--accent-2);
+  text-underline-offset: 3px;
+}
+
 /* Listing cards (Services / Games / Plugins) */
 .card3d,
 .team-card,
